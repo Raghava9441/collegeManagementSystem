@@ -1,3 +1,7 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/hello\",\"status\":\"200\",\"responseTime\":\"3.489\"}","timestamp":"2024-06-26T07:21:10.684Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/hello\",\"status\":\"304\",\"responseTime\":\"0.592\"}","timestamp":"2024-06-26T07:22:33.192Z"}
 {"level":"info","message":"{\"method\":\"GET\",\"url\":\"/api/hello\",\"status\":\"304\",\"responseTime\":\"2.441\"}","timestamp":"2024-06-26T07:22:42.021Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\"GET /api/hello 304 2.800 ms\\n\"","timestamp":"2024-06-26T07:34:04.328Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\"GET /api/hell 404 1.486 ms\\n\"","timestamp":"2024-06-26T07:38:32.515Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/hell\",\"status\":\"404\",\"responseTime\":\"2.608\"}","timestamp":"2024-06-26T07:38:56.633Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/hell\",\"status\":\"404\",\"responseTime\":\"0.478\"}","timestamp":"2024-06-26T07:39:06.529Z"}

@@ -5,8 +5,7 @@ import morgan from 'morgan';
 const app = express();
 const port = process.env.PORT || 8000; // Use environment variable or default to 8000
 
-
-//morganformat
+// morgan format
 const morganFormat = ':method :url :status :response-time ms';
 
 app.use(morgan(morganFormat, {
@@ -22,6 +21,7 @@ app.use(morgan(morganFormat, {
         }
     }
 }));
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 
@@ -45,6 +45,7 @@ app.put('/api/hello', (req, res) => {
 // DELETE route
 app.delete('/api/hello', (req, res) => {
     res.json({ message: 'Message deleted' });
+    
 });
 
 const server = app.listen(port, () => {
