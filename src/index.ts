@@ -1,15 +1,14 @@
-require('dotenv').config();
-import express, { Request, Response } from 'express';
+import express from 'express';
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000; // Use environment variable or default to 8000
 
-
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello, TypeScript Express!');
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello, world!' });
 });
 
-
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+export default server;
