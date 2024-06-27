@@ -5,4 +5,4 @@ const asyncHandler = (fn: Function) => (req: any, res: any, next: any) => {
         });
 };
 
-export default { asyncHandler };
+export { asyncHandler };

@@ -30,10 +30,17 @@ app.use(morgan(morganFormat, {
 }));
 
 //common middleware
-app.use(express.json({ limit: '16kb'}));
+app.use(express.json({ limit: '16kb' }));
 
-app.use(express.urlencoded({ extended: true,limit : '16kb'}));
+app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 
 app.use(express.static('public'));
+
+//import routes
+import healthCheckRoutes from './routes/healthCheck.routes';
+
+
+//mount routes
+app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 export { app };
