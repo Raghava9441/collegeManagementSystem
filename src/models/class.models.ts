@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
-
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 interface IClass extends Document {
     _id: string;
     name: string;
@@ -103,5 +103,5 @@ classSchema.methods.enrollStudent = function (this: IClass, studentId: mongoose.
     this.currentEnrollment += 1;
     return this.save();
 };
-
+classSchema.plugin(mongooseAggregatePaginate)
 export const Class: Model<IClass> = mongoose.model<IClass>('Class', classSchema);

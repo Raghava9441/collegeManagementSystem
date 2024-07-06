@@ -6,8 +6,7 @@
 // createdAt date
 // updatedAt date
 
-
-
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 import mongoose, { Schema } from 'mongoose';
 
 const organizationSchema = new Schema(
@@ -71,5 +70,6 @@ const organizationSchema = new Schema(
         timestamps: true
     }
 );
+organizationSchema.plugin(mongooseAggregatePaginate)
 
 export const Organization = mongoose.model('Organization', organizationSchema);

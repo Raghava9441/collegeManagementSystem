@@ -7,6 +7,7 @@
 //   updatedAt date
 
 import mongoose, { Schema } from 'mongoose';
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 const teacherSchema = new Schema(
     {
@@ -68,5 +69,5 @@ const teacherSchema = new Schema(
         timestamps: true
     }
 );
-
+teacherSchema.plugin(mongooseAggregatePaginate)
 export const Teacher = mongoose.model('Teacher', teacherSchema);

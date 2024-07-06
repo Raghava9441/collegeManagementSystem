@@ -1,15 +1,45 @@
-// firstname string
-// lastname string
-// email string
-// role enum ['admin', 'teacher', 'student', 'parent']
-// password string
-// age int
-// gender enum ['male', 'female', 'other']
-// organizationId string fk
 
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema, Model, Document } from 'mongoose';
+export interface IUser extends Document {
+    username: string;
+    email: string;
+    fullname: string;
+    avatar: string;
+    coverImage?: string;
+    age?: number;
+    role: 'admin' | 'teacher' | 'student' | 'parent';
+    gender: 'male' | 'female' | 'other';
+    organizationId: string;
+    phone?: string;
+    address?: {
+        street?: string;
+        city?: string;
+        state?: string;
+        zip?: string;
+        country?: string;
+    };
+    status?: 'active' | 'inactive';
+    dateOfBirth?: Date;
+    biography?: string;
+    permissions?: string[];
+    socialLinks?: {
+        facebook?: string;
+        twitter?: string;
+        linkedin?: string;
+    };
+    preferences?: {
+        notifications?: boolean;
+        language?: string;
+    };
+    password: string;
+    refreshToken: string;
+    createdAt?: Date;
+    updatedAt?: Date;
+}
 
-const userSchema = new Schema(
+
+
+const userSchema = new Schema<IUser>(
     {
         username: {
             type: String,
@@ -106,4 +136,4 @@ const userSchema = new Schema(
     }
 )
 
-export const User = mongoose.model("User", userSchema);
+export const User: Model<IUser> = mongoose.model<IUser>("User", userSchema);

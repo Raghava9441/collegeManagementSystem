@@ -39,6 +39,7 @@
     "D": "^1.0.0",
     "dotenv": "^16.4.5",
     "mongoose": "^8.4.4",
+    "mongoose-aggregate-paginate-v2": "^1.1.1",
     "morgan": "^1.10.0",
     "swagger-ui-express": "^5.0.1",
     "winston": "^3.13.0"

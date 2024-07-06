@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 interface IStudent extends Document {
     _id: string;
@@ -121,7 +122,6 @@ const studentSchema = new Schema<IStudent>(
         timestamps: true // Add this line to enable timestamps
     }
 );
+studentSchema.plugin(mongooseAggregatePaginate)
+export const Student: Model<IStudent> = mongoose.model<IStudent>('Student', studentSchema);
 
-const Student: Model<IStudent> = mongoose.model<IStudent>('Student', studentSchema);
-
-export default Student;

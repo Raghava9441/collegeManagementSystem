@@ -2,6 +2,7 @@
 
 
 import mongoose, { Schema } from 'mongoose';
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 const courseSchema = new Schema(
     {
@@ -85,5 +86,5 @@ const courseSchema = new Schema(
         timestamps: true
     }
 );
-
+courseSchema.plugin(mongooseAggregatePaginate)
 export const Course = mongoose.model('Course', courseSchema);
