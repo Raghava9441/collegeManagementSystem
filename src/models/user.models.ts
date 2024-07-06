@@ -1,5 +1,7 @@
 
 import mongoose, { Schema, Model, Document } from 'mongoose';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 export interface IUser extends Document {
     username: string;
     email: string;
@@ -135,5 +137,69 @@ const userSchema = new Schema<IUser>(
         timestamps: true
     }
 )
+
+// Hash password before saving to database
+userSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next()
+
+    this.password = await bcrypt.hash(this.password, 10);
+
+    next()
+})
+// Compare password with hashed password in database
+userSchema.methods.isPasswordCorrect = async function (password: string | Buffer) {
+    return await bcrypt.compare(password, this.password);
+}
+// Generate access token
+userSchema.methods.genetateAccessToken = function () {
+    const payload = {
+        id: this._id,
+        role: this.role,
+        email: this.email,
+        fullname: this.fullname,
+        avatar: this.avatar,
+        coverImage: this.coverImage,
+        age: this.age,
+        gender: this.gender,
+        organizationId: this.organizationId,
+        phone: this.phone,
+        address: this.address,
+        status: this.status,
+        dateOfBirth: this.dateOfBirth,
+        biography: this.biography,
+        permissions: this.permissions,
+        socialLinks: this.socialLinks,
+        preferences: this.preferences,
+    }
+    return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET as string, {
+        expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN as string,
+    })
+}
+
+// Generate refresh token
+userSchema.methods.generateRefreshToken = function () {
+    const payload = {
+        id: this._id,
+        role: this.role,
+        email: this.email,
+        fullname: this.fullname,
+        avatar: this.avatar,
+        coverImage: this.coverImage,
+        age: this.age,
+        gender: this.gender,
+        organizationId: this.organizationId,
+        phone: this.phone,
+        address: this.address,
+        status: this.status,
+        dateOfBirth: this.dateOfBirth,
+        biography: this.biography,
+        permissions: this.permissions,
+        socialLinks: this.socialLinks,
+        preferences: this.preferences,
+    }
+    return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET as string, {
+        expiresIn: process.env.REFRESH_TOKEN_EXPIRES_IN as string,
+    })
+}
 
 export const User: Model<IUser> = mongoose.model<IUser>("User", userSchema);
