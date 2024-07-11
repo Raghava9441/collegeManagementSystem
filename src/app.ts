@@ -3,6 +3,7 @@ import cors from 'cors';
 const app = express();
 import morgan from 'morgan';
 import logger from './utils/logger';
+import organizationRoutes from './routes/organization.routes';
 
 app.use(cors(
     {
@@ -42,5 +43,7 @@ import healthCheckRoutes from './routes/healthCheck.routes';
 
 //mount routes
 app.use("/api/v1/healthcheck", healthCheckRoutes);
+
+app.use("/api/v1/organizations", organizationRoutes);
 
 export { app };
