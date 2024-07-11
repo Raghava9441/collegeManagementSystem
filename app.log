@@ -82,3 +82,35 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-07-06T16:43:01.917Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-07-06T16:43:01.926Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-07-06T16:43:01.935Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2024-07-11T06:42:27.717Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-07-11T06:42:27.721Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-07-11T06:42:27.727Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"5.198\"}","timestamp":"2024-07-11T06:42:29.644Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/v1/organizations\",\"status\":\"404\",\"responseTime\":\"1.053\"}","timestamp":"2024-07-11T06:42:44.897Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"2.117\"}","timestamp":"2024-07-11T06:42:55.581Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs\",\"status\":\"404\",\"responseTime\":\"8.697\"}","timestamp":"2024-07-11T07:40:51.717Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs\",\"status\":\"404\",\"responseTime\":\"0.570\"}","timestamp":"2024-07-11T07:42:59.528Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2024-07-11T07:47:14.466Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-07-11T07:47:14.473Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-07-11T07:47:14.475Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-07-11T07:47:14.478Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-07-11T07:47:14.482Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs\",\"status\":\"301\",\"responseTime\":\"4.939\"}","timestamp":"2024-07-11T07:47:22.787Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/\",\"status\":\"200\",\"responseTime\":\"3.717\"}","timestamp":"2024-07-11T07:47:22.800Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-init.js\",\"status\":\"200\",\"responseTime\":\"0.747\"}","timestamp":"2024-07-11T07:47:22.833Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui.css\",\"status\":\"200\",\"responseTime\":\"3.889\"}","timestamp":"2024-07-11T07:47:22.835Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-standalone-preset.js\",\"status\":\"200\",\"responseTime\":\"4.875\"}","timestamp":"2024-07-11T07:47:22.839Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-bundle.js\",\"status\":\"200\",\"responseTime\":\"6.503\"}","timestamp":"2024-07-11T07:47:22.844Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/favicon-32x32.png\",\"status\":\"200\",\"responseTime\":\"0.888\"}","timestamp":"2024-07-11T07:47:23.202Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/\",\"status\":\"304\",\"responseTime\":\"1.871\"}","timestamp":"2024-07-11T07:52:14.332Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui.css\",\"status\":\"304\",\"responseTime\":\"0.831\"}","timestamp":"2024-07-11T07:52:14.361Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-bundle.js\",\"status\":\"304\",\"responseTime\":\"2.086\"}","timestamp":"2024-07-11T07:52:14.370Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-standalone-preset.js\",\"status\":\"304\",\"responseTime\":\"1.915\"}","timestamp":"2024-07-11T07:52:14.371Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-init.js\",\"status\":\"304\",\"responseTime\":\"1.928\"}","timestamp":"2024-07-11T07:52:14.372Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/favicon-32x32.png\",\"status\":\"304\",\"responseTime\":\"0.489\"}","timestamp":"2024-07-11T07:52:14.628Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/\",\"status\":\"304\",\"responseTime\":\"0.589\"}","timestamp":"2024-07-11T07:52:15.669Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui.css\",\"status\":\"304\",\"responseTime\":\"0.636\"}","timestamp":"2024-07-11T07:52:15.706Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-init.js\",\"status\":\"304\",\"responseTime\":\"0.839\"}","timestamp":"2024-07-11T07:52:15.723Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-bundle.js\",\"status\":\"304\",\"responseTime\":\"2.804\"}","timestamp":"2024-07-11T07:52:15.724Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/swagger-ui-standalone-preset.js\",\"status\":\"304\",\"responseTime\":\"3.445\"}","timestamp":"2024-07-11T07:52:15.725Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api-docs/favicon-32x32.png\",\"status\":\"304\",\"responseTime\":\"0.648\"}","timestamp":"2024-07-11T07:52:15.816Z"}
