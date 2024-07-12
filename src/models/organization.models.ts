@@ -1,11 +1,3 @@
-// name string
-// category string
-// number string
-// address string
-// createdBy string fk
-// createdAt date
-// updatedAt date
-
 import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 import mongoose, { Schema } from 'mongoose';
 
@@ -47,6 +39,7 @@ const organizationSchema = new Schema(
         contactEmail: {
             type: String,
             trim: true,
+            required: true,
             lowercase: true
         },
         contactPhone: {
