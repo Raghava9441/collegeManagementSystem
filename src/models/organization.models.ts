@@ -25,11 +25,11 @@ const organizationSchema = new Schema(
             zip: { type: String },
             country: { type: String }
         },
-        createdBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
-        },
+        // createdBy: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'User',
+        //     required: true
+        // },
         logo: {
             type: String, // cloudinary URL or other storage service URL
         },

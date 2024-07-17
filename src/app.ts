@@ -4,6 +4,8 @@ const app = express();
 import morgan from 'morgan';
 import logger from './utils/logger';
 import organizationRoutes from './routes/organization.routes';
+import userRoutes from './routes/user.routes';
+import bodyParser from 'body-parser';
 
 app.use(cors(
     {
@@ -36,6 +38,7 @@ app.use(express.json({ limit: '16kb' }));
 app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
@@ -45,5 +48,9 @@ import healthCheckRoutes from './routes/healthCheck.routes';
 app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 app.use("/api/v1/organizations", organizationRoutes);
+app.use("/api/v1/user", userRoutes);
 
+app.use((req, res, next) => {
+    res.status(404).send("Not Found");
+});
 export { app };

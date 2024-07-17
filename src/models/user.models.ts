@@ -1,4 +1,4 @@
-
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 import mongoose, { Schema, Model, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
@@ -37,11 +37,12 @@ export interface IUser extends Document {
     refreshToken: string;
     createdAt?: Date;
     updatedAt?: Date;
+    isPasswordCorrect(password: string | Buffer): Promise<boolean>;
+    genetateAccessToken(): string;
+    generateRefreshToken(): string;
 }
 
-
-
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema(
     {
         username: {
             type: String,
@@ -130,7 +131,6 @@ const userSchema = new Schema<IUser>(
         },
         refreshToken: {
             type: String,
-            required: [true, "refreshToken is required"]
         },
     },
     {
@@ -202,4 +202,6 @@ userSchema.methods.generateRefreshToken = function () {
     })
 }
 
-export const User: Model<IUser> = mongoose.model<IUser>("User", userSchema);
+userSchema.plugin(mongooseAggregatePaginate)
+
+export const User = mongoose.model('User', userSchema);

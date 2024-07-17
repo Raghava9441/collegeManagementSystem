@@ -30,10 +30,6 @@ interface IStudent extends Document {
 
 const studentSchema = new Schema<IStudent>(
     {
-        _id: {
-            type: String,
-            required: true
-        },
         userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
