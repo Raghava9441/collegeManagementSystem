@@ -7,7 +7,6 @@ import organizationRoutes from './routes/organization.routes';
 import userRoutes from './routes/user.routes';
 import teacherRoutes from './routes/teacher.routes';
 import bodyParser from 'body-parser';
-import serverless from 'serverless-http'
 
 app.use(cors(
     {
@@ -56,6 +55,4 @@ app.use("/api/v1/teacher", teacherRoutes);
 app.use((req, res, next) => {
     res.status(404).send("Not Found");
 });
-// export { app };
-
-module.exports.handler = serverless(app);
+export { app };
