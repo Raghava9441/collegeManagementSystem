@@ -6,6 +6,7 @@ import { asyncHandler } from "../utils/asyncHandler";
 import * as XLSX from 'xlsx';
 import { getMongoosePaginationOptions } from "../utils/healpers";
 import logger from "../utils/logger";
+
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
     const { page = 1, limit = 10 } = req.query;
@@ -33,39 +34,22 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 })
 
 const createUser = asyncHandler(async (req: Request, res: Response) => {
+    const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences, password, refreshToken } = req.body;
 
-    const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
-
-    if (!username || !email || !fullname || !avatar || !coverImage || !age || !role || !gender || !organizationId || !phone || !address || !status || !dateOfBirth || !biography || !permissions || !socialLinks || !preferences) {
-        return res
-            .status(400)
-            .json(new ApiError(400, "Please provide all the required fields"));
+    if (!username || !email || !fullname || !avatar || !password || !role || !gender || !organizationId) {
+        return res.status(400).json(new ApiError(400, "Please provide all the required fields"));
     }
 
     const existingUser = await User.findOne({
         $or: [
             { username },
             { email },
-            { fullname },
-            { avatar },
-            { coverImage },
-            { age },
-            { role },
-            { gender },
-            { organizationId },
-            { phone },
-            { address },
-            { status },
-            { dateOfBirth },
-            { biography },
-            { permissions },
-            { socialLinks },
-            { preferences },
+            { fullname }
         ]
     });
 
     if (existingUser) {
-        return res.status(409).json(new ApiError(409, "An user with the same username, email, or fullname already exists"));
+        return res.status(409).json(new ApiError(409, "A user with the same username, email, or fullname already exists"));
     }
 
     const user = await User.create({
@@ -86,13 +70,13 @@ const createUser = asyncHandler(async (req: Request, res: Response) => {
         permissions,
         socialLinks,
         preferences,
+        password,
+        refreshToken
     });
 
-    return res
-        .status(200)
-        .json(new ApiResponse(200, user, "User is created successfully"));
+    return res.status(200).json(new ApiResponse(200, user, "User is created successfully"));
+});
 
-})
 
 const createBulkUsers = asyncHandler(async (req: Request, res: Response) => {
 
@@ -262,11 +246,11 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     logger.info("Registering user");
     const { username, email, password, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
 
-    // if (!username || !email || !fullname || !age || !role || !gender || !organizationId || !!password) {
-    //     return res
-    //         .status(400)
-    //         .json(new ApiError(400, "Please provide all the required fields"));
-    // }
+    if (!username || !email || !fullname || !age || !role || !gender || !organizationId || !!password) {
+        return res
+            .status(400)
+            .json(new ApiError(400, "Please provide all the required fields"));
+    }
 
     const existingUser = await User.findOne({
         $or: [

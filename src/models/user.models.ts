@@ -2,6 +2,7 @@ import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 import mongoose, { Schema, Model, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { AvailableUserRoles } from '../constants';
 export interface IUser extends Document {
     username: string;
     email: string;
@@ -33,7 +34,7 @@ export interface IUser extends Document {
         notifications?: boolean;
         language?: string;
     };
-    password: string;
+    password?: string;
     refreshToken: string;
     createdAt?: Date;
     updatedAt?: Date;
@@ -79,7 +80,7 @@ const userSchema = new Schema(
         },
         role: {
             type: String,
-            enum: ['admin', 'teacher', 'student', 'parent'],
+            enum: AvailableUserRoles,
             required: true
         },
         gender: {
@@ -127,7 +128,7 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            required: [true, "password is required"]
+            required: true
         },
         refreshToken: {
             type: String,
