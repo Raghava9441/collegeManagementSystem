@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "cms application for all the eduction institutes",
   "main": "src/index.ts",
-  "type": "module",
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon",

@@ -1,13 +1,13 @@
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import logger from './utils/logger';
 
 import { app } from './app';
 import connectDB from './db';
 import swaggerDocs from './utils/swagger';
 
-dotenv.config({
-    path: './.env',
-});
+// dotenv.config({
+//     path: './.env',
+// });
 
 const port = process.env.PORT || 8000; // Use environment variable or default to 8000
 
