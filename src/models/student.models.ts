@@ -28,7 +28,7 @@ interface IStudent extends Document {
     updatedAt: Date;
 }
 
-const studentSchema = new Schema<IStudent>(
+const studentSchema = new Schema(
     {
         userId: {
             type: mongoose.Schema.Types.ObjectId,
@@ -43,10 +43,10 @@ const studentSchema = new Schema<IStudent>(
             type: String,
             required: true
         },
-        parentId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Parent'
-        },
+        // parentId: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'Parent'
+        // },
         courseIds: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Course'
@@ -119,5 +119,5 @@ const studentSchema = new Schema<IStudent>(
     }
 );
 studentSchema.plugin(mongooseAggregatePaginate)
-export const Student: Model<IStudent> = mongoose.model<IStudent>('Student', studentSchema);
+export const Student = mongoose.model('Student', studentSchema);
 

@@ -2,7 +2,10 @@ import { Request, Response } from "express";
 import { ApiResponse } from "../utils/ApiResponse";
 import { Teacher } from "../models/teacher.model";
 import { getMongoosePaginationOptions } from "../utils/healpers";
+import { User } from "../models/user.models";
+import { UserRolesEnum } from "../constants";
 import { ApiError } from "../utils/ApiError";
+import { Organization } from "../models/organization.models";
 
 const getAllTeachers = async (req: Request, res: Response) => {
 
@@ -32,44 +35,38 @@ const getAllTeachers = async (req: Request, res: Response) => {
 
 const createTeacher = async (req: Request, res: Response) => {
 
-    const { name, description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy } = req.body;
+    const { description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy, userId } = req.body;
+    console.log("organizationId:", organizationId)
+    console.log("userId:", userId)
     //check only mandatory fields are there or not 
-    if (!name || !description || !organizationId || !subjects || !coursesTaught) {
+    if (!organizationId || !userId) {
         return res
             .status(400)
             .json(new ApiError(400, "Please provide all the required fields"));
     }
 
-    const existingTeacher = await Teacher.findOne({
-        $or: [
-            { name },
-            { description },
-            { courseId },
-            { teacherId },
-            { organizationId },
-            { subjects },
-            { qualifications },
-            { experience },
-            { officeHours },
-            { researchInterests },
-            { publications },
-            { professionalMemberships },
-            { coursesTaught },
-            { performanceReviews },
-            { specialResponsibilities },
-            { teachingPhilosophy },
-        ]
-    });
+    const existingOrganization = await Organization.findById(organizationId);
+    if (!existingOrganization) {
+        return res.status(404).json(new ApiError(404, "Organization not found"));
+    }
 
-    if (existingTeacher) {
-        return res.status(409).json(new ApiError(409, "An teacher with the same name, description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy already exists"));
+    const existingUser = await User.findById(userId);
+    if (!existingUser) {
+        return res.status(404).json(new ApiError(404, "User not found"));
+    }
+
+    if (existingUser.role !== UserRolesEnum.TEACHER) {
+        return res.status(400).json(new ApiError(400, "User is not a teacher"));
+    }
+
+    const activeTeacher = await Teacher.findOne({ userId, organizationId });
+    if (activeTeacher) {
+        return res.status(409).json(new ApiError(409, "User is already an active teacher in this organization"));
     }
 
     const teacher = await Teacher.create({
-        name,
-        description,
         courseId,
-        teacherId,
+        userId,
         organizationId,
         subjects,
         qualifications,

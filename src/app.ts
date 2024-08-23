@@ -6,12 +6,13 @@ import logger from './utils/logger';
 import organizationRoutes from './routes/organization.routes';
 import userRoutes from './routes/user.routes';
 import teacherRoutes from './routes/teacher.routes';
+import studentRoutes from './routes/student.routes';
 import bodyParser from 'body-parser';
 
 app.use(cors(
     {
-        origin: process.env.CORS_ORIGIN,
-        credentials: true,
+        // origin: process.env.CORS_ORIGIN,
+        // credentials: true,
         // methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     }
 ));
@@ -51,6 +52,7 @@ app.use("/api/v1/healthcheck", healthCheckRoutes);
 app.use("/api/v1/organizations", organizationRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/teacher", teacherRoutes);
+app.use("/api/v1/students", studentRoutes);
 
 app.use((req, res, next) => {
     res.status(404).send("Not Found");
