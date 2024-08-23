@@ -629,3 +629,236 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T10:33:47.201Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T10:33:47.202Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T10:33:47.204Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T10:33:56.063Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T10:33:56.065Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T10:33:56.065Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T10:33:56.066Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T10:33:56.068Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T10:40:20.505Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T10:40:20.513Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T10:40:20.514Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T10:40:20.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T10:40:20.519Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T10:46:28.854Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T10:46:28.857Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T10:46:28.857Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T10:46:28.858Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T10:46:28.861Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T10:48:49.650Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T10:48:49.652Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T10:48:49.653Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T10:48:49.653Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T10:48:49.656Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:07:10.916Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:07:10.922Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:07:10.924Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:07:10.926Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:07:10.932Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:07:16.659Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:07:16.661Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:07:16.661Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:07:16.662Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:07:16.664Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:10:20.655Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:10:20.656Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:10:20.657Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:10:20.657Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:10:20.660Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:14:32.736Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:14:32.737Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:14:32.738Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:14:32.738Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:14:32.740Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:16:40.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:16:40.399Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:16:40.399Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:16:40.400Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:16:40.402Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:19:04.059Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:19:04.061Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:19:04.062Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:19:04.062Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:19:04.064Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:20:04.518Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:20:04.520Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:20:04.520Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:20:04.521Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:20:04.523Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:20:53.313Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:20:53.315Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:20:53.315Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:20:53.316Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:20:53.319Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:22:20.607Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:22:20.609Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:22:20.610Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:22:20.610Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:22:20.613Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:22:31.130Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:22:31.134Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:22:31.134Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:22:31.135Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:22:31.137Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:22:55.135Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:22:55.137Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:22:55.137Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:22:55.138Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:22:55.140Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:24:12.905Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:24:12.908Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:24:12.908Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:24:12.908Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:24:12.911Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:25:41.882Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:25:41.884Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:25:41.884Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:25:41.885Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:25:41.887Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:32:17.331Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:32:17.333Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:32:17.333Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:32:17.334Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:32:17.336Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/users/register\",\"status\":\"404\",\"responseTime\":\"20.278\"}","timestamp":"2024-08-23T11:33:26.532Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T11:34:26.517Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"5.129\"}","timestamp":"2024-08-23T11:34:26.521Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:35:59.942Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:35:59.944Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:35:59.945Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:35:59.945Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:35:59.948Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T11:36:02.505Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"11.841\"}","timestamp":"2024-08-23T11:36:02.509Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:37:48.154Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:37:48.157Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:37:48.158Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:37:48.159Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:37:48.163Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T11:37:51.900Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"11.294\"}","timestamp":"2024-08-23T11:37:51.904Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:39:29.538Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:39:29.539Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:39:29.540Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:39:29.541Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:39:29.543Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T11:39:33.787Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"14.224\"}","timestamp":"2024-08-23T11:39:33.794Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:39:47.690Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:39:47.694Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:39:47.694Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:39:47.695Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:39:47.699Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:40:35.198Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:40:35.200Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:40:35.200Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:40:35.201Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:40:35.203Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:40:56.048Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:40:56.049Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:40:56.050Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:40:56.050Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:40:56.053Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T11:41:10.622Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"409\",\"responseTime\":\"69.465\"}","timestamp":"2024-08-23T11:41:10.676Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T11:42:00.694Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"42.498\"}","timestamp":"2024-08-23T11:42:00.736Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"6.771\"}","timestamp":"2024-08-23T11:52:56.144Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:56:49.806Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:56:49.808Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:56:49.809Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:56:49.809Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:56:49.812Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:57:02.673Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:57:02.675Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:57:02.676Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:57:02.676Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:57:02.680Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:58:16.667Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:58:16.668Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:58:16.669Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:58:16.669Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:58:16.672Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T11:59:17.908Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T11:59:17.910Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T11:59:17.910Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T11:59:17.911Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T11:59:17.913Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:01:39.595Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:01:39.597Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:01:39.598Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:01:39.598Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:01:39.601Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:03:54.594Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:03:54.602Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:03:54.603Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:03:54.605Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:03:54.608Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"8.938\"}","timestamp":"2024-08-23T12:03:58.776Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"6.190\"}","timestamp":"2024-08-23T12:04:07.977Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:04:31.213Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:04:31.215Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:04:31.215Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:04:31.216Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:04:31.218Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:04:44.379Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:04:44.380Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:04:44.381Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:04:44.381Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:04:44.383Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"7.767\"}","timestamp":"2024-08-23T12:04:53.861Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"3.276\"}","timestamp":"2024-08-23T12:06:41.886Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:07:05.449Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:07:05.451Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:07:05.452Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:07:05.452Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:07:05.456Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"8.236\"}","timestamp":"2024-08-23T12:07:11.391Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:09:48.187Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:09:48.191Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:09:48.192Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:09:48.192Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:09:48.195Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"11.330\"}","timestamp":"2024-08-23T12:10:01.390Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:10:34.130Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:10:34.132Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:10:34.133Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:10:34.134Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:10:34.136Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"10.696\"}","timestamp":"2024-08-23T12:10:43.792Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:12:19.720Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:12:19.722Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:12:19.723Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:12:19.723Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:12:19.726Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T12:12:41.978Z"}
+{"avatar":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"avatar","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"coverImage":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"coverImage","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-08-23T12:12:42.024Z"}
+{"api_key":"366431692622581","asset_id":"712f55d94b53b396a60be7aa8785d9d2","bytes":110609,"created_at":"2024-08-23T12:12:44Z","etag":"c811316ad719844eaf314f4e2892fed5","folder":"","format":"jpg","height":720,"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","original_filename":"apache","placeholder":false,"public_id":"bm1fvbi1aujbhoyla2br","resource_type":"image","secure_url":"https://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415164/bm1fvbi1aujbhoyla2br.jpg","signature":"81b6acacf3b7e94e0476df28f06d03546b881ddf","tags":[],"timestamp":"2024-08-23T12:12:45.124Z","type":"upload","url":"http://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415164/bm1fvbi1aujbhoyla2br.jpg","version":1724415164,"version_id":"2bdb0842736f00ded5caa83a1cc28cf6","width":1280}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-08-23T12:12:45.127Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"3179.490\"}","timestamp":"2024-08-23T12:12:45.151Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T12:14:54.167Z"}
+{"avatar":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"avatar","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"coverImage":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"coverImage","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-08-23T12:14:54.223Z"}
+{"api_key":"366431692622581","asset_id":"72ce1e5df971a029fb1b34cf190fa437","bytes":110609,"created_at":"2024-08-23T12:14:56Z","etag":"c811316ad719844eaf314f4e2892fed5","folder":"","format":"jpg","height":720,"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","original_filename":"apache","placeholder":false,"public_id":"oasxjfzkakjjcyke27zi","resource_type":"image","secure_url":"https://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415296/oasxjfzkakjjcyke27zi.jpg","signature":"bf0e4c08df58963c0e69e03e5f3e75b2f02ccfe5","tags":[],"timestamp":"2024-08-23T12:14:56.552Z","type":"upload","url":"http://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415296/oasxjfzkakjjcyke27zi.jpg","version":1724415296,"version_id":"3c0f2bdb5bed522a13605405b2fefb70","width":1280}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-08-23T12:14:56.553Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"2397.182\"}","timestamp":"2024-08-23T12:14:56.561Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:16:14.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:16:14.519Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:16:14.519Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:16:14.520Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:16:14.522Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T12:17:26.361Z"}
+{"avatar":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"avatar","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"coverImage":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"coverImage","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-08-23T12:17:26.411Z"}
+{"api_key":"366431692622581","asset_id":"9e73e98ee688a1447c30afbdcb196699","bytes":110609,"created_at":"2024-08-23T12:17:29Z","etag":"c811316ad719844eaf314f4e2892fed5","folder":"","format":"jpg","height":720,"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","original_filename":"apache","placeholder":false,"public_id":"gcmdf97llfrcmiabxpkj","resource_type":"image","secure_url":"https://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415449/gcmdf97llfrcmiabxpkj.jpg","signature":"39ed07d05b3649db0c651295d3526cbaf40f5719","tags":[],"timestamp":"2024-08-23T12:17:29.299Z","type":"upload","url":"http://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415449/gcmdf97llfrcmiabxpkj.jpg","version":1724415449,"version_id":"a88c4a2d6e2c21f5fb4449d17563612a","width":1280}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-08-23T12:17:29.301Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"3154.297\"}","timestamp":"2024-08-23T12:17:29.508Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-08-23T12:24:02.224Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-08-23T12:24:02.226Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-08-23T12:24:02.226Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-08-23T12:24:02.227Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-08-23T12:24:02.229Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T12:24:14.250Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"409\",\"responseTime\":\"72.640\"}","timestamp":"2024-08-23T12:24:14.316Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-08-23T12:24:43.983Z"}
+{"avatar":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"avatar","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"coverImage":[{"destination":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp","encoding":"7bit","fieldname":"coverImage","filename":"apache.jpg","mimetype":"image/jpeg","originalname":"apache.jpg","path":"H:\\personal project\\collegeManagementSystem\\src\\public\\temp\\apache.jpg","size":110609}],"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-08-23T12:24:44.038Z"}
+{"api_key":"366431692622581","asset_id":"19c70b6464cd00fd1de1513be7b90013","bytes":110609,"created_at":"2024-08-23T12:24:46Z","etag":"c811316ad719844eaf314f4e2892fed5","folder":"","format":"jpg","height":720,"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","original_filename":"apache","placeholder":false,"public_id":"y2xsmgz2ytuhmrsxilxz","resource_type":"image","secure_url":"https://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415886/y2xsmgz2ytuhmrsxilxz.jpg","signature":"1da49963659f8c62537d562973de98451b56c681","tags":[],"timestamp":"2024-08-23T12:24:46.519Z","type":"upload","url":"http://res.cloudinary.com/dbqzrwwzk/image/upload/v1724415886/y2xsmgz2ytuhmrsxilxz.jpg","version":1724415886,"version_id":"2630caf5eacc141f837ee93d3b1bc6d9","width":1280}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-08-23T12:24:46.520Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/register\",\"status\":\"400\",\"responseTime\":\"2718.308\"}","timestamp":"2024-08-23T12:24:46.698Z"}

@@ -9,7 +9,7 @@ export interface IUser extends Document {
     fullname: string;
     avatar: string;
     coverImage?: string;
-    age?: number;
+    age?: string;
     role: 'admin' | 'teacher' | 'student' | 'parent';
     gender: 'male' | 'female' | 'other';
     organizationId: string;
@@ -74,7 +74,7 @@ const userSchema = new Schema(
             type: String,//cloudinary url
         },
         age: {
-            type: Number,
+            type: String,
             min: 15,
             max: 100,
         },

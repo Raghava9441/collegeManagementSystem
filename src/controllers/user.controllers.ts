@@ -6,6 +6,8 @@ import { asyncHandler } from "../utils/asyncHandler";
 import * as XLSX from 'xlsx';
 import { getMongoosePaginationOptions } from "../utils/healpers";
 import logger from "../utils/logger";
+import { uploadOncloudinary } from "../utils/cloudinary";
+import fs from 'fs';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
@@ -246,7 +248,11 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     logger.info("Registering user");
     const { username, email, password, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
 
-    if (!username || !email || !fullname || !age || !role || !gender || !organizationId || !!password) {
+    if (
+        [username, email, fullname, age, role, gender, organizationId].some(
+            field => typeof field !== 'string' || field.trim() === ""
+        )
+    ) {
         return res
             .status(400)
             .json(new ApiError(400, "Please provide all the required fields"));
@@ -256,34 +262,52 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
         $or: [
             { username },
             { email },
-            { fullname },
-            { avatar },
-            { coverImage },
-            { age },
-            { role },
-            { gender },
-            { organizationId },
-            { phone },
-            { address },
-            { status },
-            { dateOfBirth },
-            { biography },
-            { permissions },
-            { socialLinks },
-            { preferences },
         ]
     });
+    console.log("existingUser:", existingUser)
 
     if (existingUser) {
-        return res.status(409).json(new ApiError(409, "An user with the same username, email, or fullname already exists"));
+        return res.status(409).json(new ApiError(409, "An user with the same username, or email already exists"));
+    }
+    logger.warn("avatar path", req.files)
+
+    const localAvatarPath = req.files && 'avatar' in req.files ? req.files.avatar[0].path : "";
+    const localCoverImagePath = req.files && 'coverImage' in req.files ? req.files.coverImage[0].path : "";
+
+    if (!localAvatarPath || !fs.existsSync(localAvatarPath)) {
+        return res.status(400).json(new ApiError(400, "Please upload a valid avatar"));
+    }
+
+    let avatarCludinaryUrl;
+    try {
+        avatarCludinaryUrl = await uploadOncloudinary(localAvatarPath);
+        logger.info("Avatar uploaded:", avatarCludinaryUrl);
+    } catch (error) {
+        logger.error("Error uploading avatar:", error);
+        return res.status(400).json(new ApiError(400, "Something went wrong while uploading avatar"));
+    }
+
+    let coverImageCludinaryUrl;
+    if (localCoverImagePath && fs.existsSync(localCoverImagePath)) {
+        try {
+            coverImageCludinaryUrl = await uploadOncloudinary(localCoverImagePath);
+            logger.info("Cover image uploaded:", coverImageCludinaryUrl);
+        } catch (error) {
+            logger.error("Error uploading cover image:", error);
+            return res.status(400).json(new ApiError(400, "Something went wrong while uploading cover image"));
+        }
+    } else {
+        logger.warn("No cover image provided or file not found");
+        coverImageCludinaryUrl = { url: "" }; // Default value if no cover image is uploaded
     }
 
     const user = await User.create({
         username,
         email,
+        password,
         fullname,
-        avatar,
-        coverImage,
+        avatar: avatarCludinaryUrl?.url,
+        coverImage: coverImageCludinaryUrl?.url || "",
         age,
         role,
         gender,
@@ -298,9 +322,18 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
         preferences,
     });
 
+    const createdUser = await User.findById(user._id).populate({
+        path: 'user',
+        strictPopulate: false
+    });
+
+    if (!createdUser) {
+        return res.status(500).json(new ApiError(404, "Sonthing went wrong while registering user"));
+    }
+
     return res
         .status(200)
-        .json(new ApiResponse(200, user, "User is created successfully"));
+        .json(new ApiResponse(200, user, "User is registered successfully"));
 
 })
 

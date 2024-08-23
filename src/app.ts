@@ -41,20 +41,24 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
+// app.use(cookieParser());
 
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
+import cookieParser from 'cookie-parser';
+import { errorHandler } from './middlewares/error.middlewares';
 
 
 //mount routes
 app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 app.use("/api/v1/organizations", organizationRoutes);
-app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/teacher", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);
 
 app.use((req, res, next) => {
     res.status(404).send("Not Found");
 });
+app.use(errorHandler)
 export { app };
