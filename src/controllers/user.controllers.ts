@@ -6,7 +6,7 @@ import { asyncHandler } from "../utils/asyncHandler";
 import * as XLSX from 'xlsx';
 import { getMongoosePaginationOptions } from "../utils/healpers";
 import logger from "../utils/logger";
-import { uploadOncloudinary } from "../utils/cloudinary";
+import { deleteFromCloudinary, uploadOncloudinary } from "../utils/cloudinary";
 import fs from 'fs';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
@@ -298,42 +298,52 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
         }
     } else {
         logger.warn("No cover image provided or file not found");
-        coverImageCludinaryUrl = { url: "" }; // Default value if no cover image is uploaded
     }
 
-    const user = await User.create({
-        username,
-        email,
-        password,
-        fullname,
-        avatar: avatarCludinaryUrl?.url,
-        coverImage: coverImageCludinaryUrl?.url || "",
-        age,
-        role,
-        gender,
-        organizationId,
-        phone,
-        address,
-        status,
-        dateOfBirth,
-        biography,
-        permissions,
-        socialLinks,
-        preferences,
-    });
+    try {
+        const user = await User.create({
+            username,
+            email,
+            password,
+            fullname,
+            avatar: avatarCludinaryUrl?.url,
+            coverImage: coverImageCludinaryUrl?.url || "",
+            age,
+            role,
+            gender,
+            organizationId,
+            phone,
+            address,
+            status,
+            dateOfBirth,
+            biography,
+            permissions,
+            socialLinks,
+            preferences,
+        });
 
-    const createdUser = await User.findById(user._id).populate({
-        path: 'user',
-        strictPopulate: false
-    });
+        const createdUser = await User.findById(user._id).populate({
+            path: 'user',
+            strictPopulate: false
+        });
 
-    if (!createdUser) {
-        return res.status(500).json(new ApiError(404, "Sonthing went wrong while registering user"));
+        if (!createdUser) {
+            return res.status(500).json(new ApiError(404, "Sonthing went wrong while registering user"));
+        }
+
+        return res
+            .status(200)
+            .json(new ApiResponse(200, user, "User is registered successfully"));
+    } catch (error) {
+        logger.error("Error registering user:", error);
+        if (avatarCludinaryUrl) {
+            await deleteFromCloudinary(avatarCludinaryUrl.public_id);
+        }
+        if (coverImageCludinaryUrl) {
+            await deleteFromCloudinary(coverImageCludinaryUrl.public_id);
+        }
+        throw new ApiError(404, "Sonthing went wrong while registering user and deleting imagess");
     }
-
-    return res
-        .status(200)
-        .json(new ApiResponse(200, user, "User is registered successfully"));
 
 })
 
