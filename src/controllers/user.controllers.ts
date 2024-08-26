@@ -218,30 +218,46 @@ const deleteBulkUsers = asyncHandler(async (req: Request, res: Response) => {
 
 
 const loginUser = asyncHandler(async (req: Request, res: Response) => {
+
     const { email, password } = req.body;
-
-    try {
-        // Find user by email
-        const user: IUser | null = await User.findOne({ email });
-        if (!user) {
-            return res.status(404).json(new ApiError(404, "User not found"));
-        }
-        // Check if password is correct
-        const isPasswordValid = await user.isPasswordCorrect(password);
-        if (!isPasswordValid) {
-            return res.status(401).json(new ApiError(401, "Invalid email or password"));
-        }
-        // Generate tokens
-        const accessToken = user.genetateAccessToken();
-        const refreshToken = user.generateRefreshToken();
-        // Return success response with user data and tokens
-        return res.status(200).json(new ApiResponse(200, user, "User is logged in successfully"));
-
-    } catch (error) {
-        // Handle any unexpected errors
-        console.error("Error logging in user:", error);
-        return res.status(500).json(new ApiError(500, "Internal server error"));
+    // Check if email and password are provided
+    if (!email || !password) {
+        return res.status(400).json(new ApiError(400, "Please provide all the required fields"));
     }
+
+    // Find user by email
+    const user: IUser | null = await User.findOne({ email });
+    if (!user) {
+        return res.status(404).json(new ApiError(404, "User not found"));
+    }
+    // Check if password is correct
+    const isPasswordValid = await user.isPasswordCorrect(password);
+    if (!isPasswordValid) {
+        return res.status(401).json(new ApiError(401, "Invalid email or password"));
+    }
+    // Generate tokens
+    const tokens = await generateAccessAndRefreshToken(user._id as string);
+
+    if (!tokens) {
+        return res.status(500).json(new ApiError(500, "Something went wrong while generating tokens"));
+    }
+
+    const { accessToken, refreshToken } = tokens;
+
+    const loggedInUser = await User.findById(user._id).select("-password -refreshToken");
+
+    if (!loggedInUser) {
+        return res.status(500).json(new ApiError(500, "Something went wrong while logging in user"));
+    }
+    const options = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+    }
+    // Return success response with user data and tokens
+    return res.status(200)
+        .cookie('accessToken', accessToken, options)
+        .cookie('refreshToken', refreshToken, options)
+        .json(new ApiResponse(200, loggedInUser, "User is logged in successfully"));
 });
 
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
@@ -347,6 +363,31 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
 
 })
 
+
+const generateAccessAndRefreshToken = async (userId: string): Promise<{ accessToken: string; refreshToken: string } | null> => {
+    try {
+        const user: IUser | null = await User.findById(userId);
+
+        if (!user) {
+            console.error(`User with ID ${userId} not found.`);
+            return null;
+        }
+
+        const accessToken = user.genetateAccessToken();
+        const refreshToken = user.generateRefreshToken();
+
+        user.refreshToken = refreshToken;
+
+        // Optionally, you can save the refreshToken to the database if needed
+        await user.save({ validateBeforeSave: false });
+
+        return { accessToken, refreshToken };
+    } catch (error) {
+        console.error('Error generating tokens:', error);
+        throw new ApiError(500, "somthing went wrong while generatting access and refesh tokens")
+        // or handle it in a way that's appropriate for your application
+    }
+};
 
 export {
     getAllUsers,
