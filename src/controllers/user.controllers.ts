@@ -8,6 +8,7 @@ import { getMongoosePaginationOptions } from "../utils/healpers";
 import logger from "../utils/logger";
 import { deleteFromCloudinary, uploadOncloudinary } from "../utils/cloudinary";
 import fs from 'fs';
+import jwt from 'jsonwebtoken';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
@@ -389,6 +390,42 @@ const generateAccessAndRefreshToken = async (userId: string): Promise<{ accessTo
     }
 };
 
+const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
+    const imcomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
+
+    if (!imcomingRefreshToken) {
+        return res.status(400).json(new ApiError(400, "Please provide a refresh token"));
+    }
+
+    try {
+        const decodedToken = jwt.verify(imcomingRefreshToken, process.env.REFRESH_TOKEN_SECRET as string)
+        const user = await User.findById(decodedToken?._id);
+        if (!user) {
+            return res.status(404).json(new ApiError(404, "invalid refresh token"));
+        }
+
+        if (user?.refreshToken !== imcomingRefreshToken) {
+            return res.status(401).json(new ApiError(401, "invalid refresh token"));
+        }
+        const options = {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+        }
+
+        const { accessToken, refreshToken: newRefreshToken } = await user.generateAccessRefreshTokens(user._id as string);
+
+        return res.status(200)
+            .cookie('accessToken', accessToken, options)
+            .cookie('refreshToken', newRefreshToken, options)
+            .json(new ApiResponse(200, { accessToken, newRefreshToken }, "User is logged in successfully"));
+
+    } catch (error) {
+        throw new ApiError(500, "Something went wrong while refreshing access token");
+    }
+})
+
+
+
 export {
     getAllUsers,
     createUser,
@@ -398,5 +435,6 @@ export {
     deleteBulkUsers,
     createBulkUsers,
     loginUser,
-    registerUser
+    registerUser,
+    refreshAccessToken
 }
