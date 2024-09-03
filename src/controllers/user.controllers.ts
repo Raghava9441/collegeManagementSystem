@@ -8,7 +8,7 @@ import { getMongoosePaginationOptions } from "../utils/healpers";
 import logger from "../utils/logger";
 import { deleteFromCloudinary, uploadOncloudinary } from "../utils/cloudinary";
 import fs from 'fs';
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
@@ -398,7 +398,7 @@ const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
     }
 
     try {
-        const decodedToken = jwt.verify(imcomingRefreshToken, process.env.REFRESH_TOKEN_SECRET as string)
+        const decodedToken = jwt.verify(imcomingRefreshToken, process.env.REFRESH_TOKEN_SECRET as string) as JwtPayload & { _id: string };
         const user = await User.findById(decodedToken?._id);
         if (!user) {
             return res.status(404).json(new ApiError(404, "invalid refresh token"));
@@ -423,6 +423,34 @@ const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
         throw new ApiError(500, "Something went wrong while refreshing access token");
     }
 })
+interface AuthenticatedRequest extends Request {
+    user?: IUser | null;
+}
+const logoutUser = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+    
+    if (!req.user) {
+        return res.status(401).json(new ApiError(401, "Unauthorized"));
+    }
+    await User.findByIdAndUpdate(
+        //need to come back here after middlewaare is done
+        req.user._id,
+        {
+            $set: {
+                refreshToken: undefined
+            }
+        }, {
+        new: true
+    }
+    )
+    const options = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+    }
+    return res.status(200)
+        .clearCookie('accessToken', options)
+        .clearCookie('refreshToken', options)
+        .json(new ApiResponse(200, "User is logged out successfully", "User is logged out successfully"));
+})
 
 
 
@@ -436,5 +464,6 @@ export {
     createBulkUsers,
     loginUser,
     registerUser,
-    refreshAccessToken
+    refreshAccessToken,
+    logoutUser
 }
