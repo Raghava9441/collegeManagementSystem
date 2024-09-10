@@ -10,7 +10,7 @@ export interface IUser extends Document {
     avatar: string;
     coverImage?: string;
     age?: string;
-    role: 'admin' | 'teacher' | 'student' | 'parent';
+    role: 'ADMIN' | 'TEACHER' | 'STUDENT' | 'PARENT';
     gender: 'male' | 'female' | 'other';
     organizationId: string;
     phone?: string;

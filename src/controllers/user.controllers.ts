@@ -427,7 +427,7 @@ interface AuthenticatedRequest extends Request {
     user?: IUser | null;
 }
 const logoutUser = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-    
+
     if (!req.user) {
         return res.status(401).json(new ApiError(401, "Unauthorized"));
     }
