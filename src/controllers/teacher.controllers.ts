@@ -13,41 +13,27 @@ interface AuthenticatedRequest extends Request {
 }
 const getAllTeachers = async (req: AuthenticatedRequest, res: Response) => {
     const { page = 1, limit = 10 } = req.query;
-    let teachers;
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
 
-    if (req.user && req.user.role === 'ADMIN') {
-        // For Admin, fetch all teachers with pagination
-        const productAggregate = Teacher.aggregate([{ $match: {} }]);
-
-        teachers = await Teacher.aggregatePaginate(
-            productAggregate,
-            getMongoosePaginationOptions({
-                page: parsedPage,
-                limit: parsedLimit,
-                customLabels: {
-                    totalDocs: "totalTeachers",
-                    docs: "teachers",
-                },
-            }),
-        );
-    } else if (req.user && req.user.organizationId) {
-        // For non-admin users, fetch teachers from the same organization
-        teachers = await Teacher.find({ organizationId: req.user.organizationId })
-            .populate({
-                path: 'user', // Populate the user field with user data
-                strictPopulate: false,
-            })
-            .limit(parsedLimit)
-            .skip((parsedPage - 1) * parsedLimit);
-
-        console.log("Teachers from organization:", teachers);
-    } else {
-        // If user is neither admin nor part of any organization
+    if (!req.user) {
         return res.status(403).json(new ApiResponse(403, [], "Access denied"));
     }
+
+    const teachers = await Teacher.aggregatePaginate(
+        req.user.role === 'ADMIN' ?
+            Teacher.aggregate([{ $match: {} }]) :
+            Teacher.aggregate([{ $match: { organizationId: req.user.organizationId } }]),
+        getMongoosePaginationOptions({
+            page: parsedPage,
+            limit: parsedLimit,
+            customLabels: {
+                totalDocs: "totalTeachers",
+                docs: "teachers",
+            },
+        }),
+    );
 
     return res
         .status(200)

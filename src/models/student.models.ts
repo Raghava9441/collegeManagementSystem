@@ -6,7 +6,7 @@ interface IStudent extends Document {
     userId: mongoose.Types.ObjectId;
     teacherIds: mongoose.Types.ObjectId[];
     organizationId: string;
-    parentId: mongoose.Types.ObjectId;
+    parentIds: mongoose.Types.ObjectId[];
     courseIds: mongoose.Types.ObjectId[];
     dateOfBirth: Date;
     address: {
@@ -43,10 +43,10 @@ const studentSchema = new Schema(
             type: String,
             required: true
         },
-        // parentId: {
-        //     type: mongoose.Schema.Types.ObjectId,
-        //     ref: 'Parent'
-        // },
+        parentIds: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Parent'
+        },
         courseIds: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Course'

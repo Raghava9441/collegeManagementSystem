@@ -1,3 +1,5 @@
+import { IUser } from "../models/user.models";
+
 interface PaginationOptions {
     page?: number;
     limit?: number;
@@ -26,3 +28,9 @@ export const getMongoosePaginationOptions = ({
         },
     };
 };
+
+export interface AuthenticatedRequest extends Request {
+    user?: IUser | null;
+    params: Record<string, any>;
+}
+
