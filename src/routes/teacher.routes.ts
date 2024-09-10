@@ -1,19 +1,20 @@
 import { Router } from 'express';
 import { createTeacher, deleteBulkTeachers, deleteTeacherById, getAllTeachers, getTeacherById, updateTeacherById } from '../controllers/teacher.controllers';
+import { isTeacher, verifyJWT } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 router.route("/")
-    .get(getAllTeachers)
+    .get(verifyJWT, isTeacher, getAllTeachers)
     .post(createTeacher);
 
 router.route("/:teacherId")
-    .get(getTeacherById)
-    .put(updateTeacherById)
-    .delete(deleteTeacherById);
+    .get(verifyJWT, isTeacher, getTeacherById)
+    .put(verifyJWT, isTeacher, updateTeacherById)
+    .delete(verifyJWT, isTeacher, deleteTeacherById);
 
 router.route("/bulk")
-    .post(createTeacher)
-    .delete(deleteBulkTeachers);
+    .post(verifyJWT, isTeacher, createTeacher)
+    .delete(verifyJWT, isTeacher, deleteBulkTeachers);
 
 export default router;

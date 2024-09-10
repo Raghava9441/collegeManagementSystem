@@ -47,7 +47,7 @@ export const isAdmin = async (req: any, res: any, next: any) => {
 };
 
 export const isTeacher = async (req: any, res: any, next: any) => {
-    if (req.user && req.user.role === 'TEACHER') {
+    if (req.user && req.user.role === 'TEACHER' || req.user.role === 'ADMIN') {
         next();
     } else {
         return res.status(403).json(new ApiError(403, "Access denied. Teachers only."));
@@ -55,7 +55,7 @@ export const isTeacher = async (req: any, res: any, next: any) => {
 };
 
 export const isStudent = async (req: any, res: any, next: any) => {
-    if (req.user && req.user.role === 'STUDENT') {
+    if (req.user && req.user.role === 'STUDENT' || req.user.role === 'ADMIN') {
         next();
     } else {
         return res.status(403).json(new ApiError(403, "Access denied. Students only."));
@@ -63,7 +63,7 @@ export const isStudent = async (req: any, res: any, next: any) => {
 };
 
 export const isParent = async (req: any, res: any, next: any) => {
-    if (req.user && req.user.role === 'PARENT') {
+    if (req.user && req.user.role === 'PARENT' || req.user.role === 'ADMIN') {
         next();
     } else {
         return res.status(403).json(new ApiError(403, "Access denied. Students only."));
