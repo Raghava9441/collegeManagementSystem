@@ -1,4 +1,6 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
+
 
 interface IParent extends Document {
     _id: string;
@@ -25,12 +27,9 @@ interface IParent extends Document {
     updatedAt: Date;
 }
 
-const parentSchema = new Schema<IParent>(
+const parentSchema = new Schema(
     {
-        _id: {
-            type: String,
-            required: true
-        },
+
         userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
@@ -112,5 +111,6 @@ const parentSchema = new Schema<IParent>(
         timestamps: true // Adds createdAt and updatedAt fields
     }
 );
+parentSchema.plugin(mongooseAggregatePaginate)
 
-export const Parent: Model<IParent> = mongoose.model<IParent>('Parent', parentSchema);
+export const Parent = mongoose.model('Parent', parentSchema);

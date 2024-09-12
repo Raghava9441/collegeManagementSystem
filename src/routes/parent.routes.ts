@@ -1,19 +1,20 @@
 import { Router } from 'express';
 import { createParent, deleteBulkParents, deleteParentById, getAllParents, getParentById, updateParentById } from '../controllers/parent.controllers';
+import { isAdmin, isTeacher, verifyJWT } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 router.route("/")
-    .get(getAllParents)
-    .post(createParent);
+    .get(verifyJWT, isAdmin, isTeacher, getAllParents)
+    .post(verifyJWT, isAdmin, isTeacher, createParent);
 
 router.route("/:parentId")
-    .get(getParentById)
-    .put(updateParentById)
-    .delete(deleteParentById);
+    .get(verifyJWT, isAdmin, isTeacher, getParentById)
+    .put(verifyJWT, isAdmin, isTeacher, updateParentById)
+    .delete(verifyJWT, isAdmin, isTeacher, deleteParentById);
 
 router.route("/bulk")
-    .post(createParent)
-    .delete(deleteBulkParents);
+    .post(verifyJWT, isAdmin, isTeacher, createParent)
+    .delete(verifyJWT, isAdmin, isTeacher, deleteBulkParents);
 
 export default router;
