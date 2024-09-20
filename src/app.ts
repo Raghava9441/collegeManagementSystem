@@ -12,11 +12,12 @@ import bodyParser from 'body-parser';
 
 app.use(cors(
     {
-        // origin: process.env.CORS_ORIGIN,
-        // credentials: true,
-        // methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+        origin: process.env.CORS_ORIGIN,
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     }
 ));
+// app.use(cors());
 
 // morgan format
 const morganFormat = ':method :url :status :response-time ms';
@@ -54,7 +55,7 @@ import { errorHandler } from './middlewares/error.middlewares';
 app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 app.use("/api/v1/organizations", organizationRoutes);
-app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/teacher", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);

@@ -5,8 +5,8 @@ import { verifyJWT } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-router.route("/login").post(loginUser);
-router.route("/register").post(
+router.route("/auth/login").post(loginUser);
+router.route("/auth/register").post(
     upload.fields([
         {
             name: 'avatar',
@@ -19,8 +19,8 @@ router.route("/register").post(
     ]),
     registerUser
 );
-router.route("/refresh").post(refreshAccessToken);
-router.route("/logout").post(verifyJWT, logoutUser);
+router.route("/auth/refresh").post(refreshAccessToken);
+router.route("/auth/logout").post(verifyJWT, logoutUser);
 
 
 router.route("/")

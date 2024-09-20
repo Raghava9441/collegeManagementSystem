@@ -8,7 +8,11 @@ const router = Router();
 //here i want to add one middle ware to check if user is admin or not
 
 router.route("/")
-    .get(verifyJWT, isAdmin, getAllOrganizations)
+    .get(
+        verifyJWT,
+        isAdmin,
+        getAllOrganizations
+    )
     .post(verifyJWT, isAdmin, createOrganization)
 
 router.route("/:organizationId")

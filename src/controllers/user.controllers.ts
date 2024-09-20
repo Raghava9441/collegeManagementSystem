@@ -258,7 +258,7 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200)
         .cookie('accessToken', accessToken, options)
         .cookie('refreshToken', refreshToken, options)
-        .json(new ApiResponse(200, loggedInUser, "User is logged in successfully"));
+        .json(new ApiResponse(200, { loggedInUser, accessToken, refreshToken }, "User is logged in successfully"));
 });
 
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
@@ -391,7 +391,7 @@ const generateAccessAndRefreshToken = async (userId: string): Promise<{ accessTo
 };
 
 const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
-    const imcomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
+    const imcomingRefreshToken = req.cookies?.refreshToken ? req.cookies.refreshToken : req.body.refreshToken;
 
     if (!imcomingRefreshToken) {
         return res.status(400).json(new ApiError(400, "Please provide a refresh token"));
@@ -399,7 +399,8 @@ const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
 
     try {
         const decodedToken = jwt.verify(imcomingRefreshToken, process.env.REFRESH_TOKEN_SECRET as string) as JwtPayload & { _id: string };
-        const user = await User.findById(decodedToken?._id);
+        const user = await User.findById(decodedToken?.id);
+        // console.log(user)
         if (!user) {
             return res.status(404).json(new ApiError(404, "invalid refresh token"));
         }
@@ -412,7 +413,8 @@ const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
             secure: process.env.NODE_ENV === 'production',
         }
 
-        const { accessToken, refreshToken: newRefreshToken } = await user.generateAccessRefreshTokens(user._id as string);
+        const { accessToken, refreshToken: newRefreshToken } = await generateAccessAndRefreshToken(user._id as string) || {};
+        console.log("here")
 
         return res.status(200)
             .cookie('accessToken', accessToken, options)
