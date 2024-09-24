@@ -9,12 +9,12 @@ dotenv.config({
     path: './.env',
 });
 
-const port = process.env.PORT || 8000; // Use environment variable or default to 8000
+const port = process.env.PORT; // Use environment variable or default to 8000
 
 connectDB().then(() => {
-    swaggerDocs(app, port);
+    swaggerDocs(app, port as string);
     app.listen(port, () => {
-        logger.info(`Server running at http://localhost:${process.env.PORT} ${port}`);
+        logger.info(`Server running at http://localhost:${process.env.PORT}`);
     });
 }).catch((error) => {
     logger.error(error);
