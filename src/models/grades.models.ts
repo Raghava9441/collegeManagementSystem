@@ -5,7 +5,12 @@ interface IGrade extends Document {
     studentId: mongoose.Types.ObjectId;
     courseId: mongoose.Types.ObjectId;
     teacherId: mongoose.Types.ObjectId;
-    assignment: string;
+    assignment: mongoose.Types.ObjectId;
+    subjectId: mongoose.Types.ObjectId;
+    exam: mongoose.Types.ObjectId;
+    score: number;
+    remarks?: string;
+    gradedBy: mongoose.Types.ObjectId;
     grade: number;
     feedback?: string; // Optional
     dateAssigned: Date;
@@ -21,21 +26,16 @@ const gradeSchema = new Schema<IGrade>(
             ref: 'Student',
             required: true
         },
-        courseId: {
+        subjectId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Course',
             required: true
         },
-        teacherId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Teacher',
-            required: true
-        },
-        assignment: {
-            type: String,
-            required: true,
-            trim: true
-        },
+        exam: { type: Schema.Types.ObjectId, ref: 'Exam', required: true },
+        assignment: { type: Schema.Types.ObjectId, ref: 'Assignment' },
+        score: { type: Number, required: true },
+        remarks: { type: String },
+        gradedBy: { type: Schema.Types.ObjectId, ref: 'Teacher', required: true },
         grade: {
             type: Number,
             required: true,

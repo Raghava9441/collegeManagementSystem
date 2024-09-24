@@ -6,9 +6,10 @@ import { Parent } from "../models/parent.model";
 import { getMongoosePaginationOptions } from "../utils/healpers";
 import { Student } from "../models/student.models";
 import mongoose from "mongoose";
+import { asyncHandler } from "../utils/asyncHandler";
 
 
-const getAllParents = async (req: Request, res: Response) => {
+const getAllParents = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10 } = req.query;
 
     const productAggregate = Parent.aggregate([{ $match: {} }]);
@@ -29,9 +30,9 @@ const getAllParents = async (req: Request, res: Response) => {
     )
 
     return res.status(200).json(new ApiResponse(200, Parents, "Parents are fetched successfully"));
-}
+})
 
-const createParent = async (req: Request, res: Response) => {
+const createParent = asyncHandler(async (req: Request, res: Response) => {
     const { userId, childrenIds, organizationId, relationshipToStudent, dateOfBirth, address, phoneNumber, email, emergencyContacts, occupation } = req.body;
 
     if (!userId || !childrenIds || !organizationId || !relationshipToStudent || !dateOfBirth || !address || !phoneNumber || !email || !emergencyContacts || !occupation) {
@@ -62,17 +63,17 @@ const createParent = async (req: Request, res: Response) => {
     const parent = await Parent.create({ userId, childrenIds, organizationId, relationshipToStudent, dateOfBirth, address, phoneNumber, email, emergencyContacts, occupation });
 
     return res.status(200).json(new ApiResponse(200, parent, "Parent is created successfully"));
-}
+})
 
-const getParentById = async (req: Request, res: Response) => {
+const getParentById = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "parent is fetched successfully", "Parent is fetched successfully"));
-}
+})
 
-const updateParentById = async (req: Request, res: Response) => {
+const updateParentById = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "parent is updated successfully", "Parent is updated successfully"));
-}
+})
 
-const deleteParentById = async (req: Request, res: Response) => {
+const deleteParentById = asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.params;
     //check the id is valid or not
     if (!id) {
@@ -87,11 +88,11 @@ const deleteParentById = async (req: Request, res: Response) => {
         return res.status(400).json(new ApiResponse(400, null, "Parent not found"));
     }
     return res.status(200).json(new ApiResponse(200, "parent is deleted successfully", "Parent is deleted successfully"));
-}
+})
 
-const deleteBulkParents = async (req: Request, res: Response) => {
+const deleteBulkParents = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "parents are deleted successfully", "Parents are deleted successfully"));
-}
+})
 
 
 export {

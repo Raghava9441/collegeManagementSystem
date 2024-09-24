@@ -5,7 +5,7 @@ import { isAdmin, isTeacher, verifyJWT } from '../middlewares/auth.middleware';
 const router = Router();
 
 router.route("/")
-    .get(verifyJWT, isAdmin, isTeacher, getAllParents)
+    .get( getAllParents)
     .post(verifyJWT, isAdmin, isTeacher, createParent);
 
 router.route("/:parentId")

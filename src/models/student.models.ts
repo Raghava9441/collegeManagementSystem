@@ -22,6 +22,7 @@ interface IStudent extends Document {
         relationship: string;
         phone: string;
     }>;
+    claassId: mongoose.Types.ObjectId;
     enrollmentDate: Date;
     graduationDate?: Date;
     createdAt: Date;
@@ -43,14 +44,15 @@ const studentSchema = new Schema(
             type: String,
             required: true
         },
-        parentIds: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Parent'
-        },
-        courseIds: [{
+        parentId: { type: Schema.Types.ObjectId, ref: 'Parent' },
+        enrolledCoursesIds: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Course'
         }],
+        CurrentClassId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Class'
+        },
         dateOfBirth: {
             type: Date,
             required: true

@@ -5,7 +5,7 @@ interface IClass extends Document {
     name: string;
     description: string;
     courseId: mongoose.Types.ObjectId;
-    teacherId: mongoose.Types.ObjectId;
+    classTeacherId: mongoose.Types.ObjectId;
     studentIds: mongoose.Types.ObjectId[];
     organizationId: string;
     schedule: Array<{
@@ -17,6 +17,9 @@ interface IClass extends Document {
     credits: number;
     maxCapacity: number;
     currentEnrollment: number;
+    supervisorId: mongoose.Types.ObjectId;
+    academicYear: string;
+    departmentId: mongoose.Types.ObjectId;
     createdAt: Date;
     updatedAt: Date;
     enrollStudent(studentId: mongoose.Types.ObjectId): Promise<IClass>;
@@ -24,36 +27,42 @@ interface IClass extends Document {
 
 const classSchema = new Schema<IClass>(
     {
-        _id: {
-            type: String,
-            required: true
-        },
         name: {
             type: String,
             required: true,
             trim: true
         },
-        description: {
+        academicYear: {
             type: String,
-            trim: true
+            trim: true,
+            required: true 
         },
-        courseId: {
+        departmentId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Course',
-            required: true
-        },
-        teacherId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Teacher',
+            ref: 'Department',
             required: true
         },
         studentIds: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Student'
         }],
+        courseId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Course',
+            required: true
+        },
+        classTeacherId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Teacher',
+            required: true
+        },
         organizationId: {
             type: String,
             required: true
+        },
+        supervisorId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Teacher'
         },
         schedule: [{
             dayOfWeek: {

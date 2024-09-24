@@ -8,7 +8,9 @@ import userRoutes from './routes/user.routes';
 import teacherRoutes from './routes/teacher.routes';
 import studentRoutes from './routes/student.routes';
 import parentRoutes from './routes/parent.routes';
+import departmentRoutes from './routes/department.routes';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 
 app.use(cors(
     {
@@ -43,11 +45,10 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
-import cookieParser from 'cookie-parser';
 import { errorHandler } from './middlewares/error.middlewares';
 
 
@@ -55,8 +56,9 @@ import { errorHandler } from './middlewares/error.middlewares';
 app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 app.use("/api/v1/organizations", organizationRoutes);
+app.use("/api/v1/departments", departmentRoutes);
 app.use("/api/v1/user", userRoutes);
-app.use("/api/v1/teacher", teacherRoutes);
+app.use("/api/v1/teachers", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
 

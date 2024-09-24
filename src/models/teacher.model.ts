@@ -11,20 +11,10 @@ import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 const teacherSchema = new Schema(
     {
-        userId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
-        },
-        organizationId: {
-            type: String,
-            required: true
-        },
-        subjects: [{
-            type: String,
-            required: true,
-            trim: true
-        }],
+        userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        organizationId: { type: Schema.Types.ObjectId, ref: 'Organization', required: true },
+        departments: [{ type: Schema.Types.ObjectId, ref: 'Department' }],
+        subjects: [{ type: Schema.Types.ObjectId, ref: 'Subject' }],
         qualifications: {
             type: String,
             trim: true

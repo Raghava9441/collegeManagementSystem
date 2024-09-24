@@ -7,11 +7,12 @@ import { UserRolesEnum } from "../constants";
 import { ApiError } from "../utils/ApiError";
 import { Organization } from "../models/organization.models";
 import mongoose from "mongoose";
+import { asyncHandler } from "../utils/asyncHandler";
 
 interface AuthenticatedRequest extends Request {
     user?: IUser | null;
 }
-const getAllTeachers = async (req: AuthenticatedRequest, res: Response) => {
+const getAllTeachers = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
     const { page = 1, limit = 10 } = req.query;
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
@@ -38,9 +39,9 @@ const getAllTeachers = async (req: AuthenticatedRequest, res: Response) => {
     return res
         .status(200)
         .json(new ApiResponse(200, teachers, "Teachers are fetched successfully"));
-};
+})
 
-const createTeacher = async (req: AuthenticatedRequest, res: Response) => {
+const createTeacher = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
     //create teacher if the user is admin
     if (req.user && req.user.role === 'ADMIN') {
         const { description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy, userId } = req.body;
@@ -95,17 +96,17 @@ const createTeacher = async (req: AuthenticatedRequest, res: Response) => {
     } else {
         return res.status(403).json(new ApiResponse(403, [], "Access denied"));
     }
-}
+})
 
-const getTeacherById = async (req: Request, res: Response) => {
+const getTeacherById = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teacher is fetched successfully", "Teacher is fetched successfully"));
-}
+})
 
-const updateTeacherById = async (req: Request, res: Response) => {
+const updateTeacherById = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teacher is updated successfully", "Teacher is updated successfully"));
-}
+})
 
-const deleteTeacherById = async (req: AuthenticatedRequest, res: Response) => {
+const deleteTeacherById = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
     if (req.user && req.user.role === 'ADMIN') {
         const { teacherId } = req.params;
         if (!teacherId) {
@@ -140,15 +141,15 @@ const deleteTeacherById = async (req: AuthenticatedRequest, res: Response) => {
     } else {
         return res.status(403).json(new ApiResponse(403, [], "Access denied"));
     }
-}
+})
 
-const deleteBulkTeachers = async (req: Request, res: Response) => {
+const deleteBulkTeachers = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teachers are deleted successfully", "Teachers are deleted successfully"));
-}
+})
 
-const getTeacherBySubject = async (req: Request, res: Response) => {
+const getTeacherBySubject = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teacher is fetched successfully", "Teacher is fetched successfully"));
-}
+})
 
 
 export {

@@ -11,10 +11,14 @@ const courseSchema = new Schema(
             required: true,
             trim: true
         },
+        code: { type: String, required: true, unique: true },
         description: {
             type: String,
             trim: true
         },
+        academicYear: { type: String, required: true },
+        subjectsIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Subject' }],
+        department: { type: Schema.Types.ObjectId, ref: 'Department', required: true },
         teacherId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Teacher',

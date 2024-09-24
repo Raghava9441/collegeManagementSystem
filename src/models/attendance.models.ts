@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 interface IAttendance extends Document {
     classId: mongoose.Types.ObjectId;
@@ -11,7 +12,7 @@ interface IAttendance extends Document {
     updatedAt: Date;
 }
 
-const attendanceSchema = new Schema<IAttendance>(
+const attendanceSchema = new Schema(
     {
         classId: {
             type: mongoose.Schema.Types.ObjectId,
@@ -23,6 +24,11 @@ const attendanceSchema = new Schema<IAttendance>(
             ref: 'Student',
             required: true
         },
+        // subjectId: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'Subject',
+        //     required: true
+        // },
         date: {
             type: Date,
             required: true
@@ -37,8 +43,8 @@ const attendanceSchema = new Schema<IAttendance>(
             trim: true
         },
         markedBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            type: Schema.Types.ObjectId,
+            ref: 'Teacher',
             required: true
         }
     },
@@ -46,5 +52,5 @@ const attendanceSchema = new Schema<IAttendance>(
         timestamps: true // Adds createdAt and updatedAt fields
     }
 );
-
-export const Attendance: Model<IAttendance> = mongoose.model<IAttendance>('Attendance', attendanceSchema);
+attendanceSchema.plugin(mongooseAggregatePaginate)
+export const Attendance = mongoose.model('Attendance', attendanceSchema);

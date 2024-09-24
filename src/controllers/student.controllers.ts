@@ -8,9 +8,10 @@ import { User } from "../models/user.models";
 import { UserRolesEnum } from "../constants";
 import { Parent } from "../models/parent.model";
 import { Teacher } from "../models/teacher.model";
+import { asyncHandler } from "../utils/asyncHandler";
 
 
-const getAllStudents = async (req: any, res: Response) => {
+const getAllStudents = asyncHandler(async (req: any, res: Response) => {
 
     const { page = 1, limit = 10 } = req.query;
 
@@ -34,9 +35,9 @@ const getAllStudents = async (req: any, res: Response) => {
     return res
         .status(200)
         .json(new ApiResponse(200, students, "Students are fetched successfully"));
-}
+})
 
-const createStudent = async (req: Request, res: Response) => {
+const createStudent = asyncHandler(async (req: Request, res: Response) => {
     const { userId, organizationId, parentIds, courseIds, dateOfBirth, emergencyContacts, address, phoneNumber, email, enrollmentDate, graduationDate } = req.body;
 
     if (!organizationId || !userId) {
@@ -96,10 +97,10 @@ const createStudent = async (req: Request, res: Response) => {
     return res
         .status(201) // Status 201 for successful creation
         .json(new ApiResponse(201, student, "Student is created successfully"));
-};
+});
 
 
-const getStudentById = async (req: Request, res: Response) => {
+const getStudentById = asyncHandler(async (req: Request, res: Response) => {
 
     const { studentId } = req.params;
 
@@ -114,9 +115,9 @@ const getStudentById = async (req: Request, res: Response) => {
     return res
         .status(200)
         .json(new ApiResponse(200, student, "Student is fetched successfully"));
-}
+})
 
-const updateStudentById = async (req: Request, res: Response) => {
+const updateStudentById = asyncHandler(async (req: Request, res: Response) => {
 
     const { studentId } = req.params;
 
@@ -151,9 +152,9 @@ const updateStudentById = async (req: Request, res: Response) => {
     return res
         .status(200)
         .json(new ApiResponse(200, updatedStudent, "Student is created successfully"));
-}
+})
 
-const deleteStudentById = async (req: any, res: Response) => {
+const deleteStudentById = asyncHandler(async (req: any, res: Response) => {
     const { organizationId, teacherId } = req.user;
     const { studentId } = req.params;
 
@@ -204,9 +205,9 @@ const deleteStudentById = async (req: any, res: Response) => {
     await Student.deleteOne({ _id: studentId });
 
     return res.status(200).json(new ApiResponse(200, "student is deleted successfully", "Student is deleted successfully"));
-}
+})
 
-const deleteStudentBulk = async (req: Request, res: Response) => {
+const deleteStudentBulk = asyncHandler(async (req: Request, res: Response) => {
     const { studentIds } = req.body;
 
     if (!studentIds || !Array.isArray(studentIds)) {
@@ -218,7 +219,7 @@ const deleteStudentBulk = async (req: Request, res: Response) => {
     await Student.deleteMany({ _id: { $in: studentIds } });
 
     return res.status(200).json(new ApiResponse(200, "students are deleted successfully", "Students are deleted successfully"));
-}
+})
 
 export {
     getAllStudents,

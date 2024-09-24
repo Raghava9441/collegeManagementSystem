@@ -29,14 +29,13 @@ interface IParent extends Document {
 
 const parentSchema = new Schema(
     {
-
         userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required: true
         },
         childrenIds: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Student'
         }],
         organizationId: {

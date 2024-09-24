@@ -12,14 +12,16 @@ interface IEvent extends Document {
         state?: string; // Optional
         postalCode?: string; // Optional
     };
-    organizerId: mongoose.Types.ObjectId;
-    attendees?: mongoose.Types.ObjectId[]; // Optional
+    organizer: mongoose.Types.ObjectId;
+    // organizerId: mongoose.Types.ObjectId;
+    // attendees?: mongoose.Types.ObjectId[]; // Optional
+    participants: mongoose.Types.ObjectId[];
     eventType: 'workshop' | 'seminar' | 'meeting' | 'other';
     createdAt: Date;
     updatedAt: Date;
 }
 
-const eventSchema = new Schema<IEvent>(
+const eventSchema = new Schema(
     {
         title: {
             type: String,
@@ -30,6 +32,8 @@ const eventSchema = new Schema<IEvent>(
             type: String,
             trim: true
         },
+        organizer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        participants: [{ type: Schema.Types.ObjectId, ref: 'User' }],
         date: {
             type: Date,
             required: true
@@ -63,15 +67,11 @@ const eventSchema = new Schema<IEvent>(
                 trim: true
             }
         },
-        organizerId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
-        },
-        attendees: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        }],
+        // organizerId: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'User',
+        //     required: true
+        // },
         eventType: {
             type: String,
             enum: ['workshop', 'seminar', 'meeting', 'other'],
@@ -83,6 +83,6 @@ const eventSchema = new Schema<IEvent>(
     }
 );
 
-const Event: Model<IEvent> = mongoose.model<IEvent>('Event', eventSchema);
+const Events = mongoose.model('Events', eventSchema);
 
-export default Event;
+export default Events;

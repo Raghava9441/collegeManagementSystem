@@ -1,6 +1,8 @@
 import { User } from "../models/user.models";
 import { ApiError } from "../utils/ApiError";
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { asyncHandler } from "../utils/asyncHandler";
+import { NextFunction } from "express";
 
 
 export const verifyJWT = async (req: any, res: any, next: any) => {
@@ -17,7 +19,6 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
             accessToken = accessTokenCookie.split('=')[1]
         }
     }
-    console.log(accessToken)
     if (!accessToken) {
         return res.status(401).json(new ApiError(401, "Please login to access this resource"));
     }
@@ -37,6 +38,18 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
 
     }
 }
+
+export const verifyPermission = (roles: string[] = []) =>
+    asyncHandler(async (req: any, res: any, next: any) => {
+        if (!req.user?._id) {
+            throw new ApiError(401, "Unauthorized request");
+        }
+        if (roles.includes(req.user?.role)) {
+            next();
+        } else {
+            throw new ApiError(403, "You are not allowed to perform this action");
+        }
+    });
 
 export const isAdmin = async (req: any, res: any, next: any) => {
     if (req.user && req.user.role === 'ADMIN') {

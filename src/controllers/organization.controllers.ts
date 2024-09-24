@@ -7,6 +7,7 @@ import { ApiError } from "../utils/ApiError";
 import * as XLSX from 'xlsx';
 
 const getAllOrganizations = asyncHandler(async (req: Request, res: Response) => {
+    // throw new ApiError(400, `Missing required fields for organization`)
 
     const { page = 1, limit = 10 } = req.query;
 

@@ -11,7 +11,7 @@ import fs from 'fs';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
-
+    // new ApiError(409, "A user with the same username, email, or fullname already exists")
     const { page = 1, limit = 10 } = req.query;
 
     const productAggregate = User.aggregate([{ $match: {} }]);
