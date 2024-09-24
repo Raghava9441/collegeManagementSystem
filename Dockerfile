@@ -10,13 +10,13 @@ RUN npm cache clean --force
 RUN npm install
 
 # Copy the rest of the app's files
-# COPY . .
+COPY . .
 
 # Build the TypeScript application
 RUN npm run build
 
 # Prune the development dependencies after the build
-RUN npm prune --production
+#RUN npm prune --production
 
 # Expose the application's port
 EXPOSE 8000
