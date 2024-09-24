@@ -14,7 +14,7 @@ const port = process.env.PORT || 8000; // Use environment variable or default to
 connectDB().then(() => {
     swaggerDocs(app, port);
     app.listen(port, () => {
-        logger.info(`Server running at http://localhost:${port}`);
+        logger.info(`Server running at http://localhost:${process.env.PORT} ${port}`);
     });
 }).catch((error) => {
     logger.error(error);

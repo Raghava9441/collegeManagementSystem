@@ -16,10 +16,9 @@ app.use(cors(
     {
         origin: process.env.CORS_ORIGIN,
         credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+        // methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     }
 ));
-// app.use(cors());
 
 // morgan format
 const morganFormat = ':method :url :status :response-time ms';
