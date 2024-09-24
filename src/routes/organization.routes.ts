@@ -10,10 +10,9 @@ const router = Router();
 
 router.route("/")
     .get(
-        verifyJWT,
-        verifyPermission(["ADMIN"]),
-        organizationValidator(),
-        getAllOrganizations
+        // verifyJWT,
+        // verifyPermission(["ADMIN"]),
+        // getAllOrganizations
     )
     .post(
         verifyJWT,
