@@ -12,7 +12,7 @@ router.route("/")
     .get(
         // verifyJWT,
         // verifyPermission(["ADMIN"]),
-        // getAllOrganizations
+        getAllOrganizations
     )
     .post(
         verifyJWT,
