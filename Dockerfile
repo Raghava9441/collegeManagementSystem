@@ -21,4 +21,4 @@ RUN npm prune --production
 EXPOSE 8000
 
 # Command to run the server
-CMD [ "node", "dist/index.js" ]
+CMD [ "node", "dist/src/index.js" ]
