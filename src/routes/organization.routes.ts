@@ -2,21 +2,22 @@ import { Router } from 'express';
 import { createBulkOrganizations, createOrganization, deleteBulkOrganizations, deleteOrganizationById, getAllOrganizations, getOrganizationById, updateOrganizationById } from '../controllers/organization.controllers';
 import multer from 'multer';
 import { isAdmin, verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
-import { organizationValidator } from '../validators/organizationValidators';
+import { organizationValidator } from '../validators/organization.validators';
+import { mongoIdPathVariableValidator } from '../validators/common/mongodb.validators';
 
 const upload = multer();
 const router = Router();
-//here i want to add one middle ware to check if user is admin or not
 
 router.route("/")
     .get(
-        // verifyJWT,
-        // verifyPermission(["ADMIN"]),
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
         getAllOrganizations
     )
     .post(
         verifyJWT,
         verifyPermission(["ADMIN"]),
+        organizationValidator(),
         createOrganization
     )
 
@@ -30,6 +31,7 @@ router.route("/:organizationId")
     .put(
         verifyJWT,
         verifyPermission(["ADMIN"]),
+        organizationValidator(),
         updateOrganizationById
     )
 
@@ -37,6 +39,7 @@ router.route("/:organizationId")
     .delete(
         verifyJWT,
         verifyPermission(["ADMIN"]),
+        mongoIdPathVariableValidator("organizationId"),
         deleteOrganizationById
     )
 

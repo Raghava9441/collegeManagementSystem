@@ -1,7 +1,9 @@
-import { Router } from 'express';
+import { NextFunction, Router } from 'express';
 import { createBulkUsers, createUser, deleteBulkUsers, deleteUserById, getAllUsers, getUserById, loginUser, logoutUser, refreshAccessToken, registerUser, updateUserById } from '../controllers/user.controllers';
 import { upload } from '../middlewares/multer.middleware';
-import { verifyJWT } from '../middlewares/auth.middleware';
+import { verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
+import { createuservalidator } from '../validators/users.validators';
+import { handleValidationErrors, mongoIdPathVariableValidator } from '../validators/common/mongodb.validators';
 
 const router = Router();
 
@@ -24,13 +26,36 @@ router.route("/auth/logout").post(verifyJWT, logoutUser);
 
 
 router.route("/")
-    .get(getAllUsers)
-    .post(createUser);
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getAllUsers
+    )
+    .post(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        createuservalidator(),
+        handleValidationErrors,
+        createUser
+    );
 
 router.route("/:userId")
-    .get(getUserById)
-    .put(updateUserById)
-    .delete(deleteUserById);
+    .get(
+        mongoIdPathVariableValidator("userId"),
+        getUserById
+    )
+    .put(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        createuservalidator(),
+        updateUserById
+    )
+    .delete(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        mongoIdPathVariableValidator("userId"),
+        deleteUserById
+    );
 
 router.route("/bulk")
     .post(createBulkUsers)

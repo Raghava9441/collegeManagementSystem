@@ -9,6 +9,7 @@ import logger from "../utils/logger";
 import { deleteFromCloudinary, uploadOncloudinary } from "../utils/cloudinary";
 import fs from 'fs';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { Organization } from "../models/organization.models";
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // new ApiError(409, "A user with the same username, email, or fullname already exists")
@@ -37,22 +38,33 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 })
 
 const createUser = asyncHandler(async (req: Request, res: Response) => {
-    const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences, password, refreshToken } = req.body;
+    const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
 
-    if (!username || !email || !fullname || !avatar || !password || !role || !gender || !organizationId) {
-        return res.status(400).json(new ApiError(400, "Please provide all the required fields"));
+    if (!username || !email || !fullname || !avatar || !role || !gender || !organizationId) {
+        throw new ApiError(400, "Please provide all the required fields");
     }
 
     const existingUser = await User.findOne({
         $or: [
             { username },
             { email },
-            { fullname }
         ]
     });
 
     if (existingUser) {
-        return res.status(409).json(new ApiError(409, "A user with the same username, email, or fullname already exists"));
+        throw new ApiError(409, null, 'user creation failed', undefined, [{ msg: 'A user with the same username, email already exists' }]);
+    }
+
+    //check the organization id is valid
+    const existingOrganization = await Organization.findById(organizationId);
+
+    if (!existingOrganization) {
+        throw new ApiError(404, null, "user creation failed", undefined, [{ msg: "Organization not found" }]);
+    }
+    //check if the user is already part of the organization
+    const existingUserInOrganization = await User.findOne({ organizationId });
+    if (existingUserInOrganization) {
+        throw new ApiError(409, null, "user creation failed", undefined, [{ msg: "Organization not found" }]);
     }
 
     const user = await User.create({
@@ -73,8 +85,8 @@ const createUser = asyncHandler(async (req: Request, res: Response) => {
         permissions,
         socialLinks,
         preferences,
-        password,
-        refreshToken
+        // password,
+        // refreshToken
     });
 
     return res.status(200).json(new ApiResponse(200, user, "User is created successfully"));
