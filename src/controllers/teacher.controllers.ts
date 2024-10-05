@@ -19,7 +19,7 @@ const getAllTeachers = asyncHandler(async (req: AuthenticatedRequest, res: Respo
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
 
     if (!req.user) {
-        return res.status(403).json(new ApiResponse(403, [], "Access denied"));
+        return new ApiResponse(403, [], "Access denied");
     }
 
     const teachers = await Teacher.aggregatePaginate(
@@ -43,10 +43,13 @@ const getAllTeachers = asyncHandler(async (req: AuthenticatedRequest, res: Respo
 
 const createTeacher = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
     //create teacher if the user is admin
+    console.log(req.user)
     if (req.user && req.user.role === 'ADMIN') {
+        console.log("object")
         const { description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy, userId } = req.body;
-        console.log("organizationId:", organizationId)
-        console.log("userId:", userId)
+        // console.log("organizationId:", organizationId)
+        console.log(subjects)
+        // console.log("userId:", userId)
         //check only mandatory fields are there or not 
         if (!organizationId || !userId) {
             return res
@@ -89,6 +92,14 @@ const createTeacher = asyncHandler(async (req: AuthenticatedRequest, res: Respon
             specialResponsibilities,
             teachingPhilosophy,
         });
+
+        //update the user object
+        const userdetails = await User.findByIdAndUpdate(userId, {
+            $set: {
+                "teacherId": teacher._id
+            }
+        });
+        console.log("object", userdetails)
 
         return res
             .status(200)

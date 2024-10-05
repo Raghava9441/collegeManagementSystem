@@ -4,7 +4,7 @@ import { ApiError } from "../utils/ApiError";
 import { IUser, User } from "../models/user.models";
 import { asyncHandler } from "../utils/asyncHandler";
 import * as XLSX from 'xlsx';
-import { getMongoosePaginationOptions } from "../utils/healpers";
+import { getMongoosePaginationOptions, sendEmail } from "../utils/healpers";
 import logger from "../utils/logger";
 import { deleteFromCloudinary, uploadOncloudinary } from "../utils/cloudinary";
 import fs from 'fs';
@@ -38,10 +38,10 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 })
 
 const createUser = asyncHandler(async (req: Request, res: Response) => {
-    const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
-
+    const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences, teacherId, parentId, studentId } = req.body;
+    console.log(organizationId)
     if (!username || !email || !fullname || !avatar || !role || !gender || !organizationId) {
-        throw new ApiError(400, "Please provide all the required fields");
+        throw new ApiError(400, null, 'user creation failed', undefined, [{ msg: 'Please provide all the required fields' }]);
     }
 
     const existingUser = await User.findOne({
@@ -57,15 +57,21 @@ const createUser = asyncHandler(async (req: Request, res: Response) => {
 
     //check the organization id is valid
     const existingOrganization = await Organization.findById(organizationId);
-
+    console.log("object", existingOrganization)
     if (!existingOrganization) {
         throw new ApiError(404, null, "user creation failed", undefined, [{ msg: "Organization not found" }]);
     }
     //check if the user is already part of the organization
-    const existingUserInOrganization = await User.findOne({ organizationId });
+    const existingUserInOrganization = await Organization.findOne({
+        $or: [
+            { username },
+            { email },
+        ]
+    });
     if (existingUserInOrganization) {
-        throw new ApiError(409, null, "user creation failed", undefined, [{ msg: "Organization not found" }]);
+        throw new ApiError(409, null, "user creation failed", undefined, [{ msg: "User is already part of the organization" }]);
     }
+    const dummyPassword = "DummyPassword123";
 
     const user = await User.create({
         username,
@@ -85,9 +91,13 @@ const createUser = asyncHandler(async (req: Request, res: Response) => {
         permissions,
         socialLinks,
         preferences,
-        // password,
+        teacherId,
+        parentId,
+        studentId,
+        password: dummyPassword,
         // refreshToken
     });
+    await sendEmail(email, fullname, dummyPassword);
 
     return res.status(200).json(new ApiResponse(200, user, "User is created successfully"));
 });
@@ -147,11 +157,14 @@ const deleteUserById = asyncHandler(async (req: Request, res: Response) => {
     const user = await User.findById(userId);
 
     if (!user) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "User is not found"));
+        throw new ApiError(404, null, "User is not found", undefined, [{ msg: "User is not found" }]);
     }
 
+    const existingOrganization = await Organization.findById(user.organizationId);
+
+    if (!existingOrganization) {
+        throw new ApiError(404, null, "user deletion failed", undefined, [{ msg: "Organization not found" }]);
+    }
     await User.deleteOne({ _id: userId });
     return res.status(200).json(new ApiResponse(200, "user is deleted successfully", "User is deleted successfully"));
 });

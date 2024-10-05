@@ -1,12 +1,16 @@
 import { Router } from 'express';
 import { createTeacher, deleteBulkTeachers, deleteTeacherById, getAllTeachers, getTeacherById, updateTeacherById } from '../controllers/teacher.controllers';
-import { isTeacher, verifyJWT } from '../middlewares/auth.middleware';
+import { isTeacher, verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 router.route("/")
     .get(verifyJWT, isTeacher, getAllTeachers)
-    .post(createTeacher);
+    .post(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        createTeacher
+    );
 
 router.route("/:teacherId")
     .get(verifyJWT, isTeacher, getTeacherById)

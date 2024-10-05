@@ -82,6 +82,13 @@ const createStudent = asyncHandler(async (req: Request, res: Response) => {
         emergencyContacts
     });
 
+    //update the user object
+    await User.findByIdAndUpdate(userId, {
+        $set: {
+            "studentId": student._id
+        }
+    });
+
     // If parentIds are provided, update the student and parent records
     if (Array.isArray(parentIds) && parentIds.length) {
         student.parentIds = parentIds;

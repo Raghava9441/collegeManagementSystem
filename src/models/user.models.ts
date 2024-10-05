@@ -45,6 +45,15 @@ export interface IUser extends Document {
 
 const userSchema = new Schema(
     {
+        teacherId: {
+            type: String,
+        },
+        parentId: {
+            type: String,
+        },
+        studentId: {
+            type: String,
+        },
         username: {
             type: String,
             required: true,

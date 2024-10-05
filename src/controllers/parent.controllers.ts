@@ -7,6 +7,7 @@ import { getMongoosePaginationOptions } from "../utils/healpers";
 import { Student } from "../models/student.models";
 import mongoose from "mongoose";
 import { asyncHandler } from "../utils/asyncHandler";
+import { User } from "../models/user.models";
 
 
 const getAllParents = asyncHandler(async (req: Request, res: Response) => {
@@ -61,7 +62,13 @@ const createParent = asyncHandler(async (req: Request, res: Response) => {
     }
 
     const parent = await Parent.create({ userId, childrenIds, organizationId, relationshipToStudent, dateOfBirth, address, phoneNumber, email, emergencyContacts, occupation });
-
+    //update the user object
+    await User.findByIdAndUpdate(userId, {
+        $set: {
+            "parentId": parent._id
+        }
+    });
+    
     return res.status(200).json(new ApiResponse(200, parent, "Parent is created successfully"));
 })
 
