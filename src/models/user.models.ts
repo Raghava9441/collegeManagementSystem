@@ -1,10 +1,13 @@
-import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
-import mongoose, { Schema, Model, Document } from 'mongoose';
+import mongooseAggregatePaginate, { } from 'mongoose-aggregate-paginate-v2';
+import mongoose, { Schema, Model, Document, InferSchemaType } from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { AvailableUserRoles } from '../constants';
 export interface IUser extends Document {
     username: string;
+    teacherId?: string;
+    parentId?: string;
+    studentId?: string;
     email: string;
     fullname: string;
     avatar: string;
@@ -42,6 +45,9 @@ export interface IUser extends Document {
     genetateAccessToken(): string;
     generateRefreshToken(): string;
 }
+
+export type IUserAggregateModel = mongoose.AggregatePaginateModel<IUser> & Model<IUser>;
+
 
 const userSchema = new Schema(
     {
@@ -164,6 +170,9 @@ userSchema.methods.isPasswordCorrect = async function (password: string | Buffer
 userSchema.methods.genetateAccessToken = function () {
     const payload = {
         id: this._id,
+        teacherId: this.teacherId,
+        parentId: this.parentId,
+        studentId: this.studentId,
         role: this.role,
         email: this.email,
         fullname: this.fullname,
@@ -190,6 +199,9 @@ userSchema.methods.genetateAccessToken = function () {
 userSchema.methods.generateRefreshToken = function () {
     const payload = {
         id: this._id,
+        teacherId: this.teacherId,
+        parentId: this.parentId,
+        studentId: this.studentId,
         role: this.role,
         email: this.email,
         fullname: this.fullname,
@@ -214,4 +226,5 @@ userSchema.methods.generateRefreshToken = function () {
 
 userSchema.plugin(mongooseAggregatePaginate)
 
-export const User = mongoose.model('User', userSchema);
+// export const User: IUserAggregateModel = mongoose.model<IUser>('User', userSchema) as IUserAggregateModel;
+export const User = mongoose.model<IUser, IUserAggregateModel>('User', userSchema);

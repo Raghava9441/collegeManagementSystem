@@ -8,6 +8,7 @@ import userRoutes from './routes/user.routes';
 import teacherRoutes from './routes/teacher.routes';
 import studentRoutes from './routes/student.routes';
 import parentRoutes from './routes/parent.routes';
+import courseRoutes from './routes/courses.routes';
 import departmentRoutes from './routes/department.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
@@ -60,9 +61,12 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/teachers", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
+app.use("/api/v1/course", courseRoutes);
 
 app.use((req, res, next) => {
     res.status(404).send("Not Found");
 });
 app.use(errorHandler)
+
+
 export { app };

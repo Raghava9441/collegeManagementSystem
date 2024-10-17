@@ -30,6 +30,7 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
         if (!user) {
             return res.status(401).json(new ApiError(401, "Invalid access token"));
         }
+        // console.log("object", user)
         req.user = user;
         next();
     }

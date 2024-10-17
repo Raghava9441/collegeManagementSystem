@@ -7,7 +7,29 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./src/@types",
+            "./node_modules/@types"
+        ],
+        "baseUrl": "./src", // Add this line
+        "paths": {
+            "@utils/*": [
+                "utils/*"
+            ],
+            "@controllers/*": [
+                "controllers/*"
+            ],
+            "@models/*": [
+                "models/*"
+            ],
+            "@services/*": [
+                "services/*"
+            ],
+            "@types/*": [
+                "@types/*"
+            ]
+        }
     },
     "include": [
         "src/**/*.ts"

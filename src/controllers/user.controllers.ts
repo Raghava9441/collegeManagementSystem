@@ -10,6 +10,7 @@ import { deleteFromCloudinary, uploadOncloudinary } from "../utils/cloudinary";
 import fs from 'fs';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { Organization } from "../models/organization.models";
+import { userService } from "../services/user.service";
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // new ApiError(409, "A user with the same username, email, or fullname already exists")
@@ -44,60 +45,62 @@ const createUser = asyncHandler(async (req: Request, res: Response) => {
         throw new ApiError(400, null, 'user creation failed', undefined, [{ msg: 'Please provide all the required fields' }]);
     }
 
-    const existingUser = await User.findOne({
-        $or: [
-            { username },
-            { email },
-        ]
-    });
+    const user = await userService.createUser(req.body);
 
-    if (existingUser) {
-        throw new ApiError(409, null, 'user creation failed', undefined, [{ msg: 'A user with the same username, email already exists' }]);
-    }
+    // const existingUser = await User.findOne({
+    //     $or: [
+    //         { username },
+    //         { email },
+    //     ]
+    // });
 
-    //check the organization id is valid
-    const existingOrganization = await Organization.findById(organizationId);
-    console.log("object", existingOrganization)
-    if (!existingOrganization) {
-        throw new ApiError(404, null, "user creation failed", undefined, [{ msg: "Organization not found" }]);
-    }
-    //check if the user is already part of the organization
-    const existingUserInOrganization = await Organization.findOne({
-        $or: [
-            { username },
-            { email },
-        ]
-    });
-    if (existingUserInOrganization) {
-        throw new ApiError(409, null, "user creation failed", undefined, [{ msg: "User is already part of the organization" }]);
-    }
-    const dummyPassword = "DummyPassword123";
+    // if (existingUser) {
+    //     throw new ApiError(409, null, 'user creation failed', undefined, [{ msg: 'A user with the same username, email already exists' }]);
+    // }
 
-    const user = await User.create({
-        username,
-        email,
-        fullname,
-        avatar,
-        coverImage,
-        age,
-        role,
-        gender,
-        organizationId,
-        phone,
-        address,
-        status,
-        dateOfBirth,
-        biography,
-        permissions,
-        socialLinks,
-        preferences,
-        teacherId,
-        parentId,
-        studentId,
-        password: dummyPassword,
-        // refreshToken
-    });
-    await sendEmail(email, fullname, dummyPassword);
+    // //check the organization id is valid
+    // const existingOrganization = await Organization.findById(organizationId);
+    // console.log("object", existingOrganization)
+    // if (!existingOrganization) {
+    //     throw new ApiError(404, null, "user creation failed", undefined, [{ msg: "Organization not found" }]);
+    // }
+    // //check if the user is already part of the organization
+    // const existingUserInOrganization = await Organization.findOne({
+    //     $or: [
+    //         { username },
+    //         { email },
+    //     ]
+    // });
+    // if (existingUserInOrganization) {
+    //     throw new ApiError(409, null, "user creation failed", undefined, [{ msg: "User is already part of the organization" }]);
+    // }
+    // const dummyPassword = "DummyPassword123";
+
+    // const user = await User.create({
+    //     username,
+    //     email,
+    //     fullname,
+    //     avatar,
+    //     coverImage,
+    //     age,
+    //     role,
+    //     gender,
+    //     organizationId,
+    //     phone,
+    //     address,
+    //     status,
+    //     dateOfBirth,
+    //     biography,
+    //     permissions,
+    //     socialLinks,
+    //     preferences,
+    //     teacherId,
+    //     parentId,
+    //     studentId,
+    //     password: dummyPassword,
+    //     // refreshToken
+    // });
+    // await sendEmail(email, fullname, dummyPassword);
 
     return res.status(200).json(new ApiResponse(200, user, "User is created successfully"));
 });
@@ -450,17 +453,15 @@ const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
         throw new ApiError(500, "Something went wrong while refreshing access token");
     }
 })
-interface AuthenticatedRequest extends Request {
-    user?: IUser | null;
-}
-const logoutUser = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+
+const logoutUser = asyncHandler(async (req: Request, res: Response) => {
 
     if (!req.user) {
         return res.status(401).json(new ApiError(401, "Unauthorized"));
     }
     await User.findByIdAndUpdate(
         //need to come back here after middlewaare is done
-        req.user._id,
+        req.user.id,
         {
             $set: {
                 refreshToken: undefined

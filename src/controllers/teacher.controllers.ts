@@ -9,10 +9,8 @@ import { Organization } from "../models/organization.models";
 import mongoose from "mongoose";
 import { asyncHandler } from "../utils/asyncHandler";
 
-interface AuthenticatedRequest extends Request {
-    user?: IUser | null;
-}
-const getAllTeachers = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+
+const getAllTeachers = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10 } = req.query;
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
@@ -41,7 +39,7 @@ const getAllTeachers = asyncHandler(async (req: AuthenticatedRequest, res: Respo
         .json(new ApiResponse(200, teachers, "Teachers are fetched successfully"));
 })
 
-const createTeacher = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+const createTeacher = asyncHandler(async (req: Request, res: Response) => {
     //create teacher if the user is admin
     console.log(req.user)
     if (req.user && req.user.role === 'ADMIN') {
@@ -117,7 +115,7 @@ const updateTeacherById = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teacher is updated successfully", "Teacher is updated successfully"));
 })
 
-const deleteTeacherById = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+const deleteTeacherById = asyncHandler(async (req: Request, res: Response) => {
     if (req.user && req.user.role === 'ADMIN') {
         const { teacherId } = req.params;
         if (!teacherId) {

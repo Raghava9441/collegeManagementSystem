@@ -313,13 +313,13 @@ const seedTeachers = async (numTeachers: number) => {
         const subjectIds = subjects.map(subject => subject._id.toString());
 
         for (let user of users) {
-            const fakeTeacher = await generateFakeTeacherData(
-                user._id.toString(),
-                organizations[0]._id.toString(),
-                departments.map(dep => dep._id.toString()),
-                subjectIds
-            );
-            await Teacher.create(fakeTeacher);
+            // const fakeTeacher = await generateFakeTeacherData(
+            //     user._id.toString(),
+            //     organizations[0]._id.toString(),
+            //     departments.map(dep => dep._id.toString()),
+            //     subjectIds
+            // );
+            // await Teacher.create(fakeTeacher);
         }
 
         console.log(`${numTeachers} teachers seeded successfully.`);
@@ -397,15 +397,15 @@ const seedStudents = async (numStudents: number) => {
         const organizationId = organizations[0]._id.toString();
 
         for (let user of users) {
-            const fakeStudent = await generateFakeStudentData(
-                user._id,
-                teacherIds,
-                organizationId,
-                parentIds,
-                courseIds,
-                new mongoose.Types.ObjectId(classIds[Math.floor(Math.random() * classIds.length)]) // Randomly select a class
-            );
-            await Student.create(fakeStudent);
+            // const fakeStudent = await generateFakeStudentData(
+            //     user._id,
+            //     teacherIds,
+            //     organizationId,
+            //     parentIds,
+            //     courseIds,
+            //     new mongoose.Types.ObjectId(classIds[Math.floor(Math.random() * classIds.length)]) // Randomly select a class
+            // );
+            // await Student.create(fakeStudent);
         }
 
         console.log(`${numStudents} students seeded successfully.`);
