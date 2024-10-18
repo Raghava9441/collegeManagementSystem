@@ -14,24 +14,18 @@ const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
     const { organizationId } = req.user as UserDocument
     //validate the organization id
     if (!organizationId) {
-        return res
-            .status(400)
-            .json(new ApiError(400, null, "get all courses failed", undefined, [{ msg: "Please provide organization id" }]));
+        throw new ApiError(400, null, "get all courses failed", undefined, [{ msg: "Please provide organization id" }])
     }
     //check organization is exist or not 
     const existingOrganization = await Organization.findById(organizationId);
     if (!existingOrganization) {
-        return res
-            .status(404)
-            .json(new ApiError(404, null, "get all courses failed", undefined, [{ msg: "Organization not found" }]));
+        throw new ApiError(404, null, "get all courses failed", undefined, [{ msg: "Organization not found" }]);
     }
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
     const courses = await courseService.getCoursesPaginate(parsedPage, parsedLimit, organizationId);
     if (!courses) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Courses are not found"));
+        throw new ApiError(404, null, "Courses are not found", undefined, [{ msg: "Courses are not found" }]);
     }
 
     return res
@@ -43,17 +37,13 @@ const getCourseById = asyncHandler(async (req: Request, res: Response) => {
     const { courseId } = req.params;
     //validate the course id
     if (!courseId) {
-        return res
-            .status(400)
-            .json(new ApiError(400, null, "get course by id failed", undefined, [{ msg: "Please provide course id" }]));
+        throw new ApiError(400, null, "get course by id failed", undefined, [{ msg: "Please provide course id" }]);
     }
 
     const course = await courseService.getCourseById(courseId);
 
     if (!course) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Course is not found"));
+        throw new ApiError(404, null, "Course is not found", undefined, [{ msg: "Course is not found" }]);
     }
 
     return res
@@ -65,25 +55,19 @@ const updateCourseById = asyncHandler(async (req: Request, res: Response) => {
     const { courseId } = req.params;
     //validate the course id
     if (!courseId) {
-        return res
-            .status(400)
-            .json(new ApiError(400, null, "update course by id failed", undefined, [{ msg: "Please provide course id" }]));
+        throw new ApiError(400, null, "update course by id failed", undefined, [{ msg: "Please provide course id" }]);
     }
 
     const course = await courseService.getCourseById(courseId);
 
     if (!course) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Course is not found"));
+        throw new ApiError(404, null, "Course is not found", undefined, [{ msg: "Course is not found" }]);
     }
 
     const updatedCourse = await courseService.updateCourseById(courseId, req.body);
 
     if (!updatedCourse) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Course is not found"));
+        throw new ApiError(404, null, "Course is not found", undefined, [{ msg: "Course is not found" }])
     }
 
     return res
@@ -95,17 +79,13 @@ const deleteCourseById = asyncHandler(async (req: Request, res: Response) => {
     const { courseId } = req.params;
     //validate the course id
     if (!courseId) {
-        return res
-            .status(400)
-            .json(new ApiError(400, null, "delete course by id failed", undefined, [{ msg: "Please provide course id" }]));
+        throw new ApiError(400, null, "delete course by id failed", undefined, [{ msg: "Please provide course id" }])
     }
 
     const course = await courseService.getCourseById(courseId);
 
     if (!course) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Course is not found"));
+        throw new ApiError(404, null, "Course is not found", undefined, [{ msg: "Course is not found" }]);
     }
 
     await courseService.deleteCourseById(courseId);

@@ -20,7 +20,7 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
         }
     }
     if (!accessToken) {
-        return res.status(401).json(new ApiError(401, "Please login to access this resource"));
+        return res.status(401).json(new ApiError(401, null, "Please login to access this resource", undefined, [{ msg: "Please login to access this resource" }]));
     }
     try {
         const decodedToken = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET as string) as JwtPayload & { _id: string };
@@ -28,14 +28,14 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
         const user = await User.findById(decodedToken?.id).select("-password -refreshToken");
         console.log("user:", user)
         if (!user) {
-            return res.status(401).json(new ApiError(401, "Invalid access token"));
+            return res.status(401).json(new ApiError(401, null, "Invalid access token", undefined, [{ msg: "Invalid access token" }]));
         }
         // console.log("object", user)
         req.user = user;
         next();
     }
     catch (error) {
-        return res.status(401).json(new ApiError(401, "Invalid access token"));
+        return res.status(401).json(new ApiError(401, null, "Invalid access token", undefined, [{ msg: "Invalid access token" }]));
 
     }
 }

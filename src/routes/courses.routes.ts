@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { createBulkCourses, createCourse, deleteBulkCourses, deleteCourseById, getAllCourses, getCourseById, updateCourseById } from '../controllers/courses.controllers';
 import { verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
 import { courseValidator } from '../validators/course.validators';
-import { handleValidationErrors } from '../validators/common/mongodb.validators';
+import { handleValidationErrors, mongoIdPathVariableValidator } from '../validators/common/mongodb.validators';
 
 const router = Router();
 
@@ -20,9 +20,20 @@ router.route("/")
     );
 
 router.route("/:courseId")
-    .get(getCourseById)
-    .put(updateCourseById)
-    .delete(deleteCourseById);
+    .get(
+        mongoIdPathVariableValidator,
+        getCourseById
+    )
+    .put(
+        mongoIdPathVariableValidator,
+        courseValidator(),
+        handleValidationErrors,
+        updateCourseById
+    )
+    .delete(
+        mongoIdPathVariableValidator,
+        deleteCourseById
+    );
 
 router.route("/bulk")
     .post(
