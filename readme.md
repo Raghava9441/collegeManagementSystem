@@ -57,6 +57,39 @@ The College Management System (CMS) is a comprehensive web application designed 
    npm run dev
    ```
 
+## Access Control Matrix
+
+| **Route**                                           | **Admin** | **Teacher**                  | **Student**             | **Parent**                       |
+|-----------------------------------------------------|-----------|------------------------------|-------------------------|-----------------------------------|
+| **/students**                                       | Yes       | No                           | No                      | No                                |
+| **/students/:id**                                   | Yes       | Yes (their students)         | Yes (own)               | No                                |
+| **/students/:id/courses**                           | Yes       | Yes (their students)         | Yes (own)               | No                                |
+| **/students/:id/attendance**                        | Yes       | Yes (their students)         | Yes (own)               | No                                |
+| **/students/:id/exam-results**                      | Yes       | Yes (their students)         | Yes (own)               | No                                |
+| **/students/:id/assignments**                       | Yes       | Yes (their students)         | Yes (own)               | No                                |
+| **/students/:id/events**                            | Yes       | Yes (their students)         | Yes (own)               | No                                |
+| **/parents**                                        | Yes       | No                           | No                      | No                                |
+| **/parents/:id**                                    | Yes       | No                           | No                      | Yes (own)                         |
+| **/parents/:parentId/children/:childId/courses**    | Yes       | Yes (related students)       | No                      | Yes (own children)                |
+| **/parents/:parentId/children/:childId/attendance** | Yes       | Yes (related students)       | No                      | Yes (own children)                |
+| **/parents/:parentId/children/:childId/exam-results**| Yes       | Yes (related students)      | No                      | Yes (own children)                |
+| **/parents/:parentId/children/:childId/assignments**| Yes       | Yes (related students)       | No                      | Yes (own children)                |
+| **/parents/:parentId/children/:childId/events**     | Yes       | Yes (related students)       | No                      | Yes (own children)                |
+| **/teachers**                                       | Yes       | No                           | No                      | No                                |
+| **/teachers/:id**                                   | Yes       | Yes (own profile)            | No                      | No                                |
+| **/teachers/:id/courses**                           | Yes       | Yes (own)                    | No                      | No                                |
+| **/teachers/:id/attendance**                        | Yes       | Yes (own)                    | No                      | No                                |
+| **/teachers/:id/exam-results**                      | Yes       | Yes (own)                    | No                      | No                                |
+| **/courses**                                        | Yes       | Yes                          | Yes (view own)          | No                                |
+| **/courses/:id**                                    | Yes       | Yes                          | Yes (view own)          | No                                |
+| **/courses/:id/assignments**                        | Yes       | Yes                          | Yes (view own)          | No                                |
+| **/exams**                                          | Yes       | Yes                          | Yes (view own)          | No                                |
+| **/exams/:id**                                      | Yes       | Yes                          | Yes (view own)          | No                                |
+| **/events**                                         | Yes       | Yes                          | Yes (view)              | No                                |
+| **/events/:id**                                     | Yes       | Yes                          | Yes (view)              | Yes (own child-related events)    |
+| **/assignments**                                    | Yes       | Yes                          | Yes (view own)          | Yes (view own child)              |
+
+
 ## API Endpoints
 
 ### Health Check

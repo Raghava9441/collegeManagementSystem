@@ -26,8 +26,8 @@ const getAllStudents = asyncHandler(async (req: any, res: Response) => {
             page: parsedPage,
             limit: parsedLimit,
             customLabels: {
-                totalDocs: "totalOrganizations",
-                docs: "organizations",
+                totalDocs: "totalStudents",
+                docs: "students",
             },
         }),
     )

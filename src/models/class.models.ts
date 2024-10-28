@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
-interface IClass extends Document {
+export interface IClass extends Document {
     _id: string;
     name: string;
     description: string;
@@ -22,25 +22,30 @@ interface IClass extends Document {
     departmentId: mongoose.Types.ObjectId;
     createdAt: Date;
     updatedAt: Date;
+    createdBy: mongoose.Types.ObjectId;
     enrollStudent(studentId: mongoose.Types.ObjectId): Promise<IClass>;
 }
 
-const classSchema = new Schema<IClass>(
+const classSchema = new Schema(
     {
         name: {
             type: String,
             required: true,
             trim: true
         },
+        description: {
+            type: String,
+            trim: true
+        },
         academicYear: {
             type: String,
             trim: true,
-            required: true 
+            required: true
         },
         departmentId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Department',
-            required: true
+            // required: true
         },
         studentIds: [{
             type: mongoose.Schema.Types.ObjectId,
@@ -95,6 +100,16 @@ const classSchema = new Schema<IClass>(
             type: Number,
             default: 0
         },
+        createdBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
+        updatedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            // required: true
+        }
     },
     {
         timestamps: true
@@ -113,4 +128,4 @@ classSchema.methods.enrollStudent = function (this: IClass, studentId: mongoose.
     return this.save();
 };
 classSchema.plugin(mongooseAggregatePaginate)
-export const Class: Model<IClass> = mongoose.model<IClass>('Class', classSchema);
+export const Class = mongoose.model('Class', classSchema);

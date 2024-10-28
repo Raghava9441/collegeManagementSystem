@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 const app = express();
 import morgan from 'morgan';
@@ -9,6 +9,7 @@ import teacherRoutes from './routes/teacher.routes';
 import studentRoutes from './routes/student.routes';
 import parentRoutes from './routes/parent.routes';
 import courseRoutes from './routes/courses.routes';
+import classRoutes from './routes/classes.routes';
 import departmentRoutes from './routes/department.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
@@ -50,6 +51,7 @@ app.use(cookieParser());
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
 import { errorHandler } from './middlewares/error.middlewares';
+import { ApiError } from '@utils/ApiError';
 
 
 //mount routes
@@ -62,11 +64,20 @@ app.use("/api/v1/teachers", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
 app.use("/api/v1/course", courseRoutes);
+app.use("/api/v1/classes", classRoutes);
 
-app.use((req, res, next) => {
-    res.status(404).send("Not Found");
+// 404 handler
+app.use((req: Request, res: Response, next: NextFunction) => {
+    next(new ApiError(404, null, "Route not found", undefined, [{ msg: `${req.originalUrl} not found` }]));
 });
+
 app.use(errorHandler)
+
+process.on('unhandledRejection', (reason: any) => {
+    console.log('Unhandled Rejection:', reason);
+    // Create an error log
+    logger.error('Unhandled Rejection:', reason);
+});
 
 
 export { app };

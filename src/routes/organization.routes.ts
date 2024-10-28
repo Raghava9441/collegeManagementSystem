@@ -27,15 +27,12 @@ router.route("/:organizationId")
         verifyPermission(["ADMIN"]),
         getOrganizationById
     )
-
     .put(
         verifyJWT,
         verifyPermission(["ADMIN"]),
         organizationValidator(),
         updateOrganizationById
     )
-
-
     .delete(
         verifyJWT,
         verifyPermission(["ADMIN"]),

@@ -5,7 +5,12 @@ import { isAdmin, isTeacher, verifyJWT } from '../middlewares/auth.middleware';
 const router = Router();
 
 router.route("/")
-    .get(verifyJWT, isAdmin, isTeacher, getAllStudents)
+    .get(
+        verifyJWT,
+        // isAdmin,
+        isTeacher,
+        getAllStudents
+    )
     .post(createStudent);
 
 router.route("/:studentId")

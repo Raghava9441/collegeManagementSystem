@@ -18,6 +18,7 @@ const subjectSchema = new Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Teacher'
         }],
+        classId: { type: Schema.Types.ObjectId, ref: 'Class' },
         organizationId: { type: Schema.Types.ObjectId, ref: 'Organization', required: true },
         courseId: { type: Schema.Types.ObjectId, ref: 'Course' },
         studentsEnrolled: [{ type: Schema.Types.ObjectId, ref: 'Student' }],

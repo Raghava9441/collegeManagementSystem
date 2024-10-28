@@ -24,9 +24,9 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
     }
     try {
         const decodedToken = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET as string) as JwtPayload & { _id: string };
-        console.log("decodedToken:", decodedToken)
+        // console.log("decodedToken:", decodedToken)
         const user = await User.findById(decodedToken?.id).select("-password -refreshToken");
-        console.log("user:", user)
+        // console.log("user:", user)
         if (!user) {
             return res.status(401).json(new ApiError(401, null, "Invalid access token", undefined, [{ msg: "Invalid access token" }]));
         }
