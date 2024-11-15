@@ -63,7 +63,7 @@ app.use(cookieParser());
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
 import { errorHandler } from './middlewares/error.middlewares';
-import { ApiError } from '@utils/ApiError';
+// import { ApiError } from '@utils/ApiError';
 
 
 //mount routes
@@ -79,9 +79,9 @@ app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
 
 // 404 handler
-app.use((req: Request, res: Response, next: NextFunction) => {
-    next(new ApiError(404, null, "Route not found", undefined, [{ msg: `${req.originalUrl} not found` }]));
-});
+// app.use((req: Request, res: Response, next: NextFunction) => {
+//     next(new ApiError(404, null, "Route not found", undefined, [{ msg: `${req.originalUrl} not found` }]));
+// });
 
 app.use(errorHandler)
 
