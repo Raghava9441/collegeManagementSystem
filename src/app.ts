@@ -14,13 +14,25 @@ import departmentRoutes from './routes/department.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
-app.use(cors(
-    {
-        origin: process.env.CORS_ORIGIN,
-        credentials: true,
-        // methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    }
-));
+const allowedOrigins = ['http://localhost:3000'];
+
+app.use(cors({
+    origin: allowedOrigins,
+    //  function (origin, callback) {
+    //     // Allow requests with no origin (like mobile apps or curl requests)
+    //     if (!origin) return callback(null, true);
+
+    //     if (allowedOrigins.indexOf(origin) === -1) {
+    //         return callback(new Error('The CORS policy for this site does not allow access from the specified Origin.'), false);
+    //     }
+    //     return callback(null, true);
+    // },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+    exposedHeaders: ['Set-Cookie'],
+    maxAge: 86400
+}));
 
 // morgan format
 const morganFormat = ':method :url :status :response-time ms';

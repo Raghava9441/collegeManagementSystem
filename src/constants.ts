@@ -5,6 +5,7 @@ export const UserRolesEnum = {
     TEACHER: "TEACHER",
     STUDENT: "STUDENT",
     PARENT: "PARENT",
+    ORGADMIN: "ORGADMIN"
 };
 
 export const AvailableUserRoles = Object.values(UserRolesEnum);
