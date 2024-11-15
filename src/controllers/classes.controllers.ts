@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { ApiResponse } from "../utils/ApiResponse";
-import { ApiError } from "@utils/ApiError";
+import { ApiError } from "../utils/ApiError";
 import { UserDocument } from "../@types/express";
-import { classesService } from "@services/classes.service";
-import { Organization } from "@models/organization.models";
+import { classesService } from "../services/classes.service";
+import { Organization } from "../models/organization.models";
 import mongoose from "mongoose";
-import { Course } from "@models/course.models";
-import { Teacher } from "@models/teacher.model";
-import { asyncHandler } from "@utils/asyncHandler";
+import { Course } from "../models/course.models";
+import { Teacher } from "../models/teacher.model";
+import { asyncHandler } from "../utils/asyncHandler";
 
 const getAllClasses = asyncHandler(async (req: Request, res: Response) => {
     const page = req.query.page || 1;

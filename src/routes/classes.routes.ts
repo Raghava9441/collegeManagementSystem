@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { createBulkClasses, createClass, deleteBulkClasses, deleteClassById, getAllClasses, getClassById, updateClassById } from '../controllers/classes.controllers';
-import { verifyJWT, verifyPermission } from 'middlewares/auth.middleware';
-import { mongoIdPathVariableValidator } from 'validators/common/mongodb.validators';
+import { verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
+import { mongoIdPathVariableValidator } from '../validators/common/mongodb.validators';
 
 const router = Router();
 
