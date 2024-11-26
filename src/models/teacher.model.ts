@@ -11,6 +11,8 @@ import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 const teacherSchema = new Schema(
     {
+        name: { type: String, required: true },
+        email: { type: String, required: true },
         userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         organizationId: { type: Schema.Types.ObjectId, ref: 'Organization', required: true },
         departments: [{ type: Schema.Types.ObjectId, ref: 'Department' }],

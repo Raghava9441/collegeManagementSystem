@@ -10,6 +10,7 @@ import studentRoutes from './routes/student.routes';
 import parentRoutes from './routes/parent.routes';
 import courseRoutes from './routes/courses.routes';
 import classRoutes from './routes/classes.routes';
+import seedDbRoutes from './routes/seedDb.routes';
 import departmentRoutes from './routes/department.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
@@ -77,6 +78,8 @@ app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
 app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
+
+app.use("/api/v1/seed", seedDbRoutes);
 
 // 404 handler
 // app.use((req: Request, res: Response, next: NextFunction) => {
