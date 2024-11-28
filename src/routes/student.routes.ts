@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { createStudent, deleteStudentBulk, deleteStudentById, getAllStudents, getStudentById, updateStudentById } from '../controllers/student.controllers';
-import { isAdmin, isTeacher, verifyJWT } from '../middlewares/auth.middleware';
+import { checkPermission, isAdmin, isTeacher, verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 router.route("/")
     .get(
         verifyJWT,
-        // isAdmin,
+        // checkPermission('organizations', 'create'),
         isTeacher,
         getAllStudents
     )

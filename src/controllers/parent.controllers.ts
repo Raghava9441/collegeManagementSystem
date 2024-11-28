@@ -8,12 +8,13 @@ import { Student } from "../models/student.models";
 import mongoose from "mongoose";
 import { asyncHandler } from "../utils/asyncHandler";
 import { User } from "../models/user.models";
+import { Organization } from "@models/organization.models";
 
 
 const getAllParents = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10 } = req.query;
 
-    const productAggregate = Parent.aggregate([{ $match: {} }]);
+    const productAggregate = Parent.aggregate([{ $match: {} }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, childrenIds: 1, organizationId: 1, relationshipToStudent: 1, dateOfBirth: 1, address: 1, phoneNumber: 1, emergencyContacts: 1, occupation: 1 } }]);
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
@@ -68,16 +69,80 @@ const createParent = asyncHandler(async (req: Request, res: Response) => {
             "parentId": parent._id
         }
     });
-    
+
     return res.status(200).json(new ApiResponse(200, parent, "Parent is created successfully"));
 })
 
 const getParentById = asyncHandler(async (req: Request, res: Response) => {
-    return res.status(200).json(new ApiResponse(200, "parent is fetched successfully", "Parent is fetched successfully"));
+    const { id } = req.params;
+    //check the id is valid or not
+    if (!id) {
+        return res.status(400).json(new ApiResponse(400, "Please provide a valid id", "Invalid id"));
+    }
+    //check the id is valid mongoose id or not
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json(new ApiResponse(400, "Invalid id", "Invalid id"));
+    }
+    //check for the organization also exist from the request.user
+    if (!req.user || !req.user.organizationId) {
+        return res.status(400).json(new ApiResponse(400, "User or organizationId is missing", "User or organizationId is missing"));
+    }
+    const existingOrganization = await Organization.findById(req.user.organizationId);
+
+    if (!existingOrganization) {
+        return res.status(404).json(new ApiResponse(404, "Organization not found", "Organization not found"));
+    }
+    const parent = await Parent.findOne({ _id: id, organizationId: req.user.organizationId });
+    if (!parent) {
+        return res.status(404).json(new ApiResponse(404, "Parent not found", "Parent not found"));
+    }
+    return res.status(200).json(new ApiResponse(200, parent, "Parent found successfully"));
 })
 
 const updateParentById = asyncHandler(async (req: Request, res: Response) => {
-    return res.status(200).json(new ApiResponse(200, "parent is updated successfully", "Parent is updated successfully"));
+    const { id } = req.params;
+    //check the id is valid or not
+    if (!id) {
+        return res.status(400).json(new ApiResponse(400, "Please provide a valid id", "Invalid id"));
+    }
+    //check the id is valid mongoose id or not
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json(new ApiResponse(400, "Invalid id", "Invalid id"));
+    }
+    //check for the organization also exist from the request.user
+    if (!req.user || !req.user.organizationId) {
+        return res.status(400).json(new ApiResponse(400, "User or organizationId is missing", "User or organizationId is missing"));
+    }
+    const existingOrganization = await Organization.findById(req.user.organizationId);
+
+    if (!existingOrganization) {
+        return res.status(404).json(new ApiResponse(404, "Organization not found", "Organization not found"));
+    }
+    const parent = await Parent.findOne({ _id: id, organizationId: req.user.organizationId });
+    if (!parent) {
+        return res.status(404).json(new ApiResponse(404, "Parent not found", "Parent not found"));
+    }
+    const { userId, childrenIds, organizationId, relationshipToStudent, dateOfBirth, address, phoneNumber, email, emergencyContacts, occupation } = req.body;
+    if (!userId || !childrenIds || !organizationId || !relationshipToStudent || !dateOfBirth || !address || !phoneNumber || !email || !emergencyContacts || !occupation) {
+        return res.status(400).json(new ApiResponse(400, "All fields are required", "All fields are required"));
+    }
+    const updatedParent = await Parent.findOneAndUpdate({ _id: id, organizationId: req.user.organizationId }, {
+        $set: {
+            userId,
+            childrenIds,
+            organizationId,
+            relationshipToStudent,
+            dateOfBirth,
+            address,
+            phoneNumber,
+            email,
+            emergencyContacts,
+            occupation
+        }
+    }, {
+        new: true
+    });
+    return res.status(200).json(new ApiResponse(200, updatedParent, "Parent is updated successfully"));
 })
 
 const deleteParentById = asyncHandler(async (req: Request, res: Response) => {

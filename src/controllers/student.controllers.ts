@@ -20,8 +20,8 @@ const getAllStudents = asyncHandler(async (req: any, res: Response) => {
 
     const students = await Student.aggregatePaginate(
         req.user && req.user.role === 'ADMIN' ?
-            Student.aggregate([{ $match: {} }]) :
-            Student.aggregate([{ $match: { organizationId: req.user.organizationId } }]),
+            Student.aggregate([{ $match: {} }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, userId: 1, organizationId: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', dateOfBirth: 1, emergencyContacts: 1, address: 1, phoneNumber: 1, enrollmentDate: 1, graduationDate: 1, createdAt: 1, updatedAt: 1, enrolledCoursesIds: 1 } }]) :
+            Student.aggregate([{ $match: { organizationId: req.user.organizationId } }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, userId: 1, organizationId: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', dateOfBirth: 1, emergencyContacts: 1, address: 1, phoneNumber: 1, enrollmentDate: 1, graduationDate: 1, createdAt: 1, updatedAt: 1, enrolledCoursesIds: 1 } }]),
         getMongoosePaginationOptions({
             page: parsedPage,
             limit: parsedLimit,
