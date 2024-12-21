@@ -11,18 +11,28 @@ import fs from 'fs';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { Organization } from "../models/organization.models";
 import { userService } from "../services/user.service";
+import { ObjectId } from 'mongodb';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // new ApiError(409, "A user with the same username, email, or fullname already exists")
     const { page = 1, limit = 10 } = req.query;
+    
+    const { organizationId, role } = req.user;
 
-    const productAggregate = User.aggregate([{ $match: {} }]);
+    // Build match condition based on user role
+    const matchCondition = role === 'ADMIN'
+        ? {} // Admin can see all users
+        : { organizationId: organizationId };
+
+    const userAggregate = User.aggregate([
+        { $match: matchCondition }
+    ]);
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
 
     const users = await User.aggregatePaginate(
-        productAggregate,
+        userAggregate,
         getMongoosePaginationOptions({
             page: parsedPage,
             limit: parsedLimit,
@@ -40,8 +50,8 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
 const createUser = asyncHandler(async (req: Request, res: Response) => {
     const { username, email, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences, teacherId, parentId, studentId } = req.body;
-    console.log(organizationId)
-    if (!username || !email || !fullname || !avatar || !role || !gender || !organizationId) {
+    // console.log(organizationId)
+    if (!username || !email || !fullname || !role || !gender || !organizationId) {
         throw new ApiError(400, null, 'user creation failed', undefined, [{ msg: 'Please provide all the required fields' }]);
     }
 
@@ -256,11 +266,14 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
 
     // Find user by email
     const user: IUser | null = await User.findOne({ email });
+    // console.log(user)
     if (!user) {
         return res.status(404).json(new ApiError(404, "User not found"));
     }
     // Check if password is correct
     const isPasswordValid = await user.isPasswordCorrect(password);
+    console.log(password)
+    console.log(isPasswordValid)
     if (!isPasswordValid) {
         return res.status(401).json(new ApiError(401, "Invalid email or password"));
     }
@@ -292,7 +305,9 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
     logger.info("Registering user");
     const { username, email, password, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
-
+    console.log("username", username)
+    console.log(email)
+    console.log(fullname, age, role, gender, organizationId)
     if (
         [username, email, fullname, age, role, gender, organizationId].some(
             field => typeof field !== 'string' || field.trim() === ""
@@ -309,7 +324,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
             { email },
         ]
     });
-    console.log("existingUser:", existingUser)
+    // console.log("existingUser:", existingUser)
 
     if (existingUser) {
         return res.status(409).json(new ApiError(409, "An user with the same username, or email already exists"));
@@ -319,9 +334,9 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     const localAvatarPath = req.files && 'avatar' in req.files ? req.files.avatar[0].path : "";
     const localCoverImagePath = req.files && 'coverImage' in req.files ? req.files.coverImage[0].path : "";
 
-    if (!localAvatarPath || !fs.existsSync(localAvatarPath)) {
-        return res.status(400).json(new ApiError(400, "Please upload a valid avatar"));
-    }
+    // if (!localAvatarPath || !fs.existsSync(localAvatarPath)) {
+    //     return res.status(400).json(new ApiError(400, "Please upload a valid avatar"));
+    // }
 
     let avatarCludinaryUrl;
     try {
@@ -351,7 +366,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
             email,
             password,
             fullname,
-            avatar: avatarCludinaryUrl?.url,
+            avatar: avatarCludinaryUrl?.url || "",
             coverImage: coverImageCludinaryUrl?.url || "",
             age,
             role,
@@ -398,7 +413,7 @@ const generateAccessAndRefreshToken = async (userId: string): Promise<{ accessTo
         const user: IUser | null = await User.findById(userId);
 
         if (!user) {
-            console.error(`User with ID ${userId} not found.`);
+            // console.error(`User with ID ${userId} not found.`);
             return null;
         }
 
@@ -412,7 +427,7 @@ const generateAccessAndRefreshToken = async (userId: string): Promise<{ accessTo
 
         return { accessToken, refreshToken };
     } catch (error) {
-        console.error('Error generating tokens:', error);
+        // console.error('Error generating tokens:', error);
         throw new ApiError(500, "somthing went wrong while generatting access and refesh tokens")
         // or handle it in a way that's appropriate for your application
     }

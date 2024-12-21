@@ -9,16 +9,16 @@ const router = Router();
 
 router.route("/auth/login").post(loginUser);
 router.route("/auth/register").post(
-    upload.fields([
-        {
-            name: 'avatar',
-            maxCount: 1
-        },
-        {
-            name: 'coverImage',
-            maxCount: 1
-        }
-    ]),
+    // upload.fields([
+    //     {
+    //         name: 'avatar',
+    //         maxCount: 1
+    //     },
+    //     {
+    //         name: 'coverImage',
+    //         maxCount: 1
+    //     }
+    // ]),
     registerUser
 );
 router.route("/auth/refresh").post(refreshAccessToken);
@@ -28,7 +28,7 @@ router.route("/auth/logout").post(verifyJWT, logoutUser);
 router.route("/")
     .get(
         verifyJWT,
-        verifyPermission(["ADMIN"]),
+        // verifyPermission(["ADMIN"]),
         getAllUsers
     )
     .post(

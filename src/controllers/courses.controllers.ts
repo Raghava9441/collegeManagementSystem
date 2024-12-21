@@ -12,6 +12,7 @@ const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10, } = req.query;
     // const { organizationId } = req.params;
     const { organizationId } = req.user as UserDocument
+    
     //validate the organization id
     if (!organizationId) {
         throw new ApiError(400, null, "get all courses failed", undefined, [{ msg: "Please provide organization id" }])
@@ -109,7 +110,7 @@ const deleteBulkCourses = asyncHandler(async (req: Request, res: Response) => {
 
 const createCourse = asyncHandler(async (req: Request, res: Response) => {
     const { name, description, teacherIds, organizationId, subjectsIds, startDate, endDate, schedule, credits, prerequisites, location, fee, textbooks, syllabus, assignments, gradingScheme, feedback, resources } = req.body;
-
+    console.log("organizationId",organizationId)
     const existingOrganization = await Organization.findById(organizationId);
     if (!existingOrganization) {
         throw new ApiError(404, null, "Course creation failed", undefined, [{ msg: "Organization not found" }]);

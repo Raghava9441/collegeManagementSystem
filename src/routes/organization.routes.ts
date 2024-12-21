@@ -11,7 +11,7 @@ const router = Router();
 router.route("/")
     .get(
         verifyJWT,
-        verifyPermission(["ADMIN"]),
+        // verifyPermission(["ADMIN"]),
         getAllOrganizations
     )
     .post(

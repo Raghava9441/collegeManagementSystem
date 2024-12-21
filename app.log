@@ -6433,3 +6433,854 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"97.198\"}","timestamp":"2024-11-28T07:31:02.048Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"96.982\"}","timestamp":"2024-11-28T07:31:02.738Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"96.542\"}","timestamp":"2024-11-28T07:31:02.836Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-11-28T07:32:27.260Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-11-28T07:32:27.262Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-11-28T07:32:27.263Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-11-28T07:32:27.263Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-11-28T07:32:27.265Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"144.032\"}","timestamp":"2024-11-28T07:49:28.343Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"88.745\"}","timestamp":"2024-11-28T07:49:28.433Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"87.601\"}","timestamp":"2024-11-28T07:49:41.034Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-11-28T11:29:08.008Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-11-28T11:29:08.011Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-11-28T11:29:08.011Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-11-28T11:29:08.012Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-11-28T11:29:08.015Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"401\",\"responseTime\":\"7.758\"}","timestamp":"2024-11-28T11:29:41.114Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"401\",\"responseTime\":\"1.967\"}","timestamp":"2024-11-28T11:29:41.118Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"401\",\"responseTime\":\"68.857\"}","timestamp":"2024-11-28T11:29:41.285Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"401\",\"responseTime\":\"1.762\"}","timestamp":"2024-11-28T11:29:47.338Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"401\",\"responseTime\":\"48.321\"}","timestamp":"2024-11-28T11:29:47.389Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"100.246\"}","timestamp":"2024-11-28T11:30:02.447Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"92.477\"}","timestamp":"2024-11-28T11:30:02.542Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"268.022\"}","timestamp":"2024-11-28T11:30:05.333Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"93.845\"}","timestamp":"2024-11-28T11:30:08.637Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"95.473\"}","timestamp":"2024-11-28T11:30:08.734Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"100.475\"}","timestamp":"2024-11-28T11:30:09.158Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"94.733\"}","timestamp":"2024-11-28T11:30:09.254Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"50.309\"}","timestamp":"2024-11-28T11:30:09.620Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"48.023\"}","timestamp":"2024-11-28T11:30:09.669Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"409\",\"responseTime\":\"100.635\"}","timestamp":"2024-11-28T11:31:02.956Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"93.539\"}","timestamp":"2024-11-28T11:31:24.943Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"174.705\"}","timestamp":"2024-11-28T11:31:46.068Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"95.256\"}","timestamp":"2024-11-28T11:31:52.605Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"95.861\"}","timestamp":"2024-11-28T11:32:16.690Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"91.587\"}","timestamp":"2024-11-28T11:32:16.783Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"400\",\"responseTime\":\"48.119\"}","timestamp":"2024-11-28T11:33:40.115Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"95.865\"}","timestamp":"2024-11-28T11:34:54.262Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"51.607\"}","timestamp":"2024-11-28T11:35:02.499Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"95.586\"}","timestamp":"2024-11-28T11:35:26.215Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"93.594\"}","timestamp":"2024-11-28T11:37:17.410Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"46.968\"}","timestamp":"2024-11-28T11:37:21.924Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"58.269\"}","timestamp":"2024-11-28T11:41:04.717Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"116.980\"}","timestamp":"2024-11-28T11:43:46.068Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"98.550\"}","timestamp":"2024-11-28T11:43:46.168Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"91.799\"}","timestamp":"2024-11-28T11:46:14.543Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"91.180\"}","timestamp":"2024-11-28T11:46:19.133Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"91.800\"}","timestamp":"2024-11-28T11:46:19.226Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"95.348\"}","timestamp":"2024-11-28T11:46:44.590Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"98.587\"}","timestamp":"2024-11-28T11:46:44.690Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"97.571\"}","timestamp":"2024-11-28T11:46:46.316Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"93.273\"}","timestamp":"2024-11-28T11:46:46.411Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"76.058\"}","timestamp":"2024-11-28T11:47:29.262Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"92.087\"}","timestamp":"2024-11-28T11:49:20.063Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"47.763\"}","timestamp":"2024-11-28T11:49:24.966Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"94.515\"}","timestamp":"2024-11-28T11:49:44.250Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"289.716\"}","timestamp":"2024-11-28T11:52:59.544Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"96.284\"}","timestamp":"2024-11-28T11:53:17.860Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"100.675\"}","timestamp":"2024-11-28T11:55:13.538Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"95.428\"}","timestamp":"2024-11-28T11:55:13.635Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"92.101\"}","timestamp":"2024-11-28T11:55:15.761Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"146.588\"}","timestamp":"2024-11-28T11:55:15.909Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"91.339\"}","timestamp":"2024-11-28T11:55:50.692Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"92.298\"}","timestamp":"2024-11-28T11:55:50.786Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"98.422\"}","timestamp":"2024-11-28T12:01:51.599Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"96.617\"}","timestamp":"2024-11-28T12:01:51.697Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"92.600\"}","timestamp":"2024-11-28T12:03:04.292Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"104.016\"}","timestamp":"2024-11-28T12:03:04.398Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"92.541\"}","timestamp":"2024-11-28T12:05:57.123Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"100.801\"}","timestamp":"2024-11-28T12:06:26.179Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"94.219\"}","timestamp":"2024-11-28T12:06:26.275Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"100.639\"}","timestamp":"2024-11-28T12:06:47.182Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"95.151\"}","timestamp":"2024-11-28T12:06:47.279Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"101.691\"}","timestamp":"2024-11-28T12:07:07.403Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"113.500\"}","timestamp":"2024-11-28T12:07:07.518Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"101.523\"}","timestamp":"2024-11-28T12:09:32.191Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"91.332\"}","timestamp":"2024-11-28T12:09:32.284Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"90.573\"}","timestamp":"2024-11-28T12:09:37.383Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"89.283\"}","timestamp":"2024-11-28T12:09:37.473Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"98.044\"}","timestamp":"2024-11-28T12:13:00.301Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"95.986\"}","timestamp":"2024-11-28T12:13:00.399Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-11-29T10:22:08.233Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-11-29T10:22:08.236Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-11-29T10:22:08.237Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-11-29T10:22:08.237Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-11-29T10:22:08.241Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"283.974\"}","timestamp":"2024-11-29T10:22:40.853Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"90.240\"}","timestamp":"2024-11-29T10:22:42.837Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"84.131\"}","timestamp":"2024-11-29T10:22:42.922Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"88.008\"}","timestamp":"2024-11-29T10:22:46.002Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"146.295\"}","timestamp":"2024-11-29T10:22:46.155Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"80.676\"}","timestamp":"2024-11-29T10:22:57.715Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"77.503\"}","timestamp":"2024-11-29T10:22:57.794Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"78.398\"}","timestamp":"2024-11-29T10:23:59.646Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"78.319\"}","timestamp":"2024-11-29T10:23:59.729Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"77.373\"}","timestamp":"2024-11-29T10:24:00.449Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"79.189\"}","timestamp":"2024-11-29T10:24:00.529Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"79.310\"}","timestamp":"2024-11-29T10:24:28.704Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"82.338\"}","timestamp":"2024-11-29T10:24:28.788Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"79.899\"}","timestamp":"2024-11-29T10:24:29.702Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"80.460\"}","timestamp":"2024-11-29T10:24:29.784Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"84.161\"}","timestamp":"2024-11-29T10:43:37.759Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"81.735\"}","timestamp":"2024-11-29T10:43:37.842Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"125.219\"}","timestamp":"2024-11-29T10:43:46.782Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"82.626\"}","timestamp":"2024-11-29T10:43:46.867Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"78.804\"}","timestamp":"2024-11-29T10:49:13.832Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"80.648\"}","timestamp":"2024-11-29T10:50:24.497Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"76.992\"}","timestamp":"2024-11-29T10:50:24.575Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"38.572\"}","timestamp":"2024-11-29T10:50:25.081Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"38.888\"}","timestamp":"2024-11-29T10:50:25.121Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"40.478\"}","timestamp":"2024-11-29T10:50:49.643Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"38.687\"}","timestamp":"2024-11-29T10:50:49.683Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"79.264\"}","timestamp":"2024-11-29T10:50:53.119Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"81.281\"}","timestamp":"2024-11-29T10:50:53.202Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"93.089\"}","timestamp":"2024-11-29T10:54:58.556Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"89.715\"}","timestamp":"2024-11-29T10:54:58.849Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"90.910\"}","timestamp":"2024-11-29T10:54:58.941Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"102.776\"}","timestamp":"2024-11-29T10:55:35.797Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"122.075\"}","timestamp":"2024-11-29T10:55:35.920Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"304.801\"}","timestamp":"2024-11-29T10:56:32.158Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"113.207\"}","timestamp":"2024-11-29T10:56:32.272Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"92.942\"}","timestamp":"2024-11-29T10:56:44.772Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"87.487\"}","timestamp":"2024-11-29T10:56:44.862Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"49.968\"}","timestamp":"2024-11-29T10:57:36.089Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"49.241\"}","timestamp":"2024-11-29T10:57:36.140Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"43.683\"}","timestamp":"2024-11-29T11:00:04.202Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"44.893\"}","timestamp":"2024-11-29T11:00:04.247Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-03T05:06:53.234Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-03T05:06:53.238Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-03T05:06:53.239Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-03T05:06:53.241Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-03T05:06:53.245Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"366.427\"}","timestamp":"2024-12-03T05:07:38.071Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"115.922\"}","timestamp":"2024-12-03T05:07:40.212Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"109.201\"}","timestamp":"2024-12-03T05:07:40.323Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"127.500\"}","timestamp":"2024-12-03T05:07:41.951Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"115.094\"}","timestamp":"2024-12-03T05:07:42.068Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"109.552\"}","timestamp":"2024-12-03T05:07:43.563Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"107.549\"}","timestamp":"2024-12-03T05:07:43.675Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"112.968\"}","timestamp":"2024-12-03T05:07:45.430Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"106.539\"}","timestamp":"2024-12-03T05:07:45.539Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"56.623\"}","timestamp":"2024-12-03T05:07:47.550Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"53.646\"}","timestamp":"2024-12-03T05:07:47.609Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"567.674\"}","timestamp":"2024-12-03T08:33:25.007Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-10T15:14:32.220Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-10T15:14:32.223Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-10T15:14:32.223Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-10T15:14:32.224Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-10T15:14:32.227Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"401\",\"responseTime\":\"4.375\"}","timestamp":"2024-12-10T15:14:53.273Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"401\",\"responseTime\":\"1.319\"}","timestamp":"2024-12-10T15:14:53.276Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"299.796\"}","timestamp":"2024-12-10T15:15:14.417Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"101.730\"}","timestamp":"2024-12-10T15:15:19.130Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"92.874\"}","timestamp":"2024-12-10T15:15:19.225Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"92.824\"}","timestamp":"2024-12-10T15:15:22.544Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"95.500\"}","timestamp":"2024-12-10T15:15:33.481Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"94.439\"}","timestamp":"2024-12-10T15:15:33.577Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"96.934\"}","timestamp":"2024-12-10T15:16:23.983Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"94.585\"}","timestamp":"2024-12-10T15:16:24.079Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"383.197\"}","timestamp":"2024-12-11T03:48:39.446Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"88.442\"}","timestamp":"2024-12-11T03:48:39.542Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T15:39:54.405Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T15:39:54.415Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T15:39:54.417Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T15:39:54.420Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T15:39:54.428Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"348.865\"}","timestamp":"2024-12-17T15:40:34.518Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"118.687\"}","timestamp":"2024-12-17T15:40:39.209Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"114.873\"}","timestamp":"2024-12-17T15:40:39.326Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"123.557\"}","timestamp":"2024-12-17T15:40:45.555Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"114.700\"}","timestamp":"2024-12-17T15:40:45.671Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"131.203\"}","timestamp":"2024-12-17T15:40:49.126Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"111.999\"}","timestamp":"2024-12-17T15:40:49.240Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"200\",\"responseTime\":\"71.914\"}","timestamp":"2024-12-17T15:40:51.890Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"55.992\"}","timestamp":"2024-12-17T15:40:51.948Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"57.275\"}","timestamp":"2024-12-17T15:40:58.069Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"57.772\"}","timestamp":"2024-12-17T15:40:58.129Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"113.162\"}","timestamp":"2024-12-17T15:40:59.871Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"112.387\"}","timestamp":"2024-12-17T15:40:59.985Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"114.401\"}","timestamp":"2024-12-17T15:41:00.926Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"117.005\"}","timestamp":"2024-12-17T15:41:01.048Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"112.246\"}","timestamp":"2024-12-17T15:41:02.508Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"111.544\"}","timestamp":"2024-12-17T15:41:02.622Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"144.475\"}","timestamp":"2024-12-17T15:41:03.939Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"112.323\"}","timestamp":"2024-12-17T15:41:04.057Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations?page=1&limit=10\",\"status\":\"401\",\"responseTime\":\"0.635\"}","timestamp":"2024-12-17T15:41:47.038Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"307.780\"}","timestamp":"2024-12-17T15:41:56.977Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations?page=1&limit=10\",\"status\":\"200\",\"responseTime\":\"121.885\"}","timestamp":"2024-12-17T15:42:02.404Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"114.436\"}","timestamp":"2024-12-17T15:42:56.949Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"113.102\"}","timestamp":"2024-12-17T15:42:57.065Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"111.928\"}","timestamp":"2024-12-17T15:43:14.890Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T15:44:42.732Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-17T15:44:42.806Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"80.707\"}","timestamp":"2024-12-17T15:44:42.807Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T15:47:25.155Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-17T15:47:25.213Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"60.933\"}","timestamp":"2024-12-17T15:47:25.214Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T15:48:22.846Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T15:48:22.855Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T15:48:22.857Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T15:48:22.860Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T15:48:22.870Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T15:48:25.218Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-17T15:48:25.273Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-17T15:48:25.274Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-17T15:48:25.274Z"}
+{"_message":"User validation failed","errors":{"avatar":{"kind":"required","message":"Path `avatar` is required.","name":"ValidatorError","path":"avatar","properties":{"message":"Path `avatar` is required.","path":"avatar","type":"required"}}},"level":"\u001b[31merror\u001b[39m","message":"Error registering user: User validation failed: avatar: Path `avatar` is required.","stack":"ValidationError: User validation failed: avatar: Path `avatar` is required.\n    at Document.invalidate (H:\\personal project\\collegeManagementSystem\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at H:\\personal project\\collegeManagementSystem\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at H:\\personal project\\collegeManagementSystem\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2024-12-17T15:48:25.289Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"404\",\"responseTime\":\"86.583\"}","timestamp":"2024-12-17T15:48:25.298Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T15:49:02.134Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T15:49:02.137Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T15:49:02.138Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T15:49:02.139Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T15:49:02.142Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T15:49:09.990Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-17T15:49:10.052Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-17T15:49:10.054Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-17T15:49:10.056Z"}
+{"_message":"User validation failed","errors":{"avatar":{"kind":"required","message":"Path `avatar` is required.","name":"ValidatorError","path":"avatar","properties":{"message":"Path `avatar` is required.","path":"avatar","type":"required","value":""},"value":""}},"level":"\u001b[31merror\u001b[39m","message":"Error registering user: User validation failed: avatar: Path `avatar` is required.","stack":"ValidationError: User validation failed: avatar: Path `avatar` is required.\n    at Document.invalidate (H:\\personal project\\collegeManagementSystem\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at H:\\personal project\\collegeManagementSystem\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at H:\\personal project\\collegeManagementSystem\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2024-12-17T15:49:10.090Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"404\",\"responseTime\":\"118.950\"}","timestamp":"2024-12-17T15:49:10.105Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T15:50:28.964Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T15:50:28.967Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T15:50:28.968Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T15:50:28.969Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T15:50:28.974Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T15:50:32.341Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"6.679\"}","timestamp":"2024-12-17T15:50:32.347Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T15:51:14.461Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T15:51:14.467Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T15:51:14.468Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T15:51:14.469Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T15:51:14.475Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T15:51:18.230Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"6.558\"}","timestamp":"2024-12-17T15:51:18.237Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"131.385\"}","timestamp":"2024-12-17T15:51:41.700Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"4.464\"}","timestamp":"2024-12-17T15:59:15.491Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"4.547\"}","timestamp":"2024-12-17T16:07:15.761Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"2.442\"}","timestamp":"2024-12-17T16:08:49.086Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"401\",\"responseTime\":\"21.768\"}","timestamp":"2024-12-17T16:09:13.655Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"306.989\"}","timestamp":"2024-12-17T16:12:55.945Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"62.591\"}","timestamp":"2024-12-17T16:13:48.138Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:15:34.241Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:15:34.245Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:15:34.246Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:15:34.248Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:15:34.254Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"91.585\"}","timestamp":"2024-12-17T16:15:42.146Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"49.745\"}","timestamp":"2024-12-17T16:17:01.145Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:17:47.150Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:17:47.159Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:17:47.161Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:17:47.163Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:17:47.173Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:17:51.448Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:17:51.450Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:17:51.451Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:17:51.452Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:17:51.455Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"94.582\"}","timestamp":"2024-12-17T16:17:55.576Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"61.223\"}","timestamp":"2024-12-17T16:18:11.691Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"59.813\"}","timestamp":"2024-12-17T16:18:19.215Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:18:53.241Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:18:53.250Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:18:53.252Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:18:53.254Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:18:53.260Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"115.246\"}","timestamp":"2024-12-17T16:18:55.849Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:20:10.203Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:20:10.207Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:20:10.208Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:20:10.210Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:20:10.215Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"234.984\"}","timestamp":"2024-12-17T16:20:15.498Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:20:53.288Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:20:53.292Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:20:53.293Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:20:53.294Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:20:53.297Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"349.724\"}","timestamp":"2024-12-17T16:21:01.217Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"313.806\"}","timestamp":"2024-12-17T16:38:20.403Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"112.230\"}","timestamp":"2024-12-17T16:38:28.924Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"114.194\"}","timestamp":"2024-12-17T16:39:34.631Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"137.841\"}","timestamp":"2024-12-17T16:39:57.042Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"113.210\"}","timestamp":"2024-12-17T16:41:19.514Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"109.597\"}","timestamp":"2024-12-17T16:42:37.033Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"44.206\"}","timestamp":"2024-12-17T16:46:22.348Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:47:45.533Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:47:45.537Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:47:45.537Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:47:45.539Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:47:45.542Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:47:52.921Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:47:52.926Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:47:52.928Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:47:52.929Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:47:52.933Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"83.626\"}","timestamp":"2024-12-17T16:48:08.982Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:48:54.507Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:48:54.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:48:54.518Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:48:54.521Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:48:54.531Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:49:06.263Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:49:06.271Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:49:06.274Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:49:06.277Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:49:06.287Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"83.121\"}","timestamp":"2024-12-17T16:49:22.402Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"280.134\"}","timestamp":"2024-12-17T16:49:58.889Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"338.323\"}","timestamp":"2024-12-17T16:52:01.163Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"107.214\"}","timestamp":"2024-12-17T16:52:14.427Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"148.772\"}","timestamp":"2024-12-17T16:52:21.322Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"123.953\"}","timestamp":"2024-12-17T16:54:29.709Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:56:43.190Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:56:43.199Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:56:43.202Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:56:43.204Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:56:43.209Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T16:58:39.252Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T16:58:39.255Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T16:58:39.255Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T16:58:39.256Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T16:58:39.265Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"149.058\"}","timestamp":"2024-12-17T16:58:51.449Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T17:01:26.404Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T17:01:26.413Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T17:01:26.415Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T17:01:26.419Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T17:01:26.428Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"158.066\"}","timestamp":"2024-12-17T17:01:46.180Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T17:03:28.666Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T17:03:28.670Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T17:03:28.671Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T17:03:28.672Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T17:03:28.675Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T17:03:57.506Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T17:03:57.510Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T17:03:57.511Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T17:03:57.512Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T17:03:57.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"143.648\"}","timestamp":"2024-12-17T17:04:26.037Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T17:07:17.448Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"3.928\"}","timestamp":"2024-12-17T17:07:17.451Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"59.771\"}","timestamp":"2024-12-17T17:07:56.166Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T17:10:02.500Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"6.352\"}","timestamp":"2024-12-17T17:10:02.506Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-17T17:11:49.127Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-17T17:11:49.136Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-17T17:11:49.138Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-17T17:11:49.141Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-17T17:11:49.151Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T17:11:50.890Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"8.422\"}","timestamp":"2024-12-17T17:11:50.897Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"306.195\"}","timestamp":"2024-12-17T17:13:48.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T17:14:46.546Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-17T17:14:46.594Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-17T17:14:46.595Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-17T17:14:46.595Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"240.131\"}","timestamp":"2024-12-17T17:14:46.787Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-17T17:15:48.636Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"2.978\"}","timestamp":"2024-12-17T17:15:48.639Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"109.543\"}","timestamp":"2024-12-17T17:16:11.056Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"275.277\"}","timestamp":"2024-12-17T17:16:44.271Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"52.414\"}","timestamp":"2024-12-17T17:17:07.608Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"47.731\"}","timestamp":"2024-12-17T17:17:07.658Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"106.315\"}","timestamp":"2024-12-17T17:19:01.483Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-20T05:58:24.430Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-20T05:58:24.439Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-20T05:58:24.441Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-20T05:58:24.444Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-20T05:58:24.447Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"289.483\"}","timestamp":"2024-12-20T05:59:19.500Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"46.941\"}","timestamp":"2024-12-20T05:59:26.733Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"41.583\"}","timestamp":"2024-12-20T05:59:26.777Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"46.431\"}","timestamp":"2024-12-20T06:19:00.334Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"48.087\"}","timestamp":"2024-12-20T06:19:00.384Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"52.540\"}","timestamp":"2024-12-20T06:22:14.751Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.344\"}","timestamp":"2024-12-20T06:23:25.850Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"73.220\"}","timestamp":"2024-12-20T06:24:24.773Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.136\"}","timestamp":"2024-12-20T06:24:38.681Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.645\"}","timestamp":"2024-12-20T06:24:52.018Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"46.993\"}","timestamp":"2024-12-20T06:24:52.067Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"47.072\"}","timestamp":"2024-12-20T06:25:50.419Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"48.062\"}","timestamp":"2024-12-20T06:25:50.469Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"49.840\"}","timestamp":"2024-12-20T06:26:38.809Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"48.767\"}","timestamp":"2024-12-20T06:26:48.695Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"56.847\"}","timestamp":"2024-12-20T06:28:01.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"47.663\"}","timestamp":"2024-12-20T06:28:36.764Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"46.476\"}","timestamp":"2024-12-20T06:28:43.754Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"48.232\"}","timestamp":"2024-12-20T06:28:54.782Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.760\"}","timestamp":"2024-12-20T06:30:08.765Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"49.400\"}","timestamp":"2024-12-20T06:30:20.806Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"53.338\"}","timestamp":"2024-12-20T06:30:57.343Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.753\"}","timestamp":"2024-12-20T06:31:57.689Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.091\"}","timestamp":"2024-12-20T06:37:04.834Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"51.544\"}","timestamp":"2024-12-20T06:37:23.707Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"48.711\"}","timestamp":"2024-12-20T06:37:49.795Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"50.946\"}","timestamp":"2024-12-20T06:38:19.910Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"46.839\"}","timestamp":"2024-12-20T06:38:49.549Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"45.716\"}","timestamp":"2024-12-20T06:38:49.596Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"48.861\"}","timestamp":"2024-12-20T06:39:08.747Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"61.953\"}","timestamp":"2024-12-20T06:39:23.056Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"53.129\"}","timestamp":"2024-12-20T06:40:36.949Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"44.484\"}","timestamp":"2024-12-20T06:40:36.996Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-20T06:41:46.868Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-20T06:41:46.877Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-20T06:41:46.878Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-20T06:41:46.880Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-20T06:41:46.884Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"121.776\"}","timestamp":"2024-12-20T06:41:49.363Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"105.114\"}","timestamp":"2024-12-20T06:43:31.198Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"95.963\"}","timestamp":"2024-12-20T06:43:31.297Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"105.036\"}","timestamp":"2024-12-20T06:44:54.454Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"110.654\"}","timestamp":"2024-12-20T06:44:54.566Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"103.580\"}","timestamp":"2024-12-20T06:45:41.767Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"93.526\"}","timestamp":"2024-12-20T06:45:41.862Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"97.432\"}","timestamp":"2024-12-20T06:48:15.149Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"100.714\"}","timestamp":"2024-12-20T06:48:15.264Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"92.873\"}","timestamp":"2024-12-20T06:51:06.339Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"90.265\"}","timestamp":"2024-12-20T06:51:06.432Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"86.179\"}","timestamp":"2024-12-20T06:53:00.437Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"85.154\"}","timestamp":"2024-12-20T06:53:00.524Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"111.403\"}","timestamp":"2024-12-20T06:56:00.884Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"279.159\"}","timestamp":"2024-12-20T06:56:07.920Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"393.438\"}","timestamp":"2024-12-20T18:41:19.249Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"74.900\"}","timestamp":"2024-12-20T18:41:19.326Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"82.573\"}","timestamp":"2024-12-20T18:41:44.088Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"85.531\"}","timestamp":"2024-12-20T18:41:44.175Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"84.302\"}","timestamp":"2024-12-20T18:42:31.372Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"77.513\"}","timestamp":"2024-12-20T18:42:31.451Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"72.088\"}","timestamp":"2024-12-20T18:46:17.059Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"70.533\"}","timestamp":"2024-12-20T18:46:17.130Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"72.997\"}","timestamp":"2024-12-20T18:46:25.921Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"70.785\"}","timestamp":"2024-12-20T18:46:25.993Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"80.780\"}","timestamp":"2024-12-20T19:02:20.937Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"78.952\"}","timestamp":"2024-12-20T19:02:21.017Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"81.682\"}","timestamp":"2024-12-20T19:02:48.594Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"210.583\"}","timestamp":"2024-12-20T19:02:53.729Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"82.338\"}","timestamp":"2024-12-20T19:05:09.294Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"81.295\"}","timestamp":"2024-12-20T19:05:09.377Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"78.707\"}","timestamp":"2024-12-20T19:05:16.769Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"76.127\"}","timestamp":"2024-12-20T19:05:17.990Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"79.414\"}","timestamp":"2024-12-20T19:17:14.845Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"76.868\"}","timestamp":"2024-12-20T19:17:14.923Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"42.892\"}","timestamp":"2024-12-20T19:17:25.066Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"37.347\"}","timestamp":"2024-12-20T19:17:25.104Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"82.570\"}","timestamp":"2024-12-20T19:19:20.835Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"74.634\"}","timestamp":"2024-12-20T19:19:20.911Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"86.123\"}","timestamp":"2024-12-20T19:20:46.010Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"73.167\"}","timestamp":"2024-12-20T19:20:46.084Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"81.171\"}","timestamp":"2024-12-20T19:21:04.136Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"98.335\"}","timestamp":"2024-12-20T19:21:04.236Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"70.578\"}","timestamp":"2024-12-20T19:21:09.180Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"73.117\"}","timestamp":"2024-12-20T19:21:09.255Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"81.124\"}","timestamp":"2024-12-20T19:21:24.934Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"78.626\"}","timestamp":"2024-12-20T19:21:25.014Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"76.386\"}","timestamp":"2024-12-20T19:21:31.593Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"72.840\"}","timestamp":"2024-12-20T19:21:31.667Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"75.593\"}","timestamp":"2024-12-20T19:21:50.752Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"77.893\"}","timestamp":"2024-12-20T19:21:50.831Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"74.994\"}","timestamp":"2024-12-20T19:21:54.803Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"86.575\"}","timestamp":"2024-12-20T19:21:54.890Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"74.034\"}","timestamp":"2024-12-20T19:21:59.828Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"74.978\"}","timestamp":"2024-12-20T19:21:59.904Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"76.105\"}","timestamp":"2024-12-20T19:22:03.479Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"73.957\"}","timestamp":"2024-12-20T19:22:03.554Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"73.614\"}","timestamp":"2024-12-20T19:29:39.433Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"76.029\"}","timestamp":"2024-12-20T19:29:39.511Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"37.025\"}","timestamp":"2024-12-20T19:29:41.800Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"37.703\"}","timestamp":"2024-12-20T19:29:41.838Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"71.092\"}","timestamp":"2024-12-20T19:29:51.910Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"87.874\"}","timestamp":"2024-12-20T19:29:52.000Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"71.840\"}","timestamp":"2024-12-20T19:29:54.461Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"72.708\"}","timestamp":"2024-12-20T19:29:54.539Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"75.715\"}","timestamp":"2024-12-20T19:30:20.250Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"71.272\"}","timestamp":"2024-12-20T19:30:20.323Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"83.438\"}","timestamp":"2024-12-20T19:36:47.737Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"75.089\"}","timestamp":"2024-12-20T19:36:47.813Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"71.364\"}","timestamp":"2024-12-20T19:36:55.014Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"72.594\"}","timestamp":"2024-12-20T19:36:55.088Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"75.102\"}","timestamp":"2024-12-20T19:37:00.104Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"98.723\"}","timestamp":"2024-12-20T19:37:00.204Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"74.042\"}","timestamp":"2024-12-20T19:37:01.705Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"72.579\"}","timestamp":"2024-12-20T19:37:01.779Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"73.888\"}","timestamp":"2024-12-20T19:37:06.321Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"74.267\"}","timestamp":"2024-12-20T19:37:06.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"72.846\"}","timestamp":"2024-12-20T19:37:59.776Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"37.182\"}","timestamp":"2024-12-20T19:38:03.199Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"81.610\"}","timestamp":"2024-12-20T19:46:03.799Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"206.825\"}","timestamp":"2024-12-20T19:46:08.970Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"88.768\"}","timestamp":"2024-12-20T19:46:11.185Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"PUT\",\"url\":\"/api/v1/organizations/66976aa3b8ebf8df5217e255\",\"status\":\"200\",\"responseTime\":\"112.197\"}","timestamp":"2024-12-20T19:46:16.714Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"409\",\"responseTime\":\"81.218\"}","timestamp":"2024-12-20T19:46:33.370Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"71.141\"}","timestamp":"2024-12-20T19:46:44.280Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"PUT\",\"url\":\"/api/v1/organizations/66976aa3b8ebf8df5217e255\",\"status\":\"200\",\"responseTime\":\"84.215\"}","timestamp":"2024-12-20T19:46:55.168Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"78.044\"}","timestamp":"2024-12-20T20:05:47.075Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"88.225\"}","timestamp":"2024-12-20T20:06:31.218Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"36.153\"}","timestamp":"2024-12-20T20:06:47.994Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"36.123\"}","timestamp":"2024-12-20T20:07:00.962Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"48.394\"}","timestamp":"2024-12-20T20:07:35.211Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"78.398\"}","timestamp":"2024-12-20T20:10:18.801Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"47.567\"}","timestamp":"2024-12-20T20:10:26.343Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"75.187\"}","timestamp":"2024-12-20T20:10:27.145Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"72.738\"}","timestamp":"2024-12-20T20:10:28.412Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"79.432\"}","timestamp":"2024-12-20T20:10:31.717Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"86.436\"}","timestamp":"2024-12-20T20:10:35.081Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-20T20:53:43.308Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-20T20:53:43.312Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-20T20:53:43.313Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-20T20:53:43.314Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-20T20:53:43.316Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"114.475\"}","timestamp":"2024-12-20T20:56:45.881Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"89.834\"}","timestamp":"2024-12-20T20:56:48.687Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"88.668\"}","timestamp":"2024-12-20T20:56:50.692Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"86.635\"}","timestamp":"2024-12-20T21:00:16.944Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"104.287\"}","timestamp":"2024-12-20T21:03:01.344Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"107.237\"}","timestamp":"2024-12-20T21:03:20.554Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"83.903\"}","timestamp":"2024-12-20T21:03:58.747Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"84.867\"}","timestamp":"2024-12-20T21:04:09.748Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"81.715\"}","timestamp":"2024-12-20T21:04:20.730Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"85.497\"}","timestamp":"2024-12-20T21:04:59.423Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"98.701\"}","timestamp":"2024-12-20T21:05:09.658Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"84.956\"}","timestamp":"2024-12-20T21:05:23.709Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"87.682\"}","timestamp":"2024-12-20T21:05:30.298Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"91.338\"}","timestamp":"2024-12-20T21:10:06.075Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"85.403\"}","timestamp":"2024-12-20T21:10:35.409Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"84.848\"}","timestamp":"2024-12-20T21:11:36.905Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"86.043\"}","timestamp":"2024-12-20T21:11:38.620Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"90.972\"}","timestamp":"2024-12-20T21:11:41.268Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"88.427\"}","timestamp":"2024-12-20T21:11:43.648Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"88.793\"}","timestamp":"2024-12-20T21:11:45.399Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"54.364\"}","timestamp":"2024-12-20T21:11:54.486Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"88.364\"}","timestamp":"2024-12-20T21:11:58.090Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"43.553\"}","timestamp":"2024-12-20T21:12:01.571Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"84.976\"}","timestamp":"2024-12-20T21:12:03.618Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"45.291\"}","timestamp":"2024-12-20T21:12:05.117Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"96.872\"}","timestamp":"2024-12-20T21:12:07.106Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"42.215\"}","timestamp":"2024-12-20T21:12:25.135Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"46.985\"}","timestamp":"2024-12-20T21:12:31.476Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"84.867\"}","timestamp":"2024-12-20T21:12:32.715Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"86.451\"}","timestamp":"2024-12-20T21:12:34.138Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"84.708\"}","timestamp":"2024-12-20T21:12:35.989Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T13:46:59.462Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T13:46:59.464Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T13:46:59.465Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T13:46:59.466Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T13:46:59.469Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T13:47:03.018Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T13:47:03.022Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T13:47:03.022Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T13:47:03.023Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T13:47:03.026Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"81.876\"}","timestamp":"2024-12-21T13:48:20.752Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/classes\",\"status\":\"401\",\"responseTime\":\"3.343\"}","timestamp":"2024-12-21T14:03:45.116Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"325.297\"}","timestamp":"2024-12-21T14:03:53.757Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/classes\",\"status\":\"400\",\"responseTime\":\"87.714\"}","timestamp":"2024-12-21T14:03:58.614Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/classes\",\"status\":\"400\",\"responseTime\":\"51.524\"}","timestamp":"2024-12-21T14:04:18.987Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"102.146\"}","timestamp":"2024-12-21T14:06:15.784Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"109.344\"}","timestamp":"2024-12-21T14:08:17.171Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"100.054\"}","timestamp":"2024-12-21T14:08:45.423Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"109.629\"}","timestamp":"2024-12-21T14:10:44.279Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"102.899\"}","timestamp":"2024-12-21T14:12:22.785Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"102.374\"}","timestamp":"2024-12-21T14:12:46.779Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T14:13:01.127Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T14:13:01.131Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T14:13:01.131Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T14:13:01.132Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T14:13:01.137Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T14:13:08.836Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T14:13:08.839Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T14:13:08.839Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T14:13:08.840Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T14:13:08.843Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"134.683\"}","timestamp":"2024-12-21T14:13:12.971Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T14:19:08.753Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"4.099\"}","timestamp":"2024-12-21T14:19:08.757Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T14:20:49.514Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"2.881\"}","timestamp":"2024-12-21T14:20:49.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"314.753\"}","timestamp":"2024-12-21T14:22:38.403Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"400\",\"responseTime\":\"211.035\"}","timestamp":"2024-12-21T14:24:53.400Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T14:28:06.567Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T14:28:06.577Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T14:28:06.579Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T14:28:06.582Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T14:28:06.592Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"442.682\"}","timestamp":"2024-12-21T14:28:11.182Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"419.967\"}","timestamp":"2024-12-21T14:30:04.802Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/students\",\"status\":\"400\",\"responseTime\":\"108.527\"}","timestamp":"2024-12-21T14:31:45.568Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/students\",\"status\":\"201\",\"responseTime\":\"420.630\"}","timestamp":"2024-12-21T14:32:59.401Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"373.701\"}","timestamp":"2024-12-21T14:33:55.720Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/parents\",\"status\":\"-\",\"responseTime\":\"-\"}","timestamp":"2024-12-21T14:35:37.848Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/parents\",\"status\":\"400\",\"responseTime\":\"166.092\"}","timestamp":"2024-12-21T14:35:40.501Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"400\",\"responseTime\":\"244.895\"}","timestamp":"2024-12-21T14:39:22.556Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"200\",\"responseTime\":\"213.171\"}","timestamp":"2024-12-21T14:40:06.956Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"200\",\"responseTime\":\"57.873\"}","timestamp":"2024-12-21T14:41:02.194Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"115.019\"}","timestamp":"2024-12-21T14:41:05.527Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"106.940\"}","timestamp":"2024-12-21T14:41:12.670Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"104.326\"}","timestamp":"2024-12-21T14:41:15.745Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"105.966\"}","timestamp":"2024-12-21T14:41:20.043Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/course\",\"status\":\"400\",\"responseTime\":\"55.565\"}","timestamp":"2024-12-21T14:42:34.596Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"277.786\"}","timestamp":"2024-12-21T14:55:38.412Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"113.833\"}","timestamp":"2024-12-21T14:56:26.836Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"116.104\"}","timestamp":"2024-12-21T14:56:40.622Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"107.259\"}","timestamp":"2024-12-21T14:56:46.508Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"113.271\"}","timestamp":"2024-12-21T14:57:04.323Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T14:57:45.035Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T14:57:45.038Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T14:57:45.039Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T14:57:45.039Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T14:57:45.042Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"126.711\"}","timestamp":"2024-12-21T14:57:57.791Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"401\",\"responseTime\":\"106.068\"}","timestamp":"2024-12-21T14:59:10.073Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:11:32.395Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:11:32.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:11:32.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:11:32.398Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:11:32.400Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:16:54.507Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"409\",\"responseTime\":\"77.706\"}","timestamp":"2024-12-21T15:16:54.571Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:17:51.901Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-21T15:17:51.957Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-21T15:17:51.960Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-21T15:17:51.964Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"261.012\"}","timestamp":"2024-12-21T15:17:52.161Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"308.975\"}","timestamp":"2024-12-21T15:18:04.973Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"121.408\"}","timestamp":"2024-12-21T15:18:25.164Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:19:09.230Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"409\",\"responseTime\":\"57.554\"}","timestamp":"2024-12-21T15:19:09.288Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:19:39.707Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-21T15:19:39.762Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-21T15:19:39.764Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-21T15:19:39.765Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"236.520\"}","timestamp":"2024-12-21T15:19:39.944Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:21:27.930Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-21T15:21:27.983Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-21T15:21:27.984Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-21T15:21:27.984Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"226.335\"}","timestamp":"2024-12-21T15:21:28.156Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:21:57.288Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"409\",\"responseTime\":\"56.986\"}","timestamp":"2024-12-21T15:21:57.345Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:22:13.750Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-21T15:22:13.803Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-21T15:22:13.804Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-21T15:22:13.804Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"219.978\"}","timestamp":"2024-12-21T15:22:13.970Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:22:36.850Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"409\",\"responseTime\":\"56.308\"}","timestamp":"2024-12-21T15:22:36.906Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Registering user","timestamp":"2024-12-21T15:22:54.783Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"avatar path","timestamp":"2024-12-21T15:22:54.838Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Avatar uploaded:","timestamp":"2024-12-21T15:22:54.839Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"No cover image provided or file not found","timestamp":"2024-12-21T15:22:54.839Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"224.653\"}","timestamp":"2024-12-21T15:22:55.008Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"282.873\"}","timestamp":"2024-12-21T15:24:41.396Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"59.743\"}","timestamp":"2024-12-21T15:24:44.028Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"56.274\"}","timestamp":"2024-12-21T15:25:34.144Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"54.891\"}","timestamp":"2024-12-21T15:41:33.702Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:42:12.309Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:42:12.311Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:42:12.311Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:42:12.312Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:42:12.314Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"403\",\"responseTime\":\"73.027\"}","timestamp":"2024-12-21T15:42:14.995Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"111.016\"}","timestamp":"2024-12-21T15:42:16.306Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:44:02.250Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:44:02.253Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:44:02.254Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:44:02.255Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:44:02.257Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"403\",\"responseTime\":\"72.809\"}","timestamp":"2024-12-21T15:45:07.387Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"403\",\"responseTime\":\"55.330\"}","timestamp":"2024-12-21T15:45:24.822Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"111.018\"}","timestamp":"2024-12-21T15:45:29.917Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:45:57.085Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:45:57.089Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:45:57.090Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:45:57.091Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:45:57.094Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"111.230\"}","timestamp":"2024-12-21T15:46:03.511Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:46:23.006Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:46:23.012Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:46:23.013Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:46:23.013Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:46:23.015Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"136.555\"}","timestamp":"2024-12-21T15:46:26.568Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:46:54.938Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:46:54.941Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:46:54.941Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:46:54.942Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:46:54.944Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:47:46.556Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:47:46.559Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:47:46.559Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:47:46.560Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:47:46.562Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:48:02.067Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:48:02.070Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:48:02.071Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:48:02.072Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:48:02.076Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:48:09.027Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:48:09.036Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:48:09.037Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:48:09.039Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:48:09.044Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"106.342\"}","timestamp":"2024-12-21T15:48:13.552Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:50:26.952Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:50:26.955Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:50:26.955Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:50:26.956Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:50:26.958Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"125.857\"}","timestamp":"2024-12-21T15:50:37.175Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:50:58.549Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:50:58.554Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:50:58.554Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:50:58.555Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:50:58.557Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"118.046\"}","timestamp":"2024-12-21T15:51:02.887Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:51:35.588Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:51:35.591Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:51:35.591Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:51:35.592Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:51:35.595Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:51:44.100Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:51:44.103Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:51:44.104Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:51:44.105Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:51:44.108Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:52:44.126Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:52:44.128Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:52:44.129Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:52:44.129Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:52:44.132Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:52:58.493Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:52:58.495Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:52:58.496Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:52:58.497Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:52:58.499Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:53:01.958Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:53:01.960Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:53:01.960Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:53:01.961Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:53:01.964Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:53:06.587Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:53:06.590Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:53:06.591Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:53:06.591Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:53:06.594Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"115.338\"}","timestamp":"2024-12-21T15:53:12.430Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:54:36.340Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:54:36.342Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:54:36.343Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:54:36.344Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:54:36.347Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:54:50.321Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:54:50.323Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:54:50.324Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:54:50.324Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:54:50.327Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"400\",\"responseTime\":\"69.364\"}","timestamp":"2024-12-21T15:54:58.336Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:55:16.373Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:55:16.376Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:55:16.376Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:55:16.377Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:55:16.380Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T15:55:35.886Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T15:55:35.888Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T15:55:35.889Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T15:55:35.890Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T15:55:35.892Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"108.389\"}","timestamp":"2024-12-21T15:55:39.619Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:06:29.332Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:06:29.334Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:06:29.334Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:06:29.335Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:06:29.337Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:06:52.395Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:06:52.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:06:52.397Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:06:52.398Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:06:52.400Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"232.801\"}","timestamp":"2024-12-21T17:06:52.750Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"403\",\"responseTime\":\"50.597\"}","timestamp":"2024-12-21T17:06:54.260Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:07:17.022Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:07:17.023Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:07:17.024Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:07:17.024Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:07:17.027Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:08:13.141Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:08:13.143Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:08:13.144Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:08:13.144Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:08:13.147Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"119.503\"}","timestamp":"2024-12-21T17:08:15.299Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:09:19.785Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:09:19.787Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:09:19.788Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:09:19.788Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:09:19.790Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"103.722\"}","timestamp":"2024-12-21T17:09:21.703Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:09:53.189Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:09:53.192Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:09:53.192Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:09:53.193Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:09:53.195Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:10:37.270Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:10:37.272Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:10:37.273Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:10:37.274Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:10:37.276Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"121.400\"}","timestamp":"2024-12-21T17:10:39.994Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:12:02.086Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:12:02.088Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:12:02.089Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:12:02.090Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:12:02.092Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"112.424\"}","timestamp":"2024-12-21T17:12:10.670Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:13:26.926Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:13:26.928Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:13:26.929Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:13:26.930Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:13:26.932Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:13:45.235Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:13:45.237Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:13:45.237Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:13:45.238Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:13:45.240Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"106.642\"}","timestamp":"2024-12-21T17:14:43.017Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:15:06.101Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:15:06.103Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:15:06.104Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:15:06.104Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:15:06.106Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"98.636\"}","timestamp":"2024-12-21T17:15:06.859Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:18:01.741Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:18:01.744Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:18:01.744Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:18:01.745Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:18:01.747Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"400\",\"responseTime\":\"61.056\"}","timestamp":"2024-12-21T17:18:04.041Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:18:22.172Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:18:22.179Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:18:22.180Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:18:22.180Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:18:22.182Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"119.655\"}","timestamp":"2024-12-21T17:18:24.914Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:18:40.367Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:18:40.370Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:18:40.370Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:18:40.371Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:18:40.373Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"106.809\"}","timestamp":"2024-12-21T17:18:42.294Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2024-12-21T17:19:04.499Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Connected to MongoDB","timestamp":"2024-12-21T17:19:04.504Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2024-12-21T17:19:04.505Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2024-12-21T17:19:04.505Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2024-12-21T17:19:04.508Z"}

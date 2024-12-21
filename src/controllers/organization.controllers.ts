@@ -5,13 +5,15 @@ import { Organization } from "../models/organization.models";
 import { getMongoosePaginationOptions } from "../utils/healpers";
 import { ApiError } from "../utils/ApiError";
 import * as XLSX from 'xlsx';
+import { ObjectId } from 'mongodb';
 
 const getAllOrganizations = asyncHandler(async (req: Request, res: Response) => {
     // throw new ApiError(400, `Missing required fields for organization`)
 
     const { page = 1, limit = 10 } = req.query;
+    const userRole = req.user.role;
 
-    const productAggregate = Organization.aggregate([{ $match: {} }]);
+    const productAggregate = Organization.aggregate([{ $match: userRole !== 'admin' ? { _id: new ObjectId(req.user.organizationId) } : {} }]);
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;

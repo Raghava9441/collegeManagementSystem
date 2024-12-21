@@ -21,14 +21,14 @@ const createuservalidator = () => {
             .trim()
             .notEmpty()
             .withMessage("Fullname is required"),
-        body("avatar")
-            .trim()
-            .notEmpty()
-            .withMessage("Avatar is required"),
-        body("coverImage")
-            .trim()
-            .notEmpty()
-            .withMessage("Cover image is required"),
+        // body("avatar")
+        //     .trim()
+        //     .notEmpty()
+        //     .withMessage("Avatar is required"),
+        // body("coverImage")
+        //     .trim()
+        //     .notEmpty()
+        //     .withMessage("Cover image is required"),
         body("age")
             .trim()
             .notEmpty()
@@ -53,10 +53,10 @@ const createuservalidator = () => {
             .trim()
             .notEmpty()
             .withMessage("Status is required"),
-        body("dateOfBirth")
-            .trim()
-            .notEmpty()
-            .withMessage("Date of birth is required"),
+        // body("dateOfBirth")
+        //     .trim()
+        //     .notEmpty()
+        //     .withMessage("Date of birth is required"),
         body("permissions")
             .trim()
             .notEmpty()
