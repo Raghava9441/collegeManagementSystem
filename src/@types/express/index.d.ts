@@ -5,6 +5,8 @@ interface UserDocument {
     teacherId: string;
     parentId: string;
     studentId: string;
+    courseId: string;
+    classId: string;
     role: string;
     email: string;
     fullname: string;

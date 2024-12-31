@@ -15,7 +15,7 @@ import departmentRoutes from './routes/department.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
 
 app.use(cors({
     origin: allowedOrigins,
@@ -76,7 +76,7 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/teachers", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
-app.use("/api/v1/course", courseRoutes);
+app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
 
 app.use("/api/v1/seed", seedDbRoutes);
@@ -96,3 +96,23 @@ process.on('unhandledRejection', (reason: any) => {
 
 
 export { app };
+
+
+//server creation
+// database connection
+//cors
+//logging using morgan
+//cookie parser
+//global error handler
+//routes
+//auth middleware
+//validators
+//token based authentication jwt
+//uploading files using multer and cloudinary
+
+//TODO: 
+// add swagger docs
+// add tests
+//realtime connections using socket.io
+//web hook for sending notifications
+// add email verification

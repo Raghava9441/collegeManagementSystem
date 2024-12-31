@@ -11,8 +11,8 @@ import { UserDocument } from "../@types/express";
 const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10, } = req.query;
     // const { organizationId } = req.params;
-    const { organizationId } = req.user as UserDocument
-    
+    const { organizationId, role } = req.user as UserDocument
+
     //validate the organization id
     if (!organizationId) {
         throw new ApiError(400, null, "get all courses failed", undefined, [{ msg: "Please provide organization id" }])
@@ -24,7 +24,7 @@ const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
     }
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
-    const courses = await courseService.getCoursesPaginate(parsedPage, parsedLimit, organizationId);
+    const courses = await courseService.getCoursesPaginate(parsedPage, parsedLimit, organizationId, req.user);
     if (!courses) {
         throw new ApiError(404, null, "Courses are not found", undefined, [{ msg: "Courses are not found" }]);
     }
@@ -110,7 +110,7 @@ const deleteBulkCourses = asyncHandler(async (req: Request, res: Response) => {
 
 const createCourse = asyncHandler(async (req: Request, res: Response) => {
     const { name, description, teacherIds, organizationId, subjectsIds, startDate, endDate, schedule, credits, prerequisites, location, fee, textbooks, syllabus, assignments, gradingScheme, feedback, resources } = req.body;
-    console.log("organizationId",organizationId)
+    console.log("organizationId", organizationId)
     const existingOrganization = await Organization.findById(organizationId);
     if (!existingOrganization) {
         throw new ApiError(404, null, "Course creation failed", undefined, [{ msg: "Organization not found" }]);

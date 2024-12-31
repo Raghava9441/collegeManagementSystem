@@ -9,11 +9,14 @@ import { ObjectId } from 'mongodb';
 
 const getAllOrganizations = asyncHandler(async (req: Request, res: Response) => {
     // throw new ApiError(400, `Missing required fields for organization`)
-
     const { page = 1, limit = 10 } = req.query;
-    const userRole = req.user.role;
+    if (!req.user) {
+        throw new ApiError(401, "User not authenticated");
+    }
+    const { role, organizationId } = req.user;
+    // console.log("userRole", role, organizationId);
 
-    const productAggregate = Organization.aggregate([{ $match: userRole !== 'admin' ? { _id: new ObjectId(req.user.organizationId) } : {} }]);
+    const productAggregate = Organization.aggregate([{ $match: role !== 'ADMIN' ? { _id: new ObjectId(organizationId) } : {} }]);
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;

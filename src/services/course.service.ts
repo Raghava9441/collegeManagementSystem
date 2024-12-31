@@ -5,6 +5,7 @@ import { Organization } from '../models/organization.models';
 import { ApiError } from '../utils/ApiError';
 import { getMongoosePaginationOptions } from '../utils/healpers';
 import GenericService from './generic.service';
+import { IUser } from '@models/user.models';
 
 class CourseService {
     private courseService: GenericService<any, any>; // Use IUser and IUserAggregateModel
@@ -48,8 +49,16 @@ class CourseService {
     async deleteBulkCourses(courseIds: string[]): Promise<any> {
         return await this.courseService.deleteMany({ _id: { $in: courseIds } }); // Use the deleteMany method from GenericService
     }
-    async getCoursesPaginate(parsedPage: number, parsedLimit: number, orgId: string): Promise<any> {
-        const productAggregate = Course.aggregate([{ $match: { organizationId: new mongoose.Types.ObjectId(orgId) } }]);
+    async getCoursesPaginate(parsedPage: number, parsedLimit: number, orgId: string, user: any): Promise<any> {
+        let matchStage = {};
+        if (user.role === 'admin') {
+            matchStage = {};
+        } else if (user.role === 'orgadmin') {
+            matchStage = { organizationId: new mongoose.Types.ObjectId(orgId) };
+        } else {
+            matchStage = { courseId: user.courseId };
+        }
+        const productAggregate = Course.aggregate([{ $match: matchStage }]);
 
         const Courses = await Course.aggregatePaginate(
             productAggregate,

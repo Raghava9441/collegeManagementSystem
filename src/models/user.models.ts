@@ -8,6 +8,8 @@ export interface IUser extends Document {
     teacherId?: string;
     parentId?: string;
     studentId?: string;
+    courseId?: string;
+    classId?: string;
     email: string;
     fullname: string;
     avatar: string;
@@ -58,6 +60,12 @@ const userSchema = new Schema(
             type: String,
         },
         studentId: {
+            type: String,
+        },
+        courseId: {
+            type: String,
+        },
+        classId: {
             type: String,
         },
         username: {
