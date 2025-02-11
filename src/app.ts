@@ -110,9 +110,27 @@ export { app };
 //token based authentication jwt
 //uploading files using multer and cloudinary
 
-//TODO: 
+//TODO:
 // add swagger docs
 // add tests
 //realtime connections using socket.io
 //web hook for sending notifications
 // add email verification
+
+//*****features*******
+//---------DONE--------------
+//organizations
+//courses
+//teachers
+//students
+//parents
+//classes
+//---------TODO:--------------
+//rate limiting
+//events
+//assignments
+//exams
+//attendances
+//notifications
+//settings
+
