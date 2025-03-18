@@ -78,7 +78,6 @@ app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
-
 app.use("/api/v1/seed", seedDbRoutes);
 
 // 404 handler
