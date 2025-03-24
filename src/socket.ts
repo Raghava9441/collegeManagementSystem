@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import { Server as HttpServer } from "http";
+import { socketMiddleware } from 'middlewares/socket.middleware';
 import mongoose from "mongoose";
 import { Server, ServerOptions, Socket } from "socket.io";
 dotenv.config({
@@ -51,10 +52,10 @@ export const initializeSocket = (server: HttpServer): void => {
         pingInterval: 25000,
         pingTimeout: 20000,
     } as SocketOptions);
-console.log( process.env.FRONT_URL)
     console.log("socket initilised")
 
     // socket protect middleware
+    io.use(socketMiddleware);
     io.use((socket, next) => {
         socket._error = (error: string | Error, context = "general") => {
             const errorObj = typeof error === "string" ? { message: error } : error;
@@ -75,13 +76,11 @@ console.log( process.env.FRONT_URL)
         // Connection setup with error handling
         const setupConnection = asyncHandler(socket, async () => {
             const user = socket?.user;
-
             if (!user) {
                 throw new Error("User not found in socket");
             }
 
             const user_id = user._id.toString();
-
             // join user with socket
             socket.join(user_id);
 
@@ -89,8 +88,8 @@ console.log( process.env.FRONT_URL)
             user.onlineStatus = "online";
             await user.save();
 
-            await emitFriendStatus(io, socket, user, "online");
-            await joinConvo(socket, user_id);
+            // await emitFriendStatus(io, socket, user, "online");
+            // await joinConvo(socket, user_id);
 
             console.log(`User ${user_id} connected with socket ${socket_id}`);
         }, "connection_setup");
@@ -109,7 +108,7 @@ console.log( process.env.FRONT_URL)
             user.onlineStatus = "offline";
             await user.save();
 
-            await emitFriendStatus(io, socket, user, "offline");
+            // await emitFriendStatus(io, socket, user, "offline");
             console.log(`User ${user._id} disconnected`);
         }, "disconnect"));
 
@@ -127,7 +126,7 @@ console.log( process.env.FRONT_URL)
                 const msg_id = new mongoose.Types.ObjectId();
                 message._id = msg_id;
 
-                await socketSendMessage(socket, user_id, message);
+                // await socketSendMessage(socket, user_id, message);
                 socket.emit("message_received", message);
             }
 
