@@ -12,6 +12,7 @@ import courseRoutes from './routes/courses.routes';
 import classRoutes from './routes/classes.routes';
 import seedDbRoutes from './routes/seedDb.routes';
 import departmentRoutes from './routes/department.routes';
+import messageRputes from './routes/message.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
@@ -80,6 +81,7 @@ app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
 
 app.use("/api/v1/seed", seedDbRoutes);
+app.use("/api/v1/seed", messageRputes);
 
 // 404 handler
 // app.use((req: Request, res: Response, next: NextFunction) => {

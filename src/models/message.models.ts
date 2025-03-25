@@ -1,12 +1,14 @@
 
 import mongoose, { Schema, Document } from "mongoose";
 
-interface IMessage extends Document {
+export interface IMessage extends Document {
     chatId: mongoose.Types.ObjectId;
     senderId: mongoose.Types.ObjectId;
     senderRole: string;
     message: string;
     isRead: boolean;
+    conversation: mongoose.Types.ObjectId;
+    files: [],
 }
 
 const MessageSchema = new Schema<IMessage>(
@@ -16,6 +18,8 @@ const MessageSchema = new Schema<IMessage>(
         senderRole: { type: String, enum: ["TEACHER", "STUDENT", "PARENT"], required: true },
         message: { type: String, required: true },
         isRead: { type: Boolean, default: false },
+        conversation: { type: mongoose.Schema.ObjectId, ref: "Conversation" },
+        files: [],
     },
     { timestamps: true }
 );

@@ -87,11 +87,13 @@ export const initializeSocket = (server: HttpServer): void => {
             // set user online
             user.onlineStatus = "online";
             await user.save();
+            socket.emit("message_received", { hey: "message" });
 
             // await emitFriendStatus(io, socket, user, "online");
             // await joinConvo(socket, user_id);
 
             console.log(`User ${user_id} connected with socket ${socket_id}`);
+
         }, "connection_setup");
 
         // Run setup with error handling
@@ -160,5 +162,9 @@ export const initializeSocket = (server: HttpServer): void => {
                 conversation_id: conversation_id,
             });
         }, "stop_typing"));
+
+        socket.on('message_from_client', asyncHandler(socket, async (conversation_id) => {
+            console.log("conversation_id", conversation_id)
+        }, "message_from_client"))
     });
 };
