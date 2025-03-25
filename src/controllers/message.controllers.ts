@@ -88,9 +88,8 @@ const socketSendMessage = asyncHandler(async (socket, user_id, messageData) => {
 })
 
 
-
-
 export {
     sendMessage,
-    getMessages
+    getMessages,
+    socketSendMessage
 }
