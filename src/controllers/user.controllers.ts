@@ -30,6 +30,7 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
+    
 
     const users = await User.aggregatePaginate(
         userAggregate,
