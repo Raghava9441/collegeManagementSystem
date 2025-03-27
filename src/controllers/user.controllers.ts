@@ -22,7 +22,7 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // Build match condition based on user role
     const matchCondition = role === 'ADMIN'
         ? {} // Admin can see all users
-        : {};
+        : { organizationId: organizationId };;
 
     const userAggregate = User.aggregate([
         { $match: matchCondition }
