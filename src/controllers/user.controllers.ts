@@ -16,13 +16,13 @@ import { ObjectId } from 'mongodb';
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // new ApiError(409, "A user with the same username, email, or fullname already exists")
     const { page = 1, limit = 10 } = req.query;
-    
+
     const { organizationId, role } = req.user;
 
     // Build match condition based on user role
     const matchCondition = role === 'ADMIN'
         ? {} // Admin can see all users
-        : { organizationId: organizationId };
+        : {};
 
     const userAggregate = User.aggregate([
         { $match: matchCondition }
@@ -30,7 +30,6 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
-    
 
     const users = await User.aggregatePaginate(
         userAggregate,
@@ -43,6 +42,38 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
             },
         }),
     )
+    console.log(" users:", users.users)
+    // let scriptUsers = users.users.map(user => user.activityStatus ? user : { ...user, activityStatus: "Hey There! I ❤️ Using CMS ", onlineStatus: ["online"] })
+    // const bulkOperations = scriptUsers.map(user => ({
+    //     updateOne: {
+    //         filter: { _id: user._id }, 
+    //         update: {
+    //             $set: {
+    //                 activityStatus: user.activityStatus || "Hey There! I ❤️ Using CMS",
+    //                 onlineStatus: user.onlineStatus || ["online"]
+    //             }
+    //         },
+    //         upsert: true
+    //     }
+    // }));
+    // console.log(" scriptUsers:", scriptUsers)
+
+    // User.bulkWrite(bulkOperations)
+
+    // const result = await User.updateMany(
+    //     {}, // Empty filter to match all documents
+    //     {
+    //         $set: {
+    //             friends:[]
+    //         }
+    //     }
+    // );
+
+
+    // Hey There! I ❤️ Using CMS 😸
+
+    // activityStatus: string;
+    // onlineStatus: ["online", "offline"]
 
     return res
         .status(200)

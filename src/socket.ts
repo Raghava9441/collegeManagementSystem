@@ -47,7 +47,7 @@ const asyncHandler = (socket: Socket, handler: Function, context: string) => {
 export const initializeSocket = (server: HttpServer): void => {
     // creating socket.io instance
     const io = new Server(server, {
-        cors: { origin: process.env.CORS_ORIGIN },
+        cors: { origin: "*" },
         methods: ["GET", "POST"],
         pingInterval: 25000,
         pingTimeout: 20000,

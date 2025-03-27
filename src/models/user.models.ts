@@ -27,6 +27,8 @@ export interface IUser extends Document {
         country?: string;
     };
     status?: 'active' | 'inactive';
+    activityStatus: string;
+    onlineStatus: ["online", "offline"]
     dateOfBirth?: Date;
     biography?: string;
     permissions?: string[];
@@ -43,7 +45,7 @@ export interface IUser extends Document {
     refreshToken: string;
     createdAt?: Date;
     updatedAt?: Date;
-    friends: mongoose.Types.ObjectId;
+    friends: [{ type: typeof mongoose.Schema.Types.ObjectId, ref: "User" }];
     isPasswordCorrect(password: string | Buffer): Promise<boolean>;
     genetateAccessToken(): string;
     generateRefreshToken(): string;
@@ -132,6 +134,16 @@ const userSchema = new Schema(
             enum: ['active', 'inactive'],
             default: 'active'
         },
+        activityStatus: {
+            type: String,
+            default: "Hey There! I ❤️ Using CMS 😸",
+        },
+        onlineStatus: {
+            type: String,
+            default: "offline",
+            enum: ["online", "offline"],
+        },
+        friends: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
         dateOfBirth: {
             type: Date
         },
@@ -210,7 +222,6 @@ userSchema.methods.genetateAccessToken = function () {
         permissions: this.permissions,
         socialLinks: this.socialLinks,
         preferences: this.preferences,
-        friends: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
     }
     return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET as string, {
         expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN as string,

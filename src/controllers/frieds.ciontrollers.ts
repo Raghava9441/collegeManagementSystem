@@ -118,12 +118,14 @@ const getFriends = asyncHandler(async (req: Request, res: Response, next: NextFu
 
 const getOnlineFriends = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const user_id = req.user._id;
+    console.log(" user_id:", user_id)
 
     // find the user and populate the friends list
     const user = await User.findById(user_id).populate(
         "friends",
-        "_id firstName lastName avatar onlineStatus"
+        // "_id firstName lastName avatar onlineStatus"
     );
+    console.log(" user:", user)
 
     // filter online friends
     const onlineFriends = user.friends.filter(
