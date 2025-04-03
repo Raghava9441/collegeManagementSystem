@@ -1,6 +1,7 @@
 import { User } from "@models/user.models";
 import { conversationService } from "@services/conversation.service";
 import { ApiError } from "@utils/ApiError";
+import { ApiResponse } from "@utils/ApiResponse";
 import { asyncHandler } from "@utils/asyncHandler";
 import { NextFunction, Response } from "express";
 
@@ -16,8 +17,9 @@ const createOpenConversation = asyncHandler(async (req: Request, res: Response, 
     // check if receiver exists
     const receiver = await User.findOne({
         _id: receiver_id,
-        verified: true,
+        // verified: true,
     });
+    // console.log(receiver)
     // check if receiver exists
     if (!receiver) {
         throw new ApiError(400, null, 'Verified Receiver does not exist', undefined, [{ msg: 'Verified Receiver does not exist' }]);
@@ -53,13 +55,13 @@ const createOpenConversation = asyncHandler(async (req: Request, res: Response, 
 
         if (sender_id.toString() === receiver_id.toString()) {
             convoData = {
-                name: `${receiver.firstName} ${receiver.lastName}`,
+                name: `${receiver.fullname}`,
                 isGroup: false,
                 users: [receiver_id],
             };
         } else {
             convoData = {
-                name: `${receiver.firstName} ${receiver.lastName}`,
+                name: `${receiver.fullname}`,
                 isGroup: false,
                 users: [sender_id, receiver_id],
             };
@@ -81,8 +83,8 @@ const getConversations = asyncHandler(async (req: Request, res: Response, next: 
         const { id: user_id } = req.user
 
         const conversations = await conversationService.getUserConversations(user_id);
-
-        res.status(200).json({ status: "success", conversations: conversations });
+        console.log("conversations", conversations)
+        res.status(200).json(new ApiResponse(200, conversations, "Course is created successfully"));
     } catch (error) {
         next(error);
     }

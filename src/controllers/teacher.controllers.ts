@@ -41,12 +41,12 @@ const getAllTeachers = asyncHandler(async (req: Request, res: Response) => {
 
 const createTeacher = asyncHandler(async (req: Request, res: Response) => {
     //create teacher if the user is admin
-    console.log(req.user)
+    // console.log(req.user)
     if (req.user && req.user.role === 'ADMIN') {
-        console.log("object")
+        // console.log("object")
         const { description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy, userId } = req.body;
         // console.log("organizationId:", organizationId)
-        console.log(subjects)
+        // console.log(subjects)
         // console.log("userId:", userId)
         //check only mandatory fields are there or not 
         if (!organizationId || !userId) {

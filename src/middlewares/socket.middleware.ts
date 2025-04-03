@@ -9,12 +9,12 @@ import mongoose from 'mongoose';
 export const socketMiddleware = async (socket, next) => {
 
     const token = socket.handshake.query.token as string;
-    console.log(token)
+    // console.log(token)
     if (token) {
         try {
             const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET as string) as JwtPayload & { _id: string };
 
-            console.log(" decodedToken:", decodedToken.id)
+            // console.log(" decodedToken:", decodedToken.id)
             // Check for token expiration
             // const currentTime = Math.floor(Date.now() / 1000);
 
@@ -31,7 +31,7 @@ export const socketMiddleware = async (socket, next) => {
                 return next(new ApiError(401, null, "Unidentified User, Please login again", undefined, [{ msg: "Unidentified User, Please login again" }]));
             }
             socket.user = this_user;
-            console.log('Middleware completed successfully');
+            // console.log('Middleware completed successfully');
             next();
         } catch (error) {
             return next(new ApiError(401, null, "Invalid token, Please login again", undefined, [{ msg: "Invalid token, Please login again" }]));

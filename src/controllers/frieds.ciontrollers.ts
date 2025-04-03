@@ -118,14 +118,14 @@ const getFriends = asyncHandler(async (req: Request, res: Response, next: NextFu
 
 const getOnlineFriends = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const user_id = req.user._id;
-    console.log(" user_id:", user_id)
+    // console.log(" user_id:", user_id)
 
     // find the user and populate the friends list
     const user = await User.findById(user_id).populate(
         "friends",
         // "_id firstName lastName avatar onlineStatus"
     );
-    console.log(" user:", user)
+    // console.log(" user:", user)
 
     // filter online friends
     const onlineFriends = user.friends.filter(
@@ -198,9 +198,9 @@ const getSentRequests = asyncHandler(async (req: Request, res: Response, next: N
 const removeFriend = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const user = req.user;
     const { friend_id } = req.body;
-    console.log(req.body)
-    console.log(user.id)
-    console.log(friend_id)
+    // console.log(req.body)
+    // console.log(user.id)
+    // console.log(friend_id)
 
     // check if user_id is same as friend_id
     if (user.id.toString() === friend_id.toString()) {

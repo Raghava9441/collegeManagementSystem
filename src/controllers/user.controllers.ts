@@ -304,8 +304,8 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
     }
     // Check if password is correct
     const isPasswordValid = await user.isPasswordCorrect(password);
-    console.log(password)
-    console.log(isPasswordValid)
+    // console.log(password)
+    // console.log(isPasswordValid)
     if (!isPasswordValid) {
         return res.status(401).json(new ApiError(401, "Invalid email or password"));
     }

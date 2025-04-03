@@ -16,7 +16,7 @@ class ConversationService {
         await Conversation.find({
             users: { $elemMatch: { $eq: user_id } },
         })
-            .populate("users", "-verified -password -passwordChangedAt -friends")
+            .populate("users", "-refreshToken -password -permissions -friends -biography -dateOfBirth -gender -verified -email -avatar -refreshToken -address -socialLinks -preferences -phone")
             .populate("admin", "-verified -password -passwordChangedAt -friends")
             .populate("latestMessage")
             .sort({ updatedAt: -1 })
@@ -41,7 +41,7 @@ class ConversationService {
                 isGroup: false,
                 users: { $all: [receiver_id], $size: 1 },
             })
-                .populate("users", "-verified -password -passwordChangedAt -friends")
+                .populate("users", "-refreshToken -password -permissions -friends -biography -dateOfBirth -gender -verified -email -avatar -refreshToken -address -socialLinks -preferences -phone")
                 .populate("latestMessage");
         } else {
             convos = await Conversation.find({
@@ -51,7 +51,7 @@ class ConversationService {
                     { users: { $elemMatch: { $eq: receiver_id } } },
                 ],
             })
-                .populate("users", "-verified -password -passwordChangedAt -friends")
+                .populate("users", "-refreshToken -password -permissions -friends -biography -dateOfBirth -gender -verified -email -avatar -refreshToken -address -socialLinks -preferences -phone")
                 .populate("latestMessage");
         }
 
@@ -68,7 +68,7 @@ class ConversationService {
 
         return convos[0];
     }
-    
+
     async createConversation(convoData) {
         const newConvo = await Conversation.create(convoData);
 
@@ -78,7 +78,7 @@ class ConversationService {
 
         const populatedConvo = await Conversation.findOne({
             _id: newConvo._id,
-        }).populate("users", "-verified -password -passwordChangedAt -friends");
+        }).populate("users", "-refreshToken -password -permissions -friends -biography -dateOfBirth -gender -verified -email -avatar -refreshToken");
 
         if (!populatedConvo) {
             throw new ApiError(400, null, 'Unable to populate conversation', undefined, [{ msg: 'Unable to populate conversation' }]);

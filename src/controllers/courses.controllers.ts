@@ -110,7 +110,7 @@ const deleteBulkCourses = asyncHandler(async (req: Request, res: Response) => {
 
 const createCourse = asyncHandler(async (req: Request, res: Response) => {
     const { name, description, teacherIds, organizationId, subjectsIds, startDate, endDate, schedule, credits, prerequisites, location, fee, textbooks, syllabus, assignments, gradingScheme, feedback, resources } = req.body;
-    console.log("organizationId", organizationId)
+    // console.log("organizationId", organizationId)
     const existingOrganization = await Organization.findById(organizationId);
     if (!existingOrganization) {
         throw new ApiError(404, null, "Course creation failed", undefined, [{ msg: "Organization not found" }]);
