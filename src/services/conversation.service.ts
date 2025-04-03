@@ -64,6 +64,7 @@ class ConversationService {
         convos = await User.populate(convos, {
             path: "latestMessage.sender",
             select: "firstName lastName email avatar activityStatus",
+            
         });
 
         return convos[0];
