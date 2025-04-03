@@ -22,7 +22,7 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // Build match condition based on user role
     const matchCondition = role === 'ADMIN'
         ? {} // Admin can see all users
-        : { organizationId: organizationId };;
+        : { organizationId: organizationId };
 
     const userAggregate = User.aggregate([
         { $match: matchCondition }
@@ -345,9 +345,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
             field => typeof field !== 'string' || field.trim() === ""
         )
     ) {
-        return res
-            .status(400)
-            .json(new ApiError(400, "Please provide all the required fields"));
+        throw new ApiError(400, "Please provide all the required fields")
     }
 
     const existingUser = await User.findOne({

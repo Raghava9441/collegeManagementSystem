@@ -12,7 +12,7 @@ const router = Router();
 router.route("/")
     .get(
         apiRateLimiter,
-        verifyJWT,
+        // verifyJWT,
         // verifyPermission(["ADMIN"]),
         getAllOrganizations
     )

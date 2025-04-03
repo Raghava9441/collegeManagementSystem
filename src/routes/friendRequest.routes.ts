@@ -1,4 +1,4 @@
-import { acceptRejectRequest, cancelRequest, getFriends, getOnlineFriends, getRequests, getSentRequests, removeFriend, searchFriends, sendRequest } from "@controllers/frieds.ciontrollers";
+import { acceptRejectRequest, cancelRequest, getFriends, getOnlineFriends, getRequests, getSentRequests, removeFriend, searchFriends, sendRequest, getOrgUsers } from "@controllers/frieds.ciontrollers";
 import { Router } from "express";
 import { verifyJWT } from "middlewares/auth.middleware";
 
@@ -42,5 +42,10 @@ friendsRouter.route("/get-requests").get(verifyJWT, getRequests);
 friendsRouter
     .route("/get-sent-requests")
     .get(verifyJWT, getSentRequests);
+
+//get list of all the users in the organization
+friendsRouter
+    .route("/get-orgusers")
+    .get(verifyJWT, getOrgUsers);
 
 export default friendsRouter;

@@ -18,6 +18,8 @@ const requestSchema = new Schema({
         type: Date,
         default: Date.now(),
     },
+}, {
+    timestamps: true
 })
 
 export const FriendRequest = mongoose.model('FriendRequest', requestSchema);

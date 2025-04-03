@@ -85,7 +85,7 @@ app.use("/api/v1/classes", classRoutes);
 app.use("/api/v1/seed", seedDbRoutes);
 app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);
-app.use("/api/v1/friend-request", friendRequest);
+app.use("/api/v1/friends", friendRequest);
 
 // 404 handler
 // app.use((req: Request, res: Response, next: NextFunction) => {
@@ -116,12 +116,6 @@ export { app };
 //token based authentication jwt
 //uploading files using multer and cloudinary
 
-//TODO:
-// add swagger docs
-// add tests
-//realtime connections using socket.io
-//web hook for sending notifications
-// add email verification
 
 //*****features*******
 //---------DONE--------------
@@ -132,6 +126,7 @@ export { app };
 //parents
 //classes
 //---------TODO:--------------
+
 //rate limiting
 //events
 //assignments
@@ -139,4 +134,13 @@ export { app };
 //attendances
 //notifications
 //settings
+// add swagger docs
+// add tests
+//realtime connections using socket.io
+//web hook for sending notifications
+// add email verification
+//add pdf functionality
+//sentry logging for server
+//otp functionality
+//notification functionality
 

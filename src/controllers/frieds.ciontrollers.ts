@@ -7,7 +7,7 @@ import { asyncHandler } from "@utils/asyncHandler"
 import { NextFunction, Request, Response } from "express"
 
 const acceptRejectRequest = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    const receiver_id = req.user._id;
+    const receiver_id = req.user.id;
     const { sender_id, action_type } = req.body;
 
     // check for required fields
@@ -107,7 +107,7 @@ const getFriends = asyncHandler(async (req: Request, res: Response, next: NextFu
     // find the user and populate the friends list
     const user = await User.findById(user_id).populate(
         "friends",
-        "_id firstName lastName avatar activityStatus onlineStatus email"
+        "_id fullname avatar activityStatus onlineStatus email"
     );
 
     // return list of friends for current user
@@ -198,9 +198,12 @@ const getSentRequests = asyncHandler(async (req: Request, res: Response, next: N
 const removeFriend = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const user = req.user;
     const { friend_id } = req.body;
+    console.log(req.body)
+    console.log(user.id)
+    console.log(friend_id)
 
     // check if user_id is same as friend_id
-    if (user._id.toString() === friend_id.toString()) {
+    if (user.id.toString() === friend_id.toString()) {
         return res
             .status(400)
             .json(new ApiError(400, "Something went wrong"));
@@ -286,7 +289,7 @@ const sendRequest = asyncHandler(async (req: Request, res: Response, next: NextF
     // check if verified receiver exists
     const receiver = await User.findOne({
         _id: receiver_id,
-        verified: true,
+        // verified: true,
     }).select("-password -passwordChangedAt");
 
     if (!receiver) {
@@ -343,7 +346,66 @@ const sendRequest = asyncHandler(async (req: Request, res: Response, next: NextF
 
     return res
         .status(200)
-        .json(new ApiResponse(200, response, "Organization is created successfully"));
+        .json(new ApiResponse(200, response, "Friend Request sent successfully"));
+})
+
+const getOrgUsers = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+    const organizationId = req.user?.organizationId;
+    const currentUser_id = req.user?.id;
+    const friends_ids = req.user?.friends.map(friend => friend._id.toString());
+
+    if (!organizationId) {
+        return res
+            .status(400)
+            .json(new ApiError(400, "Organization ID is not provided"));
+    }
+    const matchCondition = { organizationId: organizationId };
+
+    const userAggregate = User.aggregate([
+        { $match: matchCondition },
+        {
+            $addFields: {
+                requestSent: {
+                    $cond: {
+                        if: {
+                            $in: ["$_id", friends_ids],
+                        },
+                        then: false, // If user is already a friend, requestSent is false
+                        else: {
+                            $in: [
+                                "$_id",
+                                await FriendRequest.find({
+                                    sender: currentUser_id,
+                                }).distinct("recipient"),
+                            ],
+                        },
+                    },
+                },
+
+            },
+        },
+        {
+            $project: {
+                _id: 1,
+                fullname: 1,
+                requestSent: 1,
+                email: 1,
+                activityStatus: 1,
+                verified: 1,
+                onlineStatus: 1,
+                role: 1,
+                status: 1,
+                gender: 1,
+                avatar: 1
+            },
+        },
+    ]);
+
+    const users = await userAggregate.exec();
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, users, "Users from the organization are fetched successfully"));
 })
 
 // ----------------------- Socket: Friend Status -----------------------
@@ -374,5 +436,6 @@ export {
     removeFriend,
     searchFriends,
     sendRequest,
+    getOrgUsers,
     emitFriendStatus
 }
