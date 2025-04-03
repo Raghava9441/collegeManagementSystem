@@ -10099,3 +10099,12 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2025-04-03T12:03:10.933Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2025-04-03T12:03:10.933Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-03T12:03:10.935Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-03T12:03:45.668Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2025-04-03T12:03:45.670Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2025-04-03T12:03:45.671Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-03T12:03:45.673Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/conversation/create-open-conversation\",\"status\":\"200\",\"responseTime\":\"292.284\"}","timestamp":"2025-04-03T12:03:46.224Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/get-requests\",\"status\":\"304\",\"responseTime\":\"88.511\"}","timestamp":"2025-04-03T12:03:51.768Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/get-friends\",\"status\":\"304\",\"responseTime\":\"133.810\"}","timestamp":"2025-04-03T12:03:51.815Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"135.029\"}","timestamp":"2025-04-03T12:03:52.496Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"153.845\"}","timestamp":"2025-04-03T12:03:52.514Z"}
