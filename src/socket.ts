@@ -1,3 +1,4 @@
+import { socketSendMessage } from '@controllers/message.controllers';
 import dotenv from 'dotenv';
 import { Server as HttpServer } from "http";
 import { socketMiddleware } from 'middlewares/socket.middleware';
@@ -115,30 +116,36 @@ export const initializeSocket = (server: HttpServer): void => {
         }, "disconnect"));
 
         // Handle message sending with error handling
-        socket.on("send_message", asyncHandler(socket, async (message) => {
-            const user = socket?.user;
-            const user_id = user._id.toString();
-            const conversation = message.conversation;
+        socket.on("send_message", async (message) => {
+            try {
+                
+                // console.log("message", message)
+                const user = socket?.user;
+                const user_id = user._id.toString();
+                const conversation = message.conversation;
 
-            if (!conversation || !conversation.users) {
-                throw new Error("Invalid conversation data");
-            }
-
-            if (message.approach && message.approach.toLowerCase() === "optimistic") {
-                const msg_id = new mongoose.Types.ObjectId();
-                message._id = msg_id;
-
-                // await socketSendMessage(socket, user_id, message);
-                socket.emit("message_received", message);
-            }
-
-            // emit message to each user
-            for (const recipient of conversation.users) {
-                if (recipient._id !== message.sender._id) {
-                    socket.in(recipient._id).emit("message_received", message);
+                if (!conversation || !conversation.users) {
+                    throw new Error("Invalid conversation data");
                 }
+
+                if (message.approach && message.approach.toLowerCase() === "optimistic") {
+                    const msg_id = new mongoose.Types.ObjectId();
+                    message._id = msg_id;
+                    // console.log("object")
+                    await socketSendMessage(socket, user_id, message);
+                    socket.emit("message_received", message);
+                }
+
+                // emit message to each user
+                for (const recipient of conversation.users) {
+                    if (recipient._id !== message.sender._id) {
+                        socket.in(recipient._id).emit("message_received", message);
+                    }
+                }
+            } catch (error) {
+                console.log(error)
             }
-        }, "send_message"));
+        })
 
         // Handle typing events with error handling
         socket.on("start_typing", asyncHandler(socket, async (conversation_id) => {

@@ -25,12 +25,13 @@ class MessageService {
         const receiverUser = await User.findById(receiver_id);
 
         // Check if users are friends
-        if (
-            !senderUser.friends.includes(receiver_id) ||
-            !receiverUser.friends.includes(sender_id)
-        ) {
-            throw new ApiError(400, null, 'You are no longer friends with this user', undefined, [{ msg: 'You are no longer friends with this user' }]);
-        }
+        // TODO:need to fix this 
+        // if (
+        //     !senderUser?.friends?.includes(receiver_id) ||
+        //     !receiverUser.friends.includes(sender_id)
+        // ) {
+        //     throw new ApiError(400, null, 'You are no longer friends with this user', undefined, [{ msg: 'You are no longer friends with this user' }]);
+        // }
     };
     async createMessage(data) {
         const newMessage = await Message.create(data);
@@ -94,9 +95,15 @@ class MessageService {
     };
 
     async getConvoMessages(convo_id) {
+        
         const messages = await Message.find({ conversation: convo_id })
-            .populate("sender", "firstName lastName avatar email activityStatus")
+            .populate({
+                path: "sender",
+                select: "avatar email activityStatus",
+                model: "User",
+            })
             .populate("conversation");
+            console.log(messages)
 
         if (!messages) {
             throw new ApiError(400, null, 'Unable to fetch messages', undefined, [{ msg: 'Unable to fetch messages' }]);
