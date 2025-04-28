@@ -1,6 +1,5 @@
 {
   "name": "collegemanagementsystem",
-  "type": "module",
   "version": "1.0.0",
   "description": "cms application for all the eduction institutes",
   "main": "src/index.ts",
