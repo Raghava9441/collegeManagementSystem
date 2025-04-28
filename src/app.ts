@@ -15,6 +15,7 @@ import departmentRoutes from './routes/department.routes';
 import messageRputes from './routes/message.routes';
 import conversationRoutes from './routes/conversation.routes';
 import friendRequest from './routes/friendRequest.routes';
+import examsRoutes from './routes/exam.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
@@ -81,6 +82,7 @@ app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/parents", parentRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
+app.use("/api/v1/exams", examsRoutes);
 
 app.use("/api/v1/seed", seedDbRoutes);
 app.use("/api/v1/message", messageRputes);
