@@ -19,11 +19,10 @@ const getAllTeachers = asyncHandler(async (req: Request, res: Response) => {
     if (!req.user) {
         return new ApiResponse(403, [], "Access denied");
     }
-
     const teachers = await Teacher.aggregatePaginate(
         req.user.role === 'ADMIN' ?
             Teacher.aggregate([{ $match: {} }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, organizationId: 1, departments: 1, subjects: 1, qualifications: 1, experience: 1, officeHours: 1, researchInterests: 1, publications: 1, professionalMemberships: 1, coursesTaught: 1, performanceReviews: 1, specialResponsibilities: 1, teachingPhilosophy: 1 } }]) :
-            Teacher.aggregate([{ $match: { organizationId: req.user.organizationId } }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, organizationId: 1, departments: 1, subjects: 1, qualifications: 1, experience: 1, officeHours: 1, researchInterests: 1, publications: 1, professionalMemberships: 1, coursesTaught: 1, performanceReviews: 1, specialResponsibilities: 1, teachingPhilosophy: 1 } }]),
+            Teacher.aggregate([{ $match: {  } }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, organizationId: 1, departments: 1, subjects: 1, qualifications: 1, experience: 1, officeHours: 1, researchInterests: 1, publications: 1, professionalMemberships: 1, coursesTaught: 1, performanceReviews: 1, specialResponsibilities: 1, teachingPhilosophy: 1 } }]),
         getMongoosePaginationOptions({
             page: parsedPage,
             limit: parsedLimit,

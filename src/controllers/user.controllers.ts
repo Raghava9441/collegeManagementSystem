@@ -325,12 +325,13 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
     }
     const options = {
         httpOnly: true,
+        sameSite: 'none',
         secure: process.env.NODE_ENV === 'production',
     }
     // Return success response with user data and tokens
     return res.status(200)
-        .cookie('accessToken', accessToken, options)
-        .cookie('refreshToken', refreshToken, options)
+        .cookie('accessToken', accessToken, { httpOnly: true, sameSite: 'none', secure: process.env.NODE_ENV === 'production' })
+        .cookie('refreshToken', refreshToken, { httpOnly: true, sameSite: 'none', secure: process.env.NODE_ENV === 'production' })
         .json(new ApiResponse(200, { loggedInUser, accessToken, refreshToken }, "User is logged in successfully"));
 });
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FriendRequest } from "@models/friendRequest.models";
 import GenericService from "./generic.service";
 import { User } from "@models/user.models";

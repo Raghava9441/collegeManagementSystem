@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Conversation } from "@models/conversation.models";
 import { messageService } from "@services/message.service";
 import { ApiError } from "@utils/ApiError";

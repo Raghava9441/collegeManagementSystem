@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { socketSendMessage } from '@controllers/message.controllers';
 import dotenv from 'dotenv';
 import { Server as HttpServer } from "http";

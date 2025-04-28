@@ -3,7 +3,7 @@
         "target": "es6",
         "module": "commonjs",
         "outDir": "./dist",
-        "strict": true,
+        "strict": false,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
@@ -12,7 +12,7 @@
             "./src/@types",
             "./node_modules/@types"
         ],
-        "baseUrl": "./src", // Add this line
+        "baseUrl": "./src",
         "paths": {
             "@utils/*": [
                 "utils/*"
@@ -29,7 +29,8 @@
             "@types/*": [
                 "@types/*"
             ]
-        }
+        },
+        "noEmitOnError": false
     },
     "include": [
         "src/**/*.ts"

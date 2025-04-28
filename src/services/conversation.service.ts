@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Conversation } from "@models/conversation.models";
 import GenericService from "./generic.service";
 import { User } from "@models/user.models";

@@ -5,7 +5,12 @@ import { isTeacher, verifyJWT, verifyPermission } from '../middlewares/auth.midd
 const router = Router();
 
 router.route("/")
-    .get(verifyJWT, isTeacher, getAllTeachers)
+    .get(
+        verifyJWT,
+        // isTeacher,
+        verifyPermission(["ADMIN", "TEACHER", "ORGANIZATION", "STUDENT", "PARENT"]),
+        getAllTeachers
+    )
     .post(
         verifyJWT,
         verifyPermission(["ADMIN"]),

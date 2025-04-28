@@ -18,7 +18,7 @@ import friendRequest from './routes/friendRequest.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = ["https://raghava9441.github.io", 'http://localhost:3000', 'http://localhost:3001',];
 
 app.use(cors({
     origin: allowedOrigins,
@@ -125,6 +125,7 @@ export { app };
 //students
 //parents
 //classes
+//realtime connections using socket.io
 //---------TODO:--------------
 
 //rate limiting
@@ -136,7 +137,6 @@ export { app };
 //settings
 // add swagger docs
 // add tests
-//realtime connections using socket.io
 //web hook for sending notifications
 // add email verification
 //add pdf functionality
