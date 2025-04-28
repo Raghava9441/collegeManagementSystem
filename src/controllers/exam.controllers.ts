@@ -4,6 +4,7 @@ import { asyncHandler } from '../utils/asyncHandler';
 import { ApiResponse } from '../utils/ApiResponse';
 import { ApiError } from '../utils/ApiError';
 import { getMongoosePaginationOptions } from '../utils/healpers';
+import { isValidObjectId } from 'mongoose';
 
 
 const getAllExams = asyncHandler(async (req, res) => {
