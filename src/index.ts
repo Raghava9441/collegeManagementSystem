@@ -1,4 +1,5 @@
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 import logger from './utils/logger';
 import { app } from './app';
 import connectDB from './db';
