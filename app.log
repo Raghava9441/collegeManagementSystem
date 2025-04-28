@@ -12751,3 +12751,30 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-28T15:28:12.917Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/conversation/create-open-conversation\",\"status\":\"200\",\"responseTime\":\"432.909\"}","timestamp":"2025-04-28T15:28:23.710Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/67ee777ab908bdb7934be708\",\"status\":\"304\",\"responseTime\":\"404.442\"}","timestamp":"2025-04-28T15:28:24.193Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-28T15:53:07.681Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2025-04-28T15:53:07.684Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2025-04-28T15:53:07.686Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-28T15:53:07.689Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-28T15:53:14.640Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2025-04-28T15:53:14.642Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2025-04-28T15:53:14.643Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-28T15:53:14.645Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/get-requests\",\"status\":\"304\",\"responseTime\":\"159.058\"}","timestamp":"2025-04-28T15:53:17.283Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/get-friends\",\"status\":\"304\",\"responseTime\":\"381.959\"}","timestamp":"2025-04-28T15:53:17.513Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"200\",\"responseTime\":\"385.983\"}","timestamp":"2025-04-28T15:53:18.270Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"468.397\"}","timestamp":"2025-04-28T15:53:18.351Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/conversation/create-open-conversation\",\"status\":\"200\",\"responseTime\":\"430.142\"}","timestamp":"2025-04-28T15:53:19.082Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/67ee777ab908bdb7934be708\",\"status\":\"200\",\"responseTime\":\"583.076\"}","timestamp":"2025-04-28T15:53:19.773Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/conversation/create-open-conversation\",\"status\":\"200\",\"responseTime\":\"466.620\"}","timestamp":"2025-04-28T15:53:28.285Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/67ee777ab908bdb7934be708\",\"status\":\"200\",\"responseTime\":\"663.686\"}","timestamp":"2025-04-28T15:53:29.054Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"249.904\"}","timestamp":"2025-04-28T15:53:53.593Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"375.452\"}","timestamp":"2025-04-28T15:53:53.716Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/67ee777ab908bdb7934be708\",\"status\":\"304\",\"responseTime\":\"591.513\"}","timestamp":"2025-04-28T15:53:53.926Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/67ee777ab908bdb7934be708\",\"status\":\"200\",\"responseTime\":\"600.875\"}","timestamp":"2025-04-28T15:53:54.531Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/get-requests\",\"status\":\"200\",\"responseTime\":\"172.579\"}","timestamp":"2025-04-28T15:53:54.706Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/get-friends\",\"status\":\"304\",\"responseTime\":\"277.527\"}","timestamp":"2025-04-28T15:53:54.812Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/conversation/create-open-conversation\",\"status\":\"200\",\"responseTime\":\"488.067\"}","timestamp":"2025-04-28T15:53:56.787Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-28T15:54:12.183Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Initializing Swagger docs","timestamp":"2025-04-28T15:54:12.188Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Swagger docs are ready at http://localhost:8000/api-docs","timestamp":"2025-04-28T15:54:12.190Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-28T15:54:12.200Z"}
