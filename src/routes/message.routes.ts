@@ -1,6 +1,7 @@
-import { getMessages, sendMessage } from "@controllers/message.controllers";
 import { Router } from "express";
-import { verifyJWT } from "middlewares/auth.middleware";
+import { verifyJWT } from "../middlewares/auth.middleware";
+import { sendMessage } from "../controllers/message.controllers";
+import { getMessages } from "../controllers/chat.controllers";
 
 const router = Router();
 

@@ -1,11 +1,11 @@
 // @ts-nocheck
-import { FriendRequest } from "@models/friendRequest.models"
-import { User } from "@models/user.models"
-import { friendRequestService } from "@services/friendRequest.setvice"
-import { ApiError } from "@utils/ApiError"
-import { ApiResponse } from "@utils/ApiResponse"
-import { asyncHandler } from "@utils/asyncHandler"
 import { NextFunction, Request, Response } from "express"
+import { asyncHandler } from "../utils/asyncHandler";
+import { ApiError } from "../utils/ApiError";
+import { FriendRequest } from "../models/friendRequest.models";
+import { ApiResponse } from "../utils/ApiResponse";
+import { User } from "../models/user.models";
+import { friendRequestService } from "../services/friendRequest.setvice";
 
 const acceptRejectRequest = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const receiver_id = req.user.id;

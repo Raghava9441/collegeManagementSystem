@@ -8,7 +8,7 @@ import { Student } from "../models/student.models";
 import mongoose from "mongoose";
 import { asyncHandler } from "../utils/asyncHandler";
 import { User } from "../models/user.models";
-import { Organization } from "@models/organization.models";
+import { Organization } from "../models/organization.models";
 
 
 const getAllParents = asyncHandler(async (req: Request, res: Response) => {

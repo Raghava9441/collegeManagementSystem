@@ -1,9 +1,10 @@
 // @ts-nocheck
-import { Conversation } from "@models/conversation.models";
-import { messageService } from "@services/message.service";
-import { ApiError } from "@utils/ApiError";
-import { ApiResponse } from "@utils/ApiResponse";
-import { asyncHandler } from "@utils/asyncHandler";
+
+import { Conversation } from "../models/conversation.models";
+import { messageService } from "../services/message.service";
+import { ApiError } from "../utils/ApiError";
+import { ApiResponse } from "../utils/ApiResponse";
+import { asyncHandler } from "../utils/asyncHandler";
 
 const sendMessage = asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.user

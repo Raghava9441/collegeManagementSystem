@@ -1,8 +1,8 @@
 // @ts-nocheck
-import { Conversation } from "@models/conversation.models";
+import { Conversation } from "../models/conversation.models";
+import { User } from "../models/user.models";
+import { ApiError } from "../utils/ApiError";
 import GenericService from "./generic.service";
-import { User } from "@models/user.models";
-import { ApiError } from "@utils/ApiError";
 
 
 class ConversationService {

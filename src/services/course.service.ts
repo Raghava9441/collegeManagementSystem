@@ -5,7 +5,6 @@ import { Organization } from '../models/organization.models';
 import { ApiError } from '../utils/ApiError';
 import { getMongoosePaginationOptions } from '../utils/healpers';
 import GenericService from './generic.service';
-import { IUser } from '@models/user.models';
 
 class CourseService {
     private courseService: GenericService<any, any>; // Use IUser and IUserAggregateModel

@@ -1,6 +1,6 @@
-import { acceptRejectRequest, cancelRequest, getFriends, getOnlineFriends, getRequests, getSentRequests, removeFriend, searchFriends, sendRequest, getOrgUsers } from "@controllers/frieds.ciontrollers";
 import { Router } from "express";
-import { verifyJWT } from "middlewares/auth.middleware";
+import { verifyJWT } from "../middlewares/auth.middleware";
+import { acceptRejectRequest, cancelRequest, getFriends, getOnlineFriends, getOrgUsers, getRequests, getSentRequests, removeFriend, searchFriends, sendRequest } from "../controllers/frieds.ciontrollers";
 
 const friendsRouter = Router();
 

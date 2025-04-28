@@ -1,10 +1,10 @@
 // @ts-nocheck
-import { socketSendMessage } from '@controllers/message.controllers';
 import dotenv from 'dotenv';
 import { Server as HttpServer } from "http";
-import { socketMiddleware } from 'middlewares/socket.middleware';
 import mongoose from "mongoose";
 import { Server, ServerOptions, Socket } from "socket.io";
+import { socketSendMessage } from './controllers/message.controllers';
+import { socketMiddleware } from './middlewares/socket.middleware';
 dotenv.config({
     path: './.env',
 });

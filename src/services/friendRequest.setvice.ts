@@ -1,7 +1,6 @@
 // @ts-nocheck
-import { FriendRequest } from "@models/friendRequest.models";
+import { FriendRequest } from "../models/friendRequest.models";
 import GenericService from "./generic.service";
-import { User } from "@models/user.models";
 // import validator from "validator";
 
 class FriendRequestService {

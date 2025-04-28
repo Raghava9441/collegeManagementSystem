@@ -1,10 +1,10 @@
 // @ts-nocheck
-import { User } from "@models/user.models";
-import { conversationService } from "@services/conversation.service";
-import { ApiError } from "@utils/ApiError";
-import { ApiResponse } from "@utils/ApiResponse";
-import { asyncHandler } from "@utils/asyncHandler";
 import { NextFunction, Response } from "express";
+import { asyncHandler } from "../utils/asyncHandler";
+import { ApiError } from "../utils/ApiError";
+import { User } from "../models/user.models";
+import { ApiResponse } from "../utils/ApiResponse";
+import { conversationService } from "../services/conversation.service";
 
 const createOpenConversation = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const { id: sender_id } = req.user;

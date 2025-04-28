@@ -1,8 +1,8 @@
 
-import { User } from '@models/user.models';
-import { ApiError } from '@utils/ApiError';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import mongoose from 'mongoose';
+import { User } from '../models/user.models';
+import { ApiError } from '../utils/ApiError';
 
 
 

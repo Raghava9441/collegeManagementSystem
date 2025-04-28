@@ -4,7 +4,7 @@ import { app } from './app';
 import connectDB from './db';
 import swaggerDocs from './utils/swagger';
 import { createServer } from 'http';
-import { initializeSocket } from 'socket';
+import { initializeSocket } from './socket';
 
 dotenv.config({
     path: './.env',

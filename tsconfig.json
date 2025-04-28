@@ -12,24 +12,24 @@
             "./src/@types",
             "./node_modules/@types"
         ],
-        "baseUrl": "./src",
-        "paths": {
-            "@utils/*": [
-                "utils/*"
-            ],
-            "@controllers/*": [
-                "controllers/*"
-            ],
-            "@models/*": [
-                "models/*"
-            ],
-            "@services/*": [
-                "services/*"
-            ],
-            "@types/*": [
-                "@types/*"
-            ]
-        },
+        // "baseUrl": "./src",
+        // "paths": {
+        //     "@utils/*": [
+        //         "utils/*"
+        //     ],
+        //     "@controllers/*": [
+        //         "controllers/*"
+        //     ],
+        //     "@models/*": [
+        //         "models/*"
+        //     ],
+        //     "@services/*": [
+        //         "services/*"
+        //     ],
+        //     "@types/*": [
+        //         "@types/*"
+        //     ]
+        // },
         "noEmitOnError": false
     },
     "include": [

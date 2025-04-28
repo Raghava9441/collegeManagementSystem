@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
  // Adjust path as needed
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
-import { Organization } from '@models/organization.models';
-import { User } from '@models/user.models';
+// import { Organization } from '@models/organization.models';
+// import { User } from '@models/user.models';
 
 // Load environment variables
 dotenv.config();
@@ -126,13 +126,13 @@ export const seedDatabase = async () => {
 
         // Generate and insert organizations
         const organizationsToSeed = generateOrganizations(5);
-        const insertedOrganizations = await Organization.insertMany(organizationsToSeed);
-        console.log(`Seeded ${insertedOrganizations.length} organizations`);
+        // const insertedOrganizations = await Organization.insertMany(organizationsToSeed);
+        // console.log(`Seeded ${insertedOrganizations.length} organizations`);
 
         // Generate and insert users for each organization
-        const usersToSeed = generateUsers(insertedOrganizations, 50);
-        const insertedUsers = await User.insertMany(usersToSeed);
-        console.log(`Seeded ${insertedUsers.length} users`);
+        // const usersToSeed = generateUsers(insertedOrganizations, 50);
+        // const insertedUsers = await User.insertMany(usersToSeed);
+        // console.log(`Seeded ${insertedUsers.length} users`);
 
         // Disconnect from MongoDB
         await mongoose.disconnect();

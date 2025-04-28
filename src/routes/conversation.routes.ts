@@ -1,6 +1,6 @@
-import { createOpenConversation, getConversations } from "@controllers/conversation.controllers";
 import { Router } from "express";
-import { verifyJWT } from "middlewares/auth.middleware";
+import { verifyJWT } from "../middlewares/auth.middleware";
+import { createOpenConversation, getConversations } from "../controllers/conversation.controllers";
 
 const router = Router();
 
