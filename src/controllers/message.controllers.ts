@@ -84,14 +84,14 @@ const socketSendMessage = async (socket, user_id, messageData) => {
             conversation: convo_id,
             files: files || [],
         };
-        console.log("msgData", msgData)
+        // console.log("msgData", msgData)
         const newMessage = await messageService.createMessage(msgData);
         await messageService.updateLatestMessage(convo_id, newMessage);
         const populatedMessage = await messageService.populateMessage(newMessage._id);
 
         return { message: populatedMessage };
     } catch (error) {
-        console.log(error)
+        // console.log(error)
     }
 }
 

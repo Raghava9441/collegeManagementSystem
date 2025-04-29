@@ -9,7 +9,7 @@ import { ApiError } from '../utils/ApiError';
 export const socketMiddleware = async (socket, next) => {
 
     const token = socket.handshake.query.token as string;
-    console.log("token", token)
+    // console.log("token", token)
     if (token) {
         try {
             const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET as string) as JwtPayload & { _id: string };

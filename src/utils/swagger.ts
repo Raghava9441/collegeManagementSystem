@@ -55,7 +55,7 @@ const options: swaggerJsdoc.Options = {
 const swaggerSpec = swaggerJsdoc(options);
 
 function swaggerDocs(app: Express, port: number | string) {
-    logger.info("Initializing Swagger docs");
+    // logger.info("Initializing Swagger docs");
 
     // Swagger page
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
@@ -66,7 +66,7 @@ function swaggerDocs(app: Express, port: number | string) {
         res.send(swaggerSpec);
     });
 
-    logger.info(`Swagger docs are ready at http://localhost:${port}/api-docs`);
+    // logger.info(`Swagger docs are ready at http://localhost:${port}/api-docs`);
 }
 
 export default swaggerDocs;

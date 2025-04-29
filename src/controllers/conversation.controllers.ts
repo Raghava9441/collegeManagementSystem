@@ -84,7 +84,7 @@ const getConversations = asyncHandler(async (req: Request, res: Response, next: 
         const { id: user_id } = req.user
 
         const conversations = await conversationService.getUserConversations(user_id);
-        console.log("conversations", conversations)
+        // console.log("conversations", conversations)
         res.status(200).json(new ApiResponse(200, conversations, "Course is created successfully"));
     } catch (error) {
         next(error);

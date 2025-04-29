@@ -15,7 +15,7 @@ export const createRateLimiter = (config: RateLimitConfig) => {
         max: config.max,
         message: config.message || 'Too many requests, please try again later.',
         handler: (req: Request, res: Response) => {
-            logger.warn(`Rate limit exceeded for IP: ${req.ip}`);
+            // logger.warn(`Rate limit exceeded for IP: ${req.ip}`);
             res.status(429).json({
                 success: false,
                 message: config.message || 'Too many requests, please try again later.'

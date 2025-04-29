@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import { Server, ServerOptions, Socket } from "socket.io";
 import { socketSendMessage } from './controllers/message.controllers';
 import { socketMiddleware } from './middlewares/socket.middleware';
+import { emitFriendStatus } from './controllers/frieds.ciontrollers';
+import { joinConvo } from './controllers/conversation.controllers';
 dotenv.config({
     path: './.env',
 });
@@ -54,7 +56,7 @@ export const initializeSocket = (server: HttpServer): void => {
         pingInterval: 25000,
         pingTimeout: 20000,
     } as SocketOptions);
-    console.log("socket initilised")
+    // console.log("socket initilised")
 
     // socket protect middleware
     io.use(socketMiddleware);
@@ -91,10 +93,10 @@ export const initializeSocket = (server: HttpServer): void => {
             await user.save();
             socket.emit("message_received", { hey: "message" });
 
-            // await emitFriendStatus(io, socket, user, "online");
-            // await joinConvo(socket, user_id);
+            await emitFriendStatus(io, socket, user, "online");
+            await joinConvo(socket, user_id);
 
-            console.log(`User ${user_id} connected with socket ${socket_id}`);
+            // console.log(`User ${user_id} connected with socket ${socket_id}`);
 
         }, "connection_setup");
 
@@ -112,8 +114,8 @@ export const initializeSocket = (server: HttpServer): void => {
             user.onlineStatus = "offline";
             await user.save();
 
-            // await emitFriendStatus(io, socket, user, "offline");
-            console.log(`User ${user._id} disconnected`);
+            await emitFriendStatus(io, socket, user, "offline");
+            // console.log(`User ${user._id} disconnected`);
         }, "disconnect"));
 
         // Handle message sending with error handling
@@ -144,7 +146,7 @@ export const initializeSocket = (server: HttpServer): void => {
                     }
                 }
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         })
 
@@ -172,7 +174,7 @@ export const initializeSocket = (server: HttpServer): void => {
         }, "stop_typing"));
 
         socket.on('message_from_client', asyncHandler(socket, async (conversation_id) => {
-            console.log("conversation_id", conversation_id)
+            // console.log("conversation_id", conversation_id)
         }, "message_from_client"))
     });
 };

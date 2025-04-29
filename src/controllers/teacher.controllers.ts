@@ -96,7 +96,7 @@ const createTeacher = asyncHandler(async (req: Request, res: Response) => {
                 "teacherId": teacher._id
             }
         });
-        console.log("object", userdetails)
+        // console.log("object", userdetails)
 
         return res
             .status(200)

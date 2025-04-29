@@ -186,13 +186,13 @@ userSchema.pre('save', async function (next) {
 // Compare password with hashed password in database
 userSchema.methods.isPasswordCorrect = async function (password: string | Buffer) {
     let trimmedPassword = typeof password === 'string' ? password.trim() : password;
-    console.log('Input Password (raw):', password);
-    console.log('Input Password (trimmed):', trimmedPassword);
-    console.log('Stored Hashed Password:', this.password);
+    // console.log('Input Password (raw):', password);
+    // console.log('Input Password (trimmed):', trimmedPassword);
+    // console.log('Stored Hashed Password:', this.password);
 
     try {
         const isMatch = await bcrypt.compare(trimmedPassword, this.password);
-        console.log('Bcrypt Compare Result:', isMatch);
+        // console.log('Bcrypt Compare Result:', isMatch);
         return isMatch;
     } catch (error) {
         console.error('Password Comparison Error:', error);

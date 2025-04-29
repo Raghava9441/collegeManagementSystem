@@ -12,6 +12,7 @@ const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10, } = req.query;
     // const { organizationId } = req.params;
     const { organizationId, role } = req.user as UserDocument
+    console.log(organizationId)
 
     //validate the organization id
     if (!organizationId) {

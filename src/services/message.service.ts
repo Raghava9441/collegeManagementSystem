@@ -103,7 +103,7 @@ class MessageService {
                 model: "User",
             })
             .populate("conversation");
-            console.log(messages)
+            // console.log(messages)
 
         if (!messages) {
             throw new ApiError(400, null, 'Unable to fetch messages', undefined, [{ msg: 'Unable to fetch messages' }]);

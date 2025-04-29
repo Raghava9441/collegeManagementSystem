@@ -336,11 +336,11 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
 });
 
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
-    logger.info("Registering user");
+    // logger.info("Registering user");
     const { username, email, password, fullname, avatar, coverImage, age, role, gender, organizationId, phone, address, status, dateOfBirth, biography, permissions, socialLinks, preferences } = req.body;
-    console.log("username", username)
-    console.log(email)
-    console.log(fullname, age, role, gender, organizationId)
+    // console.log("username", username)
+    // console.log(email)
+    // console.log(fullname, age, role, gender, organizationId)
     if (
         [username, email, fullname, age, role, gender, organizationId].some(
             field => typeof field !== 'string' || field.trim() === ""
@@ -360,7 +360,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     if (existingUser) {
         return res.status(409).json(new ApiError(409, "An user with the same username, or email already exists"));
     }
-    logger.warn("avatar path", req.files)
+    // logger.warn("avatar path", req.files)
 
     const localAvatarPath = req.files && 'avatar' in req.files ? req.files.avatar[0].path : "";
     const localCoverImagePath = req.files && 'coverImage' in req.files ? req.files.coverImage[0].path : "";
@@ -372,9 +372,9 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     let avatarCludinaryUrl;
     try {
         avatarCludinaryUrl = await uploadOncloudinary(localAvatarPath);
-        logger.info("Avatar uploaded:", avatarCludinaryUrl);
+        // logger.info("Avatar uploaded:", avatarCludinaryUrl);
     } catch (error) {
-        logger.error("Error uploading avatar:", error);
+        // logger.error("Error uploading avatar:", error);
         return res.status(400).json(new ApiError(400, "Something went wrong while uploading avatar"));
     }
 
@@ -382,13 +382,13 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     if (localCoverImagePath && fs.existsSync(localCoverImagePath)) {
         try {
             coverImageCludinaryUrl = await uploadOncloudinary(localCoverImagePath);
-            logger.info("Cover image uploaded:", coverImageCludinaryUrl);
+            // logger.info("Cover image uploaded:", coverImageCludinaryUrl);
         } catch (error) {
-            logger.error("Error uploading cover image:", error);
+            // logger.error("Error uploading cover image:", error);
             return res.status(400).json(new ApiError(400, "Something went wrong while uploading cover image"));
         }
     } else {
-        logger.warn("No cover image provided or file not found");
+        // logger.warn("No cover image provided or file not found");
     }
 
     try {
@@ -426,7 +426,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
             .status(200)
             .json(new ApiResponse(200, user, "User is registered successfully"));
     } catch (error) {
-        logger.error("Error registering user:", error);
+        // logger.error("Error registering user:", error);
         if (avatarCludinaryUrl) {
             await deleteFromCloudinary(avatarCludinaryUrl.public_id);
         }
@@ -488,7 +488,7 @@ const refreshAccessToken = asyncHandler(async (req: Request, res: Response) => {
         }
 
         const { accessToken, refreshToken: newRefreshToken } = await generateAccessAndRefreshToken(user._id as string) || {};
-        console.log("here")
+        // console.log("here")
 
         return res.status(200)
             .cookie('accessToken', accessToken, options)
