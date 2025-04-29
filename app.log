@@ -12979,3 +12979,195 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"165.088\"}","timestamp":"2025-04-29T06:05:13.312Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"120.911\"}","timestamp":"2025-04-29T06:13:50.142Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"153.044\"}","timestamp":"2025-04-29T06:13:50.172Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"112.427\"}","timestamp":"2025-04-29T06:16:39.983Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"157.513\"}","timestamp":"2025-04-29T06:16:40.026Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/conversation/get-conversations\",\"status\":\"404\",\"responseTime\":\"1.996\"}","timestamp":"2025-04-29T06:18:10.125Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/friends/online-friends\",\"status\":\"404\",\"responseTime\":\"3.248\"}","timestamp":"2025-04-29T06:18:10.126Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/conversation/get-conversations\",\"status\":\"404\",\"responseTime\":\"0.752\"}","timestamp":"2025-04-29T06:18:20.321Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/friends/online-friends\",\"status\":\"404\",\"responseTime\":\"1.152\"}","timestamp":"2025-04-29T06:18:20.322Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/logout\",\"status\":\"404\",\"responseTime\":\"0.428\"}","timestamp":"2025-04-29T06:18:24.229Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/login\",\"status\":\"404\",\"responseTime\":\"0.410\"}","timestamp":"2025-04-29T06:18:38.352Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/login\",\"status\":\"404\",\"responseTime\":\"0.398\"}","timestamp":"2025-04-29T06:19:58.565Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/login\",\"status\":\"404\",\"responseTime\":\"0.458\"}","timestamp":"2025-04-29T06:20:14.916Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T09:42:14.755Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T09:42:14.763Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/organizations\",\"status\":\"404\",\"responseTime\":\"5.783\"}","timestamp":"2025-04-29T09:42:33.729Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/conversation/get-conversations\",\"status\":\"404\",\"responseTime\":\"2.139\"}","timestamp":"2025-04-29T09:42:33.734Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/friends/online-friends\",\"status\":\"404\",\"responseTime\":\"2.826\"}","timestamp":"2025-04-29T09:42:33.735Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/organizations\",\"status\":\"404\",\"responseTime\":\"0.794\"}","timestamp":"2025-04-29T09:42:40.426Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/conversation/get-conversations\",\"status\":\"404\",\"responseTime\":\"0.816\"}","timestamp":"2025-04-29T09:42:40.429Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/friends/online-friends\",\"status\":\"404\",\"responseTime\":\"14.202\"}","timestamp":"2025-04-29T09:42:40.445Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/logout\",\"status\":\"404\",\"responseTime\":\"0.762\"}","timestamp":"2025-04-29T09:42:46.099Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/login\",\"status\":\"404\",\"responseTime\":\"21.431\"}","timestamp":"2025-04-29T09:43:09.022Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/user/auth/login\",\"status\":\"404\",\"responseTime\":\"1.232\"}","timestamp":"2025-04-29T09:43:35.741Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"241.817\"}","timestamp":"2025-04-29T09:43:59.629Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"200\",\"responseTime\":\"144.195\"}","timestamp":"2025-04-29T09:44:00.094Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"182.312\"}","timestamp":"2025-04-29T09:44:00.131Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"87.130\"}","timestamp":"2025-04-29T09:44:04.190Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"45.829\"}","timestamp":"2025-04-29T09:44:41.139Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T09:46:35.584Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T09:46:35.594Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"80.176\"}","timestamp":"2025-04-29T09:46:46.921Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-29T09:47:36.970Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T09:47:36.978Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"403\",\"responseTime\":\"71.351\"}","timestamp":"2025-04-29T09:47:39.695Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"99.348\"}","timestamp":"2025-04-29T09:48:21.506Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"277.448\"}","timestamp":"2025-04-29T09:48:27.456Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"401\",\"responseTime\":\"3.522\"}","timestamp":"2025-04-29T09:48:27.644Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"401\",\"responseTime\":\"4.406\"}","timestamp":"2025-04-29T09:48:27.646Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"138.461\"}","timestamp":"2025-04-29T09:48:27.811Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"112.321\"}","timestamp":"2025-04-29T09:48:27.939Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"409\",\"responseTime\":\"103.894\"}","timestamp":"2025-04-29T09:49:05.445Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"409\",\"responseTime\":\"123.119\"}","timestamp":"2025-04-29T09:49:27.646Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"144.440\"}","timestamp":"2025-04-29T09:49:59.434Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"153.757\"}","timestamp":"2025-04-29T09:51:00.001Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"404\",\"responseTime\":\"51.002\"}","timestamp":"2025-04-29T09:52:12.974Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T09:54:07.292Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T09:54:07.297Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"404\",\"responseTime\":\"68.905\"}","timestamp":"2025-04-29T09:54:10.813Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-29T09:54:47.140Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T09:54:47.154Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"234.052\"}","timestamp":"2025-04-29T09:54:57.516Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"237.566\"}","timestamp":"2025-04-29T09:57:01.526Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"401\",\"responseTime\":\"7.508\"}","timestamp":"2025-04-29T09:57:01.887Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"401\",\"responseTime\":\"1.281\"}","timestamp":"2025-04-29T09:57:01.895Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"125.004\"}","timestamp":"2025-04-29T09:57:02.024Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"73.332\"}","timestamp":"2025-04-29T09:57:02.104Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"83.334\"}","timestamp":"2025-04-29T09:57:06.283Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"76.201\"}","timestamp":"2025-04-29T09:57:16.716Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"304\",\"responseTime\":\"38.742\"}","timestamp":"2025-04-29T09:57:18.811Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"80.896\"}","timestamp":"2025-04-29T09:57:28.961Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"202.945\"}","timestamp":"2025-04-29T09:59:22.932Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"240.858\"}","timestamp":"2025-04-29T09:59:44.105Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"401\",\"responseTime\":\"1.127\"}","timestamp":"2025-04-29T09:59:44.423Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"401\",\"responseTime\":\"0.987\"}","timestamp":"2025-04-29T09:59:44.438Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"110.310\"}","timestamp":"2025-04-29T09:59:44.551Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"80.726\"}","timestamp":"2025-04-29T09:59:44.637Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"200\",\"responseTime\":\"81.529\"}","timestamp":"2025-04-29T10:00:39.901Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"90.066\"}","timestamp":"2025-04-29T10:00:39.905Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"77.299\"}","timestamp":"2025-04-29T10:00:48.421Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"89.834\"}","timestamp":"2025-04-29T10:00:48.440Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/logout\",\"status\":\"200\",\"responseTime\":\"85.049\"}","timestamp":"2025-04-29T10:05:59.247Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"5.371\"}","timestamp":"2025-04-29T10:06:39.877Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"1.502\"}","timestamp":"2025-04-29T10:06:42.407Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"400\",\"responseTime\":\"1.629\"}","timestamp":"2025-04-29T10:07:52.573Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"201.206\"}","timestamp":"2025-04-29T10:08:27.598Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"184.502\"}","timestamp":"2025-04-29T10:10:20.441Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"186.193\"}","timestamp":"2025-04-29T10:10:50.463Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"184.985\"}","timestamp":"2025-04-29T10:11:13.186Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"182.584\"}","timestamp":"2025-04-29T10:11:42.474Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"178.331\"}","timestamp":"2025-04-29T10:12:06.284Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"186.885\"}","timestamp":"2025-04-29T10:12:27.071Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/register\",\"status\":\"200\",\"responseTime\":\"190.687\"}","timestamp":"2025-04-29T10:13:05.757Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"225.238\"}","timestamp":"2025-04-29T10:13:15.602Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"401\",\"responseTime\":\"1.110\"}","timestamp":"2025-04-29T10:13:15.898Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"401\",\"responseTime\":\"1.125\"}","timestamp":"2025-04-29T10:13:15.907Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"117.938\"}","timestamp":"2025-04-29T10:13:16.035Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"75.983\"}","timestamp":"2025-04-29T10:13:16.118Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"77.317\"}","timestamp":"2025-04-29T10:13:21.466Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"94.318\"}","timestamp":"2025-04-29T10:13:23.865Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"128.193\"}","timestamp":"2025-04-29T10:14:47.749Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"1.905\"}","timestamp":"2025-04-29T10:15:12.152Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"401\",\"responseTime\":\"0.665\"}","timestamp":"2025-04-29T10:15:56.233Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/login\",\"status\":\"200\",\"responseTime\":\"234.773\"}","timestamp":"2025-04-29T10:16:24.224Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"116.899\"}","timestamp":"2025-04-29T10:16:29.969Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:18:23.554Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:18:23.560Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"203.992\"}","timestamp":"2025-04-29T10:18:26.375Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:18:43.796Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:18:43.814Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"143.156\"}","timestamp":"2025-04-29T10:18:44.704Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"103.294\"}","timestamp":"2025-04-29T10:19:31.201Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"106.683\"}","timestamp":"2025-04-29T10:19:39.775Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"56.055\"}","timestamp":"2025-04-29T10:20:21.772Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"45.441\"}","timestamp":"2025-04-29T10:32:22.837Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"86.248\"}","timestamp":"2025-04-29T10:32:22.883Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"88.267\"}","timestamp":"2025-04-29T10:32:22.885Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"103.443\"}","timestamp":"2025-04-29T10:32:34.103Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"47.460\"}","timestamp":"2025-04-29T10:32:34.937Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"80.669\"}","timestamp":"2025-04-29T10:33:18.762Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"47.117\"}","timestamp":"2025-04-29T10:33:22.756Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"109.965\"}","timestamp":"2025-04-29T10:35:26.856Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"67.186\"}","timestamp":"2025-04-29T10:36:14.275Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:36:45.578Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:36:45.585Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"66.337\"}","timestamp":"2025-04-29T10:36:49.026Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"46.389\"}","timestamp":"2025-04-29T10:37:50.066Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:38:46.782Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:38:46.798Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"67.548\"}","timestamp":"2025-04-29T10:38:48.881Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"43.040\"}","timestamp":"2025-04-29T10:38:52.465Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:39:02.312Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:39:02.332Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"77.588\"}","timestamp":"2025-04-29T10:39:10.985Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:39:21.474Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:39:21.480Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"56.099\"}","timestamp":"2025-04-29T10:39:23.405Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:40:16.897Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:40:16.911Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"59.554\"}","timestamp":"2025-04-29T10:40:18.185Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:41:00.611Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:41:00.621Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:41:06.162Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:41:06.172Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"60.740\"}","timestamp":"2025-04-29T10:41:07.228Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:41:36.647Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:41:36.668Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"83.601\"}","timestamp":"2025-04-29T10:41:40.815Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:42:07.701Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:42:07.709Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"403\",\"responseTime\":\"68.941\"}","timestamp":"2025-04-29T10:42:11.909Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:42:37.054Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:42:37.074Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"326.745\"}","timestamp":"2025-04-29T10:42:40.089Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"88.904\"}","timestamp":"2025-04-29T10:42:54.018Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"108.438\"}","timestamp":"2025-04-29T10:42:57.728Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"90.824\"}","timestamp":"2025-04-29T10:43:11.859Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"271.736\"}","timestamp":"2025-04-29T10:44:46.822Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"84.752\"}","timestamp":"2025-04-29T10:46:08.081Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"400\",\"responseTime\":\"129.997\"}","timestamp":"2025-04-29T10:47:12.101Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"261.766\"}","timestamp":"2025-04-29T10:48:03.334Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"200\",\"responseTime\":\"85.517\"}","timestamp":"2025-04-29T10:49:19.931Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"403\",\"responseTime\":\"43.522\"}","timestamp":"2025-04-29T10:49:23.475Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"93.886\"}","timestamp":"2025-04-29T10:49:51.706Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"95.791\"}","timestamp":"2025-04-29T10:49:59.220Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"132.846\"}","timestamp":"2025-04-29T10:50:48.752Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/students\",\"status\":\"201\",\"responseTime\":\"231.581\"}","timestamp":"2025-04-29T10:53:17.020Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"403\",\"responseTime\":\"42.363\"}","timestamp":"2025-04-29T10:53:29.520Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/teachers\",\"status\":\"304\",\"responseTime\":\"84.889\"}","timestamp":"2025-04-29T10:53:33.462Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/students\",\"status\":\"201\",\"responseTime\":\"223.711\"}","timestamp":"2025-04-29T10:56:08.255Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/students\",\"status\":\"409\",\"responseTime\":\"127.635\"}","timestamp":"2025-04-29T10:56:16.254Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/students\",\"status\":\"201\",\"responseTime\":\"213.281\"}","timestamp":"2025-04-29T10:56:41.676Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"403\",\"responseTime\":\"40.370\"}","timestamp":"2025-04-29T10:58:11.065Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-02.zcckhtw.mongodb.net","timestamp":"2025-04-29T10:58:28.387Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T10:58:28.393Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"200\",\"responseTime\":\"86.701\"}","timestamp":"2025-04-29T10:58:30.010Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/parents\",\"status\":\"403\",\"responseTime\":\"51.147\"}","timestamp":"2025-04-29T10:59:43.195Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T11:00:31.449Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T11:00:31.454Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/parents\",\"status\":\"200\",\"responseTime\":\"303.311\"}","timestamp":"2025-04-29T11:00:33.733Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/parents\",\"status\":\"200\",\"responseTime\":\"303.877\"}","timestamp":"2025-04-29T11:01:30.995Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/parents\",\"status\":\"200\",\"responseTime\":\"288.354\"}","timestamp":"2025-04-29T11:02:32.705Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents\",\"status\":\"200\",\"responseTime\":\"48.432\"}","timestamp":"2025-04-29T11:04:04.436Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"121.400\"}","timestamp":"2025-04-29T11:04:18.037Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"1.388\"}","timestamp":"2025-04-29T11:04:39.615Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"122.404\"}","timestamp":"2025-04-29T11:04:45.387Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students\",\"status\":\"304\",\"responseTime\":\"78.991\"}","timestamp":"2025-04-29T11:05:36.904Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/course\",\"status\":\"404\",\"responseTime\":\"0.689\"}","timestamp":"2025-04-29T11:06:37.231Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T11:07:09.514Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T11:07:09.518Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/courses\",\"status\":\"409\",\"responseTime\":\"140.175\"}","timestamp":"2025-04-29T11:07:23.636Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/courses\",\"status\":\"400\",\"responseTime\":\"179.222\"}","timestamp":"2025-04-29T11:07:37.838Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/courses\",\"status\":\"400\",\"responseTime\":\"168.443\"}","timestamp":"2025-04-29T11:08:54.825Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"175.828\"}","timestamp":"2025-04-29T11:09:20.465Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"166.199\"}","timestamp":"2025-04-29T11:11:28.318Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"171.521\"}","timestamp":"2025-04-29T11:12:20.685Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/courses\",\"status\":\"200\",\"responseTime\":\"127.460\"}","timestamp":"2025-04-29T11:12:26.420Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T11:15:06.847Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T11:15:06.851Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T11:15:34.661Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T11:15:34.665Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-01.zcckhtw.mongodb.net","timestamp":"2025-04-29T11:16:02.679Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T11:16:02.683Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-04-29T11:16:09.656Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-04-29T11:16:09.660Z"}

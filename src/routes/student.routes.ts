@@ -8,7 +8,7 @@ router.route("/")
     .get(
         verifyJWT,
         // checkPermission('organizations', 'create'),
-        isTeacher,
+        // isTeacher,
         getAllStudents
     )
     .post(createStudent);

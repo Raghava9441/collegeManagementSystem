@@ -146,3 +146,4 @@ export { app };
 //otp functionality
 //notification functionality
 
+//BUG:realtime events not working in chating 

@@ -22,7 +22,7 @@ const getAllTeachers = asyncHandler(async (req: Request, res: Response) => {
     const teachers = await Teacher.aggregatePaginate(
         req.user.role === 'ADMIN' ?
             Teacher.aggregate([{ $match: {} }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, organizationId: 1, departments: 1, subjects: 1, qualifications: 1, experience: 1, officeHours: 1, researchInterests: 1, publications: 1, professionalMemberships: 1, coursesTaught: 1, performanceReviews: 1, specialResponsibilities: 1, teachingPhilosophy: 1 } }]) :
-            Teacher.aggregate([{ $match: {  } }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, organizationId: 1, departments: 1, subjects: 1, qualifications: 1, experience: 1, officeHours: 1, researchInterests: 1, publications: 1, professionalMemberships: 1, coursesTaught: 1, performanceReviews: 1, specialResponsibilities: 1, teachingPhilosophy: 1 } }]),
+            Teacher.aggregate([{ $match: {} }, { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'userDetails' } }, { $unwind: '$userDetails' }, { $project: { _id: 1, name: '$userDetails.fullname', email: '$userDetails.email', phone: '$userDetails.phone', userId: 1, organizationId: 1, departments: 1, subjects: 1, qualifications: 1, experience: 1, officeHours: 1, researchInterests: 1, publications: 1, professionalMemberships: 1, coursesTaught: 1, performanceReviews: 1, specialResponsibilities: 1, teachingPhilosophy: 1 } }]),
         getMongoosePaginationOptions({
             page: parsedPage,
             limit: parsedLimit,
@@ -41,7 +41,8 @@ const getAllTeachers = asyncHandler(async (req: Request, res: Response) => {
 const createTeacher = asyncHandler(async (req: Request, res: Response) => {
     //create teacher if the user is admin
     // console.log(req.user)
-    if (req.user && req.user.role === 'ADMIN') {
+    // console.log("req.user",req.user.role)
+    if (req.user && req.user.role === 'ORGADMIN' || req.user && req.user.role === 'ORGADMIN') {
         // console.log("object")
         const { description, courseId, teacherId, organizationId, subjects, qualifications, experience, officeHours, researchInterests, publications, professionalMemberships, coursesTaught, performanceReviews, specialResponsibilities, teachingPhilosophy, userId } = req.body;
         // console.log("organizationId:", organizationId)
@@ -89,6 +90,7 @@ const createTeacher = asyncHandler(async (req: Request, res: Response) => {
             specialResponsibilities,
             teachingPhilosophy,
         });
+        console.log("teacher", teacher)
 
         //update the user object
         const userdetails = await User.findByIdAndUpdate(userId, {

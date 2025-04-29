@@ -8,12 +8,12 @@ router.route("/")
     .get(
         verifyJWT,
         // isTeacher,
-        verifyPermission(["ADMIN", "TEACHER", "ORGANIZATION", "STUDENT", "PARENT"]),
+        // verifyPermission(["ADMIN", "TEACHER", "ORGANIZATION", "STUDENT", "PARENT"]),
         getAllTeachers
     )
     .post(
         verifyJWT,
-        verifyPermission(["ADMIN"]),
+        // verifyPermission(["ADMIN", "ORGANIZATION"]),
         createTeacher
     );
 

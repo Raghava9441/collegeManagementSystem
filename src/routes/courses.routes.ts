@@ -13,7 +13,7 @@ router.route("/")
     )
     .post(
         verifyJWT,
-        verifyPermission(["ADMIN"]),
+        // verifyPermission(["ADMIN"]),
         courseValidator(),
         handleValidationErrors,
         createCourse

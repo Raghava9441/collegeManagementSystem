@@ -50,9 +50,10 @@ class CourseService {
     }
     async getCoursesPaginate(parsedPage: number, parsedLimit: number, orgId: string, user: any): Promise<any> {
         let matchStage = {};
-        if (user.role === 'admin') {
+        console.log("object", user.role)
+        if (user.role === 'ADMIN') {
             matchStage = {};
-        } else if (user.role === 'orgadmin') {
+        } else if (user.role === 'ORGADMIN') {
             matchStage = { organizationId: new mongoose.Types.ObjectId(orgId) };
         } else {
             matchStage = { courseId: user.courseId };

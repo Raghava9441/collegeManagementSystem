@@ -71,6 +71,14 @@ const userSchema = new Schema(
         classId: {
             type: String,
         },
+        firstName: {
+            type: String,
+            // required: [true, "First Name is required"]
+        },
+        lastName: {
+            type: String,
+            //  required: [true, "Last Name is required"]
+        },
         username: {
             type: String,
             required: true,
