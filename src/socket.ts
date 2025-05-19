@@ -56,7 +56,6 @@ export const initializeSocket = (server: HttpServer): void => {
         pingInterval: 25000,
         pingTimeout: 20000,
     } as SocketOptions);
-    // console.log("socket initilised")
 
     // socket protect middleware
     io.use(socketMiddleware);
@@ -176,5 +175,12 @@ export const initializeSocket = (server: HttpServer): void => {
         socket.on('message_from_client', asyncHandler(socket, async (conversation_id) => {
             // console.log("conversation_id", conversation_id)
         }, "message_from_client"))
+
+        socket.on("user_online",({ user_id }) => {
+            //send unread messages to user
+            // const undelivered = await Message.find({ receiverId: userId, delivered: false });
+            // socket.to(user_id).emit("message_sync", undelivered);
+
+        })
     });
 };

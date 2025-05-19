@@ -16,6 +16,7 @@ import messageRputes from './routes/message.routes';
 import conversationRoutes from './routes/conversation.routes';
 import friendRequest from './routes/friendRequest.routes';
 import examsRoutes from './routes/exam.routes';
+import adminRoutees from './routes/admin.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
@@ -88,6 +89,7 @@ app.use("/api/v1/seed", seedDbRoutes);
 app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);
 app.use("/api/v1/friends", friendRequest);
+app.use("/api/v1/admin", adminRoutees);
 
 // 404 handler
 // app.use((req: Request, res: Response, next: NextFunction) => {
