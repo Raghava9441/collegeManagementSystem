@@ -21,6 +21,15 @@ interface AdminDashboardData extends BaseDashboardData {
         absentCount: number;
         year: number;
     };
+    events: Array<{
+        title: string;
+        description?: string;
+        organizer: {
+            id: string;
+            name: string;
+        };
+        eventType: 'workshop' | 'seminar' | 'meeting' | 'other';
+    }>;
 }
 
 // Teacher Dashboard Data

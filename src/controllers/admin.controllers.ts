@@ -15,7 +15,6 @@ const getAdminDashBoard = asyncHandler(async (req: Request, res: Response) => {
         .status(200)
         .json(new ApiResponse(200, adminDashboard, "Admin dashboard is fetched successfully"));
 
-
 })
 
 export {
