@@ -35,6 +35,49 @@ export const CLASSES_PER_COURSE = 2; // Average number of classes (sections) per
 export const ACADEMIC_YEARS = ["2023-2024", "2024-2025", "2025-2026"];
 export const DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
+// Student Profile constants
+// STUDENTS_PER_ORG is already defined (value: 20)
+export const STUDENTS_PER_CLASS_AVG = 15; // Target average, actual enrollment will vary
+export const MAX_COURSES_PER_STUDENT = 5; // Max courses a student can be enrolled in
+export const STUDENT_HAS_PARENT_PROBABILITY = 0.95; // 95% chance a student has an associated parent profile
+
+// Lesson constants
+export const LESSONS_PER_CLASS_SUBJECT_PAIR = 7; // Average number of lessons per subject in a class
+
+// Assignment constants
+export const ASSIGNMENTS_PER_SUBJECT_CLASS_PAIR = 3; // Average number of assignments per subject in a class
+
+// Attendance constants
+export const ATTENDANCE_RECORDS_PER_STUDENT_CLASS = 15; // Number of attendance records per student in a class
+export const ATTENDANCE_STATUSES = ['present', 'absent', 'excused', 'late'];
+
+// Exam constants
+export const EXAMS_PER_COURSE_CLASS_SUBJECT_COMBINATION = 1; // e.g., 1 midterm per subject in a class
+export const EXAM_TYPES = ['quiz', 'midterm', 'final', 'practical', 'oral'];
+
+// Grade constants
+export const GRADES_PER_EXAM_OR_ASSIGNMENT_PER_STUDENT = 1;
+
+// Result constants
+export const RESULT_STATUSES = ['pass', 'fail', 'incomplete'];
+
+// Conversation constants
+export const NUM_CONVERSATIONS_PER_USER_APPROX = 3;
+export const MAX_USERS_PER_GROUP_CONVO = 5;
+export const GROUP_CONVERSATION_PROBABILITY = 0.3;
+
+// Message constants
+export const MESSAGES_PER_CONVERSATION = 10;
+
+// FriendRequest constants
+export const NUM_FRIEND_REQUESTS_PER_USER_APPROX = 2;
+
+// Event constants
+export const NUM_EVENTS_PER_ORGANIZATION_OR_USER_GROUP = 3; // Adjusted to be per org for simplicity
+export const MAX_PARTICIPANTS_PER_EVENT = 20;
+export const EVENT_TYPES = ['workshop', 'seminar', 'webinar', 'meeting', 'conference', 'social', 'other'];
+
+
 // Example of how these constants might be used:
 //
 // async function seedDatabase() {
