@@ -45,12 +45,14 @@ function generateRandomClassData(
   adminUsersForOrg: UserDocument[] // Users with ORGADMIN or TEACHER role
 ): ClassData {
   const classTeacherProfile = getRandomElement(allTeachersForOrg);
-  const classTeacherId = classTeacherProfile.userId; // Get User._id from Teacher profile
+  // Corrected: Store Teacher Profile _id, not User _id
+  const classTeacherId = classTeacherProfile._id; 
 
   let supervisorId: mongoose.Types.ObjectId | undefined = undefined;
   if (allTeachersForOrg.length > 0) {
     const supervisorProfile = getRandomElement(allTeachersForOrg);
-    supervisorId = supervisorProfile.userId; // Get User._id from Teacher profile
+    // Corrected: Store Teacher Profile _id, not User _id
+    supervisorId = supervisorProfile._id; 
   }
 
   const createdBy = getRandomElement(adminUsersForOrg)._id;

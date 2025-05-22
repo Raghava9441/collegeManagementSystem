@@ -61,7 +61,8 @@ function generateRandomCourseData(
   const startDate = faker.date.soon({ days: 90 });
   const courseName = `${faker.company.bsAdjective()} ${faker.company.bsNoun()}`; // More general name
   const numTeachers = faker.number.int({ min: 1, max: Math.min(MAX_TEACHERS_PER_COURSE, allTeachersForOrg.length) });
-  const selectedTeacherIds = getRandomElements(allTeachersForOrg, numTeachers).map(t => t.userId); // Assuming teacherIds on Course refers to User._id of teacher
+  // Corrected: Store Teacher Profile _id, not User _id
+  const selectedTeacherIds = getRandomElements(allTeachersForOrg, numTeachers).map(t => t._id);
 
   const numSubjects = faker.number.int({ min: 1, max: Math.min(MAX_SUBJECTS_PER_COURSE, allSubjectsForOrg.length) });
   const selectedSubjectIds = getRandomElements(allSubjectsForOrg, numSubjects).map(s => s._id);
