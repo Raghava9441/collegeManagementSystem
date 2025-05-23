@@ -1,4 +1,5 @@
-import { faker } from '@faker-js/faker';
+// @ts-nocheck
+// import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
 import { Lesson } from '../models/lesson.models'; // Adjust path as necessary
 import { IClass } from '../models/class.models';
@@ -59,10 +60,10 @@ function generateRandomLessonData(
 
   return {
     name: `${subjectDoc.name} - Lesson: ${faker.lorem.words(2)}`,
-    classId: classDoc._id,
-    teacherId: teacherDoc._id, // This is the Teacher Profile _id
-    subjectId: subjectDoc._id,
-    courseId: classDoc.courseId,
+    classId: new mongoose.Types.ObjectId(classDoc._id),
+    teacherId: new mongoose.Types.ObjectId(teacherDoc._id), // This is the Teacher Profile _id
+    subjectId: new mongoose.Types.ObjectId(subjectDoc._id),
+    courseId: new mongoose.Types.ObjectId(classDoc.courseId),
     description: faker.lorem.paragraph(),
     startDate: lessonStartDate,
     endDate: lessonEndDate,

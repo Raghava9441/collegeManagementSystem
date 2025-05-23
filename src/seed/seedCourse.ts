@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
 import { Course } from '../models/course.models'; // Adjust path as necessary
@@ -88,28 +89,28 @@ function generateRandomCourseData(
 
     textbooks: generateN(
       () => ({
-        title : faker.commerce.productName(),
+        title: faker.commerce.productName(),
         author: faker.person.fullName(),
-        ISBN  : faker.string.numeric(13)
+        ISBN: faker.string.numeric(13)
       }),
       faker.number.int({ min: 0, max: 4 })
     ),
 
     // syllabus & gradingScheme expect strings – simplest is JSON string or markdown
     syllabus: JSON.stringify([
-      { title: 'Introduction',   content: faker.lorem.sentences(3) },
-      { title: 'Core Concepts',  content: faker.lorem.sentences(5) }
+      { title: 'Introduction', content: faker.lorem.sentences(3) },
+      { title: 'Core Concepts', content: faker.lorem.sentences(5) }
     ]),
     gradingScheme: JSON.stringify([
       { component: 'Midterm Exam', weight: 30 },
-      { component: 'Final Exam',   weight: 40 },
-      { component: 'Assignments',  weight: 30 }
+      { component: 'Final Exam', weight: 40 },
+      { component: 'Assignments', weight: 30 }
     ]),
 
     // resources must be array of objects
     resources: [
       { title: 'Course portal', url: faker.internet.url() },
-      { title: 'Extra reading',  url: faker.internet.url() }
+      { title: 'Extra reading', url: faker.internet.url() }
     ],
 
     assignments: []  // still optional

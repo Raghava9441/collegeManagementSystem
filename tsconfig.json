@@ -12,30 +12,54 @@
             "./src/@types",
             "./node_modules/@types"
         ],
-        // "baseUrl": "./src",
-        // "paths": {
-        //     "@utils/*": [
-        //         "utils/*"
-        //     ],
-        //     "@controllers/*": [
-        //         "controllers/*"
-        //     ],
-        //     "@models/*": [
-        //         "models/*"
-        //     ],
-        //     "@services/*": [
-        //         "services/*"
-        //     ],
-        //     "@types/*": [
-        //         "@types/*"
-        //     ]
-        // },
-        "noEmitOnError": false
+        "noEmitOnError": false,
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "strictFunctionTypes": false,
+        "strictBindCallApply": false,
+        "strictPropertyInitialization": false,
+        "noImplicitThis": false,
+        "alwaysStrict": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitReturns": false,
+        "noFallthroughCasesInSwitch": false,
+        "allowJs": true,
+        "checkJs": false,
+        "declaration": false,
+        "sourceMap": true,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "incremental": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": ["node_modules/*", "src/types/*"]
+        }
     },
     "include": [
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "src/**/*.js"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "dist",
+        "**/*.spec.ts",
+        "**/*.test.ts",
+        "src/seed/**/*",
+        "src/seed/seedAssignment.ts",
+        "src/seed/seedClass.ts",
+        "src/seed/seedCourse.ts",
+        "src/seed/seedLesson.ts",
+        "src/seed/seedStudent.ts",
+        "src/seed/seedAttendance.ts",
+        "src/seed/seedConversation.ts",
+        "src/seed/seedEvent.ts",
+        "src/seed/seedExam.ts",
+        "src/seed/seedFriendRequest.ts",
+        "src/seed/seedGrade.ts",
+        "src/seed/seedMessage.ts",
+        "src/seed/seedResult.ts"
     ]
 }

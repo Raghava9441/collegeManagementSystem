@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
 import { Subject } from '../models/subject.models'; // Adjust path as necessary
-import { OrganizationDocument } from '../models/organization.models'; // Assuming this type is exported
 import { NUM_SUBJECTS_PER_ORG } from './seedConstants';
 
 // Define SubjectData interface based on subjectSchema for clarity
@@ -55,7 +54,7 @@ function generateRandomSubjectData(organizationId: mongoose.Types.ObjectId): Sub
  * @returns A promise that resolves to an array of the created Subject documents.
  */
 export async function seedSubjects(
-  organizations: OrganizationDocument[],
+  organizations: any[],
 ): Promise<any[]> {
   console.log('Seeding subjects for all organizations...');
   const allCreatedSubjects = [];

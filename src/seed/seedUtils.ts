@@ -66,8 +66,8 @@ export async function connectDB(uri: string): Promise<void> {
     console.log(uri)
     // await mongoose.connect(uri); 
     const seedConnection = mongoose.createConnection(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
     });
 
 

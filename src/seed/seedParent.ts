@@ -36,8 +36,8 @@ interface ParentProfileData {
  */
 function generateRandomParentProfileData(parentUser: IUser): ParentProfileData {
   return {
-    userId: parentUser._id,
-    organizationId: parentUser.organizationId!, // Assert non-null as parent should belong to an org
+    userId: new mongoose.Types.ObjectId(parentUser._id.toString()),
+    organizationId: new mongoose.Types.ObjectId(parentUser.organizationId), // Ensure organizationId is stored as an ObjectId
     dateOfBirth: faker.date.birthdate({ min: 25, max: 60, mode: 'age' }),
     address: {
       street: faker.location.streetAddress(),

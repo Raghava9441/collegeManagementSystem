@@ -11,9 +11,9 @@ const getAdminDashBoard = asyncHandler(async (req: Request, res: Response) => {
         throw new ApiError(404, null, "Admin dashboard is not found", undefined, [{ msg: "Admin dashboard is not found" }])
     }
 
-    return res
-        .status(200)
-        .json(new ApiResponse(200, adminDashboard, "Admin dashboard is fetched successfully"));
+    // return res
+    //     .status(200)
+    //     .json(new ApiResponse(200, adminDashboard, "Admin dashboard is fetched successfully"));
 
 })
 
