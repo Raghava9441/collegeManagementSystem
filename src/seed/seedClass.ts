@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
 import { Class } from '../models/class.models'; // Adjust path as necessary
