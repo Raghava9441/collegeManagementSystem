@@ -1,15 +1,14 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Attendance from '../models/attendance.model'; // Adjust path as necessary
-import { ClassDocument } from '../models/class.models';
-import { StudentDocument } from '../models/student.model'; // Student Profile document
-import { TeacherDocument } from '../models/teacher.model'; // Teacher Profile document
-import { CourseDocument } from '../models/course.models'; // For class date context
+import { IClass } from '../models/class.models';
+import { ICourse } from '../models/course.models'; // For class date context
 import {
   ATTENDANCE_RECORDS_PER_STUDENT_CLASS,
   ATTENDANCE_STATUSES,
 } from './seedConstants';
 import { getRandomElement } from './seedUtils';
+import { Attendance } from '../models/attendance.models';
+import { IStudent } from '../models/student.models';
 
 // Define AttendanceData interface based on attendanceSchema for clarity
 interface AttendanceData {
@@ -25,10 +24,10 @@ interface AttendanceData {
  * Generates realistic fake data for a single attendance record.
  */
 function generateRandomAttendanceData(
-  classDoc: ClassDocument,
-  studentDoc: StudentDocument,
-  teacherDoc: TeacherDocument, // Teacher Profile
-  courseDoc: CourseDocument // For date context for the class
+  classDoc: IClass,
+  studentDoc: IStudent,
+  teacherDoc: any, // Teacher Profile
+  courseDoc: ICourse // For date context for the class
 ): AttendanceData {
   const status = getRandomElement(ATTENDANCE_STATUSES);
   let remarks: string | undefined = undefined;
@@ -39,9 +38,9 @@ function generateRandomAttendanceData(
   // Ensure attendance date is within the course's timeframe
   const courseStartDate = new Date(courseDoc.startDate);
   const courseEndDate = new Date(courseDoc.endDate);
-  
+
   let attendanceDate = faker.date.between({ from: courseStartDate, to: courseEndDate });
-   // If the course start and end dates are the same, or if faker produced a date outside, adjust.
+  // If the course start and end dates are the same, or if faker produced a date outside, adjust.
   if (courseStartDate.getTime() === courseEndDate.getTime() || attendanceDate < courseStartDate || attendanceDate > courseEndDate) {
     attendanceDate = courseStartDate; // Default to course start date if range is problematic
   }

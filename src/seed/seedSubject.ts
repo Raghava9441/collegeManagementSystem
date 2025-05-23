@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Subject from '../models/subject.models'; // Adjust path as necessary
+import { Subject } from '../models/subject.models'; // Adjust path as necessary
 import { OrganizationDocument } from '../models/organization.models'; // Assuming this type is exported
 import { NUM_SUBJECTS_PER_ORG } from './seedConstants';
 
@@ -41,7 +41,7 @@ function generateRandomSubjectData(organizationId: mongoose.Types.ObjectId): Sub
     name: `${name} - ${faker.lorem.words(2)}`, // Add some unique flavor
     description: faker.lorem.sentence({ min: 10, max: 25 }),
     organizationId: organizationId,
-    subjectCode: `${name.substring(0,3).toUpperCase()}${faker.string.numeric(3)}`,
+    subjectCode: `${name.substring(0, 3).toUpperCase()}${faker.string.numeric(3)}`,
     credits: faker.helpers.arrayElement([2, 3, 4]),
     startDate: startDate,
     endDate: endDate,
@@ -64,7 +64,7 @@ export async function seedSubjects(
     for (const org of organizations) {
       console.log(`Seeding subjects for organization: ${org.name} (ID: ${org._id})`);
       const subjectsForOrg = [];
-      
+
       // Ensure unique subject names within an organization for this seeding batch
       const usedSubjectNames = new Set<string>();
 
@@ -76,11 +76,11 @@ export async function seedSubjects(
           subjectData = generateRandomSubjectData(org._id);
           attempts++;
           if (attempts > subjectAreas.length * 2) { // Safety break
-            subjectData.name = `${subjectData.name} - ${faker.string.uuid().slice(0,4)}`;
+            subjectData.name = `${subjectData.name} - ${faker.string.uuid().slice(0, 4)}`;
             break;
           }
         } while (usedSubjectNames.has(subjectData.name));
-        
+
         usedSubjectNames.add(subjectData.name);
 
         const subject = new Subject(subjectData);
@@ -88,7 +88,7 @@ export async function seedSubjects(
         subjectsForOrg.push(subject);
         console.log(`Created subject: "${subject.name}" (Code: ${subject.subjectCode}) for organization: ${org.name}`);
       }
-      
+
       console.log(`Seeded ${subjectsForOrg.length} subjects for organization: ${org.name}`);
       allCreatedSubjects.push(...subjectsForOrg);
     }

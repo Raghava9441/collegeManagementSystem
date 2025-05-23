@@ -1,8 +1,7 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Department from '../models/Department.models'; // Adjust path as necessary
-import { OrganizationDocument } from '../models/organization.models'; // Assuming this type is exported
-import { UserDocument } from '../models/user.models'; // Assuming this type is exported
+import { Department } from '../models/Department.models'; // Adjust path as necessary
+import { IUser } from '../models/user.models'; // Assuming this type is exported
 import { NUM_DEPARTMENTS_PER_ORG } from './seedConstants';
 // import { getRandomElement } from './seedUtils'; // Not used for now, but could be for assigning head
 
@@ -44,7 +43,7 @@ function generateRandomDepartmentData(organizationId: mongoose.Types.ObjectId): 
  * @returns A promise that resolves to an array of the created Department documents.
  */
 export async function seedDepartments(
-  organizations: OrganizationDocument[],
+  organizations: any[],
   // users: UserDocument[] // users parameter is not used in this version
 ): Promise<any[]> {
   console.log('Seeding departments for all organizations...');
@@ -57,7 +56,7 @@ export async function seedDepartments(
 
       // Get a unique set of department names for this organization to avoid duplicates
       const usedDepartmentNames = new Set<string>();
-      
+
       for (let i = 0; i < NUM_DEPARTMENTS_PER_ORG; i++) {
         let departmentData;
         let attempts = 0;
@@ -66,11 +65,11 @@ export async function seedDepartments(
           departmentData = generateRandomDepartmentData(org._id);
           attempts++;
           if (attempts > academicDepartmentNames.length * 2) { // Safety break if too many attempts
-            departmentData.name = `${departmentData.name} - ${faker.string.uuid().slice(0,4)}`; // Ensure uniqueness if all else fails
+            departmentData.name = `${departmentData.name} - ${faker.string.uuid().slice(0, 4)}`; // Ensure uniqueness if all else fails
             break;
           }
         } while (usedDepartmentNames.has(departmentData.name));
-        
+
         usedDepartmentNames.add(departmentData.name);
 
         const department = new Department(departmentData);
@@ -78,7 +77,7 @@ export async function seedDepartments(
         departmentsForOrg.push(department);
         console.log(`Created department: ${department.name} for organization: ${org.name}`);
       }
-      
+
       console.log(`Seeded ${departmentsForOrg.length} departments for organization: ${org.name}`);
       allCreatedDepartments.push(...departmentsForOrg);
     }

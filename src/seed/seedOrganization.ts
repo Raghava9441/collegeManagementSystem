@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import Organization from '../models/organization.models'; // Adjust path as necessary
+import { Organization } from '../models/organization.models'; // Adjust path as necessary
 import { NUM_ORGANIZATIONS } from './seedConstants';
 import { generateN } from './seedUtils'; // Assuming generateN might be useful, though not strictly for this file's core logic yet
 

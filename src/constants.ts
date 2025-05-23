@@ -1,4 +1,5 @@
 export const DB_NAME = "CollegeManagementSystem";
+export const TEST_DB_NAME = "TestDB";
 
 export const UserRolesEnum = {
     ADMIN: "ADMIN",

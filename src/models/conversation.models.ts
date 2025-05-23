@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 
-interface IConversation extends Document {
+export interface IConversation extends Document {
     name: string;
     picture: string;
     isGroup: boolean;
@@ -12,7 +12,7 @@ interface IConversation extends Document {
 
 
 
-const conversationSchema =new Schema<IConversation>(
+const conversationSchema = new Schema<IConversation>(
     {
         name: { type: String, required: [true, "Name is required"], trim: true },
 

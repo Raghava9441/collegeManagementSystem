@@ -1,12 +1,9 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Teacher from '../models/teacher.model'; // Adjust path as necessary
-import User from '../models/user.models'; // For updating User.teacherId
-import { UserDocument } from '../models/user.models';
-import { OrganizationDocument } from '../models/organization.models'; // Assuming this type is exported
-import { DepartmentDocument } from '../models/Department.models'; // Assuming this type is exported
-import { SubjectDocument } from '../models/subject.models'; // Assuming this type is exported
-import { UserRoles } from '../constants';
+import { Teacher } from '../models/teacher.model'; // Adjust path as necessary
+import { User } from '../models/user.models'; // For updating User.teacherId
+import { IUser } from '../models/user.models';
+import { UserRolesEnum } from '../constants';
 import { getRandomElement } from './seedUtils'; // Will use a modified version for multiple unique elements
 import { MAX_DEPARTMENTS_PER_TEACHER, MAX_SUBJECTS_PER_TEACHER } from './seedConstants';
 
@@ -22,6 +19,18 @@ function getRandomElements<T>(array: T[], count: number): T[] {
   return shuffled.slice(0, count);
 }
 
+interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+}
+
+interface Membership {
+  organization: string;
+  membershipId: string;
+}
+
 // Define TeacherProfileData interface based on teacherSchema for clarity
 interface TeacherProfileData {
   userId: mongoose.Types.ObjectId;
@@ -32,8 +41,8 @@ interface TeacherProfileData {
   experience: number; // years
   officeHours: string;
   researchInterests?: string[];
-  publications?: string[];
-  professionalMemberships?: string[];
+  publications?: Publication[];          // <─ object array
+  professionalMemberships?: Membership[];
   teachingPhilosophy?: string;
   // coursesTaught and performanceReviews are intentionally omitted
 }
@@ -46,9 +55,9 @@ interface TeacherProfileData {
  * @returns An object containing teacher profile data.
  */
 function generateRandomTeacherProfileData(
-  teacherUser: UserDocument,
-  allDepartmentsForOrg: DepartmentDocument[],
-  allSubjectsForOrg: SubjectDocument[]
+  teacherUser: IUser,
+  allDepartmentsForOrg: any[],
+  allSubjectsForOrg: any[]
 ): TeacherProfileData {
   const numDepartments = faker.number.int({ min: 1, max: Math.min(MAX_DEPARTMENTS_PER_TEACHER, allDepartmentsForOrg.length) });
   const selectedDepartments = getRandomElements(allDepartmentsForOrg, numDepartments).map(dept => dept._id);
@@ -66,10 +75,34 @@ function generateRandomTeacherProfileData(
       `${faker.person.jobTitle()} at ${faker.company.name()}`
     ],
     experience: faker.number.int({ min: 1, max: 25 }),
-    officeHours: `${faker.helpers.arrayElement(['Mon, Wed', 'Tue, Thu'])} ${faker.number.int({ min: 9, max: 15})}:00 - ${faker.number.int({ min: 9, max: 15})+2}:00`,
+    officeHours: `${faker.helpers.arrayElement(['Mon, Wed', 'Tue, Thu'])} ${faker.number.int({ min: 9, max: 15 })}:00 - ${faker.number.int({ min: 9, max: 15 }) + 2}:00`,
     researchInterests: [faker.lorem.sentence(), faker.lorem.sentence()],
-    publications: [faker.lorem.words(5) + ' Journal', faker.lorem.words(6) + ' Conference Proceedings'],
-    professionalMemberships: [faker.company.name() + ' Association', 'National Council of Teachers of ' + faker.commerce.department()],
+    // publications: [faker.lorem.words(5) + ' Journal', faker.lorem.words(6) + ' Conference Proceedings'],
+    // professionalMemberships: [faker.company.name() + ' Association', 'National Council of Teachers of ' + faker.commerce.department()],
+    publications: [
+      {
+        title: faker.lorem.words(5),
+        authors: faker.person.fullName(),
+        journal: faker.company.name() + ' Journal',
+        year: faker.date.past({ years: 10 }).getFullYear()
+      },
+      {
+        title: faker.lorem.words(6),
+        authors: faker.person.fullName(),
+        journal: faker.company.name() + ' Conference Proceedings',
+        year: faker.date.past({ years: 10 }).getFullYear()
+      }
+    ],
+    professionalMemberships: [
+      {
+        organization: faker.company.name() + ' Association',
+        membershipId: faker.string.uuid()
+      },
+      {
+        organization: 'National Council of Teachers of ' + faker.commerce.department(),
+        membershipId: faker.string.uuid()
+      }
+    ],
     teachingPhilosophy: faker.lorem.paragraph(),
   };
 }
@@ -83,15 +116,15 @@ function generateRandomTeacherProfileData(
  * @returns A promise that resolves to an array of the created Teacher profile documents.
  */
 export async function seedTeacherProfiles(
-  allUsers: UserDocument[],
-  organizations: OrganizationDocument[], // Unused, but kept for potential future use
-  allDepartments: DepartmentDocument[],
-  allSubjects: SubjectDocument[]
+  allUsers: IUser[],
+  organizations: any[], // Unused, but kept for potential future use
+  allDepartments: any[],
+  allSubjects: any[]
 ): Promise<any[]> {
   console.log('Seeding teacher profiles...');
   const createdTeacherProfiles = [];
 
-  const teacherUsers = allUsers.filter(user => user.role === UserRoles.TEACHER);
+  const teacherUsers = allUsers.filter(user => user.role === UserRolesEnum.TEACHER);
   console.log(`Found ${teacherUsers.length} users with role TEACHER.`);
 
   try {
@@ -111,7 +144,7 @@ export async function seedTeacherProfiles(
       if (orgSubjects.length === 0) {
         console.warn(`No subjects found for organization ${teacherUser.organizationId} of teacher ${teacherUser.username}. Cannot assign subjects.`);
       }
-      
+
       const teacherProfileData = generateRandomTeacherProfileData(teacherUser, orgDepartments, orgSubjects);
       const teacherProfile = new Teacher(teacherProfileData);
       await teacherProfile.save();

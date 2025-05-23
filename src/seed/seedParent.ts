@@ -1,10 +1,8 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Parent from '../models/parent.model'; // Adjust path as necessary
-import User from '../models/user.models'; // For updating User.parentId
-import { UserDocument } from '../models/user.models';
-import { OrganizationDocument } from '../models/organization.models'; // Assuming this type is exported
-import { UserRoles } from '../constants';
+import { Parent } from '../models/parent.model'; // Adjust path as necessary
+import { User, IUser } from '../models/user.models'; // For updating User.parentId
+import { UserRolesEnum } from '../constants';
 import { getRandomElement } from './seedUtils';
 
 // Define ParentProfileData interface based on parentSchema for clarity
@@ -36,7 +34,7 @@ interface ParentProfileData {
  * @param parentUser The User document (role: PARENT) for whom to create a profile.
  * @returns An object containing parent profile data.
  */
-function generateRandomParentProfileData(parentUser: UserDocument): ParentProfileData {
+function generateRandomParentProfileData(parentUser: IUser): ParentProfileData {
   return {
     userId: parentUser._id,
     organizationId: parentUser.organizationId!, // Assert non-null as parent should belong to an org
@@ -67,13 +65,13 @@ function generateRandomParentProfileData(parentUser: UserDocument): ParentProfil
  * @returns A promise that resolves to an array of the created Parent profile documents.
  */
 export async function seedParentProfiles(
-  allUsers: UserDocument[],
-  organizations: OrganizationDocument[] // Unused, but kept for potential future use and context
+  allUsers: IUser[],
+  organizations: any[] // Unused, but kept for potential future use and context
 ): Promise<any[]> {
   console.log('Seeding parent profiles...');
   const createdParentProfiles = [];
 
-  const parentUsers = allUsers.filter(user => user.role === UserRoles.PARENT);
+  const parentUsers = allUsers.filter(user => user.role === UserRolesEnum.PARENT);
   console.log(`Found ${parentUsers.length} users with role PARENT.`);
 
   try {
@@ -82,7 +80,7 @@ export async function seedParentProfiles(
         console.warn(`Parent user ${parentUser.username} (ID: ${parentUser._id}) has no organizationId. Skipping.`);
         continue;
       }
-      
+
       const parentProfileData = generateRandomParentProfileData(parentUser);
       const parentProfile = new Parent(parentProfileData);
       await parentProfile.save();

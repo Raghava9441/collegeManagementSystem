@@ -1,10 +1,8 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Lesson from '../models/lesson.models'; // Adjust path as necessary
-import { ClassDocument } from '../models/class.models';
-import { TeacherDocument } from '../models/teacher.model'; // Teacher Profile document
-import { SubjectDocument } from '../models/subject.models';
-import { CourseDocument } from '../models/course.models';
+import { Lesson } from '../models/lesson.models'; // Adjust path as necessary
+import { IClass } from '../models/class.models';
+import { ICourse } from '../models/course.models';
 // import { OrganizationDocument } from '../models/organization.models'; // Not directly used in functions
 import { LESSONS_PER_CLASS_SUBJECT_PAIR } from './seedConstants';
 import { getRandomElement } from './seedUtils'; // Assuming this is sufficient
@@ -31,10 +29,10 @@ interface LessonData {
  * Generates realistic fake data for a single lesson.
  */
 function generateRandomLessonData(
-  classDoc: ClassDocument,
-  subjectDoc: SubjectDocument,
-  teacherDoc: TeacherDocument, // Teacher Profile
-  courseDoc: CourseDocument
+  classDoc: IClass,
+  subjectDoc: any,
+  teacherDoc: any, // Teacher Profile
+  courseDoc: ICourse
 ): LessonData {
   // Ensure lesson occurs within the course's timeframe
   const courseStartDate = new Date(courseDoc.startDate);
@@ -54,8 +52,8 @@ function generateRandomLessonData(
     lessonEndDate = courseEndDate;
   }
   if (lessonStartDate >= lessonEndDate) {
-      lessonEndDate = new Date(lessonStartDate.getTime() + (2 * 60 * 60 * 1000)); // ensure end is after start
-      if (lessonEndDate > courseEndDate) lessonEndDate = courseEndDate;
+    lessonEndDate = new Date(lessonStartDate.getTime() + (2 * 60 * 60 * 1000)); // ensure end is after start
+    if (lessonEndDate > courseEndDate) lessonEndDate = courseEndDate;
   }
 
 
@@ -77,10 +75,10 @@ function generateRandomLessonData(
  * Seeds lessons for subjects taught in classes.
  */
 export async function seedLessons(
-  allClasses: ClassDocument[],
-  allTeachers: TeacherDocument[], // Teacher Profiles
-  allSubjects: SubjectDocument[],
-  allCourses: CourseDocument[]
+  allClasses: IClass[],
+  allTeachers: any[], // Teacher Profiles
+  allSubjects: any[],
+  allCourses: ICourse[]
 ): Promise<any[]> {
   console.log('Seeding lessons...');
   const allCreatedLessons = [];

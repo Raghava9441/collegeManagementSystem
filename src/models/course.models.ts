@@ -23,7 +23,7 @@ export interface ICourse extends Document {
         title: string;
         author: string;
         ISBN: string;
-    }[]; // Array of textbooks
+    }; // Array of textbooks
     syllabus?: string; // Optional syllabus
     assignments?: {
         title: string;

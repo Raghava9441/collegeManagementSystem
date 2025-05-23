@@ -1,13 +1,13 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Conversation from '../models/conversation.model'; // Adjust path as necessary
-import { UserDocument } from '../models/user.models'; // User Profile document (which is the User document itself)
+import { IUser } from '../models/user.models'; // User Profile document (which is the User document itself)
 import {
   NUM_CONVERSATIONS_PER_USER_APPROX,
   MAX_USERS_PER_GROUP_CONVO,
   GROUP_CONVERSATION_PROBABILITY,
 } from './seedConstants';
 import { getRandomElement, getRandomElements } from './seedUtils'; // Assuming getRandomElements exists
+import { Conversation } from '../models/conversation.models';
 
 // Define ConversationData interface based on conversationSchema for clarity
 interface ConversationData {
@@ -23,7 +23,7 @@ interface ConversationData {
  * Generates realistic fake data for a single conversation.
  */
 function generateRandomConversationData(
-  participants: UserDocument[], // User Documents
+  participants: IUser[], // User Documents
   isGroup: boolean
 ): ConversationData {
   let name: string | undefined = undefined;
@@ -54,14 +54,14 @@ function generateRandomConversationData(
  * Seeds conversations among users.
  */
 export async function seedConversations(
-  allUsers: UserDocument[] // User Documents
+  allUsers: IUser[] // User Documents
 ): Promise<any[]> {
   console.log('Seeding conversations...');
   const allCreatedConversations = [];
   // Target roughly this many conversations. Division by 2 for pairs, then by a factor to control total.
   // The NUM_CONVERSATIONS_PER_USER_APPROX is a soft target for how many convos a user might *be in*.
   const targetNumConversations = Math.max(10, Math.floor((allUsers.length * NUM_CONVERSATIONS_PER_USER_APPROX) / 2.5));
-  
+
   // To avoid creating too many identical 1-on-1 conversations
   const createdPairs = new Set<string>();
 
@@ -74,7 +74,7 @@ export async function seedConversations(
   try {
     for (let i = 0; i < targetNumConversations; i++) {
       const isGroup = Math.random() < GROUP_CONVERSATION_PROBABILITY;
-      let participants: UserDocument[] = [];
+      let participants: IUser[] = [];
 
       if (isGroup) {
         const numParticipants = faker.number.int({ min: 2, max: Math.min(MAX_USERS_PER_GROUP_CONVO, allUsers.length) });
@@ -85,23 +85,23 @@ export async function seedConversations(
         if (allUsers.length < 2) continue;
         let user1 = getRandomElement(allUsers);
         let user2 = getRandomElement(allUsers);
-        
+
         let attempts = 0;
         while (user1._id.equals(user2._id) && attempts < allUsers.length * 2) { // Ensure different users
-            user2 = getRandomElement(allUsers);
-            attempts++;
+          user2 = getRandomElement(allUsers);
+          attempts++;
         }
         if (user1._id.equals(user2._id)) continue; // Skip if couldn't find a different user
 
         participants = [user1, user2];
-        
+
         // Check if this pair already exists (order independent)
         const pairKey1 = `${user1._id}-${user2._id}`;
         const pairKey2 = `${user2._id}-${user1._id}`;
         if (createdPairs.has(pairKey1) || createdPairs.has(pairKey2)) {
-            // console.log(`Skipping duplicate 1-on-1 conversation for users: ${user1.username}, ${user2.username}`);
-            i--; // Try to create another conversation to meet target
-            continue; 
+          // console.log(`Skipping duplicate 1-on-1 conversation for users: ${user1.username}, ${user2.username}`);
+          i--; // Try to create another conversation to meet target
+          continue;
         }
         createdPairs.add(pairKey1);
         createdPairs.add(pairKey2);

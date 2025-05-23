@@ -3,16 +3,16 @@ export const NUM_ORGANIZATIONS = 5;
 export const NUM_USERS_PER_ORG = 50;
 export const COURSES_PER_ORGANIZATION = 10;
 export const LESSONS_PER_COURSE = 15;
-export const QUIZZES_PER_LESSON = 1; // Assuming one quiz per lesson
-export const QUESTIONS_PER_QUIZ = 10;
+export const QUIZZES_PER_LESSON = 2; // Assuming one quiz per lesson
+export const QUESTIONS_PER_QUIZ = 25;
 export const ENROLLMENTS_PER_USER = 3; // Max courses a user can be enrolled in within their org
-export const SUBMISSIONS_PER_QUIZ = 1; // Assuming each user enrolled in a course submits each quiz once
+export const SUBMISSIONS_PER_QUIZ = 2; // Assuming each user enrolled in a course submits each quiz once
 
 // User role counts per organization
 export const ORG_ADMINS_PER_ORG = 1;
-export const TEACHERS_PER_ORG = 5;
+export const TEACHERS_PER_ORG = 10;
 export const STUDENTS_PER_ORG = 20;
-export const PARENTS_PER_ORG = 30; // Can be more than students (shared parents, multiple contacts)
+export const PARENTS_PER_ORG = 20; // Can be more than students (shared parents, multiple contacts)
 
 // Department constants
 export const NUM_DEPARTMENTS_PER_ORG = 4; // Average number of departments per organization
@@ -27,7 +27,7 @@ export const MAX_SUBJECTS_PER_TEACHER = 3; // Max subjects a teacher can be asso
 // Course constants
 // COURSES_PER_ORGANIZATION is already defined above (value: 10)
 export const MAX_TEACHERS_PER_COURSE = 2;
-export const MAX_SUBJECTS_PER_COURSE = 3;
+export const MAX_SUBJECTS_PER_COURSE = 5;
 export const DEPARTMENTS_HAVE_COURSES_PROBABILITY = 0.7; // 70% chance a course is assigned to a department
 
 // Class constants
@@ -67,13 +67,13 @@ export const MAX_USERS_PER_GROUP_CONVO = 5;
 export const GROUP_CONVERSATION_PROBABILITY = 0.3;
 
 // Message constants
-export const MESSAGES_PER_CONVERSATION = 10;
+export const MESSAGES_PER_CONVERSATION = 50;
 
 // FriendRequest constants
 export const NUM_FRIEND_REQUESTS_PER_USER_APPROX = 2;
 
 // Event constants
-export const NUM_EVENTS_PER_ORGANIZATION_OR_USER_GROUP = 3; // Adjusted to be per org for simplicity
+export const NUM_EVENTS_PER_ORGANIZATION_OR_USER_GROUP =5; // Adjusted to be per org for simplicity
 export const MAX_PARTICIPANTS_PER_EVENT = 20;
 export const EVENT_TYPES = ['workshop', 'seminar', 'webinar', 'meeting', 'conference', 'social', 'other'];
 

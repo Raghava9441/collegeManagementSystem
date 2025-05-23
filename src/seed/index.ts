@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
- // Adjust path as needed
+// Adjust path as needed
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
+import { main } from './seed';
 // import { Organization } from '@models/organization.models';
 // import { User } from '@models/user.models';
 
@@ -9,7 +10,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Available roles (based on your user schema)
-const AVAILABLE_ROLES = ['admin', 'teacher', 'student', 'parent','orgadmin'];
+const AVAILABLE_ROLES = ['admin', 'teacher', 'student', 'parent', 'orgadmin'];
 
 // Generate random date within a range
 const randomDate = (start: Date, end: Date): Date => {
@@ -119,24 +120,9 @@ const generateUsers = (organizations: any[], count: number) => {
 // Main seeding function
 export const seedDatabase = async () => {
     try {
+        main()
 
-        // Clear existing data
-        // await Organization.deleteMany({});
-        // await User.deleteMany({});
-
-        // Generate and insert organizations
-        const organizationsToSeed = generateOrganizations(5);
-        // const insertedOrganizations = await Organization.insertMany(organizationsToSeed);
-        // console.log(`Seeded ${insertedOrganizations.length} organizations`);
-
-        // Generate and insert users for each organization
-        // const usersToSeed = generateUsers(insertedOrganizations, 50);
-        // const insertedUsers = await User.insertMany(usersToSeed);
-        // console.log(`Seeded ${insertedUsers.length} users`);
-
-        // Disconnect from MongoDB
-        await mongoose.disconnect();
-        console.log('Database seeding completed successfully');
+        // console.log('Database seeding completed successfully');
     } catch (error) {
         console.error('Error seeding database:', error);
         process.exit(1);

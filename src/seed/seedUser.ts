@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import User from '../models/user.models'; // Adjust path as necessary
-import { OrganizationDocument } from '../models/organization.models'; // Assuming this type is exported or define it
+import { User } from '../models/user.models'; // Adjust path as necessary
 import {
   NUM_USERS_PER_ORG, // General constant, might be replaced by role-specific counts
   ORG_ADMINS_PER_ORG,
@@ -9,7 +8,7 @@ import {
   STUDENTS_PER_ORG,
   PARENTS_PER_ORG,
 } from './seedConstants';
-import { AvailableUserRoles, UserRoles } from '../constants'; // Assuming AvailableUserRoles is an array/object and UserRoles is the enum/type
+import { AvailableUserRoles, UserRolesEnum } from '../constants'; // Assuming AvailableUserRoles is an array/object and UserRoles is the enum/type
 import { getRandomElement } from './seedUtils'; // Not strictly needed if roles are assigned systematically
 
 // Define UserData interface based on userSchema for clarity
@@ -50,7 +49,7 @@ function generateRandomUserData(
   const lastName = faker.person.lastName();
   const simpleFullName = `${firstName} ${lastName}`;
   const username = faker.internet.userName({ firstName, lastName });
-  const email = faker.internet.email({ firstName, lastName, provider: `test-${organizationId.toString().slice(0,5)}.edu` }); // Make email unique per org for seeding
+  const email = faker.internet.email({ firstName, lastName, provider: `test-${organizationId.toString().slice(0, 5)}.edu` }); // Make email unique per org for seeding
 
   return {
     username,
@@ -80,7 +79,7 @@ function generateRandomUserData(
  * @param organizations An array of Organization documents.
  * @returns A promise that resolves to an array of the created User documents.
  */
-export async function seedUsers(organizations: OrganizationDocument[]): Promise<any[]> {
+export async function seedUsers(organizations: any[]): Promise<any[]> {
   console.log('Seeding users for all organizations...');
   const allCreatedUsers = [];
 
@@ -91,40 +90,43 @@ export async function seedUsers(organizations: OrganizationDocument[]): Promise<
 
       // Seed ORGADMINs
       for (let i = 0; i < ORG_ADMINS_PER_ORG; i++) {
-        const userData = generateRandomUserData(org._id, UserRoles.ORGADMIN);
+        console.log("object", UserRolesEnum.ORGADMIN)
+        const userData = generateRandomUserData(org._id, UserRolesEnum.ORGADMIN);
+        console.log(userData)
         const user = new User(userData);
         await user.save();
         usersForOrg.push(user);
-        console.log(`Created ${UserRoles.ORGADMIN} user: ${user.username} for org: ${org.name}`);
+        console.log(`Created ${UserRolesEnum.ORGADMIN} user: ${user.username} for org: ${org.name}`);
       }
 
       // Seed TEACHERs
       for (let i = 0; i < TEACHERS_PER_ORG; i++) {
-        const userData = generateRandomUserData(org._id, UserRoles.TEACHER);
+        const userData = generateRandomUserData(org._id, UserRolesEnum.TEACHER);
         const user = new User(userData);
         await user.save();
         usersForOrg.push(user);
-        console.log(`Created ${UserRoles.TEACHER} user: ${user.username} for org: ${org.name}`);
+        console.log(`Created ${UserRolesEnum.TEACHER} user: ${user.username} for org: ${org.name}`);
       }
 
       // Seed STUDENTs
       for (let i = 0; i < STUDENTS_PER_ORG; i++) {
-        const userData = generateRandomUserData(org._id, UserRoles.STUDENT);
+
+        const userData = generateRandomUserData(org._id, UserRolesEnum.STUDENT);
         const user = new User(userData);
         await user.save();
         usersForOrg.push(user);
-        console.log(`Created ${UserRoles.STUDENT} user: ${user.username} for org: ${org.name}`);
+        console.log(`Created ${UserRolesEnum.STUDENT} user: ${user.username} for org: ${org.name}`);
       }
 
       // Seed PARENTs
       for (let i = 0; i < PARENTS_PER_ORG; i++) {
-        const userData = generateRandomUserData(org._id, UserRoles.PARENT);
+        const userData = generateRandomUserData(org._id, UserRolesEnum.PARENT);
         const user = new User(userData);
         await user.save();
         usersForOrg.push(user);
-        console.log(`Created ${UserRoles.PARENT} user: ${user.username} for org: ${org.name}`);
+        console.log(`Created ${UserRolesEnum.PARENT} user: ${user.username} for org: ${org.name}`);
       }
-      
+
       console.log(`Seeded ${usersForOrg.length} users for organization: ${org.name}`);
       allCreatedUsers.push(...usersForOrg);
     }

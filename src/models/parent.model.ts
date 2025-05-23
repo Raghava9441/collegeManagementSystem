@@ -2,7 +2,7 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
 
-interface IParent extends Document {
+export interface IParent extends Document {
     _id: string;
     userId: mongoose.Types.ObjectId;
     childrenIds: mongoose.Types.ObjectId[];

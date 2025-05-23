@@ -1,16 +1,16 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Class from '../models/class.models'; // Adjust path as necessary
-import { OrganizationDocument } from '../models/organization.models';
-import { CourseDocument } from '../models/course.models';
-import { TeacherDocument } from '../models/teacher.model'; // These are teacher profiles
-import { UserDocument } from '../models/user.models';
+import { Class } from '../models/class.models'; // Adjust path as necessary
+// import { OrganizationDocument } from '../models/organization.models';
+import { ICourse } from '../models/course.models';
+// import { TeacherDocument } from '../models/teacher.model'; // These are teacher profiles
+import { IUser } from '../models/user.models';
 import {
   CLASSES_PER_COURSE,
   ACADEMIC_YEARS,
   DAYS_OF_WEEK,
 } from './seedConstants';
-import { UserRoles } from '../constants';
+import { UserRolesEnum } from '../constants';
 import { getRandomElement } from './seedUtils';
 
 // Define ClassData interface based on classSchema for clarity
@@ -39,20 +39,20 @@ interface ClassData {
  * Generates realistic fake data for a single class.
  */
 function generateRandomClassData(
-  organization: OrganizationDocument,
-  course: CourseDocument,
-  allTeachersForOrg: TeacherDocument[], // Teacher profiles
-  adminUsersForOrg: UserDocument[] // Users with ORGADMIN or TEACHER role
+  organization: any,
+  course: ICourse,
+  allTeachersForOrg: any[], // Teacher profiles
+  adminUsersForOrg: IUser[] // Users with ORGADMIN or TEACHER role
 ): ClassData {
   const classTeacherProfile = getRandomElement(allTeachersForOrg);
   // Corrected: Store Teacher Profile _id, not User _id
-  const classTeacherId = classTeacherProfile._id; 
+  const classTeacherId = classTeacherProfile._id;
 
   let supervisorId: mongoose.Types.ObjectId | undefined = undefined;
   if (allTeachersForOrg.length > 0) {
     const supervisorProfile = getRandomElement(allTeachersForOrg);
     // Corrected: Store Teacher Profile _id, not User _id
-    supervisorId = supervisorProfile._id; 
+    supervisorId = supervisorProfile._id;
   }
 
   const createdBy = getRandomElement(adminUsersForOrg)._id;
@@ -92,10 +92,10 @@ function generateRandomClassData(
  * Seeds classes for courses within multiple organizations.
  */
 export async function seedClasses(
-  organizations: OrganizationDocument[],
-  allCourses: CourseDocument[],
-  allTeachers: TeacherDocument[], // These are Teacher Profile documents
-  allUsers: UserDocument[]
+  organizations: any[],
+  allCourses: ICourse[],
+  allTeachers: any[], // These are Teacher Profile documents
+  allUsers: IUser[]
 ): Promise<any[]> {
   console.log('Seeding classes...');
   const allCreatedClasses = [];
@@ -104,11 +104,11 @@ export async function seedClasses(
     for (const org of organizations) {
       console.log(`Processing organization: ${org.name} (ID: ${org._id}) for class seeding.`);
 
-      const orgCourses = allCourses.filter(c => c.organizationId.equals(org._id));
-      const orgTeachers = allTeachers.filter(t => t.organizationId.equals(org._id)); // Teacher Profiles
+      const orgCourses = allCourses.filter(c => c.organizationId.toString() === org._id.toString());
+      const orgTeachers = allTeachers.filter(t => t.organizationId.toString() === org._id.toString()); // Teacher Profiles
       const orgAdminAndTeacherUsers = allUsers.filter(u =>
-        u.organizationId.equals(org._id) &&
-        (u.role === UserRoles.ORGADMIN || u.role === UserRoles.TEACHER)
+        u.organizationId.toString() === org._id.toString() &&
+        (u.role === UserRolesEnum.ORGADMIN || u.role === UserRolesEnum.TEACHER)
       );
 
       if (orgCourses.length === 0) {
@@ -123,7 +123,7 @@ export async function seedClasses(
         console.warn(`No admin or teacher users found for organization ${org.name}. Cannot set 'createdBy' for classes. Skipping class seeding for this org.`);
         continue;
       }
-      
+
       for (const course of orgCourses) {
         console.log(`Seeding classes for course: "${course.name}" (ID: ${course._id}) in org: ${org.name}`);
         const classesForCourse = [];
@@ -133,7 +133,7 @@ export async function seedClasses(
             console.error(`Cannot create class for course "${course.name}" as there are no teachers in organization ${org.name}.`);
             break; // Break from creating classes for this course
           }
-          
+
           const classData = generateRandomClassData(org, course, orgTeachers, orgAdminAndTeacherUsers);
           const newClass = new Class(classData);
           await newClass.save();

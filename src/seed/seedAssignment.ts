@@ -1,10 +1,8 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Assignment from '../models/assignment.models'; // Adjust path as necessary
-import { SubjectDocument } from '../models/subject.models';
-import { ClassDocument } from '../models/class.models';
-import { TeacherDocument } from '../models/teacher.model'; // Teacher Profile document
-import { CourseDocument } from '../models/course.models'; // Needed to get course duration context
+import { Assignment } from '../models/assignment.models'; // Adjust path as necessary
+import { IClass } from '../models/class.models';
+import { ICourse } from '../models/course.models'; // Needed to get course duration context
 // import { OrganizationDocument } from '../models/organization.models'; // Not directly used
 import { ASSIGNMENTS_PER_SUBJECT_CLASS_PAIR } from './seedConstants';
 
@@ -27,17 +25,17 @@ interface AssignmentData {
  * Generates realistic fake data for a single assignment.
  */
 function generateRandomAssignmentData(
-  subjectDoc: SubjectDocument,
-  classDoc: ClassDocument,
-  teacherDoc: TeacherDocument, // Teacher Profile
-  courseDoc: CourseDocument // For date context
+  subjectDoc: any,
+  classDoc: IClass,
+  teacherDoc: any, // Teacher Profile
+  courseDoc: ICourse // For date context
 ): AssignmentData {
   const courseStartDate = new Date(courseDoc.startDate);
   const courseEndDate = new Date(courseDoc.endDate);
 
   // Generate assignment start date within the course duration
   let assignmentStartDate = faker.date.between({ from: courseStartDate, to: courseEndDate });
-  
+
   // Ensure dueDate is after startDate and within course duration
   let assignmentDueDate = faker.date.future({ refDate: assignmentStartDate, years: 0.1 }); // Approx up to 36 days
   if (assignmentDueDate > courseEndDate) {
@@ -45,12 +43,12 @@ function generateRandomAssignmentData(
   }
   // If somehow start date ended up being the same as course end date, adjust
   if (assignmentStartDate >= courseEndDate) {
-      assignmentStartDate = new Date(courseEndDate.getTime() - (24 * 60 * 60 * 1000)); // 1 day before course end
-      assignmentDueDate = courseEndDate;
+    assignmentStartDate = new Date(courseEndDate.getTime() - (24 * 60 * 60 * 1000)); // 1 day before course end
+    assignmentDueDate = courseEndDate;
   }
-   if (assignmentStartDate >= assignmentDueDate) {
-      assignmentDueDate = new Date(assignmentStartDate.getTime() + (24 * 60 * 60 * 1000)); // ensure due date is after start
-      if (assignmentDueDate > courseEndDate) assignmentDueDate = courseEndDate;
+  if (assignmentStartDate >= assignmentDueDate) {
+    assignmentDueDate = new Date(assignmentStartDate.getTime() + (24 * 60 * 60 * 1000)); // ensure due date is after start
+    if (assignmentDueDate > courseEndDate) assignmentDueDate = courseEndDate;
   }
 
 
@@ -72,10 +70,10 @@ function generateRandomAssignmentData(
  * Seeds assignments for subjects taught in classes.
  */
 export async function seedAssignments(
-  allClasses: ClassDocument[],
-  allTeachers: TeacherDocument[], // Teacher Profiles
-  allSubjects: SubjectDocument[],
-  allCourses: CourseDocument[] // Pass all courses to find the one linked to the class
+  allClasses: IClass[],
+  allTeachers: any[], // Teacher Profiles
+  allSubjects: any[],
+  allCourses: ICourse[] // Pass all courses to find the one linked to the class
 ): Promise<any[]> {
   console.log('Seeding assignments...');
   const allCreatedAssignments = [];

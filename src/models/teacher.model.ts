@@ -17,19 +17,14 @@ const teacherSchema = new Schema(
         organizationId: { type: Schema.Types.ObjectId, ref: 'Organization', required: true },
         departments: [{ type: Schema.Types.ObjectId, ref: 'Department' }],
         subjects: [{ type: Schema.Types.ObjectId, ref: 'Subject' }],
-        qualifications: {
-            type: String,
-            trim: true
-        },
+        qualifications: [{ type: String, trim: true }],
         experience: {
             type: Number // in years
         },
         officeHours: {
             type: String // e.g., "Monday 10:00 AM - 12:00 PM"
         },
-        researchInterests: {
-            type: String
-        },
+        researchInterests: [{ type: String }],
         publications: [{
             title: { type: String },
             authors: { type: String },

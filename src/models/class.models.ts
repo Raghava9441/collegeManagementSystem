@@ -7,7 +7,7 @@ export interface IClass extends Document {
     courseId: mongoose.Types.ObjectId;
     classTeacherId: mongoose.Types.ObjectId;
     studentIds: mongoose.Types.ObjectId[];
-    organizationId: string;
+    organizationId: mongoose.Schema.Types.ObjectId;
     schedule: Array<{
         dayOfWeek: string;
         startTime: string;
@@ -62,7 +62,7 @@ const classSchema = new Schema(
             required: true
         },
         organizationId: {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId,
             required: true
         },
         supervisorId: {

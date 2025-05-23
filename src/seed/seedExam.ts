@@ -1,15 +1,13 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Exam from '../models/exam.model'; // Adjust path as necessary
-import { SubjectDocument } from '../models/subject.models';
-import { CourseDocument } from '../models/course.models';
-import { ClassDocument } from '../models/class.models';
-import { TeacherDocument } from '../models/teacher.model'; // Teacher Profile document
+import { ICourse } from '../models/course.models';
+import { IClass } from '../models/class.models';
 import {
   EXAMS_PER_COURSE_CLASS_SUBJECT_COMBINATION,
   EXAM_TYPES,
 } from './seedConstants';
 import { getRandomElement } from './seedUtils';
+import { Exam } from '../models/exam.models';
 
 // Define ExamData interface based on examSchema for clarity
 interface ExamData {
@@ -36,10 +34,10 @@ interface ExamData {
  * Generates realistic fake data for a single exam.
  */
 function generateRandomExamData(
-  courseDoc: CourseDocument,
-  classDoc?: ClassDocument,
-  subjectDoc?: SubjectDocument,
-  teacherDoc?: TeacherDocument // Teacher Profile
+  courseDoc: ICourse,
+  classDoc?: IClass,
+  subjectDoc?: any,
+  teacherDoc?: any // Teacher Profile
 ): ExamData {
   const examType = getRandomElement(EXAM_TYPES);
   let examName = `${courseDoc.name} - ${subjectDoc ? subjectDoc.name : ''} ${examType}`;
@@ -52,7 +50,7 @@ function generateRandomExamData(
   const courseEndDate = new Date(courseDoc.endDate);
 
   let examStartDate = faker.date.between({ from: courseStartDate, to: courseEndDate });
-  
+
   // Ensure examEndDate is after startDate and within course duration
   // Duration of exam itself is separate from this start/end window for taking it.
   let examEndDate = faker.date.future({ refDate: examStartDate, years: 0.02 }); // Approx up to 7 days for exam window
@@ -60,12 +58,12 @@ function generateRandomExamData(
     examEndDate = courseEndDate;
   }
   if (examStartDate >= courseEndDate) {
-      examStartDate = new Date(courseEndDate.getTime() - (24 * 60 * 60 * 1000)); // 1 day before course end
-      examEndDate = courseEndDate;
+    examStartDate = new Date(courseEndDate.getTime() - (24 * 60 * 60 * 1000)); // 1 day before course end
+    examEndDate = courseEndDate;
   }
   if (examStartDate >= examEndDate) {
-      examEndDate = new Date(examStartDate.getTime() + (24 * 60 * 60 * 1000)); // ensure end is after start
-      if (examEndDate > courseEndDate) examEndDate = courseEndDate;
+    examEndDate = new Date(examStartDate.getTime() + (24 * 60 * 60 * 1000)); // ensure end is after start
+    if (examEndDate > courseEndDate) examEndDate = courseEndDate;
   }
 
 
@@ -88,9 +86,9 @@ function generateRandomExamData(
     startDate: examStartDate,
     endDate: examEndDate, // This is the window the exam is available, not how long student has once started.
     schedule: { // Example schedule for the exam event itself
-        dayOfWeek: scheduleDay,
-        startTime: `${String(scheduleStartTimeHour).padStart(2, '0')}:00`,
-        endTime: `${String(scheduleEndTimeHour).padStart(2, '0')}:${String(duration % 60).padStart(2, '0')}`,
+      dayOfWeek: scheduleDay,
+      startTime: `${String(scheduleStartTimeHour).padStart(2, '0')}:00`,
+      endTime: `${String(scheduleEndTimeHour).padStart(2, '0')}:${String(duration % 60).padStart(2, '0')}`,
     }
   };
 }
@@ -99,10 +97,10 @@ function generateRandomExamData(
  * Seeds exams for subjects within courses/classes.
  */
 export async function seedExams(
-  allCourses: CourseDocument[],
-  allClasses: ClassDocument[],
-  allSubjects: SubjectDocument[],
-  allTeachers: TeacherDocument[] // Teacher Profiles
+  allCourses: ICourse[],
+  allClasses: IClass[],
+  allSubjects: any[],
+  allTeachers: any[] // Teacher Profiles
 ): Promise<any[]> {
   console.log('Seeding exams...');
   const allCreatedExams = [];
@@ -129,7 +127,7 @@ export async function seedExams(
         // Option: create a generic exam for the class/course if no subjects? For now, skipping.
         continue;
       }
-      
+
       for (const subjectId of courseDoc.subjectIds) {
         const subjectDoc = allSubjects.find(s => s._id.equals(subjectId));
         if (!subjectDoc) {

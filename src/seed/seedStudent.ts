@@ -1,22 +1,23 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Student from '../models/student.model'; // Adjust path as necessary
-import User from '../models/user.models';
-import Parent from '../models/parent.model';
-import Course from '../models/course.models';
-import Class from '../models/class.models';
-import { UserDocument } from '../models/user.models';
-import { OrganizationDocument } from '../models/organization.models';
-import { ParentDocument } from '../models/parent.model'; // Parent Profile document
-import { CourseDocument } from '../models/course.models';
-import { ClassDocument } from '../models/class.models';
-import { UserRoles } from '../constants';
+// import Student from '../models/student.model'; // Adjust path as necessary
+import { User } from '../models/user.models';
+import { Parent } from '../models/parent.model';
+import { Course } from '../models/course.models';
+import { Class } from '../models/class.models';
+import { IUser } from '../models/user.models';
+// import { OrganizationDocument } from '../models/organization.models';
+import { IParent } from '../models/parent.model'; // Parent Profile document
+import { ICourse } from '../models/course.models';
+import { IClass } from '../models/class.models';
+import { UserRolesEnum } from '../constants';
 import {
   STUDENTS_PER_CLASS_AVG, // Not directly used in profile generation, but for context
   MAX_COURSES_PER_STUDENT,
   STUDENT_HAS_PARENT_PROBABILITY,
 } from './seedConstants';
 import { getRandomElement, getRandomElements } from './seedUtils'; // Assuming getRandomElements exists
+import { Student } from '../models/student.models';
 
 // Define StudentProfileData interface based on studentSchema for clarity
 interface StudentProfileData {
@@ -49,10 +50,10 @@ interface StudentProfileData {
  * Generates realistic fake data for a single student profile.
  */
 function generateRandomStudentProfileData(
-  studentUser: UserDocument,
-  availableParentsForOrg: ParentDocument[],
-  availableCoursesForOrg: CourseDocument[],
-  availableClassesForOrg: ClassDocument[]
+  studentUser: IUser,
+  availableParentsForOrg: IParent[],
+  availableCoursesForOrg: ICourse[],
+  availableClassesForOrg: IClass[]
 ): StudentProfileData {
   let parentId: mongoose.Types.ObjectId | undefined = undefined;
   if (availableParentsForOrg.length > 0 && Math.random() < STUDENT_HAS_PARENT_PROBABILITY) {
@@ -76,8 +77,8 @@ function generateRandomStudentProfileData(
       currentClassId = getRandomElement(availableClassesForOrg)._id;
     }
   } else if (availableClassesForOrg.length > 0) {
-     // Fallback if no courses enrolled but classes exist
-     currentClassId = getRandomElement(availableClassesForOrg)._id;
+    // Fallback if no courses enrolled but classes exist
+    currentClassId = getRandomElement(availableClassesForOrg)._id;
   }
 
 
@@ -111,16 +112,16 @@ function generateRandomStudentProfileData(
  * Seeds Student profiles, updates related documents.
  */
 export async function seedStudentProfiles(
-  allUsers: UserDocument[],
-  organizations: OrganizationDocument[], // Unused, but good for context
-  allParentProfiles: ParentDocument[], // These are Parent Profile documents
-  allCourses: CourseDocument[],
-  allClasses: ClassDocument[]
+  allUsers: IUser[],
+  organizations: any[], // Unused, but good for context
+  allParentProfiles: IParent[], // These are Parent Profile documents
+  allCourses: ICourse[],
+  allClasses: IClass[]
 ): Promise<any[]> {
   console.log('Seeding student profiles...');
   const createdStudentProfiles = [];
 
-  const studentUsers = allUsers.filter(user => user.role === UserRoles.STUDENT);
+  const studentUsers = allUsers.filter(user => user.role === UserRolesEnum.STUDENT);
   console.log(`Found ${studentUsers.length} users with role STUDENT.`);
 
   try {
@@ -131,9 +132,9 @@ export async function seedStudentProfiles(
         continue;
       }
 
-      const orgParents = allParentProfiles.filter(p => p.organizationId.equals(orgId));
-      const orgCourses = allCourses.filter(c => c.organizationId.equals(orgId));
-      const orgClasses = allClasses.filter(cl => cl.organizationId.equals(orgId));
+      const orgParents = allParentProfiles.filter(p => p.organizationId.toString() === orgId.toString());
+      const orgCourses = allCourses.filter(c => c.organizationId.toString() === orgId.toString());
+      const orgClasses = allClasses.filter(cl => cl.organizationId.toString() === orgId.toString());
 
       // Basic checks for data availability
       if (orgCourses.length === 0) console.warn(`No courses found for organization ${orgId} of student ${studentUser.username}. Student may not be enrolled in courses.`);
@@ -183,6 +184,7 @@ export async function seedStudentProfiles(
           }
         } else {
           console.warn(`Could not find Course ${courseId} to update studentsEnrolled.`);
+          
         }
       }
 

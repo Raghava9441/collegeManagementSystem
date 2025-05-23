@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker'; // Not strictly needed for this model but good practice
 import mongoose from 'mongoose';
-import FriendRequest from '../models/friendRequest.model'; // Adjust path as necessary
 // User model is not directly needed here as we operate on UserDocuments passed in
-import { UserDocument } from '../models/user.models'; // User Profile document (which is the User document itself)
+import { IUser } from '../models/user.models'; // User Profile document (which is the User document itself)
 import { NUM_FRIEND_REQUESTS_PER_USER_APPROX } from './seedConstants';
 import { getRandomElement } from './seedUtils';
+import { FriendRequest } from '../models/friendRequest.models';
 
 // Define FriendRequestData interface based on requestSchema for clarity
 interface FriendRequestData {
@@ -18,8 +18,8 @@ interface FriendRequestData {
  * Generates realistic fake data for a single friend request.
  */
 function generateRandomFriendRequestData(
-  sender: UserDocument, // User Document
-  recipient: UserDocument // User Document
+  sender: IUser, // User Document
+  recipient: IUser // User Document
 ): FriendRequestData {
   return {
     sender: sender._id, // User._id
@@ -32,7 +32,7 @@ function generateRandomFriendRequestData(
  * Seeds friend requests among users.
  */
 export async function seedFriendRequests(
-  allUsers: UserDocument[] // User Documents
+  allUsers: IUser[] // User Documents
 ): Promise<any[]> {
   console.log('Seeding friend requests...');
   const allCreatedFriendRequests = [];

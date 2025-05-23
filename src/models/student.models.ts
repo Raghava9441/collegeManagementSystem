@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2';
 
-interface IStudent extends Document {
+export interface IStudent extends Document {
     _id: string;
     userId: mongoose.Types.ObjectId;
     teacherIds: mongoose.Types.ObjectId[];

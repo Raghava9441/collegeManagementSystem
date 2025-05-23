@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
 
 /**
@@ -11,6 +12,26 @@ export function getRandomElement<T>(array: T[]): T {
   }
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
+}
+
+/**
+ * Returns up to `count` **unique** random elements (without replacement).
+ * If count ≥ array.length, the array is shuffled and returned.
+ */
+export function getRandomElements<T>(array: T[], count: number): T[] {
+  if (!array?.length) throw new Error('Array cannot be empty');
+
+  if (count >= array.length) return faker.helpers.shuffle(array);
+
+  const copy = [...array];
+  const result: T[] = [];
+
+  while (result.length < count) {
+    const idx = Math.floor(Math.random() * copy.length);
+    result.push(copy.splice(idx, 1)[0]); // removes to keep uniqueness
+  }
+
+  return result;
 }
 
 /**
@@ -42,7 +63,15 @@ export function sleep(ms: number): Promise<void> {
  */
 export async function connectDB(uri: string): Promise<void> {
   try {
-    await mongoose.connect(uri);
+    console.log(uri)
+    // await mongoose.connect(uri); 
+    const seedConnection = mongoose.createConnection(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+
+    // mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
     console.log('MongoDB connected successfully.');
   } catch (error) {
     console.error('MongoDB connection error:', error);

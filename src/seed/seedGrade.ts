@@ -1,14 +1,10 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Grade from '../models/grade.model'; // Adjust path as necessary
-import { StudentDocument } from '../models/student.model'; // Student Profile document
-import { SubjectDocument } from '../models/subject.models';
-import { ExamDocument } from '../models/exam.model';
-import { AssignmentDocument } from '../models/assignment.models';
-import { TeacherDocument } from '../models/teacher.model'; // Teacher Profile document
-import { CourseDocument } from '../models/course.models'; // For context if item doesn't have direct courseId
+import { ICourse } from '../models/course.models'; // For context if item doesn't have direct courseId
 import { GRADES_PER_EXAM_OR_ASSIGNMENT_PER_STUDENT } from './seedConstants';
 import { getRandomElement } from './seedUtils';
+import { Grade, IGrade } from '../models/grades.models';
+import { IStudent } from '../models/student.models';
 
 // Define GradeData interface based on gradeSchema for clarity
 interface GradeData {
@@ -30,9 +26,9 @@ interface GradeData {
  * Generates realistic fake data for a single grade.
  */
 function generateRandomGradeData(
-  studentDoc: StudentDocument,
-  item: ExamDocument | AssignmentDocument,
-  teacherDoc?: TeacherDocument // Teacher Profile, can be optional if item has a teacherId
+  studentDoc: IStudent,
+  item: any,
+  teacherDoc?: any // Teacher Profile, can be optional if item has a teacherId
 ): GradeData {
   const score = faker.number.int({ min: 40, max: 100 });
   let letterGrade = 'N/A';
@@ -42,8 +38,8 @@ function generateRandomGradeData(
   else if (score >= 60) letterGrade = 'D';
   else letterGrade = 'F';
 
-  const gradedByTeacherId = teacherDoc?._id || (item as ExamDocument).teacherId || (item as AssignmentDocument).teacher;
-  
+  const gradedByTeacherId = teacherDoc?._id || item.teacherId || item.teacher;
+
   // Determine subjectId and courseId from the item
   // gradeSchema.subjectId actually refers to Course. This is a naming inconsistency in the schema.
   // We will use item.courseId for gradeSchema.subjectId if item.subjectId is not available directly on item.
@@ -57,9 +53,9 @@ function generateRandomGradeData(
   if ('subjectId' in item && item.subjectId) { // Exam has subjectId
     subjectIdForItem = item.subjectId;
   } else if ('subject' in item && item.subject) { // Assignment has subject
-     subjectIdForItem = item.subject;
+    subjectIdForItem = item.subject;
   }
-  
+
   let courseIdForItem: mongoose.Types.ObjectId | undefined = undefined;
   if ('courseId' in item && item.courseId) { // Exam has courseId
     courseIdForItem = item.courseId;
@@ -71,15 +67,15 @@ function generateRandomGradeData(
     studentId: studentDoc._id,
     subjectId: subjectIdForItem, // Actual Subject ID
     courseId: courseIdForItem,  // Actual Course ID
-    exam: (item as ExamDocument).examType ? item._id : undefined, // Check if it's an Exam
-    assignment: !(item as ExamDocument).examType ? item._id : undefined, // Check if it's an Assignment
+    exam: item.examType ? item._id : undefined, // Check if it's an Exam
+    assignment: !item.examType ? item._id : undefined, // Check if it's an Assignment
     score: score,
     remarks: faker.lorem.sentence(),
     gradedBy: gradedByTeacherId, // Teacher Profile ID
     grade: letterGrade,
     feedback: faker.lorem.paragraph(),
-    dateAssigned: (item as ExamDocument).startDate || (item as AssignmentDocument).startDate,
-    dateGraded: faker.date.soon({ days: 7, refDate: (item as ExamDocument).endDate || item.dueDate }),
+    dateAssigned: item.startDate || item.startDate,
+    dateGraded: faker.date.soon({ days: 7, refDate: item.endDate || item.dueDate }),
   };
 }
 
@@ -87,10 +83,10 @@ function generateRandomGradeData(
  * Seeds grades for students on exams and assignments.
  */
 export async function seedGrades(
-  allStudents: StudentDocument[], // Student Profiles
-  allExams: ExamDocument[],
-  allAssignments: AssignmentDocument[],
-  allTeachers: TeacherDocument[] // Teacher Profiles
+  allStudents: IStudent[], // Student Profiles
+  allExams: any[],
+  allAssignments: any[],
+  allTeachers: any[] // Teacher Profiles
 ): Promise<any[]> {
   console.log('Seeding grades...');
   const allCreatedGrades = [];
@@ -134,7 +130,7 @@ export async function seedGrades(
       for (const assignment of relevantAssignments) {
         // Find the teacher who graded it (e.g., assignment.teacher which is a Teacher Profile ID)
         const teacherDoc = allTeachers.find(t => t._id.equals(assignment.teacher));
-         if (!teacherDoc) {
+        if (!teacherDoc) {
           // console.warn(`    Teacher profile (ID: ${assignment.teacher}) not found for assignment ${assignment._id}. Grade will not have a grader.`);
         }
         for (let i = 0; i < GRADES_PER_EXAM_OR_ASSIGNMENT_PER_STUDENT; i++) {

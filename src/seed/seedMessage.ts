@@ -1,11 +1,10 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Message from '../models/message.model'; // Adjust path as necessary
-import Conversation from '../models/conversation.model'; // For updating latestMessage
-import { ConversationDocument } from '../models/conversation.model';
-import { UserDocument } from '../models/user.models'; // User Profile document (which is the User document itself)
+import { IUser } from '../models/user.models'; // User Profile document (which is the User document itself)
 import { MESSAGES_PER_CONVERSATION } from './seedConstants';
 import { getRandomElement } from './seedUtils';
+import { Message, IMessage } from '../models/message.models';
+import { Conversation, IConversation } from '../models/conversation.models';
 
 // Define MessageData interface based on messageSchema for clarity
 interface MessageData {
@@ -21,7 +20,7 @@ interface MessageData {
  */
 function generateRandomMessageData(
   conversationDoc: ConversationDocument,
-  sender: UserDocument // User Document
+  sender: IUser // User Document
 ): MessageData {
   return {
     sender: sender._id, // User._id
@@ -35,8 +34,8 @@ function generateRandomMessageData(
  * Seeds messages for conversations.
  */
 export async function seedMessages(
-  allConversations: ConversationDocument[],
-  allUsers: UserDocument[] // All User Documents, to easily find sender details
+  allConversations: IConversation[],
+  allUsers: IUser[] // All User Documents, to easily find sender details
 ): Promise<any[]> {
   console.log('Seeding messages...');
   const allCreatedMessages = [];
@@ -55,18 +54,18 @@ export async function seedMessages(
         console.warn(`    Conversation (ID: ${conversationDoc._id}) has no users. Skipping message seeding for this conversation.`);
         continue;
       }
-      
+
       // Create a map for quick UserDocument lookup from IDs in conversationDoc.users
       const userMap = new Map(allUsers.map(user => [user._id.toString(), user]));
-      
+
       // Get full UserDocument objects for participants in the current conversation
       const participantDocs = conversationDoc.users
-          .map(userId => userMap.get(userId.toString()))
-          .filter(user => user !== undefined) as UserDocument[];
+        .map(userId => userMap.get(userId.toString()))
+        .filter(user => user !== undefined) as IUser[];
 
       if (participantDocs.length === 0) {
-          console.warn(`    Could not find UserDocuments for any participants in Conversation (ID: ${conversationDoc._id}). User IDs: ${conversationDoc.users.join(', ')}. Skipping messages.`);
-          continue;
+        console.warn(`    Could not find UserDocuments for any participants in Conversation (ID: ${conversationDoc._id}). User IDs: ${conversationDoc.users.join(', ')}. Skipping messages.`);
+        continue;
       }
 
 

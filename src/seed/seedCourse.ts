@@ -1,10 +1,6 @@
 import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
-import Course from '../models/course.models'; // Adjust path as necessary
-import { OrganizationDocument } from '../models/organization.models';
-import { TeacherDocument } from '../models/teacher.model'; // Actual teacher profiles
-import { SubjectDocument } from '../models/subject.models';
-import { DepartmentDocument } from '../models/Department.models';
+import { Course } from '../models/course.models'; // Adjust path as necessary
 import {
   COURSES_PER_ORGANIZATION,
   MAX_TEACHERS_PER_COURSE,
@@ -53,13 +49,15 @@ interface CourseData {
  * Generates realistic fake data for a single course.
  */
 function generateRandomCourseData(
-  organization: OrganizationDocument,
-  allTeachersForOrg: TeacherDocument[],
-  allSubjectsForOrg: SubjectDocument[],
-  allDepartmentsForOrg: DepartmentDocument[]
+  organization: any,
+  allTeachersForOrg: any[],
+  allSubjectsForOrg: any[],
+  allDepartmentsForOrg: any[]
 ): CourseData {
   const startDate = faker.date.soon({ days: 90 });
-  const courseName = `${faker.company.bsAdjective()} ${faker.company.bsNoun()}`; // More general name
+  // const courseName = `${faker.company.bsAdjective()} ${faker.company.bsNoun()}`; // More general name
+  const courseName = `${faker.company.buzzAdjective()} ${faker.company.buzzNoun()}`;  // :contentReference[oaicite:0]{index=0}
+
   const numTeachers = faker.number.int({ min: 1, max: Math.min(MAX_TEACHERS_PER_COURSE, allTeachersForOrg.length) });
   // Corrected: Store Teacher Profile _id, not User _id
   const selectedTeacherIds = getRandomElements(allTeachersForOrg, numTeachers).map(t => t._id);
@@ -74,7 +72,7 @@ function generateRandomCourseData(
 
   return {
     name: courseName,
-    code: `${faker.lorem.word().substring(0,3).toUpperCase()}${faker.string.numeric(3)}`,
+    code: `${faker.lorem.word().substring(0, 3).toUpperCase()}${faker.string.numeric(3)}`,
     description: faker.lorem.paragraph(),
     organizationId: organization._id,
     teacherIds: selectedTeacherIds,
@@ -82,16 +80,39 @@ function generateRandomCourseData(
     departmentId: departmentId,
     startDate: startDate,
     endDate: faker.date.future({ years: 0.5, refDate: startDate }),
-    schedule: `${faker.helpers.arrayElement(['Mon/Wed/Fri', 'Tue/Thu'])} ${faker.number.int({ min: 8, max: 16})}:00-${faker.number.int({ min: 8, max: 16})+2}:00`,
+    schedule: `${faker.helpers.arrayElement(['Mon/Wed/Fri', 'Tue/Thu'])} ${faker.number.int({ min: 8, max: 16 })}:00-${faker.number.int({ min: 8, max: 16 }) + 2}:00`,
     credits: faker.helpers.arrayElement([1, 2, 3, 4]),
     prerequisites: generateN(() => faker.lorem.words(3), faker.number.int({ min: 0, max: 3 })),
     location: faker.location.secondaryAddress(), // e.g., "Room 501", "Online"
     fee: parseFloat(faker.commerce.price({ min: 50, max: 500 })),
-    textbooks: generateN(() => `${faker.commerce.productName()} by ${faker.person.fullName()}`, faker.number.int({ min: 0, max: 4 })),
-    syllabus: [{ title: "Introduction", content: faker.lorem.sentences(3) }, { title: "Core Concepts", content: faker.lorem.sentences(5) }],
-    assignments: [], // Left empty
-    gradingScheme: [{ component: "Midterm Exam", weight: 30 }, { component: "Final Exam", weight: 40 }, { component: "Assignments", weight: 30 }],
-    resources: [faker.internet.url(), faker.internet.url()],
+
+    textbooks: generateN(
+      () => ({
+        title : faker.commerce.productName(),
+        author: faker.person.fullName(),
+        ISBN  : faker.string.numeric(13)
+      }),
+      faker.number.int({ min: 0, max: 4 })
+    ),
+
+    // syllabus & gradingScheme expect strings – simplest is JSON string or markdown
+    syllabus: JSON.stringify([
+      { title: 'Introduction',   content: faker.lorem.sentences(3) },
+      { title: 'Core Concepts',  content: faker.lorem.sentences(5) }
+    ]),
+    gradingScheme: JSON.stringify([
+      { component: 'Midterm Exam', weight: 30 },
+      { component: 'Final Exam',   weight: 40 },
+      { component: 'Assignments',  weight: 30 }
+    ]),
+
+    // resources must be array of objects
+    resources: [
+      { title: 'Course portal', url: faker.internet.url() },
+      { title: 'Extra reading',  url: faker.internet.url() }
+    ],
+
+    assignments: []  // still optional
   };
 }
 
@@ -99,10 +120,10 @@ function generateRandomCourseData(
  * Seeds courses for multiple organizations.
  */
 export async function seedCourses(
-  organizations: OrganizationDocument[],
-  allTeachers: TeacherDocument[], // These are Teacher Profile documents
-  allSubjects: SubjectDocument[],
-  allDepartments: DepartmentDocument[]
+  organizations: any[],
+  allTeachers: any[], // These are Teacher Profile documents
+  allSubjects: any[],
+  allDepartments: any[]
 ): Promise<any[]> {
   console.log('Seeding courses...');
   const allCreatedCourses = [];

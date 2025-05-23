@@ -25,17 +25,17 @@ import { seedAssignments } from './seedAssignment';
 import { connectDB, disconnectDB } from './seedUtils';
 
 // Models (for clearing the database)
-import Organization from '../models/organization.models';
-import User from '../models/user.models';
-import Department from '../models/Department.models';
-import Subject from '../models/subject.models';
-import Teacher from '../models/teacher.model';
-import Parent from '../models/parent.model';
-import Student from '../models/student.model';
-import Course from '../models/course.models';
-import Class from '../models/class.models';
-import Lesson from '../models/lesson.models';
-import Assignment from '../models/assignment.models';
+import { Organization } from '../models/organization.models';
+import { User } from '../models/user.models';
+import { Department } from '../models/Department.models';
+import { Subject } from '../models/subject.models';
+import { Teacher } from '../models/teacher.model';
+import { Parent } from '../models/parent.model';
+// import { Student } from '../models/student.model';
+import { Course } from '../models/course.models';
+import { Class } from '../models/class.models';
+import { Lesson } from '../models/lesson.models';
+import { Assignment } from '../models/assignment.models';
 // Future model imports for clearing:
 // import Attendance from '../models/attendance.model';
 // import Exam from '../models/exam.model';
@@ -46,12 +46,14 @@ import Assignment from '../models/assignment.models';
 // import Event from '../models/event.model';
 
 // Constants (if needed, e.g. UserRoles, though usually handled within individual seeders)
-import { UserRoles } from '../constants'; // Example, may not be directly used here
+import { UserRolesEnum, AvailableUserRoles, TEST_DB_NAME } from '../constants'; // Example, may not be directly used here
+import { Student } from '../models/student.models';
 
 // --- Configuration ---
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/lms-test-db-seed';
+const MONGODB_URI = `${process.env.MONGODB_URI}/${TEST_DB_NAME}` || 'mongodb://localhost:27017/lms-test-db-seed';
 // For command-line arguments:
-const clearDBArg = process.argv.includes('--clear');
+const clearDBArg = true
+// process.argv.includes('--clear');
 
 /**
  * Clears all relevant collections from the database.
@@ -88,7 +90,7 @@ async function clearDatabase() {
 /**
  * Main seeding function to orchestrate the entire process.
  */
-async function main() {
+export async function main() {
   console.log('Starting database seeding process...');
   await connectDB(MONGODB_URI);
 
@@ -110,12 +112,12 @@ async function main() {
     // Filter users by role for specific profile seeders (though some seeders might do this internally)
     // These filtered lists are primarily for clarity or if a seeder *strictly* requires only users of a certain role.
     // Current profile seeders (Teacher, Parent, Student) filter allUsers internally.
-    const teacherUsers = users.filter(u => u.role === UserRoles.TEACHER);
-    const parentUsers = users.filter(u => u.role === UserRoles.PARENT);
-    const studentUsers = users.filter(u => u.role === UserRoles.STUDENT);
+    const teacherUsers = users.filter(u => u.role === UserRolesEnum.TEACHER);
+    const parentUsers = users.filter(u => u.role === UserRolesEnum.PARENT);
+    const studentUsers = users.filter(u => u.role === UserRolesEnum.STUDENT);
 
     console.log('\n--- Seeding Departments ---');
-    const departments = await seedDepartments(organizations, users); // Pass users if needed for future assignment logic
+    const departments = await seedDepartments(organizations); // Pass users if needed for future assignment logic
     console.log(`Successfully seeded ${departments.length} departments.`);
 
     console.log('\n--- Seeding Subjects ---');
@@ -155,7 +157,7 @@ async function main() {
     // It also needs subjects and courses for context.
     const lessons = await seedLessons(classes, teacherProfiles, subjects, courses);
     console.log(`Successfully seeded ${lessons.length} lessons.`);
-    
+
     console.log('\n--- Seeding Assignments ---');
     // seedAssignments needs teacherProfiles (actual Teacher documents).
     // It also needs subjects and courses (for date context).
@@ -170,7 +172,7 @@ async function main() {
     // console.log('\n--- Seeding Exams ---');
     // const exams = await seedExams(courses, classes, subjects, teacherProfiles);
     // console.log(`Successfully seeded ${exams.length} exams.`);
-    
+
     // console.log('\n--- Seeding Results/Grades ---');
     // const results = await seedResults(studentProfiles, assignments, exams);
     // console.log(`Successfully seeded ${results.length} results.`);
@@ -191,4 +193,3 @@ async function main() {
 }
 
 // --- Execute the Seeding Process ---
-main();
