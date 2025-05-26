@@ -4,7 +4,7 @@ import { getAdminDashBoard } from '../controllers/admin.controllers';
 
 const router = Router();
 
-router.route("/dashboard")
+router.route("/")
     .get(
         getAdminDashBoard
     )

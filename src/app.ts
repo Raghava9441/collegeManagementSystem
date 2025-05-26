@@ -89,7 +89,7 @@ app.use("/api/v1/seed", seedDbRoutes);
 app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);
 app.use("/api/v1/friends", friendRequest);
-app.use("/api/v1/admin", adminRoutees);
+app.use("/api/v1/dashboard", adminRoutees);
 
 // 404 handler
 // app.use((req: Request, res: Response, next: NextFunction) => {
@@ -147,5 +147,6 @@ export { app };
 //sentry logging for server
 //otp functionality
 //notification functionality
+//video chat functionality
 
 //BUG:realtime events not working in chating 
