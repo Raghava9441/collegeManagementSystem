@@ -13556,3 +13556,10 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/exams\",\"status\":\"400\",\"responseTime\":\"5.391\"}","timestamp":"2025-05-23T11:51:59.021Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-05-23T11:52:23.786Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-05-23T11:52:23.790Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"200\",\"responseTime\":\"5.066\"}","timestamp":"2025-05-23T11:55:50.927Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"200\",\"responseTime\":\"0.602\"}","timestamp":"2025-05-23T11:55:50.945Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"200\",\"responseTime\":\"0.586\"}","timestamp":"2025-05-23T11:55:50.950Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/healthcheck\",\"status\":\"404\",\"responseTime\":\"12.919\"}","timestamp":"2025-05-23T11:55:50.967Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/healthcheck\",\"status\":\"404\",\"responseTime\":\"1.708\"}","timestamp":"2025-05-23T11:55:50.973Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/non-existent-route\",\"status\":\"404\",\"responseTime\":\"0.802\"}","timestamp":"2025-05-23T11:55:50.978Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/healthcheck\",\"status\":\"400\",\"responseTime\":\"1.979\"}","timestamp":"2025-05-23T11:55:50.983Z"}
