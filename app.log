@@ -13563,3 +13563,89 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/healthcheck\",\"status\":\"404\",\"responseTime\":\"1.708\"}","timestamp":"2025-05-23T11:55:50.973Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/non-existent-route\",\"status\":\"404\",\"responseTime\":\"0.802\"}","timestamp":"2025-05-23T11:55:50.978Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/healthcheck\",\"status\":\"400\",\"responseTime\":\"1.979\"}","timestamp":"2025-05-23T11:55:50.983Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-05-26T11:39:54.637Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-05-26T11:39:54.645Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"401\",\"responseTime\":\"3.952\"}","timestamp":"2025-05-26T11:39:59.066Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"205.118\"}","timestamp":"2025-05-26T11:39:59.347Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"200\",\"responseTime\":\"100.717\"}","timestamp":"2025-05-26T11:39:59.452Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/admin/dashboard\",\"status\":\"404\",\"responseTime\":\"2.220\"}","timestamp":"2025-05-26T11:40:00.521Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"94.737\"}","timestamp":"2025-05-26T11:40:58.348Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"200\",\"responseTime\":\"201.438\"}","timestamp":"2025-05-26T11:40:58.450Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"200\",\"responseTime\":\"532.549\"}","timestamp":"2025-05-26T11:40:58.786Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"99.079\"}","timestamp":"2025-05-26T11:46:09.269Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"107.049\"}","timestamp":"2025-05-26T11:46:09.278Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"216.129\"}","timestamp":"2025-05-26T11:46:09.382Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"94.806\"}","timestamp":"2025-05-26T11:46:33.188Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"99.078\"}","timestamp":"2025-05-26T11:46:33.193Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"206.919\"}","timestamp":"2025-05-26T11:46:33.296Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"202.524\"}","timestamp":"2025-05-26T11:47:50.202Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"217.151\"}","timestamp":"2025-05-26T11:48:06.226Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"206.826\"}","timestamp":"2025-05-26T11:48:28.208Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"216.224\"}","timestamp":"2025-05-26T11:48:34.221Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"220.196\"}","timestamp":"2025-05-26T11:48:38.224Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"218.674\"}","timestamp":"2025-05-26T11:48:39.220Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"211.488\"}","timestamp":"2025-05-26T11:49:20.218Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"220.269\"}","timestamp":"2025-05-26T11:49:25.227Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"98.186\"}","timestamp":"2025-05-26T11:53:28.341Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"100.507\"}","timestamp":"2025-05-26T11:53:28.343Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"209.508\"}","timestamp":"2025-05-26T11:53:28.449Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"212.567\"}","timestamp":"2025-05-26T11:53:30.228Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"201.644\"}","timestamp":"2025-05-26T11:53:42.214Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"94.175\"}","timestamp":"2025-05-26T11:56:35.618Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"99.435\"}","timestamp":"2025-05-26T11:56:35.621Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"215.904\"}","timestamp":"2025-05-26T11:56:38.152Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"232.837\"}","timestamp":"2025-05-26T11:59:06.286Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"206.234\"}","timestamp":"2025-05-26T11:59:37.248Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"207.748\"}","timestamp":"2025-05-26T12:00:09.241Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"226.992\"}","timestamp":"2025-05-26T12:00:22.266Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"211.736\"}","timestamp":"2025-05-26T12:00:30.242Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"220.184\"}","timestamp":"2025-05-26T12:00:34.247Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"239.746\"}","timestamp":"2025-05-26T12:01:20.304Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"212.179\"}","timestamp":"2025-05-26T12:01:39.251Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"199.660\"}","timestamp":"2025-05-26T12:02:07.226Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"204.867\"}","timestamp":"2025-05-26T12:02:40.249Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"218.724\"}","timestamp":"2025-05-26T12:03:00.249Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"194.807\"}","timestamp":"2025-05-26T12:03:40.236Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"201.765\"}","timestamp":"2025-05-26T12:03:53.229Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"213.518\"}","timestamp":"2025-05-26T12:05:19.249Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"199.158\"}","timestamp":"2025-05-26T12:05:27.232Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"199.323\"}","timestamp":"2025-05-26T12:05:28.225Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"190.057\"}","timestamp":"2025-05-26T12:07:21.569Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"192.536\"}","timestamp":"2025-05-26T12:07:26.319Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"197.925\"}","timestamp":"2025-05-26T12:07:28.169Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"205.556\"}","timestamp":"2025-05-26T12:08:31.859Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"189.513\"}","timestamp":"2025-05-26T12:08:33.984Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"192.622\"}","timestamp":"2025-05-26T12:08:36.199Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"219.609\"}","timestamp":"2025-05-26T12:08:38.257Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"201.165\"}","timestamp":"2025-05-26T12:09:05.502Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"184.827\"}","timestamp":"2025-05-26T12:09:09.106Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"196.384\"}","timestamp":"2025-05-26T12:09:19.011Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"189.647\"}","timestamp":"2025-05-26T12:10:10.350Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"205.586\"}","timestamp":"2025-05-26T12:11:25.251Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"202.135\"}","timestamp":"2025-05-26T12:11:31.261Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"192.398\"}","timestamp":"2025-05-26T12:11:32.229Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"304\",\"responseTime\":\"101.231\"}","timestamp":"2025-05-26T12:11:46.869Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/friends/online-friends\",\"status\":\"304\",\"responseTime\":\"103.578\"}","timestamp":"2025-05-26T12:11:46.872Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"197.833\"}","timestamp":"2025-05-26T12:11:46.964Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"188.730\"}","timestamp":"2025-05-26T12:12:12.453Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"470.721\"}","timestamp":"2025-05-26T12:12:29.505Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"239.917\"}","timestamp":"2025-05-26T12:12:34.263Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"198.252\"}","timestamp":"2025-05-26T12:12:40.062Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"196.207\"}","timestamp":"2025-05-26T12:12:48.680Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"194.093\"}","timestamp":"2025-05-26T12:12:58.264Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"216.262\"}","timestamp":"2025-05-26T12:13:05.250Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"215.807\"}","timestamp":"2025-05-26T12:13:18.052Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"187.820\"}","timestamp":"2025-05-26T12:13:23.088Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"197.286\"}","timestamp":"2025-05-26T12:13:51.208Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/dashboard\",\"status\":\"304\",\"responseTime\":\"193.059\"}","timestamp":"2025-05-26T12:13:59.225Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-05-26T12:15:59.779Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-05-26T12:15:59.785Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-05-26T12:16:41.024Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-05-26T12:16:41.035Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/organizations\",\"status\":\"304\",\"responseTime\":\"114.768\"}","timestamp":"2025-05-26T12:16:49.237Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-05-26T12:17:05.544Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-05-26T12:17:05.548Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"200\",\"responseTime\":\"428.691\"}","timestamp":"2025-05-26T12:17:06.157Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/user\",\"status\":\"304\",\"responseTime\":\"127.398\"}","timestamp":"2025-05-26T12:17:34.340Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-05-27T04:52:15.819Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-05-27T04:52:15.823Z"}
