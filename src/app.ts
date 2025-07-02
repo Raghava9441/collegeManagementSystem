@@ -148,5 +148,6 @@ export { app };
 //otp functionality
 //notification functionality
 //video chat functionality
+//quezz feaure for exams
 
 //BUG:realtime events not working in chating 
