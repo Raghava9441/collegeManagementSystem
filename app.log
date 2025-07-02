@@ -14487,3 +14487,7 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/conversation/get-conversations\",\"status\":\"200\",\"responseTime\":\"319.668\"}","timestamp":"2025-07-02T14:10:13.414Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/68635d6e036ce669d6836c75\",\"status\":\"304\",\"responseTime\":\"556.974\"}","timestamp":"2025-07-02T14:10:14.646Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/68635d6e036ce669d6836c75\",\"status\":\"304\",\"responseTime\":\"634.688\"}","timestamp":"2025-07-02T14:10:14.672Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\n MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2025-07-02T14:10:41.447Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2025-07-02T14:10:41.451Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/68635d6e036ce669d6836c75\",\"status\":\"304\",\"responseTime\":\"608.534\"}","timestamp":"2025-07-02T14:10:43.142Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/message/get-messages/68635d6e036ce669d6836c75\",\"status\":\"304\",\"responseTime\":\"556.146\"}","timestamp":"2025-07-02T14:10:45.916Z"}
