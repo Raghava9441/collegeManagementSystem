@@ -9,7 +9,7 @@ import { isValidObjectId } from 'mongoose';
 
 const getAllExams = asyncHandler(async (req, res) => {
     const { page = 1, limit = 10 } = req.query;
-
+    console.log(req.user)
     const { role, organizationId } = req.user;
 
     if (!req.user) {

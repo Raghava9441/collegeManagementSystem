@@ -8,31 +8,31 @@ const router = Router();
 router.route("/")
     .get(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         getAllClasses
     )
     .post(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         createClass
     );
 
 router.route("/:classId")
     .get(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         mongoIdPathVariableValidator,
         getClassById
     )
     .put(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         mongoIdPathVariableValidator,
         updateClassById
     )
     .delete(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         mongoIdPathVariableValidator,
         deleteClassById
     );
@@ -40,12 +40,12 @@ router.route("/:classId")
 router.route("/bulk")
     .post(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         createBulkClasses
     )
     .delete(
         verifyJWT,
-        verifyPermission(["ADMIN", "TEACHER"]),
+        // verifyPermission(["ADMIN", "TEACHER"]),
         deleteBulkClasses
     );
 

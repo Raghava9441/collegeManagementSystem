@@ -15,7 +15,7 @@ import { ObjectId } from 'mongodb';
 
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     // new ApiError(409, "A user with the same username, email, or fullname already exists")
-    const { page = 1, limit = 10 } = req.query;
+    const { page = 1, limit = 50 } = req.query;
 
     const { organizationId, role } = req.user;
 
@@ -29,7 +29,7 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     ]);
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
-    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
+    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 50;
 
     const users = await User.aggregatePaginate(
         userAggregate,

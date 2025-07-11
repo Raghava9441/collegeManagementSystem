@@ -5,16 +5,16 @@ import { isAdmin, verifyJWT } from '../middlewares/auth.middleware';
 const router = Router();
 
 router.route("/")
-    .get(verifyJWT, isAdmin, getAllDepartments)
-    .post(verifyJWT, isAdmin, createDepartment);
+    .get(verifyJWT, getAllDepartments)
+    .post(verifyJWT, createDepartment);
 
 router.route("/:departmentId")
-    .get(verifyJWT, isAdmin, getDepartmentById)
-    .put(verifyJWT, isAdmin, updateDepartmentById)
-    .delete(verifyJWT, isAdmin, deleteDepartmentById);
+    .get(verifyJWT, getDepartmentById)
+    .put(verifyJWT, updateDepartmentById)
+    .delete(verifyJWT, deleteDepartmentById);
 
 router.route("/bulk")
-    .post(verifyJWT, isAdmin, createBulkDepartments)
-    .delete(verifyJWT, isAdmin, deleteBulkDepartments);
+    .post(verifyJWT, createBulkDepartments)
+    .delete(verifyJWT, deleteBulkDepartments);
 
 export default router;
