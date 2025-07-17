@@ -7,7 +7,7 @@ import { socketSendMessage } from './controllers/message.controllers';
 import { socketMiddleware } from './middlewares/socket.middleware';
 import { emitFriendStatus } from './controllers/frieds.ciontrollers';
 import { joinConvo } from './controllers/conversation.controllers';
-
+let io: Server
 dotenv.config({
     path: './.env',
 });
@@ -172,7 +172,7 @@ export const initializeSocket = (server: HttpServer): void => {
     const rateLimiter = createRateLimiter();
 
     // Enhanced socket.io configuration for production
-    const io = new Server(server, {
+    io = new Server(server, {
         cors: {
             origin: process.env.ALLOWED_ORIGINS?.split(',') || "*",
             credentials: true
@@ -229,7 +229,7 @@ export const initializeSocket = (server: HttpServer): void => {
         const socket_id = socket.id;
         let userId: string | null = null;
 
-        // Enhanced connection setup with better error handling
+        // Enhanced connection setup with better room debugging
         const setupConnection = asyncHandler(socket, async () => {
             const user = socket?.user;
             if (!user || !user._id) {
@@ -243,8 +243,14 @@ export const initializeSocket = (server: HttpServer): void => {
                 throw new Error("Invalid user ID format");
             }
 
-            // Join user room
+            // Join user room with debug logging
             socket.join(userId);
+            console.log(`User ${userId} joined room ${userId}`);
+
+            // Debug: Verify room membership
+            const rooms = Array.from(socket.rooms);
+            console.log(`Socket ${socket.id} is in rooms:`, rooms);
+
             connectionManager.addConnection(userId, socket_id);
 
             // Update user status with error handling
@@ -460,4 +466,43 @@ export const initializeSocket = (server: HttpServer): void => {
     });
 
     console.log("Socket server initialized successfully");
+};
+
+export const getSocketInstance = (): Server => {
+    if (!io) {
+        throw new Error('Socket.IO instance not initialized');
+    }
+    return io;
+};
+
+
+export const emitToOrganization = async (
+    organizationId: string,
+    event: string,
+    data: any,
+    excludeUserId?: string
+) => {
+    try {
+        const io = getSocketInstance();
+
+        // Get all users in the organization
+        const orgUsers = await User.find({
+            organization: organizationId,
+            ...(excludeUserId && { _id: { $ne: excludeUserId } })
+        }).select('_id');
+
+        // Emit to each user's room
+        orgUsers.forEach(user => {
+            const userId = user._id.toString();
+            io.to(userId).emit(event, {
+                ...data,
+                timestamp: new Date().toISOString(),
+                type: 'organization_update'
+            });
+        });
+
+        console.log(`Emitted ${event} to ${orgUsers.length} users in organization ${organizationId}`);
+    } catch (error) {
+        console.error('Error emitting to organization:', error);
+    }
 };

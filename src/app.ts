@@ -17,10 +17,13 @@ import conversationRoutes from './routes/conversation.routes';
 import friendRequest from './routes/friendRequest.routes';
 import examsRoutes from './routes/exam.routes';
 import adminRoutees from './routes/admin.routes';
+import permissionRoutes from './routes/permissions.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
 const allowedOrigins = ["https://raghava9441.github.io", 'http://localhost:3000', 'http://localhost:3001',];
+const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 app.use(cors({
     origin: allowedOrigins,
@@ -41,21 +44,52 @@ app.use(cors({
 }));
 
 // morgan format
-const morganFormat = ':method :url :status :response-time ms';
+// Enhanced Morgan logging with better formatting
+const morganFormat = isDevelopment
+    ? ':method :url :status :response-time ms - :res[content-length]'
+    : ':remote-addr - :method :url :status :response-time ms';
 
 app.use(morgan(morganFormat, {
     stream: {
         write: (message) => {
+            const parts = message.trim().split(' ');
             const logObject = {
-                method: message.split(' ')[0],
-                url: message.split(' ')[1],
-                status: message.split(' ')[2],
-                responseTime: message.split(' ')[3],
+                method: parts[0],
+                url: parts[1],
+                status: parseInt(parts[2]),
+                responseTime: parts[3],
+                timestamp: new Date().toISOString(),
+                ...(parts[5] && { contentLength: parts[5] })
             };
-            logger.info(JSON.stringify(logObject));
+
+            // Log different levels based on status code
+            if (logObject.status >= 400) {
+                logger.error('HTTP Error', logObject);
+            } else if (logObject.status >= 300) {
+                logger.warn('HTTP Redirect', logObject);
+            } else {
+                logger.info('HTTP Request', logObject);
+            }
         }
+    },
+    skip: (req, res) => {
+        // Skip logging for health checks in production
+        return isProduction && req.originalUrl === '/api/v1/healthcheck';
     }
 }));
+
+// Security headers middleware
+app.use((req: Request, res: Response, next: NextFunction) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    if (isProduction) {
+        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    }
+    next();
+});
+
+
 
 //common middleware
 app.use(express.json({ limit: '16kb' }));
@@ -90,6 +124,7 @@ app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);
 app.use("/api/v1/friends", friendRequest);
 app.use("/api/v1/dashboard", adminRoutees);
+app.use("/api/v1/permissions", permissionRoutes);
 
 // 404 handler
 // app.use((req: Request, res: Response, next: NextFunction) => {
