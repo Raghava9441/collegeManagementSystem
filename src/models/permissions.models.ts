@@ -12,6 +12,7 @@ export interface IFeaturePermission {
 
 export interface IPermission extends Document {
     userId: mongoose.Types.ObjectId;
+    organizationId: mongoose.Types.ObjectId;
     permissions: IFeaturePermission[];
     createdAt?: Date;
     updatedAt?: Date;
@@ -28,7 +29,8 @@ const FeaturePermissionSchema = new Schema<IFeaturePermission>(
 
 const PermissionSchema = new Schema<IPermission>(
     {
-        userId: { type: Schema.Types.ObjectId, ref: 'User', required: true, unique: true },
+        userId: { type: Schema.Types.ObjectId, ref: 'User', unique: true },
+        organizationId: { type: Schema.Types.ObjectId, ref: 'Organization', required: true, unique: true },
         permissions: { type: [FeaturePermissionSchema], default: [] },
     },
     { timestamps: true }

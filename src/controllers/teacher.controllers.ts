@@ -109,10 +109,53 @@ const createTeacher = asyncHandler(async (req: Request, res: Response) => {
 })
 
 const getTeacherById = asyncHandler(async (req: Request, res: Response) => {
-    return res.status(200).json(new ApiResponse(200, "teacher is fetched successfully", "Teacher is fetched successfully"));
+    const { teacherId } = req.params;
+    if (!teacherId) {
+        return res
+            .status(400)
+            .json(new ApiError(400, "Please provide a teacher id"));
+    }
+
+    if (!mongoose.Types.ObjectId.isValid(teacherId)) {
+        return res
+            .status(400)
+            .json(new ApiError(400, "Please provide a valid teacher id"));
+    }
+
+    const existingTeacher = await Teacher.findById(teacherId);
+    if (!existingTeacher) {
+        return res
+            .status(404)
+            .json(new ApiError(404, "Teacher is not found"));
+    }
+
+    const existingOrganization = await Organization.findById(existingTeacher.organizationId);
+    if (!existingOrganization) {
+        return res
+            .status(404)
+            .json(new ApiError(404, "Organization is not found"));
+    }
+    //in the existig teacher there is a userId so get the user details
+    const existingUser = await User.findById(existingTeacher.userId);
+    console.log(existingUser)
+    if (!existingUser) {
+        return res
+            .status(404)
+            .json(new ApiError(404, "User is not found"));
+    }
+    const responseData = {
+        ...existingTeacher.toObject(), // Convert Mongoose document to plain JavaScript object
+        userDetails: existingUser.toObject(), // Add userDetails as a nested object
+    };
+    existingTeacher.userDetails = existingUser;
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, responseData, "Teacher is fetched successfully"));
 })
 
 const updateTeacherById = asyncHandler(async (req: Request, res: Response) => {
+
     return res.status(200).json(new ApiResponse(200, "teacher is updated successfully", "Teacher is updated successfully"));
 })
 

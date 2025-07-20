@@ -18,7 +18,7 @@ router.route("/")
     );
 
 router.route("/:teacherId")
-    .get(verifyJWT, isTeacher, getTeacherById)
+    .get(verifyJWT, getTeacherById)
     .put(verifyJWT, isTeacher, updateTeacherById)
     .delete(verifyJWT, isTeacher, deleteTeacherById);
 

@@ -6,8 +6,11 @@ import { User } from "../models/user.models";
 
 export const getPermissions = asyncHandler(async (req, res, next) => {
     const { id } = req.params;
-    const permission = await Permission.findOne({ userId: id });
-    const organizationid = await User.findById(id).select('organization');
+    const user = await User.findById(id);
+    const organizationId = user.organizationId;
+    console.log(organizationId) //683014eba57fcbd9a0eba79b
+    const permission = await Permission.findOne({ organizationId: organizationId }); //
+    console.log(permission)
     if (!permission) {
         const defaultFeatures = [
             'dashboard',
@@ -21,7 +24,8 @@ export const getPermissions = asyncHandler(async (req, res, next) => {
             'assignments',
             'conversations',
             'friends',
-            'settings'
+            'settings',
+            "featureFlags"
         ];
 
         const generateDefaultPermissions = () =>
@@ -34,6 +38,7 @@ export const getPermissions = asyncHandler(async (req, res, next) => {
 
         const newPermission = new Permission({
             userId: id,
+            organizationId: organizationId,
             permissions: generateDefaultPermissions()
         });
 
@@ -48,13 +53,18 @@ export const getPermissions = asyncHandler(async (req, res, next) => {
 
 export const updatePermissions = asyncHandler(async (req, res, next) => {
     const { id } = req.params;
-    const { permissions: updatedPermissions } = req.body;
-    // console.log(updatedPermissions)
+    const updatedPermissions = req.body;
+
+    const user = await User.findById(id);
+    const organizationId = user.organizationId;
+
+    console.log(updatedPermissions)
     if (!Array.isArray(updatedPermissions)) {
         return res.status(400).json({ message: 'Invalid permissions format' });
     }
     //683014eda57fcbd9a0eba7a7
-    const permission = await Permission.findOne({ userId: id });
+    const permission = await Permission.findOne({ organizationId: organizationId });
+
     console.log("permission", permission)
     if (!permission) {
         return res.status(404).json({ message: 'No permission found with that id' });
@@ -77,13 +87,9 @@ export const updatePermissions = asyncHandler(async (req, res, next) => {
 
     await permission.save();
     //i want organization id from user modal
-    const user = await User.findById(id);
-    console.log("user object ", user)
-    const organizationId = user.organizationId;
-    // console.log("organizationId", organizationId)
     await emitToOrganization(organizationId, 'permissions_updated', {
         permissionId: id,
-        updatedPermissions: permission.permissions,
+        permissions: permission.permissions,
         updatedBy: {
             id: id,
             name: req.user?.name || 'Unknown'
