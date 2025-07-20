@@ -11,7 +11,7 @@ dotenv.config({
 });
 
 const port = process.env.PORT || 8000; // Use environment variable or default to 8000
-
+const serverIp = process.env.HOST || "3.84.190.171"
 // Create an HTTP server
 const httpServer = createServer(app);
 
@@ -22,7 +22,7 @@ connectDB().then(() => {
     swaggerDocs(app, port as string);
     // Start the HTTP server
     httpServer.listen(port, () => {
-        logger.info(`Server running at http://localhost:${port}`);
+        logger.info(`Server running at ${serverIp}:${port}`);
     });
 }).catch((error) => {
     logger.error(error);
