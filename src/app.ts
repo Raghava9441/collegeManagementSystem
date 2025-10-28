@@ -45,30 +45,29 @@ app.use(cors({
 
 // morgan format
 // Enhanced Morgan logging with better formatting
-const morganFormat = isDevelopment
-    ? ':method :url :status :response-time ms - :res[content-length]'
-    : ':remote-addr - :method :url :status :response-time ms';
+// const morganFormat = isDevelopment
+//     ? ':method :url :status :response-time ms - :res[content-length]'
+//     : ':remote-addr - :method :url :status :response-time ms';
+const morganFormat = ':method :url :status :response-time ms';
 
 app.use(morgan(morganFormat, {
     stream: {
         write: (message) => {
-            const parts = message.trim().split(' ');
             const logObject = {
-                method: parts[0],
-                url: parts[1],
-                status: parseInt(parts[2]),
-                responseTime: parts[3],
-                timestamp: new Date().toISOString(),
-                ...(parts[5] && { contentLength: parts[5] })
+                method: message.split(' ')[0],
+                url: message.split(' ')[1],
+                status: message.split(' ')[2],
+                responseTime: message.split(' ')[3],
             };
+            logger.info(JSON.stringify(logObject));
 
             // Log different levels based on status code
             if (logObject.status >= 400) {
-                logger.error('HTTP Error', logObject);
+                logger.error( JSON.stringify(logObject));
             } else if (logObject.status >= 300) {
-                logger.warn('HTTP Redirect', logObject);
+                logger.warn( JSON.stringify(logObject));
             } else {
-                logger.info('HTTP Request', logObject);
+                logger.info( JSON.stringify(logObject));
             }
         }
     },

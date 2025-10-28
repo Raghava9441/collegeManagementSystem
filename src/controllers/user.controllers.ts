@@ -289,8 +289,10 @@ const deleteBulkUsers = asyncHandler(async (req: Request, res: Response) => {
 
 
 const loginUser = asyncHandler(async (req: Request, res: Response) => {
+// console.log("🚀 ~ req:", req)
 
     const { email, password } = req.body;
+    console.log("🚀 ~ email:", email)
     // Check if email and password are provided
     if (!email || !password) {
         return res.status(400).json(new ApiError(400, "Please provide all the required fields"));
@@ -298,7 +300,7 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
 
     // Find user by email
     const user: IUser | null = await User.findOne({ email });
-    // console.log(user)
+    console.log(user)
     if (!user) {
         return res.status(404).json(new ApiError(404, "User not found"));
     }

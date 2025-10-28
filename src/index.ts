@@ -11,7 +11,7 @@ dotenv.config({
 });
 
 const port = process.env.PORT || 8000; // Use environment variable or default to 8000
-const serverIp = process.env.HOST || "3.84.190.171"
+const serverIp = process.env.HOST || 'http://localhost';
 // Create an HTTP server
 const httpServer = createServer(app);
 
