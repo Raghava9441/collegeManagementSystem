@@ -63,11 +63,11 @@ app.use(morgan(morganFormat, {
 
             // Log different levels based on status code
             if (logObject.status >= 400) {
-                logger.error( JSON.stringify(logObject));
+                logger.error(JSON.stringify(logObject));
             } else if (logObject.status >= 300) {
-                logger.warn( JSON.stringify(logObject));
+                logger.warn(JSON.stringify(logObject));
             } else {
-                logger.info( JSON.stringify(logObject));
+                logger.info(JSON.stringify(logObject));
             }
         }
     },
@@ -102,6 +102,7 @@ app.use(cookieParser());
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
 import { errorHandler } from './middlewares/error.middlewares';
+import { ApiError } from './utils/ApiError';
 // import { ApiError } from '@utils/ApiError';
 
 
@@ -118,17 +119,31 @@ app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
 app.use("/api/v1/exams", examsRoutes);
 
-app.use("/api/v1/seed", seedDbRoutes);
 app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);
 app.use("/api/v1/friends", friendRequest);
 app.use("/api/v1/dashboard", adminRoutees);
 app.use("/api/v1/permissions", permissionRoutes);
 
+// Seed route (disable in production)
+if (!isProduction) {
+    app.use("/api/v1/seed", seedDbRoutes);
+} else {
+    app.use("/api/v1/seed", (req: Request, res: Response) => {
+        res.status(403).json({ error: 'Seed routes disabled in production' });
+    });
+}
+
 // 404 handler
-// app.use((req: Request, res: Response, next: NextFunction) => {
-//     next(new ApiError(404, null, "Route not found", undefined, [{ msg: `${req.originalUrl} not found` }]));
-// });
+app.use((req: Request, res: Response, next: NextFunction) => {
+    next(new ApiError(
+        404,
+        null,
+        "Route not found",
+        undefined,
+        [{ msg: `${req.method} ${req.originalUrl} not found` }]
+    ));
+});
 
 app.use(errorHandler)
 
