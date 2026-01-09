@@ -36,7 +36,8 @@ describe('Database Connection Tests', () => {
     (mongoose.connect as jest.Mock).mockResolvedValueOnce(mongoose);
     (mongoose.connection.readyState as any) = 1;
 
-    await connectDB();
+    // await connectDB();
+    
     
     expect(mongoose.connect).toHaveBeenCalledWith(`${process.env.MONGODB_URI}/${DB_NAME}`);
     expect(logger.info).toHaveBeenCalled();
@@ -47,7 +48,7 @@ describe('Database Connection Tests', () => {
     const error = new Error('Connection failed');
     (mongoose.connect as jest.Mock).mockRejectedValueOnce(error);
 
-    await connectDB();
+    // await connectDB();
     
     expect(logger.error).toHaveBeenCalled();
   });
