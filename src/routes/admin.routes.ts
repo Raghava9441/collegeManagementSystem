@@ -1,12 +1,188 @@
 import { Router } from 'express';
-import { mongoIdPathVariableValidator } from '../validators/common/mongodb.validators';
-import { getAdminDashBoard } from '../controllers/admin.controllers';
+import { verifyJWT, verifyPermission, isAdmin } from '../middlewares/auth.middleware';
+import { handleValidationErrors, mongoIdPathVariableValidator } from '../validators/common/mongodb.validators';
+import { query } from 'express-validator';
+import {
+    getAdminDashBoard,
+    getSystemOverview,
+    getUserStatistics,
+    getAttendanceAnalytics,
+    getExamAnalytics,
+    getClassAnalytics,
+    getCourseAnalytics,
+    getRecentActivities,
+    getOrganizationDashboard,
+    getAllOrganizationsWithStats,
+    getSystemHealth,
+} from '../controllers/admin.controllers';
 
 const router = Router();
 
+// Pagination validator
+const paginationValidator = () => [
+    query("page")
+        .optional()
+        .isInt({ min: 1 })
+        .withMessage("Page must be a positive integer"),
+    query("limit")
+        .optional()
+        .isInt({ min: 1, max: 100 })
+        .withMessage("Limit must be between 1 and 100"),
+];
+
+// Date range validator
+const dateRangeValidator = () => [
+    query("startDate")
+        .optional()
+        .isISO8601()
+        .withMessage("Start date must be a valid date"),
+    query("endDate")
+        .optional()
+        .isISO8601()
+        .withMessage("End date must be a valid date"),
+];
+
+/**
+ * @route   GET /api/v1/dashboard
+ * @desc    Get main admin dashboard with overview
+ * @access  Private (ADMIN)
+ */
 router.route("/")
     .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
         getAdminDashBoard
-    )
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/overview
+ * @desc    Get comprehensive system overview statistics
+ * @access  Private (ADMIN)
+ */
+router.route("/overview")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getSystemOverview
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/users
+ * @desc    Get user statistics by role and status
+ * @access  Private (ADMIN)
+ */
+router.route("/users")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getUserStatistics
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/attendance
+ * @desc    Get attendance analytics with trends
+ * @access  Private (ADMIN)
+ */
+router.route("/attendance")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        dateRangeValidator(),
+        handleValidationErrors,
+        getAttendanceAnalytics
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/exams
+ * @desc    Get exam analytics and statistics
+ * @access  Private (ADMIN)
+ */
+router.route("/exams")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getExamAnalytics
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/classes
+ * @desc    Get class analytics with capacity utilization
+ * @access  Private (ADMIN)
+ */
+router.route("/classes")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getClassAnalytics
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/courses
+ * @desc    Get course analytics and popular courses
+ * @access  Private (ADMIN)
+ */
+router.route("/courses")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getCourseAnalytics
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/activities
+ * @desc    Get recent activities across the system
+ * @access  Private (ADMIN)
+ */
+router.route("/activities")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        query("limit")
+            .optional()
+            .isInt({ min: 1, max: 50 })
+            .withMessage("Limit must be between 1 and 50"),
+        handleValidationErrors,
+        getRecentActivities
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/organizations
+ * @desc    Get all organizations with statistics (Super Admin)
+ * @access  Private (ADMIN)
+ */
+router.route("/organizations")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        paginationValidator(),
+        handleValidationErrors,
+        getAllOrganizationsWithStats
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/organization/:organizationId
+ * @desc    Get specific organization dashboard
+ * @access  Private (ADMIN)
+ */
+router.route("/organization/:organizationId")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        mongoIdPathVariableValidator("organizationId"),
+        handleValidationErrors,
+        getOrganizationDashboard
+    );
+
+/**
+ * @route   GET /api/v1/dashboard/health
+ * @desc    Get system health metrics
+ * @access  Private (ADMIN)
+ */
+router.route("/health")
+    .get(
+        verifyJWT,
+        verifyPermission(["ADMIN"]),
+        getSystemHealth
+    );
 
 export default router;
