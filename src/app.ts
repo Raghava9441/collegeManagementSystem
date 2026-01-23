@@ -16,6 +16,7 @@ import messageRputes from './routes/message.routes';
 import conversationRoutes from './routes/conversation.routes';
 import friendRequest from './routes/friendRequest.routes';
 import examsRoutes from './routes/exam.routes';
+import attendanceRoutes from './routes/attendance.routes';
 import adminRoutees from './routes/admin.routes';
 import permissionRoutes from './routes/permissions.routes';
 import bodyParser from 'body-parser';
@@ -118,6 +119,7 @@ app.use("/api/v1/parents", parentRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/classes", classRoutes);
 app.use("/api/v1/exams", examsRoutes);
+app.use("/api/v1/attendances", attendanceRoutes);
 
 app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);

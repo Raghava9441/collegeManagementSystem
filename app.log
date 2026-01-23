@@ -377,3 +377,11 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:27:45.145Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"56.435\"}","timestamp":"2026-01-23T17:29:53.213Z"}
 {"level":"\u001b[33mwarn\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"56.435\"}","timestamp":"2026-01-23T17:29:53.215Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2026-01-23T17:34:42.202Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:34:42.227Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2026-01-23T17:35:03.269Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:35:03.295Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2026-01-23T17:35:34.765Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:35:34.786Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2026-01-23T17:35:55.965Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:35:55.984Z"}
