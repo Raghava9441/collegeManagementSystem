@@ -20,6 +20,7 @@ import attendanceRoutes from './routes/attendance.routes';
 import adminRoutees from './routes/admin.routes';
 import orgAdminRoutes from './routes/orgAdmin.routes';
 import permissionRoutes from './routes/permissions.routes';
+import settingsRoutes from './routes/settings.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
@@ -128,6 +129,7 @@ app.use("/api/v1/friends", friendRequest);
 app.use("/api/v1/dashboard", adminRoutees);
 app.use("/api/v1/org-admin", orgAdminRoutes);
 app.use("/api/v1/permissions", permissionRoutes);
+app.use("/api/v1/settings", settingsRoutes);
 
 // Seed route (disable in production)
 if (!isProduction) {
