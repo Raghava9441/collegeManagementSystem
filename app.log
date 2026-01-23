@@ -385,3 +385,15 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:35:34.786Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2026-01-23T17:35:55.965Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:35:55.984Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"MongoDB connected: ac-7ct2bxu-shard-00-00.zcckhtw.mongodb.net","timestamp":"2026-01-23T17:36:20.414Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server running at http://localhost:8000","timestamp":"2026-01-23T17:36:20.436Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students?page=1&limit=10\",\"status\":\"401\",\"responseTime\":\"10.973\"}","timestamp":"2026-01-23T17:36:41.581Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students?page=1&limit=10\",\"status\":\"401\",\"responseTime\":\"10.973\"}","timestamp":"2026-01-23T17:36:41.583Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"172.412\"}","timestamp":"2026-01-23T17:36:41.836Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/user/auth/refresh\",\"status\":\"200\",\"responseTime\":\"172.412\"}","timestamp":"2026-01-23T17:36:41.838Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"92.374\"}","timestamp":"2026-01-23T17:36:41.939Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"92.374\"}","timestamp":"2026-01-23T17:36:41.941Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"38.807\"}","timestamp":"2026-01-23T17:37:04.252Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/parents?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"38.807\"}","timestamp":"2026-01-23T17:37:04.254Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"81.691\"}","timestamp":"2026-01-23T17:37:11.062Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/students?page=1&limit=10\",\"status\":\"304\",\"responseTime\":\"81.691\"}","timestamp":"2026-01-23T17:37:11.064Z"}
