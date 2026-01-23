@@ -1,54 +1,121 @@
-import { Exam } from '../models/exam.models';
-import { ObjectId } from 'mongodb';
+import { Request, Response } from 'express';
 import { asyncHandler } from '../utils/asyncHandler';
 import { ApiResponse } from '../utils/ApiResponse';
 import { ApiError } from '../utils/ApiError';
-import { getMongoosePaginationOptions } from '../utils/healpers';
+import { examService } from '../services/exam.service';
 import { isValidObjectId } from 'mongoose';
+import * as XLSX from 'xlsx';
 
-
-const getAllExams = asyncHandler(async (req, res) => {
+/**
+ * Get all exams with pagination
+ * @route GET /api/v1/exams
+ */
+const getAllExams = asyncHandler(async (req: Request, res: Response) => {
     const { page = 1, limit = 10 } = req.query;
-    console.log(req.user)
-    const { role, organizationId } = req.user;
 
     if (!req.user) {
         throw new ApiError(401, "User not authenticated");
     }
 
-    const productAggregate = Exam.aggregate([{ $match: role !== 'ADMIN' ? { _id: new ObjectId(organizationId) } : {} }]);
+    const { role, organizationId } = req.user;
 
     const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
     const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
 
-
-    const exams = await Exam.aggregatePaginate(
-        productAggregate,
-        getMongoosePaginationOptions({
-            page: parsedPage,
-            limit: parsedLimit,
-            customLabels: {
-                totalDocs: "totalOrganizations",
-                docs: "organizations",
-            },
-        }),
-    )
+    const exams = await examService.getAllExams(
+        { page: parsedPage, limit: parsedLimit },
+        { role, organizationId }
+    );
 
     return res
         .status(200)
-        .json(new ApiResponse(200, exams, "Exams are fetched successfully"));
+        .json(new ApiResponse(200, exams, "Exams fetched successfully"));
 });
 
-const createExam = asyncHandler(async (req, res) => {
-    const { name, description, subjectId, courseId, classId, teacherId, duration, totalMarks, examType, startDate, endDate, schedule } = req.body;
+/**
+ * Create a new exam
+ * @route POST /api/v1/exams
+ */
+const createExam = asyncHandler(async (req: Request, res: Response) => {
+    const { 
+        name, 
+        description, 
+        subjectId, 
+        courseId, 
+        classId, 
+        teacherId, 
+        duration, 
+        totalMarks, 
+        examType, 
+        startDate, 
+        endDate, 
+        schedule 
+    } = req.body;
 
-    if (!name || !description || !subjectId || !courseId || !classId || !teacherId || !duration || !totalMarks || !examType || !startDate || !endDate || !schedule) {
-        return res
-            .status(400)
-            .json(new ApiError(400, "Please provide all the required fields"));
+    const exam = await examService.createExam({
+        name,
+        description,
+        subjectId,
+        courseId,
+        classId,
+        teacherId,
+        duration,
+        totalMarks,
+        examType,
+        startDate,
+        endDate,
+        schedule,
+    });
+
+    return res
+        .status(201)
+        .json(new ApiResponse(201, exam, "Exam created successfully"));
+});
+
+/**
+ * Get exam by ID
+ * @route GET /api/v1/exams/:examId
+ */
+const getExamById = asyncHandler(async (req: Request, res: Response) => {
+    const { examId } = req.params;
+
+    if (!isValidObjectId(examId)) {
+        throw new ApiError(400, "Invalid exam ID");
     }
 
-    const exam = await Exam.create({
+    const exam = await examService.getExamById(examId);
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, exam, "Exam fetched successfully"));
+});
+
+/**
+ * Update exam by ID
+ * @route PUT /api/v1/exams/:examId
+ */
+const updateExam = asyncHandler(async (req: Request, res: Response) => {
+    const { examId } = req.params;
+    const { 
+        name, 
+        description, 
+        subjectId, 
+        courseId, 
+        classId, 
+        teacherId, 
+        duration, 
+        totalMarks, 
+        examType, 
+        startDate, 
+        endDate, 
+        schedule 
+    } = req.body;
+
+    if (!isValidObjectId(examId)) {
+        throw new ApiError(400, "Invalid exam ID");
+    }
+
+    const updatedExam = await examService.updateExam(examId, {
         name,
         description,
         subjectId,
@@ -65,95 +132,210 @@ const createExam = asyncHandler(async (req, res) => {
 
     return res
         .status(200)
-        .json(new ApiResponse(200, exam, "Exam is created successfully"));
+        .json(new ApiResponse(200, updatedExam, "Exam updated successfully"));
 });
 
-const getExamById = asyncHandler(async (req, res) => {
-    const { id } = req.params;
+/**
+ * Delete exam by ID
+ * @route DELETE /api/v1/exams/:examId
+ */
+const deleteExam = asyncHandler(async (req: Request, res: Response) => {
+    const { examId } = req.params;
 
-    if (!isValidObjectId(id)) {
-        return res
-            .status(400)
-            .json(new ApiError(400, "Invalid ID provided"));
+    if (!isValidObjectId(examId)) {
+        throw new ApiError(400, "Invalid exam ID");
     }
 
-    const exam = await Exam.findById(id);
-
-    if (!exam) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Exam is not found"));
-    }
+    await examService.deleteExam(examId);
 
     return res
         .status(200)
-        .json(new ApiResponse(200, exam, "Exam is fetched successfully"));
+        .json(new ApiResponse(200, null, "Exam deleted successfully"));
 });
 
-const updateExam = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const { name, description, subjectId, courseId, classId, teacherId, duration, totalMarks, examType, startDate, endDate, schedule } = req.body;
-
-    if (!isValidObjectId(id)) {
-        return res
-            .status(400)
-            .json(new ApiError(400, "Invalid ID provided"));
+/**
+ * Bulk create exams from Excel file
+ * @route POST /api/v1/exams/bulk
+ */
+const createBulkExams = asyncHandler(async (req: Request, res: Response) => {
+    if (!req.file || !req.file.buffer) {
+        throw new ApiError(400, "No file uploaded");
     }
 
-    const exam = await Exam.findById(id);
+    // Parse the Excel buffer
+    const workbook = XLSX.read(req.file.buffer, { type: 'buffer' });
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const examsData = XLSX.utils.sheet_to_json(sheet);
 
-    if (!exam) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "Exam is not found"));
+    // Transform and validate data
+    const transformedExams = examsData.map((data: any) => ({
+        name: data.name,
+        description: data.description,
+        subjectId: data.subjectId,
+        courseId: data.courseId,
+        classId: data.classId,
+        teacherId: data.teacherId,
+        duration: parseInt(data.duration, 10),
+        totalMarks: parseInt(data.totalMarks, 10),
+        examType: data.examType,
+        startDate: new Date(data.startDate),
+        endDate: new Date(data.endDate),
+        schedule: data.schedule,
+    }));
+
+    const createdExams = await examService.createBulkExams(transformedExams);
+
+    return res
+        .status(201)
+        .json(new ApiResponse(201, createdExams, "Exams created successfully"));
+});
+
+/**
+ * Bulk delete exams
+ * @route DELETE /api/v1/exams/bulk
+ */
+const deleteBulkExams = asyncHandler(async (req: Request, res: Response) => {
+    const { examIds } = req.body;
+
+    const result = await examService.deleteBulkExams(examIds);
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, result, "Exams deleted successfully"));
+});
+
+/**
+ * Get exams by class ID
+ * @route GET /api/v1/exams/class/:classId
+ */
+const getExamsByClass = asyncHandler(async (req: Request, res: Response) => {
+    const { classId } = req.params;
+    const { page = 1, limit = 10 } = req.query;
+
+    if (!isValidObjectId(classId)) {
+        throw new ApiError(400, "Invalid class ID");
     }
 
-    const updatedExam = await Exam.findByIdAndUpdate(id, {
-        $set: {
-            name,
-            description,
-            subjectId,
-            courseId,
-            classId,
-            teacherId,
-            duration,
-            totalMarks,
-            examType,
-            startDate,
-            endDate,
-            schedule,
-        },
-    }, {
-        new: true,
+    const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
+    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
+
+    const exams = await examService.getExamsByClass(classId, {
+        page: parsedPage,
+        limit: parsedLimit,
     });
 
     return res
         .status(200)
-        .json(new ApiResponse(200, updatedExam, "Exam is updated successfully"));
+        .json(new ApiResponse(200, exams, "Exams fetched successfully"));
 });
 
-const deleteExam = asyncHandler(async (req, res) => {
-    const { id } = req.params;
+/**
+ * Get exams by teacher ID
+ * @route GET /api/v1/exams/teacher/:teacherId
+ */
+const getExamsByTeacher = asyncHandler(async (req: Request, res: Response) => {
+    const { teacherId } = req.params;
+    const { page = 1, limit = 10 } = req.query;
 
-    if (!isValidObjectId(id)) {
-        return res
-            .status(400)
-            .json(new ApiError(400, "Invalid ID provided"));
+    if (!isValidObjectId(teacherId)) {
+        throw new ApiError(400, "Invalid teacher ID");
     }
 
-    const exam = await Exam.findById(id);
+    const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
+    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
 
-    if (!exam) {
-        return res
-            .status(404)
-            .json(new ApiError(404, "exam is not found"));
-    }
-
-    await Exam.deleteOne({ _id: id });
+    const exams = await examService.getExamsByTeacher(teacherId, {
+        page: parsedPage,
+        limit: parsedLimit,
+    });
 
     return res
         .status(200)
-        .json(new ApiResponse(200, null, "Exam is deleted successfully"));
+        .json(new ApiResponse(200, exams, "Exams fetched successfully"));
+});
+
+/**
+ * Get exams by course ID
+ * @route GET /api/v1/exams/course/:courseId
+ */
+const getExamsByCourse = asyncHandler(async (req: Request, res: Response) => {
+    const { courseId } = req.params;
+    const { page = 1, limit = 10 } = req.query;
+
+    if (!isValidObjectId(courseId)) {
+        throw new ApiError(400, "Invalid course ID");
+    }
+
+    const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
+    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
+
+    const exams = await examService.getExamsByCourse(courseId, {
+        page: parsedPage,
+        limit: parsedLimit,
+    });
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, exams, "Exams fetched successfully"));
+});
+
+/**
+ * Get upcoming exams
+ * @route GET /api/v1/exams/upcoming
+ */
+const getUpcomingExams = asyncHandler(async (req: Request, res: Response) => {
+    const { page = 1, limit = 10 } = req.query;
+
+    if (!req.user) {
+        throw new ApiError(401, "User not authenticated");
+    }
+
+    const { role, organizationId } = req.user;
+
+    const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
+    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
+
+    const exams = await examService.getUpcomingExams(
+        { page: parsedPage, limit: parsedLimit },
+        { role, organizationId }
+    );
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, exams, "Upcoming exams fetched successfully"));
+});
+
+/**
+ * Get exams by type
+ * @route GET /api/v1/exams/type
+ */
+const getExamsByType = asyncHandler(async (req: Request, res: Response) => {
+    const { type } = req.query;
+    const { page = 1, limit = 10 } = req.query;
+
+    if (!req.user) {
+        throw new ApiError(401, "User not authenticated");
+    }
+
+    if (!type || !['quiz', 'midterm', 'final'].includes(type as string)) {
+        throw new ApiError(400, "Invalid exam type. Must be one of: quiz, midterm, final");
+    }
+
+    const { role, organizationId } = req.user;
+
+    const parsedPage = typeof page === 'string' ? parseInt(page, 10) : 1;
+    const parsedLimit = typeof limit === 'string' ? parseInt(limit, 10) : 10;
+
+    const exams = await examService.getExamsByType(
+        type as string,
+        { page: parsedPage, limit: parsedLimit },
+        { role, organizationId }
+    );
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, exams, `${type} exams fetched successfully`));
 });
 
 export {
@@ -161,5 +343,12 @@ export {
     createExam,
     getExamById,
     updateExam,
-    deleteExam
-}
+    deleteExam,
+    createBulkExams,
+    deleteBulkExams,
+    getExamsByClass,
+    getExamsByTeacher,
+    getExamsByCourse,
+    getUpcomingExams,
+    getExamsByType,
+};
