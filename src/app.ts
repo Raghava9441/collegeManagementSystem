@@ -18,6 +18,7 @@ import friendRequest from './routes/friendRequest.routes';
 import examsRoutes from './routes/exam.routes';
 import attendanceRoutes from './routes/attendance.routes';
 import adminRoutees from './routes/admin.routes';
+import orgAdminRoutes from './routes/orgAdmin.routes';
 import permissionRoutes from './routes/permissions.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
@@ -125,6 +126,7 @@ app.use("/api/v1/message", messageRputes);
 app.use("/api/v1/conversation", conversationRoutes);
 app.use("/api/v1/friends", friendRequest);
 app.use("/api/v1/dashboard", adminRoutees);
+app.use("/api/v1/org-admin", orgAdminRoutes);
 app.use("/api/v1/permissions", permissionRoutes);
 
 // Seed route (disable in production)
