@@ -59,7 +59,7 @@ app.use(morgan(morganFormat, {
             const logObject = {
                 method: message.split(' ')[0],
                 url: message.split(' ')[1],
-                status: message.split(' ')[2],
+                status: parseInt(message.split(' ')[2], 10),
                 responseTime: message.split(' ')[3],
             };
             logger.info(JSON.stringify(logObject));
