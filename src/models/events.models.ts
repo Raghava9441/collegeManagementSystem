@@ -17,6 +17,7 @@ interface IEvent extends Document {
     // attendees?: mongoose.Types.ObjectId[]; // Optional
     participants: mongoose.Types.ObjectId[];
     eventType: 'workshop' | 'seminar' | 'meeting' | 'other';
+    organizationId: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -75,6 +76,10 @@ const eventSchema = new Schema(
         eventType: {
             type: String,
             enum: ['workshop', 'seminar', 'meeting', 'other'],
+            required: true
+        },
+        organizationId: {
+            type: String,
             required: true
         }
     },

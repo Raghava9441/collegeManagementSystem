@@ -87,8 +87,39 @@ interface TeacherDashboardData extends BaseDashboardData {
     }>;
 }
 
+// Org Admin Dashboard Data
+interface OrgAdminDashboardData extends BaseDashboardData {
+    role: 'org_admin';
+    organization: {
+        id: string;
+        name: string;
+        category: string;
+        contactEmail: string;
+        logo?: string;
+    };
+    summary: {
+        totalUsers: number;
+        totalStudents: number;
+        totalTeachers: number;
+        totalClasses: number;
+        totalCourses: number;
+        totalDepartments: number;
+        activeUsers: number;
+        inactiveUsers: number;
+    };
+    genderDistribution: Record<string, number>;
+    todayAttendance: {
+        present: number;
+        absent: number;
+        excused: number;
+    };
+    upcomingExams: Array<any>;
+    recentEvents: Array<any>;
+    lastUpdated: Date;
+}
+
 // Union type for all dashboard data
-type DashboardData = AdminDashboardData | TeacherDashboardData;
+type DashboardData = AdminDashboardData | TeacherDashboardData | OrgAdminDashboardData;
 
 // Mongoose Models
 import mongoose, { Schema, Document } from 'mongoose';

@@ -92,31 +92,34 @@ class OrgAdminService {
             }
         ]);
 
-        // Get upcoming exams (next 7 days)
+        // Get upcoming exams (next 7 days) - filtered by organization
         const nextWeek = new Date();
         nextWeek.setDate(nextWeek.getDate() + 7);
 
+        const orgClasses = await Class.find({ organizationId: orgId }).select('_id');
+        const classIds = orgClasses.map(c => c._id);
+
         const upcomingExams = await Exam.find({
-            startDate: { $gte: new Date(), $lte: nextWeek }
+            startDate: { $gte: new Date(), $lte: nextWeek },
+            classId: { $in: classIds }
         })
-            .populate('classId', 'name organizationId')
+            .populate('classId', 'name')
+            .populate('courseId', 'name')
+            .populate('teacherId', 'firstName lastName')
             .limit(5)
             .lean();
 
-        // Filter exams by organization
-        const orgExams = upcomingExams.filter((exam: any) => 
-            exam.classId?.organizationId?.toString() === organizationId
-        );
-
-        // Get recent events
+        // Get recent events - filtered by organization
         const recentEvents = await Events.find({
-            date: { $gte: today }
+            date: { $gte: today },
+            organizationId: organizationId
         })
             .sort({ date: 1 })
             .limit(5)
             .populate('organizer', 'fullname');
 
         return {
+            role: 'org_admin',
             organization: {
                 id: organization._id,
                 name: organization.name,
@@ -143,7 +146,7 @@ class OrgAdminService {
                 absent: todayAttendance.find(a => a._id === 'absent')?.count || 0,
                 excused: todayAttendance.find(a => a._id === 'excused')?.count || 0
             },
-            upcomingExams: orgExams,
+            upcomingExams,
             recentEvents,
             lastUpdated: new Date()
         };

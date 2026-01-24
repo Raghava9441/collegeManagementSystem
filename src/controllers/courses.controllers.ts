@@ -37,6 +37,7 @@ const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
 
 const getCourseById = asyncHandler(async (req: Request, res: Response) => {
     const { courseId } = req.params;
+    console.log("🚀 ~ courseId:", courseId)
     //validate the course id
     if (!courseId) {
         throw new ApiError(400, null, "get course by id failed", undefined, [{ msg: "Please provide course id" }]);

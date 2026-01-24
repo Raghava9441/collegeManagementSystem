@@ -67,7 +67,7 @@ const userFilterValidator = () => [
 router.route("/dashboard")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgDashboard
     );
 

@@ -20,6 +20,7 @@ export const getPermissions = asyncHandler(async (req, res, next) => {
             'students',
             'exams',
             'attendance',
+            'courses',
             'classes',
             'assignments',
             'conversations',
