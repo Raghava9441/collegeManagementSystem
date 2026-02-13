@@ -170,7 +170,7 @@ class ConnectionManager {
 export const initializeSocket = (server: HttpServer): void => {
     const connectionManager = new ConnectionManager();
     const rateLimiter = createRateLimiter();
-
+console.log("socket connected")
     // Enhanced socket.io configuration for production
     io = new Server(server, {
         cors: {
@@ -228,6 +228,7 @@ export const initializeSocket = (server: HttpServer): void => {
     io.on("connection", (socket: ExtendedSocket) => {
         const socket_id = socket.id;
         let userId: string | null = null;
+        console.log(userId)
 
         // Enhanced connection setup with better room debugging
         const setupConnection = asyncHandler(socket, async () => {

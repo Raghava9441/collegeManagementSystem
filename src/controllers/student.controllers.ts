@@ -228,11 +228,72 @@ const deleteStudentBulk = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "students are deleted successfully", "Students are deleted successfully"));
 })
 
+const getStudentDashboard = asyncHandler(async (req: Request, res: Response) => {
+    const { date } = req.query;
+    const studentId = req.user?.studentId;
+
+    if (!studentId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const studentService = new (require('../services/student.service').default)();
+    
+    try {
+        const dashboardData = await studentService.getStudentDashboard(studentId.toString(), date as string);
+        return res.status(200).json(new ApiResponse(200, dashboardData, "Student dashboard fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
+const getStudentAttendanceAnalytics = asyncHandler(async (req: Request, res: Response) => {
+    const { startDate, endDate } = req.query;
+    const studentId = req.user?.studentId;
+
+    if (!studentId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const dateRange = startDate && endDate ? { 
+        startDate: new Date(startDate as string), 
+        endDate: new Date(endDate as string) 
+    } : undefined;
+
+    const studentService = new (require('../services/student.service').default)();
+    
+    try {
+        const analytics = await studentService.getAttendanceAnalytics(studentId.toString(), dateRange);
+        return res.status(200).json(new ApiResponse(200, analytics, "Attendance analytics fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
+const getStudentPerformanceAnalytics = asyncHandler(async (req: Request, res: Response) => {
+    const studentId = req.user?.studentId;
+
+    if (!studentId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const studentService = new (require('../services/student.service').default)();
+    
+    try {
+        const analytics = await studentService.getPerformanceAnalytics(studentId.toString());
+        return res.status(200).json(new ApiResponse(200, analytics, "Performance analytics fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
 export {
     getAllStudents,
     createStudent,
     getStudentById,
     updateStudentById,
     deleteStudentById,
-    deleteStudentBulk
+    deleteStudentBulk,
+    getStudentDashboard,
+    getStudentAttendanceAnalytics,
+    getStudentPerformanceAnalytics
 }

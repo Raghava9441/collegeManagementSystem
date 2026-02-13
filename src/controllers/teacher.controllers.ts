@@ -200,6 +200,81 @@ const deleteBulkTeachers = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teachers are deleted successfully", "Teachers are deleted successfully"));
 })
 
+const getTeacherDashboard = asyncHandler(async (req: Request, res: Response) => {
+    const { date } = req.query;
+    const teacherId = req.user?.teacherId;
+
+    if (!teacherId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const teacherService = new (require('../services/teacher.service').default)();
+    
+    try {
+        const dashboardData = await teacherService.getTeacherDashboard(teacherId.toString(), date as string);
+        return res.status(200).json(new ApiResponse(200, dashboardData, "Teacher dashboard fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
+const getTeacherAttendanceAnalytics = asyncHandler(async (req: Request, res: Response) => {
+    const { startDate, endDate } = req.query;
+    const teacherId = req.user?.teacherId;
+
+    if (!teacherId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const dateRange = startDate && endDate ? { 
+        startDate: new Date(startDate as string), 
+        endDate: new Date(endDate as string) 
+    } : undefined;
+
+    const teacherService = new (require('../services/teacher.service').default)();
+    
+    try {
+        const analytics = await teacherService.getAttendanceAnalytics(teacherId.toString(), dateRange);
+        return res.status(200).json(new ApiResponse(200, analytics, "Attendance analytics fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
+const getTeacherStudentPerformance = asyncHandler(async (req: Request, res: Response) => {
+    const teacherId = req.user?.teacherId;
+
+    if (!teacherId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const teacherService = new (require('../services/teacher.service').default)();
+    
+    try {
+        const analytics = await teacherService.getStudentPerformanceAnalytics(teacherId.toString());
+        return res.status(200).json(new ApiResponse(200, analytics, "Student performance analytics fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
+const getTeacherCourseAnalytics = asyncHandler(async (req: Request, res: Response) => {
+    const teacherId = req.user?.teacherId;
+
+    if (!teacherId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const teacherService = new (require('../services/teacher.service').default)();
+    
+    try {
+        const analytics = await teacherService.getCourseAnalytics(teacherId.toString());
+        return res.status(200).json(new ApiResponse(200, analytics, "Course analytics fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
 const getTeacherBySubject = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "teacher is fetched successfully", "Teacher is fetched successfully"));
 })
@@ -212,5 +287,9 @@ export {
     updateTeacherById,
     deleteTeacherById,
     deleteBulkTeachers,
-    getTeacherBySubject
+    getTeacherBySubject,
+    getTeacherDashboard,
+    getTeacherAttendanceAnalytics,
+    getTeacherStudentPerformance,
+    getTeacherCourseAnalytics
 }

@@ -119,7 +119,7 @@ class OrgAdminService {
             .populate('organizer', 'fullname');
 
         return {
-            role: 'org_admin',
+            role: 'ORGADMIN',
             organization: {
                 id: organization._id,
                 name: organization.name,

@@ -2,6 +2,7 @@
 
 import { Request, Response } from "express";
 import { ApiResponse } from "../utils/ApiResponse";
+import { ApiError } from "../utils/ApiError";
 import { Parent } from "../models/parent.model";
 import { getMongoosePaginationOptions } from "../utils/healpers";
 import { Student } from "../models/student.models";
@@ -166,6 +167,41 @@ const deleteBulkParents = asyncHandler(async (req: Request, res: Response) => {
     return res.status(200).json(new ApiResponse(200, "parents are deleted successfully", "Parents are deleted successfully"));
 })
 
+const getParentDashboard = asyncHandler(async (req: Request, res: Response) => {
+    const { date } = req.query;
+    const parentId = req.user?.parentId;
+
+    if (!parentId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const parentService = new (require('../services/parent.service').default)();
+    
+    try {
+        const dashboardData = await parentService.getParentDashboard(parentId.toString(), date as string);
+        return res.status(200).json(new ApiResponse(200, dashboardData, "Parent dashboard fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
+
+const getChildAnalytics = asyncHandler(async (req: Request, res: Response) => {
+    const { studentId } = req.params;
+    const parentId = req.user?.parentId;
+
+    if (!parentId || !studentId) {
+        return res.status(403).json(new ApiError(403, "Access denied"));
+    }
+
+    const parentService = new (require('../services/parent.service').default)();
+    
+    try {
+        const analytics = await parentService.getChildAnalytics(parentId.toString(), studentId);
+        return res.status(200).json(new ApiResponse(200, analytics, "Child analytics fetched successfully"));
+    } catch (error: any) {
+        return res.status(500).json(new ApiError(500, error.message));
+    }
+})
 
 export {
     getAllParents,
@@ -173,5 +209,7 @@ export {
     getParentById,
     updateParentById,
     deleteParentById,
-    deleteBulkParents
+    deleteBulkParents,
+    getParentDashboard,
+    getChildAnalytics
 }

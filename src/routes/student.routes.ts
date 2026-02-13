@@ -1,6 +1,16 @@
 import { Router } from 'express';
-import { createStudent, deleteStudentBulk, deleteStudentById, getAllStudents, getStudentById, updateStudentById } from '../controllers/student.controllers';
-import { checkPermission, isAdmin, isTeacher, verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
+import { 
+    createStudent, 
+    deleteStudentBulk, 
+    deleteStudentById, 
+    getAllStudents, 
+    getStudentById, 
+    updateStudentById,
+    getStudentDashboard,
+    getStudentAttendanceAnalytics,
+    getStudentPerformanceAnalytics
+} from '../controllers/student.controllers';
+import { checkPermission, isAdmin, isTeacher, isStudent, verifyJWT, verifyPermission } from '../middlewares/auth.middleware';
 
 const router = Router();
 
@@ -21,5 +31,15 @@ router.route("/:studentId")
 router.route("/bulk")
     .post(verifyJWT, isAdmin, isTeacher, createStudent)
     .delete(verifyJWT, isAdmin, isTeacher, deleteStudentBulk);
+
+// Student dashboard routes
+router.route("/dashboard")
+    .get(verifyJWT, isStudent, getStudentDashboard);
+
+router.route("/dashboard/attendance")
+    .get(verifyJWT, isStudent, getStudentAttendanceAnalytics);
+
+router.route("/dashboard/performance")
+    .get(verifyJWT, isStudent, getStudentPerformanceAnalytics);
 
 export default router;

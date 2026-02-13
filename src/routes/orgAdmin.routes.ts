@@ -94,7 +94,7 @@ router.route("/users")
 router.route("/analytics/students")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgStudentAnalytics
     );
 
@@ -106,7 +106,7 @@ router.route("/analytics/students")
 router.route("/analytics/teachers")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgTeacherAnalytics
     );
 
@@ -118,7 +118,7 @@ router.route("/analytics/teachers")
 router.route("/analytics/attendance")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         dateRangeValidator(),
         handleValidationErrors,
         getOrgAttendanceAnalytics
@@ -132,7 +132,7 @@ router.route("/analytics/attendance")
 router.route("/analytics/classes")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgClassAnalytics
     );
 
@@ -144,7 +144,7 @@ router.route("/analytics/classes")
 router.route("/analytics/exams")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgExamAnalytics
     );
 
@@ -156,7 +156,7 @@ router.route("/analytics/exams")
 router.route("/analytics/courses")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgCourseAnalytics
     );
 
@@ -180,7 +180,7 @@ router.route("/analytics/departments")
 router.route("/activities")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         query("limit")
             .optional()
             .isInt({ min: 1, max: 50 })
@@ -197,7 +197,7 @@ router.route("/activities")
 router.route("/performance")
     .get(
         verifyJWT,
-        verifyPermission(["ORG_ADMIN", "ADMIN"]),
+        verifyPermission(["ORGADMIN", "ADMIN"]),
         getOrgPerformanceMetrics
     );
 

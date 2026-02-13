@@ -1,6 +1,15 @@
 import { Router } from 'express';
-import { createParent, deleteBulkParents, deleteParentById, getAllParents, getParentById, updateParentById } from '../controllers/parent.controllers';
-import { isAdmin, isTeacher, verifyJWT } from '../middlewares/auth.middleware';
+import { 
+    createParent, 
+    deleteBulkParents, 
+    deleteParentById, 
+    getAllParents, 
+    getParentById, 
+    updateParentById,
+    getParentDashboard,
+    getChildAnalytics
+} from '../controllers/parent.controllers';
+import { isAdmin, isTeacher, isParent, verifyJWT } from '../middlewares/auth.middleware';
 
 const router = Router();
 
@@ -21,5 +30,12 @@ router.route("/:parentId")
 router.route("/bulk")
     .post(verifyJWT, isAdmin, isTeacher, createParent)
     .delete(verifyJWT, isAdmin, isTeacher, deleteBulkParents);
+
+// Parent dashboard routes
+router.route("/dashboard")
+    .get(verifyJWT, isParent, getParentDashboard);
+
+router.route("/dashboard/children/:studentId")
+    .get(verifyJWT, isParent, getChildAnalytics);
 
 export default router;
