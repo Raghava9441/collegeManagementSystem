@@ -1,6 +1,6 @@
 // Constants for the number of documents to generate
 export const NUM_ORGANIZATIONS = 5;
-export const NUM_USERS_PER_ORG = 50;
+export const NUM_USERS_PER_ORG = 10;
 export const COURSES_PER_ORGANIZATION = 10;
 export const LESSONS_PER_COURSE = 15;
 export const QUIZZES_PER_LESSON = 2; // Assuming one quiz per lesson

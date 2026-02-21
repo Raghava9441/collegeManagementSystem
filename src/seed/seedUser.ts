@@ -13,6 +13,8 @@ import { getRandomElement } from './seedUtils'; // Not strictly needed if roles 
 
 // Define UserData interface based on userSchema for clarity
 interface UserData {
+  firstName: string;
+  lastName: string;
   username: string;
   email: string;
   fullname: string;
@@ -52,6 +54,8 @@ function generateRandomUserData(
   const email = faker.internet.email({ firstName, lastName, provider: `test-${organizationId.toString().slice(0, 5)}.edu` }); // Make email unique per org for seeding
 
   return {
+    firstName,
+    lastName,
     username,
     email,
     fullname: simpleFullName,

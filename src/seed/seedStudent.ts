@@ -26,7 +26,7 @@ interface StudentProfileData {
   organizationId: mongoose.Types.ObjectId;
   parentId?: mongoose.Types.ObjectId;
   enrolledCoursesIds: mongoose.Types.ObjectId[];
-  currentClassId?: mongoose.Types.ObjectId;
+  CurrentClassId?: mongoose.Types.ObjectId;
   dateOfBirth: Date;
   address: {
     street: string;
@@ -88,7 +88,7 @@ function generateRandomStudentProfileData(
     organizationId: studentUser.organizationId!, // Should exist for a student user
     parentId: parentId,
     enrolledCoursesIds: enrolledCoursesIds,
-    currentClassId: currentClassId,
+    CurrentClassId: currentClassId,
     dateOfBirth: faker.date.birthdate({ min: 15, max: 22, mode: 'age' }),
     address: {
       street: faker.location.streetAddress(),

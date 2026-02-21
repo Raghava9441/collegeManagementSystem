@@ -43,13 +43,7 @@ export function sleep(ms: number): Promise<void> {
 export async function connectDB(uri: string): Promise<void> {
   try {
     console.log(uri)
-    // await mongoose.connect(uri); 
-    const seedConnection = mongoose.createConnection(uri, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
-
-
+    await mongoose.connect(uri); 
     console.log('MongoDB connected successfully.');
   } catch (error) {
     console.error('MongoDB connection error:', error);

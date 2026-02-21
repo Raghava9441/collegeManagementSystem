@@ -101,12 +101,12 @@ export async function seedLessons(
         continue;
       }
 
-      if (!courseDoc.subjectIds || courseDoc.subjectIds.length === 0) {
+      if (!courseDoc.subjectsIds || courseDoc.subjectsIds.length === 0) {
         console.warn(`Course "${courseDoc.name}" (ID: ${courseDoc._id}) has no associated subjects. No lessons will be created for this course in class ${classDoc.name}.`);
         continue;
       }
 
-      for (const subjectId of courseDoc.subjectIds) {
+      for (const subjectId of courseDoc.subjectsIds) {
         const subjectDoc = allSubjects.find(s => s._id.equals(subjectId));
         if (!subjectDoc) {
           console.warn(`Subject with ID ${subjectId} not found for course ${courseDoc._id}. Skipping lessons for this subject in class ${classDoc.name}.`);

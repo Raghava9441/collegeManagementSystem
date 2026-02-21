@@ -54,10 +54,10 @@ function generateRandomOrganizationData(): OrganizationData {
     establishedDate: faker.date.past({ years: 20 }),
     description: faker.lorem.paragraphs(2),
     socialLinks: {
-      facebook: `https://facebook.com/${faker.internet.userName()}`,
-      twitter: `https://twitter.com/${faker.internet.userName()}`,
-      linkedin: `https://linkedin.com/company/${faker.internet.userName()}`,
-      instagram: `https://instagram.com/${faker.internet.userName()}`,
+      facebook: `https://facebook.com/${faker.internet.username()}`,
+      twitter: `https://twitter.com/${faker.internet.username()}`,
+      linkedin: `https://linkedin.com/company/${faker.internet.username()}`,
+      instagram: `https://instagram.com/${faker.internet.username()}`,
     },
   };
 }

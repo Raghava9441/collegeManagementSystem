@@ -63,12 +63,12 @@ function generateRandomTeacherProfileData(
   const selectedDepartments = getRandomElements(allDepartmentsForOrg, numDepartments).map(dept => dept._id);
 
   const numSubjects = faker.number.int({ min: 1, max: Math.min(MAX_SUBJECTS_PER_TEACHER, allSubjectsForOrg.length) });
-  const selectedSubjects = getRandomElements(allSubjectsForOrg, numSubjects).map(sub => sub._id.toString());
+  const selectedSubjects = getRandomElements(allSubjectsForOrg, numSubjects).map(sub => sub._id);
   return {
-    userId: new mongoose.Types.ObjectId(teacherUser._id.toString()),
-    organizationId: new mongoose.Types.ObjectId(teacherUser.organizationId.toString()),
-    departments: selectedDepartments.map(dept => new mongoose.Types.ObjectId(dept.toString())),
-    subjects: selectedSubjects.map(sub => new mongoose.Types.ObjectId(sub)),
+    userId: teacherUser._id,
+    organizationId: teacherUser.organizationId,
+    departments: selectedDepartments,
+    subjects: selectedSubjects,
     qualifications: [
       faker.helpers.arrayElement(['PhD in Education', 'M.Sc. in Computer Science', 'MA in History', 'B.Ed.']),
       `${faker.person.jobTitle()} at ${faker.company.name()}`

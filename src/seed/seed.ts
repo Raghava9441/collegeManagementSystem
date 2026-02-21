@@ -1,5 +1,9 @@
 import mongoose from 'mongoose';
 import { faker } from '@faker-js/faker'; // For potential direct use or if utils need it
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
 
 // Seeding functions
 import { seedOrganizations } from './seedOrganization';
@@ -13,13 +17,12 @@ import { seedClasses } from './seedClass';
 import { seedStudentProfiles } from './seedStudent';
 import { seedLessons } from './seedLesson';
 import { seedAssignments } from './seedAssignment';
-// Future seeder imports will go here:
-// import { seedAttendances } from './seedAttendance';
-// import { seedExams } from './seedExam';
-// import { seedResults } from './seedResult';
-// import { seedConversationsAndMessages } from './seedConversation';
-// import { seedFriendRequests } from './seedFriendRequest';
-// import { seedEvents } from './seedEvent';
+import { seedAttendances } from './seedAttendance';
+import { seedExams } from './seedExam';
+import { seedResults } from './seedResult';
+import { seedConversationsAndMessages } from './seedConversation';
+import { seedFriendRequests } from './seedFriendRequest';
+import { seedEvents } from './seedEvent';
 
 // DB Utilities
 import { connectDB, disconnectDB } from './seedUtils';
@@ -31,29 +34,26 @@ import { Department } from '../models/Department.models';
 import { Subject } from '../models/subject.models';
 import { Teacher } from '../models/teacher.model';
 import { Parent } from '../models/parent.model';
-// import { Student } from '../models/student.model';
 import { Course } from '../models/course.models';
 import { Class } from '../models/class.models';
 import { Lesson } from '../models/lesson.models';
 import { Assignment } from '../models/assignment.models';
-// Future model imports for clearing:
-// import Attendance from '../models/attendance.model';
-// import Exam from '../models/exam.model';
-// import Result from '../models/result.model';
-// import Conversation from '../models/conversation.model';
-// import Message from '../models/message.model';
-// import FriendRequest from '../models/friendRequest.model';
-// import Event from '../models/event.model';
+import { Attendance } from '../models/attendance.models';
+import { Exam } from '../models/exam.models';
+import { Result } from '../models/result.models';
+import { Conversation } from '../models/conversation.models';
+import { Message } from '../models/message.models';
+import { FriendRequest } from '../models/friendRequest.models';
+import Events from '../models/events.models';
 
 // Constants (if needed, e.g. UserRoles, though usually handled within individual seeders)
 import { UserRolesEnum, AvailableUserRoles, TEST_DB_NAME } from '../constants'; // Example, may not be directly used here
 import { Student } from '../models/student.models';
 
 // --- Configuration ---
-const MONGODB_URI = `${process.env.MONGODB_URI}/${TEST_DB_NAME}` || 'mongodb://localhost:27017/lms-test-db-seed';
+const MONGODB_URI = `${process.env.MONGODB_URI}` || 'mongodb://localhost:27017/lms-test-db-seed';
 // For command-line arguments:
-const clearDBArg = true
-// process.argv.includes('--clear');
+const clearDBArg = process.argv.includes('--clear');
 
 /**
  * Clears all relevant collections from the database.
@@ -67,19 +67,17 @@ async function clearDatabase() {
     await Subject.deleteMany({});
     await Teacher.deleteMany({});
     await Parent.deleteMany({});
-    await Student.deleteMany({});
     await Course.deleteMany({});
     await Class.deleteMany({});
     await Lesson.deleteMany({});
     await Assignment.deleteMany({});
-    // Future models:
-    // await Attendance.deleteMany({});
-    // await Exam.deleteMany({});
-    // await Result.deleteMany({});
-    // await Conversation.deleteMany({});
-    // await Message.deleteMany({});
-    // await FriendRequest.deleteMany({});
-    // await Event.deleteMany({});
+    await Attendance.deleteMany({});
+    await Exam.deleteMany({});
+    await Result.deleteMany({});
+    await Conversation.deleteMany({});
+    await Message.deleteMany({});
+    await FriendRequest.deleteMany({});
+    await Events.deleteMany({});
     console.log('Database cleared successfully.');
   } catch (error) {
     console.error('Error clearing database:', error);
@@ -164,20 +162,29 @@ export async function main() {
     const assignments = await seedAssignments(classes, teacherProfiles, subjects, courses);
     console.log(`Successfully seeded ${assignments.length} assignments.`);
 
-    // --- Future Seeder Calls ---
-    // console.log('\n--- Seeding Attendances ---');
-    // const attendances = await seedAttendances(studentProfiles, classes, lessons);
-    // console.log(`Successfully seeded ${attendances.length} attendances.`);
+    console.log('\n--- Seeding Attendances ---');
+    const attendances = await seedAttendances(studentProfiles, classes, teacherProfiles);
+    console.log(`Successfully seeded ${attendances.length} attendances.`);
 
-    // console.log('\n--- Seeding Exams ---');
-    // const exams = await seedExams(courses, classes, subjects, teacherProfiles);
-    // console.log(`Successfully seeded ${exams.length} exams.`);
+    console.log('\n--- Seeding Exams ---');
+    const exams = await seedExams(courses, classes, subjects, teacherProfiles);
+    console.log(`Successfully seeded ${exams.length} exams.`);
 
-    // console.log('\n--- Seeding Results/Grades ---');
-    // const results = await seedResults(studentProfiles, assignments, exams);
-    // console.log(`Successfully seeded ${results.length} results.`);
+    console.log('\n--- Seeding Results/Grades ---');
+    const results = await seedResults(studentProfiles, exams, assignments);
+    console.log(`Successfully seeded ${results.length} results.`);
 
-    // ... and so on for other future modules
+    console.log('\n--- Seeding Conversations and Messages ---');
+    const conversations = await seedConversationsAndMessages(users);
+    console.log(`Successfully seeded ${conversations.length} conversations and messages.`);
+
+    console.log('\n--- Seeding Friend Requests ---');
+    const friendRequests = await seedFriendRequests(users);
+    console.log(`Successfully seeded ${friendRequests.length} friend requests.`);
+
+    console.log('\n--- Seeding Events ---');
+    const events = await seedEvents(organizations, users);
+    console.log(`Successfully seeded ${events.length} events.`);
 
     console.log('\n------------------------------------');
     console.log('Database seeding process completed successfully!');
@@ -193,3 +200,9 @@ export async function main() {
 }
 
 // --- Execute the Seeding Process ---
+if (require.main === module) {
+  main().catch((error) => {
+    console.error('An error occurred during seeding:', error);
+    process.exit(1);
+  });
+}

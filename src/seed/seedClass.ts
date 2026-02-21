@@ -46,14 +46,14 @@ function generateRandomClassData(
   adminUsersForOrg: IUser[] // Users with ORGADMIN or TEACHER role
 ): ClassData {
   const classTeacherProfile = getRandomElement(allTeachersForOrg);
-  // Corrected: Store Teacher Profile _id, not User _id
-  const classTeacherId = classTeacherProfile._id;
+  // Store User _id, not Teacher Profile _id (since lesson and assignment seeding look for user ID)
+  const classTeacherId = classTeacherProfile.userId;
 
   let supervisorId: mongoose.Types.ObjectId | undefined = undefined;
   if (allTeachersForOrg.length > 0) {
     const supervisorProfile = getRandomElement(allTeachersForOrg);
-    // Corrected: Store Teacher Profile _id, not User _id
-    supervisorId = supervisorProfile._id;
+    // Store User _id, not Teacher Profile _id
+    supervisorId = supervisorProfile.userId;
   }
 
   const createdBy = getRandomElement(adminUsersForOrg)._id;

@@ -97,7 +97,7 @@ const generateFakeUserData = async (organizationId: string) => {
 
     const user = {
         _id: new mongoose.Types.ObjectId(),
-        username: faker.internet.userName(),
+        username: faker.internet.username(),
         email: faker.internet.email(),
         fullname: faker.name.fullName(),
         avatar: faker.image.avatar(),

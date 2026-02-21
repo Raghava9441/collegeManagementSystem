@@ -29,7 +29,7 @@ interface CourseData {
   description: string;
   organizationId: mongoose.Types.ObjectId;
   teacherIds: mongoose.Types.ObjectId[];
-  subjectIds: mongoose.Types.ObjectId[]; // Corrected from subjectsIds based on typical naming
+  subjectsIds: mongoose.Types.ObjectId[]; // Matches the course model
   departmentId?: mongoose.Types.ObjectId; // Changed from department to departmentId
   startDate: Date;
   endDate: Date;
@@ -77,7 +77,7 @@ function generateRandomCourseData(
     description: faker.lorem.paragraph(),
     organizationId: organization._id,
     teacherIds: selectedTeacherIds,
-    subjectIds: selectedSubjectIds,
+    subjectsIds: selectedSubjectIds,
     departmentId: departmentId,
     startDate: startDate,
     endDate: faker.date.future({ years: 0.5, refDate: startDate }),
