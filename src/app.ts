@@ -23,10 +23,12 @@ import permissionRoutes from './routes/permissions.routes';
 import settingsRoutes from './routes/settings.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import swaggerDocs from './utils/swagger';
 
 const allowedOrigins = ["https://raghava9441.github.io", 'http://localhost:3000', 'http://localhost:3001',];
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = process.env.NODE_ENV === 'development';
+const port = process.env.PORT || 8000;
 
 app.use(cors({
     origin: allowedOrigins,
@@ -102,6 +104,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+// Initialize Swagger documentation
+swaggerDocs(app, port as string);
+
 //import routes
 import healthCheckRoutes from './routes/healthCheck.routes';
 import { errorHandler } from './middlewares/error.middlewares';
@@ -114,6 +119,7 @@ app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 app.use("/api/v1/organizations", organizationRoutes);
 app.use("/api/v1/departments", departmentRoutes);
+app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/teachers", teacherRoutes);
 app.use("/api/v1/students", studentRoutes);

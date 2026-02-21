@@ -37,6 +37,17 @@ dbConnection.connect().then(() => {
     httpServer.listen(port, () => {
         logger.info(`Server running at ${serverIp}:${port}`);
     });
+
+    // Handle server listen errors
+    httpServer.on('error', (error: any) => {
+        if (error.code === 'EADDRINUSE') {
+            logger.error(`Port ${port} is already in use. Please free the port or use a different port.`);
+            process.exit(1);
+        }
+        logger.error(`Server error: ${error.message}`);
+        process.exit(1);
+    });
 }).catch((error) => {
     logger.error(error);
+    process.exit(1);
 });

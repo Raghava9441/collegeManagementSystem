@@ -6,10 +6,9 @@ import { NextFunction } from "express";
 
 
 export const verifyJWT = async (req: any, res: any, next: any) => {
-    // const accessToken = req.cookies.accessToken || req.headers("Authorization")?.replace("Bearer", "");
+    // Check for access token in cookies or Authorization header
     const cookieHeader = req.headers.cookie;  // Get the cookie header
     let accessToken;
-    // console.log("cookieHeader", cookieHeader)
 
     if (cookieHeader) {
         // Extract accessToken from cookie string
@@ -20,6 +19,15 @@ export const verifyJWT = async (req: any, res: any, next: any) => {
             accessToken = accessTokenCookie.split('=')[1]
         }
     }
+
+    // If not found in cookies, check Authorization header
+    if (!accessToken && req.headers.authorization) {
+        const authHeader = req.headers.authorization;
+        if (authHeader.startsWith('Bearer ')) {
+            accessToken = authHeader.substring(7).trim();
+        }
+    }
+
     if (!accessToken) {
         return res.status(401).json(new ApiError(401, null, "Please login to access this resource", undefined, [{ msg: "Please login to access this resource" }]));
     }
