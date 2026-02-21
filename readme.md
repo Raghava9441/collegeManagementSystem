@@ -4,15 +4,27 @@
 
 The College Management System (CMS) is a comprehensive web application designed to manage various aspects of educational institutions. It provides functionalities for managing students, teachers, courses, attendance, organizations, departments, and more. The system aims to streamline administrative tasks and enhance communication between students, parents, and faculty.
 
-## Features
+## Comprehensive Documentation
 
-- **User Management**: Manage users including students, teachers, and parents.
+For detailed documentation, please refer to [documentation.md](documentation.md) which includes:
+
+- **Complete API documentation** with all endpoints categorized by functionality
+- **Database models and relationships**
+- **Socket.io real-time communication functionality**
+- **Authentication and authorization system**
+- **Deployment and configuration instructions**
+- **Development guidelines and best practices**
+
+## Key Features
+
+- **User Management**: Manage users including students, teachers, and parents with role-based access control.
 - **Course Management**: Create, update, and delete courses, including bulk operations.
-- **Attendance Tracking**: Record and manage student attendance with detailed reports.
+- **Attendance Tracking**: Record and manage student attendance with detailed reports and bulk Excel upload.
 - **Department Management**: Organize and manage different departments within the institution.
 - **Event Management**: Schedule and manage events such as workshops, seminars, and meetings.
-- **File Uploads**: Support for bulk uploads of attendance and other data via Excel files.
+- **Real-time Communication**: Socket.io integration for real-time messaging and notifications.
 - **API Documentation**: Integrated Swagger documentation for easy API exploration.
+- **Analytics Dashboard**: Comprehensive dashboard with institutional performance insights.
 
 ## Technologies Used
 
