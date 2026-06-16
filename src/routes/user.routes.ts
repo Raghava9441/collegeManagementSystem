@@ -40,7 +40,7 @@ const router = Router();
  *             schema:
  *               $ref: '#/components/schemas/Error'
  */
-router.route("/login").post(loginUser);
+router.route("/auth/login").post(loginUser);
 
 /**
  * @swagger

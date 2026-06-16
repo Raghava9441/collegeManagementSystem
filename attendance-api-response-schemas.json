@@ -1,0 +1,491 @@
+{
+    "baseUrl": "/api/v1/attendances",
+    "routes": [
+        {
+            "path": "",
+            "method": "GET",
+            "summary": "Get all attendances with pagination and filters",
+            "parameters": [
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                },
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID to filter by"
+                },
+                {
+                    "name": "studentId",
+                    "type": "string",
+                    "description": "Student ID to filter by"
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "description": "Attendance status to filter by (present, absent, excused)"
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "Date to filter by (YYYY-MM-DD)"
+                },
+                {
+                    "name": "startDate",
+                    "type": "string",
+                    "description": "Start date of date range filter (YYYY-MM-DD)"
+                },
+                {
+                    "name": "endDate",
+                    "type": "string",
+                    "description": "End date of date range filter (YYYY-MM-DD)"
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendances fetched successfully",
+                "data": {
+                    "attendances": [
+                        {
+                            "_id": "string",
+                            "classId": "string",
+                            "studentId": "string",
+                            "date": "ISO8601Date",
+                            "status": "string",
+                            "remarks": "string",
+                            "markedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "",
+            "method": "POST",
+            "summary": "Create a new attendance record",
+            "requestBody": {
+                "classId": "string",
+                "studentId": "string",
+                "date": "ISO8601Date",
+                "status": "string",
+                "remarks": "string",
+                "markedBy": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance record created successfully",
+                "data": {
+                    "_id": "string",
+                    "classId": "string",
+                    "studentId": "string",
+                    "date": "ISO8601Date",
+                    "status": "string",
+                    "remarks": "string",
+                    "markedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/bulk",
+            "method": "POST",
+            "summary": "Bulk create attendances from Excel file",
+            "requestBody": {
+                "file": "binary"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance records created successfully",
+                "data": {
+                    "attendances": [
+                        {
+                            "_id": "string",
+                            "classId": "string",
+                            "studentId": "string",
+                            "date": "ISO8601Date",
+                            "status": "string",
+                            "remarks": "string",
+                            "markedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/bulk",
+            "method": "DELETE",
+            "summary": "Bulk delete attendances",
+            "requestBody": {
+                "attendanceIds": [
+                    "string"
+                ]
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance records deleted successfully",
+                "data": {
+                    "deletedCount": 5
+                }
+            }
+        },
+        {
+            "path": "/mark-bulk",
+            "method": "POST",
+            "summary": "Mark bulk attendance for a class",
+            "requestBody": {
+                "classId": "string",
+                "date": "ISO8601Date",
+                "attendanceRecords": [
+                    {
+                        "studentId": "string",
+                        "status": "string",
+                        "remarks": "string"
+                    }
+                ],
+                "markedBy": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Bulk attendance marked successfully",
+                "data": {
+                    "attendances": [
+                        {
+                            "_id": "string",
+                            "classId": "string",
+                            "studentId": "string",
+                            "date": "ISO8601Date",
+                            "status": "string",
+                            "remarks": "string",
+                            "markedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/student/:studentId",
+            "method": "GET",
+            "summary": "Get attendance by student",
+            "parameters": [
+                {
+                    "name": "studentId",
+                    "type": "string",
+                    "description": "Student ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                },
+                {
+                    "name": "startDate",
+                    "type": "string",
+                    "description": "Start date of date range filter (YYYY-MM-DD)"
+                },
+                {
+                    "name": "endDate",
+                    "type": "string",
+                    "description": "End date of date range filter (YYYY-MM-DD)"
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance records fetched successfully",
+                "data": {
+                    "attendances": [
+                        {
+                            "_id": "string",
+                            "classId": "string",
+                            "studentId": "string",
+                            "date": "ISO8601Date",
+                            "status": "string",
+                            "remarks": "string",
+                            "markedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/class/:classId",
+            "method": "GET",
+            "summary": "Get attendance by class",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "Date to filter by (YYYY-MM-DD)"
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance records fetched successfully",
+                "data": {
+                    "attendances": [
+                        {
+                            "_id": "string",
+                            "classId": "string",
+                            "studentId": "string",
+                            "date": "ISO8601Date",
+                            "status": "string",
+                            "remarks": "string",
+                            "markedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/date/:date",
+            "method": "GET",
+            "summary": "Get attendance by date",
+            "parameters": [
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "Date (YYYY-MM-DD)",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance records fetched successfully",
+                "data": {
+                    "attendances": [
+                        {
+                            "_id": "string",
+                            "classId": "string",
+                            "studentId": "string",
+                            "date": "ISO8601Date",
+                            "status": "string",
+                            "remarks": "string",
+                            "markedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/:attendanceId",
+            "method": "GET",
+            "summary": "Get attendance by ID",
+            "parameters": [
+                {
+                    "name": "attendanceId",
+                    "type": "string",
+                    "description": "Attendance ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance record fetched successfully",
+                "data": {
+                    "_id": "string",
+                    "classId": "string",
+                    "studentId": "string",
+                    "date": "ISO8601Date",
+                    "status": "string",
+                    "remarks": "string",
+                    "markedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:attendanceId",
+            "method": "PUT",
+            "summary": "Update attendance by ID",
+            "parameters": [
+                {
+                    "name": "attendanceId",
+                    "type": "string",
+                    "description": "Attendance ID",
+                    "required": true
+                }
+            ],
+            "requestBody": {
+                "classId": "string",
+                "studentId": "string",
+                "date": "ISO8601Date",
+                "status": "string",
+                "remarks": "string",
+                "markedBy": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance record updated successfully",
+                "data": {
+                    "_id": "string",
+                    "classId": "string",
+                    "studentId": "string",
+                    "date": "ISO8601Date",
+                    "status": "string",
+                    "remarks": "string",
+                    "markedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:attendanceId",
+            "method": "DELETE",
+            "summary": "Delete attendance by ID",
+            "parameters": [
+                {
+                    "name": "attendanceId",
+                    "type": "string",
+                    "description": "Attendance ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance record deleted successfully",
+                "data": null
+            }
+        },
+        {
+            "path": "/stats/student/:studentId",
+            "method": "GET",
+            "summary": "Get student attendance stats",
+            "parameters": [
+                {
+                    "name": "studentId",
+                    "type": "string",
+                    "description": "Student ID",
+                    "required": true
+                },
+                {
+                    "name": "startDate",
+                    "type": "string",
+                    "description": "Start date of date range (YYYY-MM-DD)"
+                },
+                {
+                    "name": "endDate",
+                    "type": "string",
+                    "description": "End date of date range (YYYY-MM-DD)"
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Attendance stats fetched successfully",
+                "data": {
+                    "totalDays": 100,
+                    "presentDays": 95,
+                    "absentDays": 3,
+                    "excusedDays": 2,
+                    "attendancePercentage": 95
+                }
+            }
+        },
+        {
+            "path": "/stats/class/:classId",
+            "method": "GET",
+            "summary": "Get class attendance stats",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "Date to get stats for (YYYY-MM-DD)"
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Class attendance stats fetched successfully",
+                "data": {
+                    "totalStudents": 30,
+                    "presentStudents": 28,
+                    "absentStudents": 1,
+                    "excusedStudents": 1,
+                    "attendancePercentage": 93.33
+                }
+            }
+        }
+    ]
+}

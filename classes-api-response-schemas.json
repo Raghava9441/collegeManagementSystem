@@ -1,0 +1,858 @@
+{
+    "baseUrl": "/api/v1/classes",
+    "routes": [
+        {
+            "path": "",
+            "method": "GET",
+            "summary": "Get all classes with pagination",
+            "parameters": [
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Classes fetched successfully",
+                "data": {
+                    "classes": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "courseId": "string",
+                            "classTeacherId": "string",
+                            "studentIds": [
+                                "string"
+                            ],
+                            "organizationId": "string",
+                            "schedule": [
+                                {
+                                    "dayOfWeek": "string",
+                                    "startTime": "string",
+                                    "endTime": "string"
+                                }
+                            ],
+                            "classroom": "string",
+                            "credits": 3,
+                            "maxCapacity": 30,
+                            "currentEnrollment": 0,
+                            "supervisorId": "string",
+                            "academicYear": "string",
+                            "departmentId": "string",
+                            "createdBy": "string",
+                            "updatedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "",
+            "method": "POST",
+            "summary": "Create a new class",
+            "requestBody": {
+                "name": "string",
+                "description": "string",
+                "courseId": "string",
+                "classTeacherId": "string",
+                "studentIds": [
+                    "string"
+                ],
+                "organizationId": "string",
+                "schedule": [
+                    {
+                        "dayOfWeek": "string",
+                        "startTime": "string",
+                        "endTime": "string"
+                    }
+                ],
+                "classroom": "string",
+                "credits": 3,
+                "maxCapacity": 30,
+                "currentEnrollment": 0,
+                "supervisorId": "string",
+                "academicYear": "string",
+                "departmentId": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Class created successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "courseId": "string",
+                    "classTeacherId": "string",
+                    "studentIds": [
+                        "string"
+                    ],
+                    "organizationId": "string",
+                    "schedule": [
+                        {
+                            "dayOfWeek": "string",
+                            "startTime": "string",
+                            "endTime": "string"
+                        }
+                    ],
+                    "classroom": "string",
+                    "credits": 3,
+                    "maxCapacity": 30,
+                    "currentEnrollment": 0,
+                    "supervisorId": "string",
+                    "academicYear": "string",
+                    "departmentId": "string",
+                    "createdBy": "string",
+                    "updatedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:classId",
+            "method": "GET",
+            "summary": "Get class by ID",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Class fetched successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "courseId": "string",
+                    "classTeacherId": "string",
+                    "studentIds": [
+                        "string"
+                    ],
+                    "organizationId": "string",
+                    "schedule": [
+                        {
+                            "dayOfWeek": "string",
+                            "startTime": "string",
+                            "endTime": "string"
+                        }
+                    ],
+                    "classroom": "string",
+                    "credits": 3,
+                    "maxCapacity": 30,
+                    "currentEnrollment": 0,
+                    "supervisorId": "string",
+                    "academicYear": "string",
+                    "departmentId": "string",
+                    "createdBy": "string",
+                    "updatedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:classId",
+            "method": "PUT",
+            "summary": "Update class by ID",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                }
+            ],
+            "requestBody": {
+                "name": "string",
+                "description": "string",
+                "courseId": "string",
+                "classTeacherId": "string",
+                "studentIds": [
+                    "string"
+                ],
+                "organizationId": "string",
+                "schedule": [
+                    {
+                        "dayOfWeek": "string",
+                        "startTime": "string",
+                        "endTime": "string"
+                    }
+                ],
+                "classroom": "string",
+                "credits": 3,
+                "maxCapacity": 30,
+                "currentEnrollment": 0,
+                "supervisorId": "string",
+                "academicYear": "string",
+                "departmentId": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Class updated successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "courseId": "string",
+                    "classTeacherId": "string",
+                    "studentIds": [
+                        "string"
+                    ],
+                    "organizationId": "string",
+                    "schedule": [
+                        {
+                            "dayOfWeek": "string",
+                            "startTime": "string",
+                            "endTime": "string"
+                        }
+                    ],
+                    "classroom": "string",
+                    "credits": 3,
+                    "maxCapacity": 30,
+                    "currentEnrollment": 0,
+                    "supervisorId": "string",
+                    "academicYear": "string",
+                    "departmentId": "string",
+                    "createdBy": "string",
+                    "updatedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:classId",
+            "method": "DELETE",
+            "summary": "Delete class by ID",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Class deleted successfully",
+                "data": null
+            }
+        },
+        {
+            "path": "/bulk",
+            "method": "POST",
+            "summary": "Bulk create classes from Excel file",
+            "requestBody": {
+                "file": "binary"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Classes created successfully",
+                "data": {
+                    "classes": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "courseId": "string",
+                            "classTeacherId": "string",
+                            "studentIds": [
+                                "string"
+                            ],
+                            "organizationId": "string",
+                            "schedule": [
+                                {
+                                    "dayOfWeek": "string",
+                                    "startTime": "string",
+                                    "endTime": "string"
+                                }
+                            ],
+                            "classroom": "string",
+                            "credits": 3,
+                            "maxCapacity": 30,
+                            "currentEnrollment": 0,
+                            "supervisorId": "string",
+                            "academicYear": "string",
+                            "departmentId": "string",
+                            "createdBy": "string",
+                            "updatedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/bulk",
+            "method": "DELETE",
+            "summary": "Bulk delete classes",
+            "requestBody": {
+                "classIds": [
+                    "string"
+                ]
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Classes deleted successfully",
+                "data": {
+                    "deletedCount": 5
+                }
+            }
+        },
+        {
+            "path": "/academic-year",
+            "method": "GET",
+            "summary": "Get classes by academic year",
+            "parameters": [
+                {
+                    "name": "academicYear",
+                    "type": "string",
+                    "description": "Academic year (e.g., 2023-2024)",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Classes fetched successfully",
+                "data": {
+                    "classes": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "courseId": "string",
+                            "classTeacherId": "string",
+                            "studentIds": [
+                                "string"
+                            ],
+                            "organizationId": "string",
+                            "schedule": [
+                                {
+                                    "dayOfWeek": "string",
+                                    "startTime": "string",
+                                    "endTime": "string"
+                                }
+                            ],
+                            "classroom": "string",
+                            "credits": 3,
+                            "maxCapacity": 30,
+                            "currentEnrollment": 0,
+                            "supervisorId": "string",
+                            "academicYear": "string",
+                            "departmentId": "string",
+                            "createdBy": "string",
+                            "updatedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/transfer-student",
+            "method": "POST",
+            "summary": "Transfer student between classes",
+            "requestBody": {
+                "studentId": "string",
+                "fromClassId": "string",
+                "toClassId": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Student transferred successfully",
+                "data": null
+            }
+        },
+        {
+            "path": "/teacher/:teacherId",
+            "method": "GET",
+            "summary": "Get classes by teacher",
+            "parameters": [
+                {
+                    "name": "teacherId",
+                    "type": "string",
+                    "description": "Teacher ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Classes fetched successfully",
+                "data": {
+                    "classes": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "courseId": "string",
+                            "classTeacherId": "string",
+                            "studentIds": [
+                                "string"
+                            ],
+                            "organizationId": "string",
+                            "schedule": [
+                                {
+                                    "dayOfWeek": "string",
+                                    "startTime": "string",
+                                    "endTime": "string"
+                                }
+                            ],
+                            "classroom": "string",
+                            "credits": 3,
+                            "maxCapacity": 30,
+                            "currentEnrollment": 0,
+                            "supervisorId": "string",
+                            "academicYear": "string",
+                            "departmentId": "string",
+                            "createdBy": "string",
+                            "updatedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/course/:courseId",
+            "method": "GET",
+            "summary": "Get classes by course",
+            "parameters": [
+                {
+                    "name": "courseId",
+                    "type": "string",
+                    "description": "Course ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Classes fetched successfully",
+                "data": {
+                    "classes": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "courseId": "string",
+                            "classTeacherId": "string",
+                            "studentIds": [
+                                "string"
+                            ],
+                            "organizationId": "string",
+                            "schedule": [
+                                {
+                                    "dayOfWeek": "string",
+                                    "startTime": "string",
+                                    "endTime": "string"
+                                }
+                            ],
+                            "classroom": "string",
+                            "credits": 3,
+                            "maxCapacity": 30,
+                            "currentEnrollment": 0,
+                            "supervisorId": "string",
+                            "academicYear": "string",
+                            "departmentId": "string",
+                            "createdBy": "string",
+                            "updatedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/department/:departmentId",
+            "method": "GET",
+            "summary": "Get classes by department",
+            "parameters": [
+                {
+                    "name": "departmentId",
+                    "type": "string",
+                    "description": "Department ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Classes fetched successfully",
+                "data": {
+                    "classes": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "courseId": "string",
+                            "classTeacherId": "string",
+                            "studentIds": [
+                                "string"
+                            ],
+                            "organizationId": "string",
+                            "schedule": [
+                                {
+                                    "dayOfWeek": "string",
+                                    "startTime": "string",
+                                    "endTime": "string"
+                                }
+                            ],
+                            "classroom": "string",
+                            "credits": 3,
+                            "maxCapacity": 30,
+                            "currentEnrollment": 0,
+                            "supervisorId": "string",
+                            "academicYear": "string",
+                            "departmentId": "string",
+                            "createdBy": "string",
+                            "updatedBy": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/:classId/students",
+            "method": "GET",
+            "summary": "Get students in class",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Students fetched successfully",
+                "data": {
+                    "students": [
+                        {
+                            "_id": "string",
+                            "userId": "string",
+                            "classId": "string",
+                            "organizationId": "string",
+                            "studentId": "string",
+                            "rollNumber": "string",
+                            "admissionNumber": "string",
+                            "firstName": "string",
+                            "lastName": "string",
+                            "dateOfBirth": "ISO8601Date",
+                            "gender": "string",
+                            "email": "string",
+                            "phone": "string",
+                            "address": "string",
+                            "guardianName": "string",
+                            "guardianPhone": "string",
+                            "enrollmentDate": "ISO8601Date",
+                            "status": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 25,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/:classId/enroll",
+            "method": "POST",
+            "summary": "Enroll a student in a class",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                }
+            ],
+            "requestBody": {
+                "studentId": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Student enrolled successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "courseId": "string",
+                    "classTeacherId": "string",
+                    "studentIds": [
+                        "string"
+                    ],
+                    "organizationId": "string",
+                    "schedule": [
+                        {
+                            "dayOfWeek": "string",
+                            "startTime": "string",
+                            "endTime": "string"
+                        }
+                    ],
+                    "classroom": "string",
+                    "credits": 3,
+                    "maxCapacity": 30,
+                    "currentEnrollment": 1,
+                    "supervisorId": "string",
+                    "academicYear": "string",
+                    "departmentId": "string",
+                    "createdBy": "string",
+                    "updatedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:classId/students/:studentId",
+            "method": "DELETE",
+            "summary": "Remove a student from a class",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                },
+                {
+                    "name": "studentId",
+                    "type": "string",
+                    "description": "Student ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Student removed successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "courseId": "string",
+                    "classTeacherId": "string",
+                    "studentIds": [
+                        "string"
+                    ],
+                    "organizationId": "string",
+                    "schedule": [
+                        {
+                            "dayOfWeek": "string",
+                            "startTime": "string",
+                            "endTime": "string"
+                        }
+                    ],
+                    "classroom": "string",
+                    "credits": 3,
+                    "maxCapacity": 30,
+                    "currentEnrollment": 0,
+                    "supervisorId": "string",
+                    "academicYear": "string",
+                    "departmentId": "string",
+                    "createdBy": "string",
+                    "updatedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:classId/enroll-multiple",
+            "method": "POST",
+            "summary": "Enroll multiple students in a class",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                }
+            ],
+            "requestBody": {
+                "studentIds": [
+                    "string"
+                ]
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Students enrolled successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "courseId": "string",
+                    "classTeacherId": "string",
+                    "studentIds": [
+                        "string"
+                    ],
+                    "organizationId": "string",
+                    "schedule": [
+                        {
+                            "dayOfWeek": "string",
+                            "startTime": "string",
+                            "endTime": "string"
+                        }
+                    ],
+                    "classroom": "string",
+                    "credits": 3,
+                    "maxCapacity": 30,
+                    "currentEnrollment": 5,
+                    "supervisorId": "string",
+                    "academicYear": "string",
+                    "departmentId": "string",
+                    "createdBy": "string",
+                    "updatedBy": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/stats",
+            "method": "GET",
+            "summary": "Get class statistics",
+            "parameters": [
+                {
+                    "name": "academicYear",
+                    "type": "string",
+                    "description": "Academic year (e.g., 2023-2024)"
+                },
+                {
+                    "name": "departmentId",
+                    "type": "string",
+                    "description": "Department ID"
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Class statistics fetched successfully",
+                "data": {
+                    "totalClasses": 50,
+                    "totalStudents": 1500,
+                    "averageStudentsPerClass": 30,
+                    "classesByDepartment": [
+                        {
+                            "departmentId": "string",
+                            "departmentName": "string",
+                            "classCount": 10
+                        },
+                        {
+                            "departmentId": "string",
+                            "departmentName": "string",
+                            "classCount": 15
+                        }
+                    ],
+                    "classesByAcademicYear": [
+                        {
+                            "academicYear": "2022-2023",
+                            "classCount": 45
+                        },
+                        {
+                            "academicYear": "2023-2024",
+                            "classCount": 50
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

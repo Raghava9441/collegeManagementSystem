@@ -1,0 +1,123 @@
+{
+    "status": "success",
+    "message": "Organization dashboard fetched successfully",
+    "data": {
+        "role": "ORGADMIN",
+        "organization": {
+            "id": "650d9c7e4c9a8b001f2e3d4c",
+            "name": "Greenwood College",
+            "category": "Higher Education",
+            "contactEmail": "admin@greenwoodcollege.edu",
+            "logo": "https://example.com/logos/greenwood-college.png"
+        },
+        "summary": {
+            "totalUsers": 2850,
+            "totalStudents": 2500,
+            "totalTeachers": 250,
+            "totalClasses": 150,
+            "totalCourses": 85,
+            "totalDepartments": 12,
+            "activeUsers": 2780,
+            "inactiveUsers": 70
+        },
+        "genderDistribution": {
+            "male": 1350,
+            "female": 1150,
+            "unknown": 0
+        },
+        "todayAttendance": {
+            "present": 2345,
+            "absent": 155,
+            "excused": 0
+        },
+        "upcomingExams": [
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d4d",
+                "name": "Mathematics Midterm",
+                "classId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d4e",
+                    "name": "Class 10-A"
+                },
+                "courseId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d4f",
+                    "name": "Mathematics"
+                },
+                "teacherId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d50",
+                    "firstName": "John",
+                    "lastName": "Smith"
+                },
+                "startDate": "2026-03-18T09:00:00.000Z",
+                "endDate": "2026-03-18T11:00:00.000Z",
+                "roomNumber": "Room 301"
+            },
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d51",
+                "name": "Physics Final Exam",
+                "classId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d52",
+                    "name": "Class 12-B"
+                },
+                "courseId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d53",
+                    "name": "Physics"
+                },
+                "teacherId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d54",
+                    "firstName": "Sarah",
+                    "lastName": "Johnson"
+                },
+                "startDate": "2026-03-20T14:00:00.000Z",
+                "endDate": "2026-03-20T16:00:00.000Z",
+                "roomNumber": "Auditorium"
+            },
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d55",
+                "name": "Chemistry Quiz",
+                "classId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d56",
+                    "name": "Class 11-C"
+                },
+                "courseId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d57",
+                    "name": "Chemistry"
+                },
+                "teacherId": {
+                    "_id": "650d9c7e4c9a8b001f2e3d58",
+                    "firstName": "Michael",
+                    "lastName": "Brown"
+                },
+                "startDate": "2026-03-22T10:30:00.000Z",
+                "endDate": "2026-03-22T11:30:00.000Z",
+                "roomNumber": "Lab 2"
+            }
+        ],
+        "recentEvents": [
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d59",
+                "title": "Parent-Teacher Meeting",
+                "description": "Annual parent-teacher meeting to discuss student progress",
+                "organizer": {
+                    "_id": "650d9c7e4c9a8b001f2e3d60",
+                    "fullname": "Jane Doe"
+                },
+                "date": "2026-03-25T09:00:00.000Z",
+                "eventType": "meeting",
+                "location": "Main Hall"
+            },
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d61",
+                "title": "Science Fair",
+                "description": "Annual science fair showcasing student projects",
+                "organizer": {
+                    "_id": "650d9c7e4c9a8b001f2e3d62",
+                    "fullname": "Dr. Alan Parker"
+                },
+                "date": "2026-03-28T10:00:00.000Z",
+                "eventType": "workshop",
+                "location": "Science Building"
+            }
+        ],
+        "lastUpdated": "2026-03-15T17:53:59.480Z"
+    }
+}

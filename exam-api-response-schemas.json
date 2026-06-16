@@ -1,0 +1,504 @@
+{
+    "baseUrl": "/api/v1/exams",
+    "routes": [
+        {
+            "path": "",
+            "method": "GET",
+            "summary": "Get all exams with pagination",
+            "parameters": [
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exams fetched successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "",
+            "method": "POST",
+            "summary": "Create a new exam",
+            "requestBody": {
+                "name": "string",
+                "description": "string",
+                "subjectId": "string",
+                "courseId": "string",
+                "classId": "string",
+                "teacherId": "string",
+                "duration": 60,
+                "totalMarks": 100,
+                "examType": "string",
+                "startDate": "ISO8601Date",
+                "endDate": "ISO8601Date",
+                "schedule": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Exam created successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "subjectId": "string",
+                    "courseId": "string",
+                    "classId": "string",
+                    "teacherId": "string",
+                    "duration": 60,
+                    "totalMarks": 100,
+                    "examType": "string",
+                    "startDate": "ISO8601Date",
+                    "endDate": "ISO8601Date",
+                    "schedule": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/bulk",
+            "method": "POST",
+            "summary": "Bulk create exams from Excel file",
+            "requestBody": {
+                "file": "binary"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Exams created successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/bulk",
+            "method": "DELETE",
+            "summary": "Bulk delete exams",
+            "requestBody": {
+                "examIds": [
+                    "string"
+                ]
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Exams deleted successfully",
+                "data": {
+                    "deletedCount": 5
+                }
+            }
+        },
+        {
+            "path": "/upcoming",
+            "method": "GET",
+            "summary": "Get upcoming exams",
+            "parameters": [
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Upcoming exams fetched successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/type",
+            "method": "GET",
+            "summary": "Get exams by type",
+            "parameters": [
+                {
+                    "name": "type",
+                    "type": "string",
+                    "description": "Exam type (quiz, midterm, final)",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exams by type fetched successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/class/:classId",
+            "method": "GET",
+            "summary": "Get exams by class",
+            "parameters": [
+                {
+                    "name": "classId",
+                    "type": "string",
+                    "description": "Class ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exams by class fetched successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/teacher/:teacherId",
+            "method": "GET",
+            "summary": "Get exams by teacher",
+            "parameters": [
+                {
+                    "name": "teacherId",
+                    "type": "string",
+                    "description": "Teacher ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exams by teacher fetched successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/course/:courseId",
+            "method": "GET",
+            "summary": "Get exams by course",
+            "parameters": [
+                {
+                    "name": "courseId",
+                    "type": "string",
+                    "description": "Course ID",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "description": "Page number",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "integer",
+                    "description": "Number of items per page",
+                    "default": 10
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exams by course fetched successfully",
+                "data": {
+                    "exams": [
+                        {
+                            "_id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "subjectId": "string",
+                            "courseId": "string",
+                            "classId": "string",
+                            "teacherId": "string",
+                            "duration": 60,
+                            "totalMarks": 100,
+                            "examType": "string",
+                            "startDate": "ISO8601Date",
+                            "endDate": "ISO8601Date",
+                            "schedule": "string",
+                            "createdAt": "ISO8601Date",
+                            "updatedAt": "ISO8601Date"
+                        }
+                    ],
+                    "total": 100,
+                    "page": 1,
+                    "limit": 10
+                }
+            }
+        },
+        {
+            "path": "/:examId",
+            "method": "GET",
+            "summary": "Get exam by ID",
+            "parameters": [
+                {
+                    "name": "examId",
+                    "type": "string",
+                    "description": "Exam ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exam fetched successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "subjectId": "string",
+                    "courseId": "string",
+                    "classId": "string",
+                    "teacherId": "string",
+                    "duration": 60,
+                    "totalMarks": 100,
+                    "examType": "string",
+                    "startDate": "ISO8601Date",
+                    "endDate": "ISO8601Date",
+                    "schedule": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:examId",
+            "method": "PUT",
+            "summary": "Update exam by ID",
+            "parameters": [
+                {
+                    "name": "examId",
+                    "type": "string",
+                    "description": "Exam ID",
+                    "required": true
+                }
+            ],
+            "requestBody": {
+                "name": "string",
+                "description": "string",
+                "subjectId": "string",
+                "courseId": "string",
+                "classId": "string",
+                "teacherId": "string",
+                "duration": 60,
+                "totalMarks": 100,
+                "examType": "string",
+                "startDate": "ISO8601Date",
+                "endDate": "ISO8601Date",
+                "schedule": "string"
+            },
+            "responseSchema": {
+                "success": true,
+                "message": "Exam updated successfully",
+                "data": {
+                    "_id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "subjectId": "string",
+                    "courseId": "string",
+                    "classId": "string",
+                    "teacherId": "string",
+                    "duration": 60,
+                    "totalMarks": 100,
+                    "examType": "string",
+                    "startDate": "ISO8601Date",
+                    "endDate": "ISO8601Date",
+                    "schedule": "string",
+                    "createdAt": "ISO8601Date",
+                    "updatedAt": "ISO8601Date"
+                }
+            }
+        },
+        {
+            "path": "/:examId",
+            "method": "DELETE",
+            "summary": "Delete exam by ID",
+            "parameters": [
+                {
+                    "name": "examId",
+                    "type": "string",
+                    "description": "Exam ID",
+                    "required": true
+                }
+            ],
+            "responseSchema": {
+                "success": true,
+                "message": "Exam deleted successfully",
+                "data": null
+            }
+        }
+    ]
+}

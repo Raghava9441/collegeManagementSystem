@@ -1,0 +1,136 @@
+{
+    "status": "success",
+    "message": "Parent dashboard fetched successfully",
+    "data": {
+        "role": "parent",
+        "parentInfo": {
+            "id": "650d9c7e4c9a8b001f2e3d89",
+            "name": "Robert Johnson",
+            "image": "https://example.com/avatars/parent1.jpg",
+            "email": "robert.johnson@example.com",
+            "phoneNumber": "+1234567890",
+            "relationship": "Father",
+            "address": "123 Main Street, Anytown, USA"
+        },
+        "children": [
+            {
+                "studentId": "650d9c7e4c9a8b001f2e3d70",
+                "name": "Alex Johnson",
+                "image": "https://example.com/avatars/student1.jpg",
+                "rollNumber": "GC2025001",
+                "class": "Class 10-A",
+                "section": "A"
+            },
+            {
+                "studentId": "650d9c7e4c9a8b001f2e3d90",
+                "name": "Emma Johnson",
+                "image": "https://example.com/avatars/student2.jpg",
+                "rollNumber": "GC2024015",
+                "class": "Class 9-B",
+                "section": "B"
+            }
+        ],
+        "childrenStats": [
+            {
+                "studentId": "650d9c7e4c9a8b001f2e3d70",
+                "name": "Alex Johnson",
+                "attendanceRate": "90.3%",
+                "averageGrade": "B+",
+                "totalAbsents": 2,
+                "recentPerformances": [
+                    {
+                        "subject": "English",
+                        "grade": "A",
+                        "date": "2026-03-10T00:00:00.000Z"
+                    },
+                    {
+                        "subject": "History",
+                        "grade": "B+",
+                        "date": "2026-03-08T00:00:00.000Z"
+                    },
+                    {
+                        "subject": "Biology",
+                        "grade": "A+",
+                        "date": "2026-03-05T00:00:00.000Z"
+                    }
+                ]
+            },
+            {
+                "studentId": "650d9c7e4c9a8b001f2e3d90",
+                "name": "Emma Johnson",
+                "attendanceRate": "95.2%",
+                "averageGrade": "A-",
+                "totalAbsents": 1,
+                "recentPerformances": [
+                    {
+                        "subject": "Mathematics",
+                        "grade": "A",
+                        "date": "2026-03-12T00:00:00.000Z"
+                    },
+                    {
+                        "subject": "Science",
+                        "grade": "B+",
+                        "date": "2026-03-09T00:00:00.000Z"
+                    },
+                    {
+                        "subject": "English",
+                        "grade": "A",
+                        "date": "2026-03-06T00:00:00.000Z"
+                    }
+                ]
+            }
+        ],
+        "upcomingEvents": [
+            {
+                "eventId": "650d9c7e4c9a8b001f2e3d59",
+                "title": "Parent-Teacher Meeting",
+                "description": "Annual parent-teacher meeting to discuss student progress",
+                "date": "2026-03-25T09:00:00.000Z",
+                "time": "09:00 AM",
+                "location": "Main Hall",
+                "eventType": "meeting"
+            },
+            {
+                "eventId": "650d9c7e4c9a8b001f2e3d61",
+                "title": "Science Fair",
+                "description": "Annual science fair showcasing student projects",
+                "date": "2026-03-28T10:00:00.000Z",
+                "time": "10:00 AM",
+                "location": "Science Building",
+                "eventType": "workshop"
+            },
+            {
+                "eventId": "650d9c7e4c9a8b001f2e3d91",
+                "title": "Sports Day",
+                "description": "Annual sports competition for all students",
+                "date": "2026-04-01T08:30:00.000Z",
+                "time": "08:30 AM",
+                "location": "Sports Ground",
+                "eventType": "other"
+            }
+        ],
+        "announcements": [
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d92",
+                "title": "Spring Break Announcement",
+                "content": "Spring break will be from March 29 to April 5. Classes will resume on April 6.",
+                "createdAt": "2026-03-10T10:00:00.000Z",
+                "author": "Admin"
+            },
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d93",
+                "title": "Exam Schedule Update",
+                "content": "Mathematics midterm exam has been rescheduled to March 18.",
+                "createdAt": "2026-03-12T14:30:00.000Z",
+                "author": "Examination Department"
+            },
+            {
+                "_id": "650d9c7e4c9a8b001f2e3d94",
+                "title": "Library Hours",
+                "content": "Library will be open from 8:00 AM to 8:00 PM during exam week.",
+                "createdAt": "2026-03-14T09:15:00.000Z",
+                "author": "Library"
+            }
+        ]
+    }
+}

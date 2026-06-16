@@ -1,0 +1,145 @@
+{
+    "status": "success",
+    "message": "Teacher dashboard fetched successfully",
+    "data": {
+        "role": "teacher",
+        "teacherInfo": {
+            "id": "650d9c7e4c9a8b001f2e3d63",
+            "name": "Dr. Emily Wilson",
+            "image": "https://example.com/avatars/teacher1.jpg",
+            "email": "emily.wilson@greenwoodcollege.edu",
+            "department": "Computer Science",
+            "designation": "Assistant Professor",
+            "qualifications": "Ph.D. in Computer Science",
+            "experience": 8,
+            "officeHours": "Monday, Wednesday 2:00 PM - 4:00 PM"
+        },
+        "attendance": {
+            "presentCount": 485,
+            "absentCount": 15,
+            "month": 3,
+            "year": 2026
+        },
+        "teachingStats": {
+            "totalLessons": 120,
+            "totalClasses": 4,
+            "coursesTaught": 3,
+            "totalStudents": 120
+        },
+        "schedule": [
+            {
+                "dayOfWeek": "Monday",
+                "classes": [
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d64",
+                        "courseId": "650d9c7e4c9a8b001f2e3d65",
+                        "courseName": "Introduction to Programming",
+                        "startTime": "09:00 AM",
+                        "endTime": "10:30 AM",
+                        "classroom": "Room 401",
+                        "subject": "Computer Science",
+                        "studentCount": 40,
+                        "maxCapacity": 45,
+                        "academicYear": "2025-2026"
+                    },
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d66",
+                        "courseId": "650d9c7e4c9a8b001f2e3d67",
+                        "courseName": "Data Structures",
+                        "startTime": "11:00 AM",
+                        "endTime": "12:30 PM",
+                        "classroom": "Lab 3",
+                        "subject": "Computer Science",
+                        "studentCount": 35,
+                        "maxCapacity": 40,
+                        "academicYear": "2025-2026"
+                    }
+                ]
+            },
+            {
+                "dayOfWeek": "Wednesday",
+                "classes": [
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d64",
+                        "courseId": "650d9c7e4c9a8b001f2e3d65",
+                        "courseName": "Introduction to Programming",
+                        "startTime": "09:00 AM",
+                        "endTime": "10:30 AM",
+                        "classroom": "Room 401",
+                        "subject": "Computer Science",
+                        "studentCount": 40,
+                        "maxCapacity": 45,
+                        "academicYear": "2025-2026"
+                    },
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d68",
+                        "courseId": "650d9c7e4c9a8b001f2e3d69",
+                        "courseName": "Web Development",
+                        "startTime": "02:00 PM",
+                        "endTime": "03:30 PM",
+                        "classroom": "Lab 4",
+                        "subject": "Computer Science",
+                        "studentCount": 30,
+                        "maxCapacity": 35,
+                        "academicYear": "2025-2026"
+                    }
+                ]
+            },
+            {
+                "dayOfWeek": "Friday",
+                "classes": [
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d66",
+                        "courseId": "650d9c7e4c9a8b001f2e3d67",
+                        "courseName": "Data Structures",
+                        "startTime": "10:00 AM",
+                        "endTime": "11:30 AM",
+                        "classroom": "Lab 3",
+                        "subject": "Computer Science",
+                        "studentCount": 35,
+                        "maxCapacity": 40,
+                        "academicYear": "2025-2026"
+                    }
+                ]
+            }
+        ],
+        "courses": [
+            {
+                "courseId": "650d9c7e4c9a8b001f2e3d65",
+                "name": "Introduction to Programming",
+                "code": "CS101",
+                "description": "Fundamentals of computer programming using Python",
+                "credits": 3,
+                "startDate": "2025-08-15T00:00:00.000Z",
+                "endDate": "2026-05-20T00:00:00.000Z",
+                "schedule": "Monday, Wednesday 9:00 AM - 10:30 AM",
+                "currentEnrollment": 40,
+                "maxCapacity": 45
+            },
+            {
+                "courseId": "650d9c7e4c9a8b001f2e3d67",
+                "name": "Data Structures",
+                "code": "CS201",
+                "description": "Advanced data structures and algorithms",
+                "credits": 4,
+                "startDate": "2025-08-15T00:00:00.000Z",
+                "endDate": "2026-05-20T00:00:00.000Z",
+                "schedule": "Monday, Friday 10:00 AM - 11:30 AM",
+                "currentEnrollment": 35,
+                "maxCapacity": 40
+            },
+            {
+                "courseId": "650d9c7e4c9a8b001f2e3d69",
+                "name": "Web Development",
+                "code": "CS301",
+                "description": "Full-stack web development using modern technologies",
+                "credits": 3,
+                "startDate": "2025-08-15T00:00:00.000Z",
+                "endDate": "2026-05-20T00:00:00.000Z",
+                "schedule": "Wednesday 2:00 PM - 3:30 PM",
+                "currentEnrollment": 30,
+                "maxCapacity": 35
+            }
+        ]
+    }
+}

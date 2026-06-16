@@ -1,0 +1,166 @@
+{
+    "status": "success",
+    "message": "Student dashboard fetched successfully",
+    "data": {
+        "role": "student",
+        "studentInfo": {
+            "id": "650d9c7e4c9a8b001f2e3d70",
+            "name": "Alex Johnson",
+            "image": "https://example.com/avatars/student1.jpg",
+            "email": "alex.johnson@student.greenwoodcollege.edu",
+            "rollNumber": "GC2025001",
+            "class": "Class 10-A",
+            "section": "A",
+            "bloodGroup": "O+",
+            "phoneNumber": "+1234567890",
+            "emergencyContact": "+0987654321"
+        },
+        "attendance": {
+            "presentCount": 28,
+            "absentCount": 2,
+            "lateCount": 1,
+            "month": 3,
+            "year": 2026,
+            "attendanceRate": "90.3%"
+        },
+        "academicStats": {
+            "totalCourses": 8,
+            "completedCourses": 0,
+            "ongoingCourses": 8,
+            "averageGrade": "B+",
+            "totalAssignments": 35,
+            "pendingAssignments": 5,
+            "completedAssignments": 30
+        },
+        "upcomingExams": [
+            {
+                "examId": "650d9c7e4c9a8b001f2e3d71",
+                "subject": "Mathematics",
+                "date": "2026-03-18T09:00:00.000Z",
+                "startTime": "09:00 AM",
+                "endTime": "11:00 AM",
+                "location": "Room 301",
+                "totalMarks": 100
+            },
+            {
+                "examId": "650d9c7e4c9a8b001f2e3d72",
+                "subject": "Physics",
+                "date": "2026-03-20T14:00:00.000Z",
+                "startTime": "02:00 PM",
+                "endTime": "04:00 PM",
+                "location": "Auditorium",
+                "totalMarks": 100
+            },
+            {
+                "examId": "650d9c7e4c9a8b001f2e3d73",
+                "subject": "Chemistry",
+                "date": "2026-03-22T10:30:00.000Z",
+                "startTime": "10:30 AM",
+                "endTime": "11:30 AM",
+                "location": "Lab 2",
+                "totalMarks": 50
+            }
+        ],
+        "recentGrades": [
+            {
+                "examId": "650d9c7e4c9a8b001f2e3d74",
+                "subject": "English",
+                "date": "2026-03-10T00:00:00.000Z",
+                "marksObtained": 85,
+                "totalMarks": 100,
+                "grade": "A",
+                "percentage": "85.0%"
+            },
+            {
+                "examId": "650d9c7e4c9a8b001f2e3d75",
+                "subject": "History",
+                "date": "2026-03-08T00:00:00.000Z",
+                "marksObtained": 78,
+                "totalMarks": 100,
+                "grade": "B+",
+                "percentage": "78.0%"
+            },
+            {
+                "examId": "650d9c7e4c9a8b001f2e3d76",
+                "subject": "Biology",
+                "date": "2026-03-05T00:00:00.000Z",
+                "marksObtained": 92,
+                "totalMarks": 100,
+                "grade": "A+",
+                "percentage": "92.0%"
+            }
+        ],
+        "schedule": [
+            {
+                "dayOfWeek": "Monday",
+                "classes": [
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d77",
+                        "courseId": "650d9c7e4c9a8b001f2e3d78",
+                        "courseName": "Mathematics",
+                        "startTime": "09:00 AM",
+                        "endTime": "10:00 AM",
+                        "classroom": "Room 101",
+                        "subject": "Mathematics",
+                        "teacher": "John Smith"
+                    },
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d79",
+                        "courseId": "650d9c7e4c9a8b001f2e3d80",
+                        "courseName": "Physics",
+                        "startTime": "10:15 AM",
+                        "endTime": "11:15 AM",
+                        "classroom": "Lab 1",
+                        "subject": "Physics",
+                        "teacher": "Sarah Johnson"
+                    },
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d81",
+                        "courseId": "650d9c7e4c9a8b001f2e3d82",
+                        "courseName": "English",
+                        "startTime": "11:30 AM",
+                        "endTime": "12:30 PM",
+                        "classroom": "Room 102",
+                        "subject": "English",
+                        "teacher": "Emily Davis"
+                    }
+                ]
+            },
+            {
+                "dayOfWeek": "Tuesday",
+                "classes": [
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d83",
+                        "courseId": "650d9c7e4c9a8b001f2e3d84",
+                        "courseName": "Chemistry",
+                        "startTime": "09:00 AM",
+                        "endTime": "10:00 AM",
+                        "classroom": "Lab 2",
+                        "subject": "Chemistry",
+                        "teacher": "Michael Brown"
+                    },
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d85",
+                        "courseId": "650d9c7e4c9a8b001f2e3d86",
+                        "courseName": "History",
+                        "startTime": "10:15 AM",
+                        "endTime": "11:15 AM",
+                        "classroom": "Room 103",
+                        "subject": "History",
+                        "teacher": "Jennifer Wilson"
+                    },
+                    {
+                        "classId": "650d9c7e4c9a8b001f2e3d87",
+                        "courseId": "650d9c7e4c9a8b001f2e3d88",
+                        "courseName": "Biology",
+                        "startTime": "11:30 AM",
+                        "endTime": "12:30 PM",
+                        "classroom": "Lab 3",
+                        "subject": "Biology",
+                        "teacher": "David Martinez"
+                    }
+                ]
+            }
+        ]
+    }
+}

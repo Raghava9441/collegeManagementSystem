@@ -289,7 +289,7 @@ const deleteBulkUsers = asyncHandler(async (req: Request, res: Response) => {
 
 
 const loginUser = asyncHandler(async (req: Request, res: Response) => {
-// console.log("🚀 ~ req:", req)
+    // console.log("🚀 ~ req:", req)
 
     const { email, password } = req.body;
     console.log("🚀 ~ email:", email)
@@ -327,13 +327,13 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
     }
     const options = {
         httpOnly: true,
-        sameSite: 'none',
-        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        secure: true
     }
     // Return success response with user data and tokens
     return res.status(200)
-        .cookie('accessToken', accessToken, { httpOnly: true, sameSite: 'none', secure: process.env.NODE_ENV === 'production' })
-        .cookie('refreshToken', refreshToken, { httpOnly: true, sameSite: 'none', secure: process.env.NODE_ENV === 'production' })
+        .cookie('accessToken', accessToken, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production' })
+        .cookie('refreshToken', refreshToken, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production' })
         .json(new ApiResponse(200, { loggedInUser, accessToken, refreshToken }, "User is logged in successfully"));
 });
 

@@ -21,6 +21,7 @@ import adminRoutees from './routes/admin.routes';
 import orgAdminRoutes from './routes/orgAdmin.routes';
 import permissionRoutes from './routes/permissions.routes';
 import settingsRoutes from './routes/settings.routes';
+import AiRoutes from './routes/ai.routes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import swaggerDocs from './utils/swagger';
@@ -136,6 +137,7 @@ app.use("/api/v1/dashboard", adminRoutees);
 app.use("/api/v1/org-admin", orgAdminRoutes);
 app.use("/api/v1/permissions", permissionRoutes);
 app.use("/api/v1/settings", settingsRoutes);
+app.use("/api/v1/ai", AiRoutes);
 
 // Seed route (disable in production)
 if (!isProduction) {
